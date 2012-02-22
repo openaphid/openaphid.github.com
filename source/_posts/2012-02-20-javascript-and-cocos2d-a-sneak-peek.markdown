@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "JavaScript and Cocos2D-iphone: a sneak peek of Open Aphid"
+title: "JavaScript and Cocos2D-iPhone: a sneak peek of Open Aphid"
 date: 2012-02-20 23:26
 comments: true
 categories: [Open Aphid]
