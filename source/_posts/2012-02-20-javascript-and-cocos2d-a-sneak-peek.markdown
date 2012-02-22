@@ -9,7 +9,9 @@ What is Open Aphid?
 ---------------------
 *Open Aphid* is our secret project to combine the power of JavaScript and [Cocos2d-iPhone](http://www.cocos2d-iphone.org/) for native game development on mobile devices. It allows developers to write fast and native quality games in JavaScript language. The architecture of Open Aphid can be summarized as below:
 
-![architecture](images/architecture.jpg "Architecture of Open Aphid")
+<!-- more -->
+
+![architecture](/images/architecture.jpg "Architecture of Open Aphid")
 
 A set of Cocos2D-style JavaScript APIs are provided for composing scenes, applying actions on nodes, handling events, etc. The core runtime of Open Aphid is written in C++, which adopts the architecture of Cocos2d-iPhone. The JavaScript binding module bridges the C++ runtime and the JavaScript engine, which allows games to use native features in pure JavaScript.
 
@@ -25,7 +27,7 @@ Open Aphid is not the first one to bring JavaScript into native game development
 
 Performance Benchmark Setup
 ---------------------------
-We adopt a benchmark program introduced in [a presentation of ngCore SDK](http://www.slideshare.net/devsumi/17a6smartphone-xplatform). The program is modified a bit and implemented in Cocos2d-iPhone, ngCore and Open Aphid. The benchmark is composed by several parts, lets describe them using APIs from Open Aphid:
+We adopt a benchmark program introduced in [a presentation of ngCore SDK](http://www.slideshare.net/devsumi/17a6smartphone-xplatform). The program is modified a bit and implemented in Cocos2d-iPhone, ngCore and Open Aphid. The benchmark is composed by several parts, let's describe them using APIs from Open Aphid:
 
 ##### A background image(Size 1024x1024)
 ``` javascript
@@ -36,7 +38,7 @@ scene.addChild(background);
 #### A frame-by-frame animation(5 frames)
 The animation is made from a 320x64 size image, which is originally included in a sample project of ngCore SDK:
 
-![tank animation](images/tank.png "Tank")
+![tank animation](/images/tank.png "Tank")
 ``` javascript
 var texture = new G2D.Texture2D("tank.png");
 
@@ -135,14 +137,14 @@ for (var i = 0; i < tankCount; i++) {
 
 A screenshot of the benchmark running with 100 tanks:
 
-![screenshot of 100 tanks in Open Aphid](images/screenshot_openaphid_100tanks.png "Screenshot")
+![screenshot of 100 tanks in Open Aphid](/images/screenshot_openaphid_100tanks.png "Screenshot")
 
 Benchmark Environment
 ---------------------
 The same benchmark is implemented in Cocos2d-iPhone, ngCore and Open Aphid. We tried to run it using the latest stable version of each:
 
 + [Cocos2d-iPhone 1.0.1](http://www.cocos2d-iphone.org/download). CCSpriteBatchNode is not used to make sure the benchmark share the same behavior in each framework. CC_DIRECTOR_FAST_FPS is also turned off for the same reason. CC_DIRECTOR_FPS_INTERVAL is set to 1.0f.
-+ [ngCore 1.6-20120209-g4a0717e](https://developer.mobage.com/). The performance of ngCore has improved a lot in this latest release than v0.9 which is used in the [presentation](http://www.slideshare.net/devsumi/17a6smartphone-xplatform).
++ [ngCore 1.6-20120209](https://developer.mobage.com/). The performance of ngCore has improved a lot in this latest release than v0.9 which is used in the [presentation](http://www.slideshare.net/devsumi/17a6smartphone-xplatform).
 + Open Aphid. An internal stable release is used to run the test.
 
 The benchmark is performed on an iPod Touch 3rd generation (32GB). The hardware specification can be found from its [wikipedia page](http://en.wikipedia.org/wiki/IPod_Touch).
@@ -150,10 +152,10 @@ The benchmark is performed on an iPod Touch 3rd generation (32GB). The hardware 
 ### Benchmark Results
 The FPS data are recorded for running different number of tanks on each framework. The FPS of ngCore is not consistent, so we tracked both the high and low FPS data.
 
-![performance benchmark](images/benchmark_01.jpg "Benchmarks")
+![performance benchmark](/images/benchmark_01.jpg "Benchmarks")
 
 Open Aphid gives a pleasant result. It can keep 60 FPS when there are less than 200 tank sprites. The FPS is lower than Cocos2d-iPhone when adding more tanks, but we can accept it as there are hundreds of native-to-JavaScript update callbacks invoked during each frame.
 
-When will OA be released?
--------------------------
+When will Open Aphid be released?
+---------------------------------
 Open Aphid is still under development. We're working hard to make the first public release available in the middle of April. Please feel free to mail us with your questions and suggestions via *openaphid At gmail.com*. We'd appreciate it for your kind help.
