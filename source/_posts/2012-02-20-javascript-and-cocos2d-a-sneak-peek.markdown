@@ -5,15 +5,15 @@ date: 2012-02-20 23:26
 comments: true
 categories: [OpenAphid]
 ---
-What is OpenAphid?
----------------------
-*OpenAphid* is our secret project to combine the power of JavaScript and [Cocos2d-iPhone](http://www.cocos2d-iphone.org/) for native game development on mobile devices. It allows developers to write fast and native quality games in JavaScript language. The architecture of OpenAphid can be summarized as below:
+## What is OpenAphid?
+
+*OpenAphid* is our secret OSS project to combine the power of JavaScript and [Cocos2d-iPhone](http://www.cocos2d-iphone.org/) for native game development on mobile devices. It allows developers to write fast and native quality games in JavaScript language. The architecture of OpenAphid can be summarized as below:
 
 <!-- more -->
 
 ![architecture](/images/architecture.jpg "Architecture of OpenAphid")
 
-A set of Cocos2D-style JavaScript APIs are provided for composing scenes, applying actions on nodes, handling events, etc. The core runtime of OpenAphid is written in C++, which adopts the architecture of Cocos2d-iPhone. The JavaScript binding module bridges the C++ runtime and the JavaScript engine, which allows games to use native features in pure JavaScript.
+A set of Cocos2D-style JavaScript APIs are provided for composing scenes, applying actions on nodes, handling events, etc. The core runtime of OpenAphid is wrote in C++, which adopts the architecture of Cocos2d-iPhone. The JavaScript binding module bridges the C++ runtime and the JavaScript engine, which allows games to use native features in pure JavaScript.
 
 We decided to implement the core of OpenAphid in C++ instead of reusing the Objective-C code base from Cocos2d-iPhone. The first reason is for portability. The current WIP version is for iOS only as Cocos2d-iPhone, but we'd like to support Android and other platforms after the iOS version is stable. The other consideration is for faster JavaScript binding. We want to reduce the performance overhead introduced by the script layer as small as possible.
 
@@ -114,7 +114,7 @@ function Tank(texture) {
 #### Apply animation and add tanks to the scene
 After applying the animation, the size of tank sprite is 64x64.
 ```javascript
-var tankCount = 100; //The benchmark tests the FPS for different count of tanks
+var tankCount = 100; //The benchmark tests FPS for different count of tanks
 for (var i = 0; i < tankCount; i++) {
 	var tank = new Tank(texture);
 	scene.addChild(tank.getSprite()); //add to scene
@@ -154,8 +154,8 @@ The FPS data are recorded for running different number of tanks on each framewor
 
 ![performance benchmark](/images/benchmark_01.jpg "Benchmarks")
 
-OpenAphid gives a pleasant result. It can keep 60 FPS when there are less than 200 tank sprites. The FPS is lower than Cocos2d-iPhone when adding more tanks, but we can accept it as there are hundreds of native-to-JavaScript update callbacks invoked during each frame.
+OpenAphid gives a pleasant result. It's faster than ngCore and keeps 60 FPS when there are less than 200 tank sprites. The FPS is lower than Cocos2d-iPhone's when adding more tanks, it's acceptable as there are hundreds of native-to-JavaScript update callbacks to invoke during each frame. And we'll keep working to improve its performance.
 
 When will OpenAphid be released?
 ---------------------------------
-OpenAphid is still under development. We're working hard to make the first public release available in the middle of April. Please feel free to mail us with your questions and suggestions via *openaphid At gmail.com*. We'd appreciate it for your kind help.
+OpenAphid is still under development. We're working hard to make the first public release available in the middle of April. All source codes will be public then. Please feel free to mail us with your questions and suggestions via *openaphid At gmail.com*. We'd appreciate it for your kind help.
