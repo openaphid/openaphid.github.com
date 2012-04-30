@@ -29,10 +29,12 @@ Performance Benchmark Setup
 ---------------------------
 We adopt a benchmark program introduced in [a presentation of ngCore SDK](http://www.slideshare.net/devsumi/17a6smartphone-xplatform). The program is modified a bit and implemented in Cocos2d-iPhone, ngCore and OpenAphid. The benchmark is composed by several parts, let's describe them using APIs from OpenAphid:
 
+> ** Updates at 2012-04-28: ** code snippets were updated according to the API changes in v0.1 release.
+
 ##### A background image(Size 1024x1024)
 ``` javascript
-var scene = new G2D.Scene();
-var background = new G2D.Sprite("background.png");
+var scene = new aphid.g2d.Scene();
+var background = new aphid.g2d.Sprite(new aphid.g2d.Texture2D("background.png"));
 scene.addChild(background);
 ```
 #### A frame-by-frame animation(5 frames)
@@ -40,99 +42,91 @@ The animation is made from a 320x64 size image, which is originally included in 
 
 ![tank animation](/images/tank.png "Tank")
 ``` javascript
-var texture = new G2D.Texture2D("tank.png");
+var texture = new aphid.g2d.Texture2D("tank.png");
 
 var frames = [];
 var imgSize = texture.contentSize;
 for (var i = 0; i < 5; i++) {
-	var frame = new G2D.SpriteFrame(
-					texture, 
-					new Core.Rect(
-						imgSize.width * i / 5, 
-						0, 
-						imgSize.width / 5, 
-						imgSize.height
-						)
-				);
+	var frame = new aphid.g2d.SpriteFrame(
+										texture, 
+										new aphid.core.Rect(
+															imgSize.width * i / 5, 
+															0, 
+															imgSize.width / 5, 
+															imgSize.height
+															)
+										);
 	frames.push(frame);
 }
 ```
 #### Tank moves per frame inside the screen
 Dozens of small tanks are added to the scene. Each of them has a random initial position and changes it during each frame.
 ``` javascript
-function Tank(texture) {
-	this.sprite = new G2D.Sprite(texture);
-	//set a random initial position
-	this.sprite.position = new Core.Point(Math.random() * 320, Math.random() * 480);
-	
-	//set the movement velocity and direction
-	this.vx = Math.random() > 0.5 ? 0.1 : -0.1;
-	this.vy = Math.random() > 0.5 ? 0.1 : -0.1;
-	
-	this.getSprite = function() {
-		return this.sprite;
-	};
+var tank = {} //declare a namespace
+tank.maxTankCount = 1000;
 
-	//invoked for each frame
-	this.onUpdate = function(interval) {
-		var p = this.sprite.position;
-		p.x += interval * 1000 * this.vx;
-		p.y += interval * 1000 * this.vy;
-		
-		var size = G2D.director.winSize;
-		
-		//make sure tank is inside the screen
+tank.Tank = function(texture) {
+	//fields
+	this.sprite_ = new aphid.g2d.Sprite(texture);
+	//the movement velocity and direction
+	this.vx_ = Math.random() > 0.5 ? 0.1 : -0.1;
+	this.vy_ = Math.random() > 0.5 ? 0.1 : -0.1;
+
+	var winSize = aphid.g2d.director.winSize;
+	//a random initial position
+	this.sprite_.position = new aphid.core.Point(Math.random() * winSize.width, Math.random() * winSize.height);
+	//setup and register frame update listener
+	this.sprite_.onframeupdate = bind(this, this.handleFrameUpdate);
+	this.sprite_.scheduleUpdate();
+};
+
+tank.Tank.prototype.getSprite = function() {return this.sprite_;};
+
+tank.Tank.prototype.handleFrameUpdate = function(target, interval) {
+		var p = this.sprite_.position;
+		p.x += interval * 1000 * this.vx_;
+		p.y += interval * 1000 * this.vy_;
+		var size = aphid.g2d.director.winSize;
 		if (p.x < 0) {
 			p.x = 0;
-			this.vx = -this.vx;
+			this.vx_ = -this.vx_;
 		}
 		
 		if (p.x > size.width) {
 			p.x = size.width;
-			this.vx = -this.vx;
+			this.vx_ = -this.vx_;
 		}
 		
 		if (p.y < 0) {
 			p.y = 0;
-			this.vy = -this.vy;
+			this.vy_ = -this.vy_;
 		}
 		
 		if (p.y > size.height) {
 			p.y = size.height;
-			this.vy = -this.vy;
+			this.vy_ = -this.vy_;
 		}
-		
-		//set the new position
-		this.sprite.position = p;
-	};
-	
-	//register and schedule the onUpdate listener
-	this.sprite.onUpdate = this;
-	this.sprite.scheduleUpdate();
-}
+		this.sprite_.position = p;
+};
 ```
 #### Apply animation and add tanks to the scene
 After applying the animation, the size of tank sprite is 64x64.
 ```javascript
-var tankCount = 100; //The benchmark tests FPS for different count of tanks
-for (var i = 0; i < tankCount; i++) {
-	var tank = new Tank(texture);
-	scene.addChild(tank.getSprite()); //add to scene
+var animation = new aphid.g2d.Animation(frames, 0.05);
+var action = aphid.g2d.actions.repeatForever(
+	aphid.g2d.actions.animate(animation, false)
+	);
 
-	//create animation
-	var animation = new G2D.Animation(frames);
-	animation.delay = 0.05;
-	
-	//apply the animation action to sprite, make it repeat forever
-	var action = new G2D.Actions.Animate(animation, false);
-	tank.getSprite().runAction(new G2D.Actions.RepeatForever(action));
+for (var i = 0; i < tank.maxTankCount; i++) {
+	var newTank = new tank.Tank(frames[0].texture);
+	newTank.getSprite().runAction(action.copy());
+	scene.addChild(newTank.getSprite());
 }
 ```
-#### Run the scene and display FPS on screen
+#### Run the scene
 ```javascript
-	var director = G2D.director;
-	director.displayFPS = true;
-	director.runWithScene(scene);
+	var director = aphid.g2d.director;
+	director.runScene(scene);
 ```
 
 A screenshot of the benchmark running with 100 tanks:
@@ -152,7 +146,9 @@ The benchmark is performed on an iPod Touch 3rd generation (32GB). The hardware 
 ### Benchmark Results
 The FPS data are recorded for running different number of tanks on each framework. The FPS of ngCore is not consistent, so we tracked both the high and low FPS data.
 
-![performance benchmark](/images/benchmark_01.jpg "Benchmarks")
+> ** Updates at 2012-04-28: ** benchmark results are updated by using OpenAphid v0.1 release.
+
+![performance benchmark](/images/tank_benchmark_fps_v0.1.jpg "Benchmark Results (Updated at 2012-04-28)")
 
 OpenAphid gives a pleasant result. It's faster than ngCore and keeps 60 FPS when there are less than 200 tank sprites. The FPS is lower than Cocos2d-iPhone's when adding more tanks, it's acceptable as there are hundreds of native-to-JavaScript update callbacks to invoke during each frame. And we'll keep working to improve its performance.
 
