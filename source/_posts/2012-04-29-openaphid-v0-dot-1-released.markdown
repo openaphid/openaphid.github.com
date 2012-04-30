@@ -18,8 +18,17 @@ Three github repositories have been created to meet different requirements:
 
 * `Boilerplate-iOS`: [https://github.com/openaphid/Boilerplate-iOS](https://github.com/openaphid/Boilerplate-iOS). It's a template project for developing iOS games with OpenAphid. It's a good start point if you want to play with the APIs of OpenAphid by yourself.
 
-The [JavaScript API references](/api-doc/latest/index.html) of OpenAphid v0.1 is also published. It's still a bit rough right now. We promise that it'll be improved in the future.
+The [JavaScript API references](/api-doc/latest/index.html) of OpenAphid v0.1 is also available. It's a bit rough right now. We promise that it'll be improved in the future.
 
-## Future of OpenAphid
+## Highlights of OpenAphid
 
-v0.1 is just the start of OpenAphid. We admit that it's not ready for developing real product yet, but we'd like 
+v0.1 is just the start of OpenAphid. We admit that it's not ready for real product yet, but we'd like to highlight some characteristics of the project here.
+
+- OpenAphid APIs can be considered as the "DOM" APIs for 2D games on mobile devices. The internal binding layer is implemented in the similar approach as [WebKit](http://www.webkit.org/) does for binding native objects to the JavaScript engine in modern browsers. 
+
+- The memory occupied by native objects is managed automatically. Compared to some other script based game engines, OpenAphid doesn't provide destroy API at script side for any native objects. Native objects that are created in JavaScript are managed by the JavaScript garbage collector as other pure JavaScript objects. 
+
+- OpenAphid follows the standard specifications to implement some core features. Although the rendering system of OpenAphid is ported from Cocos2d-iPhone, which is not supported in browsers; the other APIs in OpenAphid are planed to follow W3C standards. For example, the `console` object in global scope is provided as it is in browsers; the `XMLHttpRequest` APIs are partially implemented in v0.1, and will be fully compatible to W3C specification in the future releases. And the touch event handling in OpenAphid is implemented as the DOM touch event APIs, which is totally different from Cocos2d-iPhone.
+
+- OpenAphid is fast and efficient. The benchmark result in the [previous post](/blog/2012/02/20/javascript-and-cocos2d-a-sneak-peek/) has been updated by using v0.1, which is slightly faster. We also evaluated the memory usage of OpenAphid on the same benchmark.
+
