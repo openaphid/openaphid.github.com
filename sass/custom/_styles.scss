@@ -47,7 +47,9 @@ body > nav form .search{
 
 
 /* ----- Content ----- */
-
+blockquote {
+	font-size: 1em;
+}
 
 #content .blog-index article h1 {
   font-size: 2em;
@@ -55,14 +57,14 @@ body > nav form .search{
 }
 
 #content .blog-index article h1, #content .blog-index article h1 a, article header h1, article header h1 a{
-  color: #000000 !important;
+  color: #000 !important;
 }
 
 h1 { font-size: 2em; }
 
-h2 {font-size: 1.5em;}
+h2 {font-size: 1.4em;}
 
-h3 { font-size: 1.2em; }
+h3 { font-size: 1em; }
 
 h1 span{
   font-weight: normal;
