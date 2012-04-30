@@ -1,0 +1,4172 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>NamespaceActions Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="css/stylesPrint.css" />
+		<script type="text/javascript" src="js/toc.js"></script>
+		<script type="text/javascript" src="js/versions.js"></script>
+		<meta name="generator" content="OpenAphid Doc Generator 0.1"/>
+	</head>
+	<body>
+		<header id="top_header">
+		<div id="library" class="hideInXcode">
+						<h1><a id="libraryTitle" href="index.html">OpenAphid</a></h1>
+						<a id="developerHome" target="_blank" href="http://github.com/openaphid">Aphid Mobile</a>
+					</div>
+					
+					<div id="title" role="banner">
+						<h1 class="hideInXcode">NamespaceActions Class Reference</h1>
+					</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table Of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+						<option value="top">Jump To&#133;</option>
+					
+						
+						<option value="tasks">Overview of Tasks</option>
+						
+					
+						<option value="attributes">Attributes</option>
+						<option value="//property/TYPE_MASK_CALL_FUNCTION_0">&nbsp;&nbsp;&nbsp;&nbsp;TYPE_MASK_CALL_FUNCTION</option>
+						<option value="//property/TYPE_MASK_CAMERA_0">&nbsp;&nbsp;&nbsp;&nbsp;TYPE_MASK_CAMERA</option>
+						<option value="//property/TYPE_MASK_DEFAULT_0">&nbsp;&nbsp;&nbsp;&nbsp;TYPE_MASK_DEFAULT</option>
+						<option value="//property/TYPE_MASK_EASE_0">&nbsp;&nbsp;&nbsp;&nbsp;TYPE_MASK_EASE</option>
+						<option value="//property/TYPE_MASK_FINITE_TIME_0">&nbsp;&nbsp;&nbsp;&nbsp;TYPE_MASK_FINITE_TIME</option>
+						<option value="//property/TYPE_MASK_GRID_0">&nbsp;&nbsp;&nbsp;&nbsp;TYPE_MASK_GRID</option>
+						<option value="//property/TYPE_MASK_GRID3D_0">&nbsp;&nbsp;&nbsp;&nbsp;TYPE_MASK_GRID3D</option>
+						<option value="//property/TYPE_MASK_INSTANT_0">&nbsp;&nbsp;&nbsp;&nbsp;TYPE_MASK_INSTANT</option>
+						<option value="//property/TYPE_MASK_INTERVAL_0">&nbsp;&nbsp;&nbsp;&nbsp;TYPE_MASK_INTERVAL</option>
+						<option value="//property/TYPE_MASK_TILED_GRID3D_0">&nbsp;&nbsp;&nbsp;&nbsp;TYPE_MASK_TILED_GRID3D</option>
+					
+						<option value="functions">Functions</option>
+						<option value="//property/accelAmplitude_0">&nbsp;&nbsp;&nbsp;&nbsp;accelAmplitude(action, duration)</option>
+						<option value="//property/accelDeccelAmplitude_0">&nbsp;&nbsp;&nbsp;&nbsp;accelDeccelAmplitude(action, duration)</option>
+						<option value="//property/animate_0">&nbsp;&nbsp;&nbsp;&nbsp;animate(animation, [restoreOriginalFrame])</option>
+						<option value="//property/animate_1">&nbsp;&nbsp;&nbsp;&nbsp;animate(duration, animation, [restoreOriginalFrame])</option>
+						<option value="//property/bezierBy_0">&nbsp;&nbsp;&nbsp;&nbsp;bezierBy(duration, endPosition, controlPoint1, controlPoint2)</option>
+						<option value="//property/bezierTo_0">&nbsp;&nbsp;&nbsp;&nbsp;bezierTo(duration, endPosition, controlPoint1, controlPoint2)</option>
+						<option value="//property/blink_0">&nbsp;&nbsp;&nbsp;&nbsp;blink(duration, times)</option>
+						<option value="//property/callFunction_0">&nbsp;&nbsp;&nbsp;&nbsp;callFunction(callback)</option>
+						<option value="//property/deccelAmplitude_0">&nbsp;&nbsp;&nbsp;&nbsp;deccelAmplitude(action, duration)</option>
+						<option value="//property/delay_0">&nbsp;&nbsp;&nbsp;&nbsp;delay(duration)</option>
+						<option value="//property/easeBackIn_0">&nbsp;&nbsp;&nbsp;&nbsp;easeBackIn(action)</option>
+						<option value="//property/easeBackInOut_0">&nbsp;&nbsp;&nbsp;&nbsp;easeBackInOut(action)</option>
+						<option value="//property/easeBackOut_0">&nbsp;&nbsp;&nbsp;&nbsp;easeBackOut(action)</option>
+						<option value="//property/easeBounceIn_0">&nbsp;&nbsp;&nbsp;&nbsp;easeBounceIn(action)</option>
+						<option value="//property/easeBounceInOut_0">&nbsp;&nbsp;&nbsp;&nbsp;easeBounceInOut(action)</option>
+						<option value="//property/easeBounceOut_0">&nbsp;&nbsp;&nbsp;&nbsp;easeBounceOut(action)</option>
+						<option value="//property/easeElasticIn_0">&nbsp;&nbsp;&nbsp;&nbsp;easeElasticIn(action, period)</option>
+						<option value="//property/easeElasticInOut_0">&nbsp;&nbsp;&nbsp;&nbsp;easeElasticInOut(action, period)</option>
+						<option value="//property/easeElasticOut_0">&nbsp;&nbsp;&nbsp;&nbsp;easeElasticOut(action, period)</option>
+						<option value="//property/easeExponentialIn_0">&nbsp;&nbsp;&nbsp;&nbsp;easeExponentialIn(action)</option>
+						<option value="//property/easeExponentialInOut_0">&nbsp;&nbsp;&nbsp;&nbsp;easeExponentialInOut(action)</option>
+						<option value="//property/easeExponentialOut_0">&nbsp;&nbsp;&nbsp;&nbsp;easeExponentialOut(action)</option>
+						<option value="//property/easeIn_0">&nbsp;&nbsp;&nbsp;&nbsp;easeIn(action, rate)</option>
+						<option value="//property/easeInOut_0">&nbsp;&nbsp;&nbsp;&nbsp;easeInOut(action, rate)</option>
+						<option value="//property/easeOut_0">&nbsp;&nbsp;&nbsp;&nbsp;easeOut(action, rate)</option>
+						<option value="//property/easeSineIn_0">&nbsp;&nbsp;&nbsp;&nbsp;easeSineIn(action)</option>
+						<option value="//property/easeSineInOut_0">&nbsp;&nbsp;&nbsp;&nbsp;easeSineInOut(action)</option>
+						<option value="//property/easeSineOut_0">&nbsp;&nbsp;&nbsp;&nbsp;easeSineOut(action)</option>
+						<option value="//property/fadeIn_0">&nbsp;&nbsp;&nbsp;&nbsp;fadeIn(duration)</option>
+						<option value="//property/fadeOut_0">&nbsp;&nbsp;&nbsp;&nbsp;fadeOut(duration)</option>
+						<option value="//property/fadeOutBLTiles_0">&nbsp;&nbsp;&nbsp;&nbsp;fadeOutBLTiles(gridSize, duration)</option>
+						<option value="//property/fadeOutDownTiles_0">&nbsp;&nbsp;&nbsp;&nbsp;fadeOutDownTiles(gridSize, duration)</option>
+						<option value="//property/fadeOutTRTiles_0">&nbsp;&nbsp;&nbsp;&nbsp;fadeOutTRTiles(gridSize, duration)</option>
+						<option value="//property/fadeOutUpTiles_0">&nbsp;&nbsp;&nbsp;&nbsp;fadeOutUpTiles(gridSize, duration)</option>
+						<option value="//property/fadeTo_0">&nbsp;&nbsp;&nbsp;&nbsp;fadeTo(duration, opacity)</option>
+						<option value="//property/flipX_0">&nbsp;&nbsp;&nbsp;&nbsp;flipX(flipX)</option>
+						<option value="//property/flipX3D_0">&nbsp;&nbsp;&nbsp;&nbsp;flipX3D(duration)</option>
+						<option value="//property/flipY_0">&nbsp;&nbsp;&nbsp;&nbsp;flipY(flipY)</option>
+						<option value="//property/flipY3D_0">&nbsp;&nbsp;&nbsp;&nbsp;flipY3D(duration)</option>
+						<option value="//property/follow_0">&nbsp;&nbsp;&nbsp;&nbsp;follow(node, [worldBoundary])</option>
+						<option value="//property/hide_0">&nbsp;&nbsp;&nbsp;&nbsp;hide()</option>
+						<option value="//property/jumpBy_0">&nbsp;&nbsp;&nbsp;&nbsp;jumpBy(duration, deltaPosition, height, jumps)</option>
+						<option value="//property/jumpTiles3D_0">&nbsp;&nbsp;&nbsp;&nbsp;jumpTiles3D(waves, amplitude, gridSize, duration)</option>
+						<option value="//property/jumpTo_0">&nbsp;&nbsp;&nbsp;&nbsp;jumpTo(duration, position, height, jumps)</option>
+						<option value="//property/lens3D_0">&nbsp;&nbsp;&nbsp;&nbsp;lens3D(pos, radius, gridSize, duration)</option>
+						<option value="//property/liquid_0">&nbsp;&nbsp;&nbsp;&nbsp;liquid(waves, amplitude, gridSize, duration)</option>
+						<option value="//property/moveBy_0">&nbsp;&nbsp;&nbsp;&nbsp;moveBy(duration, deltaPosition)</option>
+						<option value="//property/moveBy_1">&nbsp;&nbsp;&nbsp;&nbsp;moveBy(duration, deltaX, deltaY)</option>
+						<option value="//property/moveTo_0">&nbsp;&nbsp;&nbsp;&nbsp;moveTo(duration, position)</option>
+						<option value="//property/moveTo_1">&nbsp;&nbsp;&nbsp;&nbsp;moveTo(duration, x, y)</option>
+						<option value="//property/orbitCamera_0">&nbsp;&nbsp;&nbsp;&nbsp;orbitCamera(duration, radius, deltaRadius, angleZ, deltaAngleZ, angleX, deltaAngleX)</option>
+						<option value="//property/pageTurn3D_0">&nbsp;&nbsp;&nbsp;&nbsp;pageTurn3D(gridSize, duration)</option>
+						<option value="//property/place_0">&nbsp;&nbsp;&nbsp;&nbsp;place(pos)</option>
+						<option value="//property/repeat_0">&nbsp;&nbsp;&nbsp;&nbsp;repeat(action, times)</option>
+						<option value="//property/repeatForever_0">&nbsp;&nbsp;&nbsp;&nbsp;repeatForever(action)</option>
+						<option value="//property/reuseGrid_0">&nbsp;&nbsp;&nbsp;&nbsp;reuseGrid(times)</option>
+						<option value="//property/ripple3D_0">&nbsp;&nbsp;&nbsp;&nbsp;ripple3D(pos, radius, waves, amplitude, gridSize, duration)</option>
+						<option value="//property/rotateBy_0">&nbsp;&nbsp;&nbsp;&nbsp;rotateBy(duration, deltaAngle)</option>
+						<option value="//property/rotateTo_0">&nbsp;&nbsp;&nbsp;&nbsp;rotateTo(duration, angle)</option>
+						<option value="//property/scaleBy_0">&nbsp;&nbsp;&nbsp;&nbsp;scaleBy(duration, deltaScaleXY)</option>
+						<option value="//property/scaleBy_1">&nbsp;&nbsp;&nbsp;&nbsp;scaleBy(duration, deltaScale)</option>
+						<option value="//property/scaleTo_0">&nbsp;&nbsp;&nbsp;&nbsp;scaleTo(duration, scale)</option>
+						<option value="//property/scaleTo_1">&nbsp;&nbsp;&nbsp;&nbsp;scaleTo(duration, scaleX, scaleY)</option>
+						<option value="//property/sequence_0">&nbsp;&nbsp;&nbsp;&nbsp;sequence(action0, action1,...)</option>
+						<option value="//property/shaky3D_0">&nbsp;&nbsp;&nbsp;&nbsp;shaky3D(range, shakeZ, gridSize, duration)</option>
+						<option value="//property/shakyTiles3D_0">&nbsp;&nbsp;&nbsp;&nbsp;shakyTiles3D(range, shakeZ, gridSize, duration)</option>
+						<option value="//property/shatteredTiles3D_0">&nbsp;&nbsp;&nbsp;&nbsp;shatteredTiles3D(range, shatterZ, gridSize, duration)</option>
+						<option value="//property/show_0">&nbsp;&nbsp;&nbsp;&nbsp;show()</option>
+						<option value="//property/shuffleTiles_0">&nbsp;&nbsp;&nbsp;&nbsp;shuffleTiles(seed, gridSize, duration)</option>
+						<option value="//property/skewBy_0">&nbsp;&nbsp;&nbsp;&nbsp;skewBy(duration, deltaSkew)</option>
+						<option value="//property/skewBy_1">&nbsp;&nbsp;&nbsp;&nbsp;skewBy(duration, deltaSkewX, deltaSkewY)</option>
+						<option value="//property/skewTo_0">&nbsp;&nbsp;&nbsp;&nbsp;skewTo(duration, skew)</option>
+						<option value="//property/skewTo_1">&nbsp;&nbsp;&nbsp;&nbsp;skewTo(duration, skewX, skewY)</option>
+						<option value="//property/spawn_0">&nbsp;&nbsp;&nbsp;&nbsp;spawn(action0, action1,...)</option>
+						<option value="//property/speed_0">&nbsp;&nbsp;&nbsp;&nbsp;speed(action, speed)</option>
+						<option value="//property/splitColumns_0">&nbsp;&nbsp;&nbsp;&nbsp;splitColumns(cols, duration)</option>
+						<option value="//property/splitRows_0">&nbsp;&nbsp;&nbsp;&nbsp;splitRows(rows, duration)</option>
+						<option value="//property/stopGrid_0">&nbsp;&nbsp;&nbsp;&nbsp;stopGrid()</option>
+						<option value="//property/tintBy_0">&nbsp;&nbsp;&nbsp;&nbsp;tintBy(duration, r, g, b)</option>
+						<option value="//property/tintBy_1">&nbsp;&nbsp;&nbsp;&nbsp;tintBy(duration, byColor)</option>
+						<option value="//property/tintTo_0">&nbsp;&nbsp;&nbsp;&nbsp;tintTo(duration, r, g, b)</option>
+						<option value="//property/toggleVisible_0">&nbsp;&nbsp;&nbsp;&nbsp;toggleVisible()</option>
+						<option value="//property/turnOffTiles_0">&nbsp;&nbsp;&nbsp;&nbsp;turnOffTiles(seed, gridSize, duration)</option>
+						<option value="//property/twirl_0">&nbsp;&nbsp;&nbsp;&nbsp;twirl(pos, twirls, amplitude, gridSize, duration)</option>
+						<option value="//property/waves_0">&nbsp;&nbsp;&nbsp;&nbsp;waves(waves, amplitude, isHorizontal, isVertical, gridSize, duration)</option>
+						<option value="//property/waves3D_0">&nbsp;&nbsp;&nbsp;&nbsp;waves3D(waves, amplitude, gridSize, duration)</option>
+						<option value="//property/wavesTiles3D_0">&nbsp;&nbsp;&nbsp;&nbsp;wavesTiles3D(waves, amplitude, gridSize, duration)</option>
+					
+					</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+				
+				<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Overview of Tasks</a></span><ul>
+					<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Attributes">Attributes</a></span></li>
+					<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Camera Actions">Camera Actions</a></span></li>
+					<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Ease Actions">Ease Actions</a></span></li>
+					<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Grid Actions">Grid Actions</a></span></li>
+					<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Grid3D Actions">Grid3D Actions</a></span></li>
+					<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Instant Actions">Instant Actions</a></span></li>
+					<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Interval Actions">Interval Actions</a></span></li>
+					<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Misc Actions">Misc Actions</a></span></li>
+					<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Tiled Grid Actions">Tiled Grid Actions</a></span></li>
+				</ul></li>
+				
+				
+				<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a	href="#attributes">Attributes</a></span>
+					<ul>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/TYPE_MASK_CALL_FUNCTION_0">TYPE_MASK_CALL_FUNCTION</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/TYPE_MASK_CAMERA_0">TYPE_MASK_CAMERA</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/TYPE_MASK_DEFAULT_0">TYPE_MASK_DEFAULT</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/TYPE_MASK_EASE_0">TYPE_MASK_EASE</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/TYPE_MASK_FINITE_TIME_0">TYPE_MASK_FINITE_TIME</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/TYPE_MASK_GRID_0">TYPE_MASK_GRID</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/TYPE_MASK_GRID3D_0">TYPE_MASK_GRID3D</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/TYPE_MASK_INSTANT_0">TYPE_MASK_INSTANT</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/TYPE_MASK_INTERVAL_0">TYPE_MASK_INTERVAL</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/TYPE_MASK_TILED_GRID3D_0">TYPE_MASK_TILED_GRID3D</a></span></li>
+					</ul>
+				</li>
+				
+				<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a	href="#functions">Functions</a></span>
+					<ul>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/accelAmplitude_0">accelAmplitude(action, duration)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/accelDeccelAmplitude_0">accelDeccelAmplitude(action, duration)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/animate_0">animate(animation, [restoreOriginalFrame])</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/animate_1">animate(duration, animation, [restoreOriginalFrame])</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/bezierBy_0">bezierBy(duration, endPosition, controlPoint1, controlPoint2)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/bezierTo_0">bezierTo(duration, endPosition, controlPoint1, controlPoint2)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/blink_0">blink(duration, times)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/callFunction_0">callFunction(callback)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/deccelAmplitude_0">deccelAmplitude(action, duration)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/delay_0">delay(duration)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/easeBackIn_0">easeBackIn(action)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/easeBackInOut_0">easeBackInOut(action)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/easeBackOut_0">easeBackOut(action)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/easeBounceIn_0">easeBounceIn(action)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/easeBounceInOut_0">easeBounceInOut(action)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/easeBounceOut_0">easeBounceOut(action)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/easeElasticIn_0">easeElasticIn(action, period)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/easeElasticInOut_0">easeElasticInOut(action, period)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/easeElasticOut_0">easeElasticOut(action, period)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/easeExponentialIn_0">easeExponentialIn(action)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/easeExponentialInOut_0">easeExponentialInOut(action)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/easeExponentialOut_0">easeExponentialOut(action)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/easeIn_0">easeIn(action, rate)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/easeInOut_0">easeInOut(action, rate)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/easeOut_0">easeOut(action, rate)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/easeSineIn_0">easeSineIn(action)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/easeSineInOut_0">easeSineInOut(action)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/easeSineOut_0">easeSineOut(action)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/fadeIn_0">fadeIn(duration)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/fadeOut_0">fadeOut(duration)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/fadeOutBLTiles_0">fadeOutBLTiles(gridSize, duration)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/fadeOutDownTiles_0">fadeOutDownTiles(gridSize, duration)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/fadeOutTRTiles_0">fadeOutTRTiles(gridSize, duration)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/fadeOutUpTiles_0">fadeOutUpTiles(gridSize, duration)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/fadeTo_0">fadeTo(duration, opacity)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/flipX_0">flipX(flipX)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/flipX3D_0">flipX3D(duration)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/flipY_0">flipY(flipY)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/flipY3D_0">flipY3D(duration)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/follow_0">follow(node, [worldBoundary])</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/hide_0">hide()</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/jumpBy_0">jumpBy(duration, deltaPosition, height, jumps)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/jumpTiles3D_0">jumpTiles3D(waves, amplitude, gridSize, duration)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/jumpTo_0">jumpTo(duration, position, height, jumps)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/lens3D_0">lens3D(pos, radius, gridSize, duration)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/liquid_0">liquid(waves, amplitude, gridSize, duration)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/moveBy_0">moveBy(duration, deltaPosition)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/moveBy_1">moveBy(duration, deltaX, deltaY)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/moveTo_0">moveTo(duration, position)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/moveTo_1">moveTo(duration, x, y)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/orbitCamera_0">orbitCamera(duration, radius, deltaRadius, angleZ, deltaAngleZ, angleX, deltaAngleX)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/pageTurn3D_0">pageTurn3D(gridSize, duration)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/place_0">place(pos)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/repeat_0">repeat(action, times)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/repeatForever_0">repeatForever(action)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/reuseGrid_0">reuseGrid(times)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/ripple3D_0">ripple3D(pos, radius, waves, amplitude, gridSize, duration)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/rotateBy_0">rotateBy(duration, deltaAngle)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/rotateTo_0">rotateTo(duration, angle)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/scaleBy_0">scaleBy(duration, deltaScaleXY)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/scaleBy_1">scaleBy(duration, deltaScale)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/scaleTo_0">scaleTo(duration, scale)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/scaleTo_1">scaleTo(duration, scaleX, scaleY)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/sequence_0">sequence(action0, action1,...)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/shaky3D_0">shaky3D(range, shakeZ, gridSize, duration)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/shakyTiles3D_0">shakyTiles3D(range, shakeZ, gridSize, duration)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/shatteredTiles3D_0">shatteredTiles3D(range, shatterZ, gridSize, duration)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/show_0">show()</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/shuffleTiles_0">shuffleTiles(seed, gridSize, duration)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/skewBy_0">skewBy(duration, deltaSkew)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/skewBy_1">skewBy(duration, deltaSkewX, deltaSkewY)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/skewTo_0">skewTo(duration, skew)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/skewTo_1">skewTo(duration, skewX, skewY)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/spawn_0">spawn(action0, action1,...)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/speed_0">speed(action, speed)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/splitColumns_0">splitColumns(cols, duration)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/splitRows_0">splitRows(rows, duration)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/stopGrid_0">stopGrid()</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/tintBy_0">tintBy(duration, r, g, b)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/tintBy_1">tintBy(duration, byColor)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/tintTo_0">tintTo(duration, r, g, b)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/toggleVisible_0">toggleVisible()</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/turnOffTiles_0">turnOffTiles(seed, gridSize, duration)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/twirl_0">twirl(pos, twirls, amplitude, gridSize, duration)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/waves_0">waves(waves, amplitude, isHorizontal, isVertical, gridSize, duration)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/waves3D_0">waves3D(waves, amplitude, gridSize, duration)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/wavesTiles3D_0">wavesTiles3D(waves, amplitude, gridSize, duration)</a></span></li>
+					</ul>
+				</li>
+				
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="NamespaceActions Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+						<li><a href="index.html">Index</a></li>
+						<li><a href="hierarchy.html">Hierarchy</a></li>
+					</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">NamespaceActions Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">JavaScript Object</td>
+</tr>
+<tr>
+	<td class="specification-title">Location</td>
+	<td class="specification-value"><a href="NamespaceG2D.html#//property/actions_0">aphid.g2d.actions</a></td>
+</tr>
+
+						</tbody></table></div>
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Overview of Tasks</h2>
+						<a title="Attributes" name="task_Attributes"></a>
+						<h3 class="subsubtitle task-title">Attributes</h3>
+						<ul class="task-list-col" style="max-width: 80%">
+							<li>Name</li>
+							<li>
+	<span class="tooltip">
+		<code><a href="#//property/TYPE_MASK_CALL_FUNCTION_0">TYPE_MASK_CALL_FUNCTION</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/TYPE_MASK_CAMERA_0">TYPE_MASK_CAMERA</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/TYPE_MASK_DEFAULT_0">TYPE_MASK_DEFAULT</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/TYPE_MASK_EASE_0">TYPE_MASK_EASE</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/TYPE_MASK_FINITE_TIME_0">TYPE_MASK_FINITE_TIME</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/TYPE_MASK_GRID_0">TYPE_MASK_GRID</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/TYPE_MASK_GRID3D_0">TYPE_MASK_GRID3D</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/TYPE_MASK_INSTANT_0">TYPE_MASK_INSTANT</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/TYPE_MASK_INTERVAL_0">TYPE_MASK_INTERVAL</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/TYPE_MASK_TILED_GRID3D_0">TYPE_MASK_TILED_GRID3D</a></code>
+		
+	</span>
+</li>
+
+						</ul>
+						<ul class="task-list-col">
+							<li>Type</li>
+							<li>
+	<code>int</code>
+</li>
+<li>
+	<code>int</code>
+</li>
+<li>
+	<code>int</code>
+</li>
+<li>
+	<code>int</code>
+</li>
+<li>
+	<code>int</code>
+</li>
+<li>
+	<code>int</code>
+</li>
+<li>
+	<code>int</code>
+</li>
+<li>
+	<code>int</code>
+</li>
+<li>
+	<code>int</code>
+</li>
+<li>
+	<code>int</code>
+</li>
+
+						</ul>
+						<ul class="task-list-col">
+							<li>Writability</li>
+							<li>
+		<code>readonly</code>
+</li>
+<li>
+		<code>readonly</code>
+</li>
+<li>
+		<code>readonly</code>
+</li>
+<li>
+		<code>readonly</code>
+</li>
+<li>
+		<code>readonly</code>
+</li>
+<li>
+		<code>readonly</code>
+</li>
+<li>
+		<code>readonly</code>
+</li>
+<li>
+		<code>readonly</code>
+</li>
+<li>
+		<code>readonly</code>
+</li>
+<li>
+		<code>readonly</code>
+</li>
+
+						</ul>
+												<a title="Camera Actions" name="task_Camera Actions"></a>
+						<h3 class="subsubtitle task-title">Camera Actions</h3>
+						<ul class="task-list-col" style="max-width: 80%">
+							<li>Signature</li>
+							<li>
+	<span class="tooltip">
+		<code><a href="#//property/orbitCamera_0">orbitCamera(duration, radius, deltaRadius, angleZ, deltaAngleZ, angleX, deltaAngleX)</a></code>
+		
+	</span>
+</li>
+
+						</ul>
+						<ul class="task-list-col">
+							<li>Return Type</li>
+							<li>
+	<code>IntervalAction</code>
+</li>
+
+						</ul>
+												<a title="Ease Actions" name="task_Ease Actions"></a>
+						<h3 class="subsubtitle task-title">Ease Actions</h3>
+						<ul class="task-list-col" style="max-width: 80%">
+							<li>Signature</li>
+							<li>
+	<span class="tooltip">
+		<code><a href="#//property/easeBackIn_0">easeBackIn(action)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/easeBackInOut_0">easeBackInOut(action)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/easeBackOut_0">easeBackOut(action)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/easeBounceIn_0">easeBounceIn(action)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/easeBounceInOut_0">easeBounceInOut(action)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/easeBounceOut_0">easeBounceOut(action)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/easeElasticIn_0">easeElasticIn(action, period)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/easeElasticInOut_0">easeElasticInOut(action, period)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/easeElasticOut_0">easeElasticOut(action, period)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/easeExponentialIn_0">easeExponentialIn(action)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/easeExponentialInOut_0">easeExponentialInOut(action)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/easeExponentialOut_0">easeExponentialOut(action)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/easeIn_0">easeIn(action, rate)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/easeInOut_0">easeInOut(action, rate)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/easeOut_0">easeOut(action, rate)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/easeSineIn_0">easeSineIn(action)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/easeSineInOut_0">easeSineInOut(action)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/easeSineOut_0">easeSineOut(action)</a></code>
+		
+	</span>
+</li>
+
+						</ul>
+						<ul class="task-list-col">
+							<li>Return Type</li>
+							<li>
+	<code>EaseAction</code>
+</li>
+<li>
+	<code>EaseAction</code>
+</li>
+<li>
+	<code>EaseAction</code>
+</li>
+<li>
+	<code>EaseAction</code>
+</li>
+<li>
+	<code>EaseAction</code>
+</li>
+<li>
+	<code>EaseAction</code>
+</li>
+<li>
+	<code>EaseAction</code>
+</li>
+<li>
+	<code>EaseAction</code>
+</li>
+<li>
+	<code>EaseAction</code>
+</li>
+<li>
+	<code>EaseAction</code>
+</li>
+<li>
+	<code>EaseAction</code>
+</li>
+<li>
+	<code>EaseAction</code>
+</li>
+<li>
+	<code>EaseAction</code>
+</li>
+<li>
+	<code>EaseAction</code>
+</li>
+<li>
+	<code>EaseAction</code>
+</li>
+<li>
+	<code>EaseAction</code>
+</li>
+<li>
+	<code>EaseAction</code>
+</li>
+<li>
+	<code>EaseAction</code>
+</li>
+
+						</ul>
+												<a title="Grid Actions" name="task_Grid Actions"></a>
+						<h3 class="subsubtitle task-title">Grid Actions</h3>
+						<ul class="task-list-col" style="max-width: 80%">
+							<li>Signature</li>
+							<li>
+	<span class="tooltip">
+		<code><a href="#//property/accelAmplitude_0">accelAmplitude(action, duration)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/accelDeccelAmplitude_0">accelDeccelAmplitude(action, duration)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/deccelAmplitude_0">deccelAmplitude(action, duration)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/reuseGrid_0">reuseGrid(times)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/stopGrid_0">stopGrid()</a></code>
+		
+	</span>
+</li>
+
+						</ul>
+						<ul class="task-list-col">
+							<li>Return Type</li>
+							<li>
+	<code>IntervalAction</code>
+</li>
+<li>
+	<code>IntervalAction</code>
+</li>
+<li>
+	<code>IntervalAction</code>
+</li>
+<li>
+	<code>InstantAction</code>
+</li>
+<li>
+	<code>InstantAction</code>
+</li>
+
+						</ul>
+												<a title="Grid3D Actions" name="task_Grid3D Actions"></a>
+						<h3 class="subsubtitle task-title">Grid3D Actions</h3>
+						<ul class="task-list-col" style="max-width: 80%">
+							<li>Signature</li>
+							<li>
+	<span class="tooltip">
+		<code><a href="#//property/flipX3D_0">flipX3D(duration)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/flipY3D_0">flipY3D(duration)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/lens3D_0">lens3D(pos, radius, gridSize, duration)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/liquid_0">liquid(waves, amplitude, gridSize, duration)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/pageTurn3D_0">pageTurn3D(gridSize, duration)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/ripple3D_0">ripple3D(pos, radius, waves, amplitude, gridSize, duration)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/shaky3D_0">shaky3D(range, shakeZ, gridSize, duration)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/twirl_0">twirl(pos, twirls, amplitude, gridSize, duration)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/waves_0">waves(waves, amplitude, isHorizontal, isVertical, gridSize, duration)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/waves3D_0">waves3D(waves, amplitude, gridSize, duration)</a></code>
+		
+	</span>
+</li>
+
+						</ul>
+						<ul class="task-list-col">
+							<li>Return Type</li>
+							<li>
+	<code>GridBaseAction</code>
+</li>
+<li>
+	<code>GridBaseAction</code>
+</li>
+<li>
+	<code>GridBaseAction</code>
+</li>
+<li>
+	<code>GridBaseAction</code>
+</li>
+<li>
+	<code>GridBaseAction</code>
+</li>
+<li>
+	<code>GridBaseAction</code>
+</li>
+<li>
+	<code>GridBaseAction</code>
+</li>
+<li>
+	<code>GridBaseAction</code>
+</li>
+<li>
+	<code>GridBaseAction</code>
+</li>
+<li>
+	<code>GridBaseAction</code>
+</li>
+
+						</ul>
+												<a title="Instant Actions" name="task_Instant Actions"></a>
+						<h3 class="subsubtitle task-title">Instant Actions</h3>
+						<ul class="task-list-col" style="max-width: 80%">
+							<li>Signature</li>
+							<li>
+	<span class="tooltip">
+		<code><a href="#//property/callFunction_0">callFunction(callback)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/flipX_0">flipX(flipX)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/flipY_0">flipY(flipY)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/hide_0">hide()</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/place_0">place(pos)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/show_0">show()</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/toggleVisible_0">toggleVisible()</a></code>
+		
+	</span>
+</li>
+
+						</ul>
+						<ul class="task-list-col">
+							<li>Return Type</li>
+							<li>
+	<code>InstantAction</code>
+</li>
+<li>
+	<code>InstantAction</code>
+</li>
+<li>
+	<code>InstantAction</code>
+</li>
+<li>
+	<code>InstantAction</code>
+</li>
+<li>
+	<code>InstantAction</code>
+</li>
+<li>
+	<code>InstantAction</code>
+</li>
+<li>
+	<code>InstantAction</code>
+</li>
+
+						</ul>
+												<a title="Interval Actions" name="task_Interval Actions"></a>
+						<h3 class="subsubtitle task-title">Interval Actions</h3>
+						<ul class="task-list-col" style="max-width: 80%">
+							<li>Signature</li>
+							<li>
+	<span class="tooltip">
+		<code><a href="#//property/animate_0">animate(animation, [restoreOriginalFrame])</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/animate_1">animate(duration, animation, [restoreOriginalFrame])</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/bezierBy_0">bezierBy(duration, endPosition, controlPoint1, controlPoint2)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/bezierTo_0">bezierTo(duration, endPosition, controlPoint1, controlPoint2)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/blink_0">blink(duration, times)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/delay_0">delay(duration)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/fadeIn_0">fadeIn(duration)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/fadeOut_0">fadeOut(duration)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/fadeTo_0">fadeTo(duration, opacity)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/jumpBy_0">jumpBy(duration, deltaPosition, height, jumps)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/jumpTo_0">jumpTo(duration, position, height, jumps)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/moveBy_0">moveBy(duration, deltaPosition)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/moveBy_1">moveBy(duration, deltaX, deltaY)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/moveTo_0">moveTo(duration, position)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/moveTo_1">moveTo(duration, x, y)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/repeat_0">repeat(action, times)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/rotateBy_0">rotateBy(duration, deltaAngle)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/rotateTo_0">rotateTo(duration, angle)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/scaleBy_0">scaleBy(duration, deltaScaleXY)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/scaleBy_1">scaleBy(duration, deltaScale)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/scaleTo_0">scaleTo(duration, scale)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/scaleTo_1">scaleTo(duration, scaleX, scaleY)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/sequence_0">sequence(action0, action1,...)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/skewBy_0">skewBy(duration, deltaSkew)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/skewBy_1">skewBy(duration, deltaSkewX, deltaSkewY)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/skewTo_0">skewTo(duration, skew)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/skewTo_1">skewTo(duration, skewX, skewY)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/spawn_0">spawn(action0, action1,...)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/tintBy_0">tintBy(duration, r, g, b)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/tintBy_1">tintBy(duration, byColor)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/tintTo_0">tintTo(duration, r, g, b)</a></code>
+		
+	</span>
+</li>
+
+						</ul>
+						<ul class="task-list-col">
+							<li>Return Type</li>
+							<li>
+	<code>IntervalAction</code>
+</li>
+<li>
+	<code>IntervalAction</code>
+</li>
+<li>
+	<code>IntervalAction</code>
+</li>
+<li>
+	<code>IntervalAction</code>
+</li>
+<li>
+	<code>IntervalAction</code>
+</li>
+<li>
+	<code>IntervalAction</code>
+</li>
+<li>
+	<code>IntervalAction</code>
+</li>
+<li>
+	<code>IntervalAction</code>
+</li>
+<li>
+	<code>IntervalAction</code>
+</li>
+<li>
+	<code>IntervalAction</code>
+</li>
+<li>
+	<code>IntervalAction</code>
+</li>
+<li>
+	<code>IntervalAction</code>
+</li>
+<li>
+	<code>IntervalAction</code>
+</li>
+<li>
+	<code>IntervalAction</code>
+</li>
+<li>
+	<code>IntervalAction</code>
+</li>
+<li>
+	<code>IntervalAction</code>
+</li>
+<li>
+	<code>IntervalAction</code>
+</li>
+<li>
+	<code>IntervalAction</code>
+</li>
+<li>
+	<code>IntervalAction</code>
+</li>
+<li>
+	<code>IntervalAction</code>
+</li>
+<li>
+	<code>IntervalAction</code>
+</li>
+<li>
+	<code>IntervalAction</code>
+</li>
+<li>
+	<code>IntervalAction</code>
+</li>
+<li>
+	<code>IntervalAction</code>
+</li>
+<li>
+	<code>IntervalAction</code>
+</li>
+<li>
+	<code>IntervalAction</code>
+</li>
+<li>
+	<code>IntervalAction</code>
+</li>
+<li>
+	<code>IntervalAction</code>
+</li>
+<li>
+	<code>IntervalAction</code>
+</li>
+<li>
+	<code>IntervalAction</code>
+</li>
+<li>
+	<code>IntervalAction</code>
+</li>
+
+						</ul>
+												<a title="Misc Actions" name="task_Misc Actions"></a>
+						<h3 class="subsubtitle task-title">Misc Actions</h3>
+						<ul class="task-list-col" style="max-width: 80%">
+							<li>Signature</li>
+							<li>
+	<span class="tooltip">
+		<code><a href="#//property/follow_0">follow(node, [worldBoundary])</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/repeatForever_0">repeatForever(action)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/speed_0">speed(action, speed)</a></code>
+		
+	</span>
+</li>
+
+						</ul>
+						<ul class="task-list-col">
+							<li>Return Type</li>
+							<li>
+	<code>Action</code>
+</li>
+<li>
+	<code>Action</code>
+</li>
+<li>
+	<code>Action</code>
+</li>
+
+						</ul>
+												<a title="Tiled Grid Actions" name="task_Tiled Grid Actions"></a>
+						<h3 class="subsubtitle task-title">Tiled Grid Actions</h3>
+						<ul class="task-list-col" style="max-width: 80%">
+							<li>Signature</li>
+							<li>
+	<span class="tooltip">
+		<code><a href="#//property/fadeOutBLTiles_0">fadeOutBLTiles(gridSize, duration)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/fadeOutDownTiles_0">fadeOutDownTiles(gridSize, duration)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/fadeOutTRTiles_0">fadeOutTRTiles(gridSize, duration)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/fadeOutUpTiles_0">fadeOutUpTiles(gridSize, duration)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/jumpTiles3D_0">jumpTiles3D(waves, amplitude, gridSize, duration)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/shakyTiles3D_0">shakyTiles3D(range, shakeZ, gridSize, duration)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/shatteredTiles3D_0">shatteredTiles3D(range, shatterZ, gridSize, duration)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/shuffleTiles_0">shuffleTiles(seed, gridSize, duration)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/splitColumns_0">splitColumns(cols, duration)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/splitRows_0">splitRows(rows, duration)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/turnOffTiles_0">turnOffTiles(seed, gridSize, duration)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/wavesTiles3D_0">wavesTiles3D(waves, amplitude, gridSize, duration)</a></code>
+		
+	</span>
+</li>
+
+						</ul>
+						<ul class="task-list-col">
+							<li>Return Type</li>
+							<li>
+	<code>GridBaseAction</code>
+</li>
+<li>
+	<code>GridBaseAction</code>
+</li>
+<li>
+	<code>GridBaseAction</code>
+</li>
+<li>
+	<code>GridBaseAction</code>
+</li>
+<li>
+	<code>GridBaseAction</code>
+</li>
+<li>
+	<code>GridBaseAction</code>
+</li>
+<li>
+	<code>GridBaseAction</code>
+</li>
+<li>
+	<code>GridBaseAction</code>
+</li>
+<li>
+	<code>GridBaseAction</code>
+</li>
+<li>
+	<code>GridBaseAction</code>
+</li>
+<li>
+	<code>GridBaseAction</code>
+</li>
+<li>
+	<code>GridBaseAction</code>
+</li>
+
+						</ul>
+												
+					</div>
+
+
+					<div class="section section-methods">
+						<a title="Attributes" name="attributes"></a>
+
+						<h2 class="subtitle subtitle-methods">Attributes</h2>
+						<div class="section-method">
+							<a name="//property/TYPE_MASK_CALL_FUNCTION_0" title="TYPE_MASK_CALL_FUNCTION"></a>
+							<h3 class="subsubtitle method-title">TYPE_MASK_CALL_FUNCTION</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>readonly</code> <code>int</code> TYPE_MASK_CALL_FUNCTION</div>
+							
+							
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/TYPE_MASK_CAMERA_0" title="TYPE_MASK_CAMERA"></a>
+							<h3 class="subsubtitle method-title">TYPE_MASK_CAMERA</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>readonly</code> <code>int</code> TYPE_MASK_CAMERA</div>
+							
+							
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/TYPE_MASK_DEFAULT_0" title="TYPE_MASK_DEFAULT"></a>
+							<h3 class="subsubtitle method-title">TYPE_MASK_DEFAULT</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>readonly</code> <code>int</code> TYPE_MASK_DEFAULT</div>
+							
+							
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/TYPE_MASK_EASE_0" title="TYPE_MASK_EASE"></a>
+							<h3 class="subsubtitle method-title">TYPE_MASK_EASE</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>readonly</code> <code>int</code> TYPE_MASK_EASE</div>
+							
+							
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/TYPE_MASK_FINITE_TIME_0" title="TYPE_MASK_FINITE_TIME"></a>
+							<h3 class="subsubtitle method-title">TYPE_MASK_FINITE_TIME</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>readonly</code> <code>int</code> TYPE_MASK_FINITE_TIME</div>
+							
+							
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/TYPE_MASK_GRID_0" title="TYPE_MASK_GRID"></a>
+							<h3 class="subsubtitle method-title">TYPE_MASK_GRID</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>readonly</code> <code>int</code> TYPE_MASK_GRID</div>
+							
+							
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/TYPE_MASK_GRID3D_0" title="TYPE_MASK_GRID3D"></a>
+							<h3 class="subsubtitle method-title">TYPE_MASK_GRID3D</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>readonly</code> <code>int</code> TYPE_MASK_GRID3D</div>
+							
+							
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/TYPE_MASK_INSTANT_0" title="TYPE_MASK_INSTANT"></a>
+							<h3 class="subsubtitle method-title">TYPE_MASK_INSTANT</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>readonly</code> <code>int</code> TYPE_MASK_INSTANT</div>
+							
+							
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/TYPE_MASK_INTERVAL_0" title="TYPE_MASK_INTERVAL"></a>
+							<h3 class="subsubtitle method-title">TYPE_MASK_INTERVAL</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>readonly</code> <code>int</code> TYPE_MASK_INTERVAL</div>
+							
+							
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/TYPE_MASK_TILED_GRID3D_0" title="TYPE_MASK_TILED_GRID3D"></a>
+							<h3 class="subsubtitle method-title">TYPE_MASK_TILED_GRID3D</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>readonly</code> <code>int</code> TYPE_MASK_TILED_GRID3D</div>
+							
+							
+							
+							
+							
+							
+						</div>
+					</div>
+
+					<div class="section section-methods">
+						<a title="Functions" name="functions"></a>
+
+						<h2 class="subtitle subtitle-methods">Functions</h2>
+						<div class="section-method">
+							<a name="//property/accelAmplitude_0" title="accelAmplitude(action, duration)"></a>
+							<h3 class="subsubtitle method-title">accelAmplitude(action, duration)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="IntervalAction.html">IntervalAction</a> accelAmplitude(<a href="GridBaseAction.html">GridBaseAction</a> action, <code>float</code> duration)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><a href="GridBaseAction.html">GridBaseAction</a> action</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>IntervalAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/accelDeccelAmplitude_0" title="accelDeccelAmplitude(action, duration)"></a>
+							<h3 class="subsubtitle method-title">accelDeccelAmplitude(action, duration)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="IntervalAction.html">IntervalAction</a> accelDeccelAmplitude(<a href="GridBaseAction.html">GridBaseAction</a> action, <code>float</code> duration)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><a href="GridBaseAction.html">GridBaseAction</a> action</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>IntervalAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/animate_0" title="animate(animation, [restoreOriginalFrame])"></a>
+							<h3 class="subsubtitle method-title">animate(animation, [restoreOriginalFrame])</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="IntervalAction.html">IntervalAction</a> animate(<a href="Animation.html">Animation</a> animation, <em>[<code>bool</code> restoreOriginalFrame]</em>)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Animation.html">Animation</a> animation</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code>  Optional </code><code>bool</code> restoreOriginalFrame</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>IntervalAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/animate_1" title="animate(duration, animation, [restoreOriginalFrame])"></a>
+							<h3 class="subsubtitle method-title">animate(duration, animation, [restoreOriginalFrame])</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="IntervalAction.html">IntervalAction</a> animate(<code>float</code> duration, <a href="Animation.html">Animation</a> animation, <em>[<code>bool</code> restoreOriginalFrame]</em>)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Animation.html">Animation</a> animation</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code>  Optional </code><code>bool</code> restoreOriginalFrame</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>IntervalAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/bezierBy_0" title="bezierBy(duration, endPosition, controlPoint1, controlPoint2)"></a>
+							<h3 class="subsubtitle method-title">bezierBy(duration, endPosition, controlPoint1, controlPoint2)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="IntervalAction.html">IntervalAction</a> bezierBy(<code>float</code> duration, <a href="Point.html">Point</a> endPosition, <a href="Point.html">Point</a> controlPoint1, <a href="Point.html">Point</a> controlPoint2)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Point.html">Point</a> endPosition</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Point.html">Point</a> controlPoint1</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Point.html">Point</a> controlPoint2</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>IntervalAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/bezierTo_0" title="bezierTo(duration, endPosition, controlPoint1, controlPoint2)"></a>
+							<h3 class="subsubtitle method-title">bezierTo(duration, endPosition, controlPoint1, controlPoint2)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="IntervalAction.html">IntervalAction</a> bezierTo(<code>float</code> duration, <a href="Point.html">Point</a> endPosition, <a href="Point.html">Point</a> controlPoint1, <a href="Point.html">Point</a> controlPoint2)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Point.html">Point</a> endPosition</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Point.html">Point</a> controlPoint1</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Point.html">Point</a> controlPoint2</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>IntervalAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/blink_0" title="blink(duration, times)"></a>
+							<h3 class="subsubtitle method-title">blink(duration, times)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="IntervalAction.html">IntervalAction</a> blink(<code>float</code> duration, <code>int</code> times)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>int</code> times</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>IntervalAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/callFunction_0" title="callFunction(callback)"></a>
+							<h3 class="subsubtitle method-title">callFunction(callback)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="InstantAction.html">InstantAction</a> callFunction(<code>function</code> callback)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><code>function</code> callback</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>InstantAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/deccelAmplitude_0" title="deccelAmplitude(action, duration)"></a>
+							<h3 class="subsubtitle method-title">deccelAmplitude(action, duration)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="IntervalAction.html">IntervalAction</a> deccelAmplitude(<a href="GridBaseAction.html">GridBaseAction</a> action, <code>float</code> duration)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><a href="GridBaseAction.html">GridBaseAction</a> action</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>IntervalAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/delay_0" title="delay(duration)"></a>
+							<h3 class="subsubtitle method-title">delay(duration)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="IntervalAction.html">IntervalAction</a> delay(<code>float</code> duration)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>IntervalAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/easeBackIn_0" title="easeBackIn(action)"></a>
+							<h3 class="subsubtitle method-title">easeBackIn(action)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="EaseAction.html">EaseAction</a> easeBackIn(<a href="IntervalAction.html">IntervalAction</a> action)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="IntervalAction.html">IntervalAction</a> action</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>EaseAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/easeBackInOut_0" title="easeBackInOut(action)"></a>
+							<h3 class="subsubtitle method-title">easeBackInOut(action)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="EaseAction.html">EaseAction</a> easeBackInOut(<a href="IntervalAction.html">IntervalAction</a> action)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="IntervalAction.html">IntervalAction</a> action</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>EaseAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/easeBackOut_0" title="easeBackOut(action)"></a>
+							<h3 class="subsubtitle method-title">easeBackOut(action)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="EaseAction.html">EaseAction</a> easeBackOut(<a href="IntervalAction.html">IntervalAction</a> action)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="IntervalAction.html">IntervalAction</a> action</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>EaseAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/easeBounceIn_0" title="easeBounceIn(action)"></a>
+							<h3 class="subsubtitle method-title">easeBounceIn(action)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="EaseAction.html">EaseAction</a> easeBounceIn(<a href="IntervalAction.html">IntervalAction</a> action)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="IntervalAction.html">IntervalAction</a> action</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>EaseAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/easeBounceInOut_0" title="easeBounceInOut(action)"></a>
+							<h3 class="subsubtitle method-title">easeBounceInOut(action)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="EaseAction.html">EaseAction</a> easeBounceInOut(<a href="IntervalAction.html">IntervalAction</a> action)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="IntervalAction.html">IntervalAction</a> action</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>EaseAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/easeBounceOut_0" title="easeBounceOut(action)"></a>
+							<h3 class="subsubtitle method-title">easeBounceOut(action)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="EaseAction.html">EaseAction</a> easeBounceOut(<a href="IntervalAction.html">IntervalAction</a> action)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="IntervalAction.html">IntervalAction</a> action</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>EaseAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/easeElasticIn_0" title="easeElasticIn(action, period)"></a>
+							<h3 class="subsubtitle method-title">easeElasticIn(action, period)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="EaseAction.html">EaseAction</a> easeElasticIn(<a href="IntervalAction.html">IntervalAction</a> action, <code>float</code> period)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="IntervalAction.html">IntervalAction</a> action</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> period</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>EaseAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/easeElasticInOut_0" title="easeElasticInOut(action, period)"></a>
+							<h3 class="subsubtitle method-title">easeElasticInOut(action, period)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="EaseAction.html">EaseAction</a> easeElasticInOut(<a href="IntervalAction.html">IntervalAction</a> action, <code>float</code> period)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="IntervalAction.html">IntervalAction</a> action</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> period</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>EaseAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/easeElasticOut_0" title="easeElasticOut(action, period)"></a>
+							<h3 class="subsubtitle method-title">easeElasticOut(action, period)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="EaseAction.html">EaseAction</a> easeElasticOut(<a href="IntervalAction.html">IntervalAction</a> action, <code>float</code> period)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="IntervalAction.html">IntervalAction</a> action</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> period</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>EaseAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/easeExponentialIn_0" title="easeExponentialIn(action)"></a>
+							<h3 class="subsubtitle method-title">easeExponentialIn(action)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="EaseAction.html">EaseAction</a> easeExponentialIn(<a href="IntervalAction.html">IntervalAction</a> action)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="IntervalAction.html">IntervalAction</a> action</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>EaseAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/easeExponentialInOut_0" title="easeExponentialInOut(action)"></a>
+							<h3 class="subsubtitle method-title">easeExponentialInOut(action)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="EaseAction.html">EaseAction</a> easeExponentialInOut(<a href="IntervalAction.html">IntervalAction</a> action)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="IntervalAction.html">IntervalAction</a> action</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>EaseAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/easeExponentialOut_0" title="easeExponentialOut(action)"></a>
+							<h3 class="subsubtitle method-title">easeExponentialOut(action)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="EaseAction.html">EaseAction</a> easeExponentialOut(<a href="IntervalAction.html">IntervalAction</a> action)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="IntervalAction.html">IntervalAction</a> action</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>EaseAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/easeIn_0" title="easeIn(action, rate)"></a>
+							<h3 class="subsubtitle method-title">easeIn(action, rate)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="EaseAction.html">EaseAction</a> easeIn(<a href="IntervalAction.html">IntervalAction</a> action, <code>float</code> rate)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="IntervalAction.html">IntervalAction</a> action</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> rate</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>EaseAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/easeInOut_0" title="easeInOut(action, rate)"></a>
+							<h3 class="subsubtitle method-title">easeInOut(action, rate)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="EaseAction.html">EaseAction</a> easeInOut(<a href="IntervalAction.html">IntervalAction</a> action, <code>float</code> rate)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="IntervalAction.html">IntervalAction</a> action</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> rate</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>EaseAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/easeOut_0" title="easeOut(action, rate)"></a>
+							<h3 class="subsubtitle method-title">easeOut(action, rate)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="EaseAction.html">EaseAction</a> easeOut(<a href="IntervalAction.html">IntervalAction</a> action, <code>float</code> rate)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="IntervalAction.html">IntervalAction</a> action</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> rate</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>EaseAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/easeSineIn_0" title="easeSineIn(action)"></a>
+							<h3 class="subsubtitle method-title">easeSineIn(action)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="EaseAction.html">EaseAction</a> easeSineIn(<a href="IntervalAction.html">IntervalAction</a> action)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="IntervalAction.html">IntervalAction</a> action</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>EaseAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/easeSineInOut_0" title="easeSineInOut(action)"></a>
+							<h3 class="subsubtitle method-title">easeSineInOut(action)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="EaseAction.html">EaseAction</a> easeSineInOut(<a href="IntervalAction.html">IntervalAction</a> action)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="IntervalAction.html">IntervalAction</a> action</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>EaseAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/easeSineOut_0" title="easeSineOut(action)"></a>
+							<h3 class="subsubtitle method-title">easeSineOut(action)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="EaseAction.html">EaseAction</a> easeSineOut(<a href="IntervalAction.html">IntervalAction</a> action)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="IntervalAction.html">IntervalAction</a> action</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>EaseAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/fadeIn_0" title="fadeIn(duration)"></a>
+							<h3 class="subsubtitle method-title">fadeIn(duration)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="IntervalAction.html">IntervalAction</a> fadeIn(<code>float</code> duration)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>IntervalAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/fadeOut_0" title="fadeOut(duration)"></a>
+							<h3 class="subsubtitle method-title">fadeOut(duration)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="IntervalAction.html">IntervalAction</a> fadeOut(<code>float</code> duration)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>IntervalAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/fadeOutBLTiles_0" title="fadeOutBLTiles(gridSize, duration)"></a>
+							<h3 class="subsubtitle method-title">fadeOutBLTiles(gridSize, duration)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="GridBaseAction.html">GridBaseAction</a> fadeOutBLTiles(<a href="Size.html">Size</a> gridSize, <code>float</code> duration)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Size.html">Size</a> gridSize</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>GridBaseAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/fadeOutDownTiles_0" title="fadeOutDownTiles(gridSize, duration)"></a>
+							<h3 class="subsubtitle method-title">fadeOutDownTiles(gridSize, duration)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="GridBaseAction.html">GridBaseAction</a> fadeOutDownTiles(<a href="Size.html">Size</a> gridSize, <code>float</code> duration)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Size.html">Size</a> gridSize</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>GridBaseAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/fadeOutTRTiles_0" title="fadeOutTRTiles(gridSize, duration)"></a>
+							<h3 class="subsubtitle method-title">fadeOutTRTiles(gridSize, duration)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="GridBaseAction.html">GridBaseAction</a> fadeOutTRTiles(<a href="Size.html">Size</a> gridSize, <code>float</code> duration)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Size.html">Size</a> gridSize</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>GridBaseAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/fadeOutUpTiles_0" title="fadeOutUpTiles(gridSize, duration)"></a>
+							<h3 class="subsubtitle method-title">fadeOutUpTiles(gridSize, duration)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="GridBaseAction.html">GridBaseAction</a> fadeOutUpTiles(<a href="Size.html">Size</a> gridSize, <code>float</code> duration)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Size.html">Size</a> gridSize</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>GridBaseAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/fadeTo_0" title="fadeTo(duration, opacity)"></a>
+							<h3 class="subsubtitle method-title">fadeTo(duration, opacity)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="IntervalAction.html">IntervalAction</a> fadeTo(<code>float</code> duration, <code>int</code> opacity)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>int</code> opacity</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>IntervalAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/flipX_0" title="flipX(flipX)"></a>
+							<h3 class="subsubtitle method-title">flipX(flipX)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="InstantAction.html">InstantAction</a> flipX(<code>bool</code> flipX)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>bool</code> flipX</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>InstantAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/flipX3D_0" title="flipX3D(duration)"></a>
+							<h3 class="subsubtitle method-title">flipX3D(duration)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="GridBaseAction.html">GridBaseAction</a> flipX3D(<code>float</code> duration)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>GridBaseAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/flipY_0" title="flipY(flipY)"></a>
+							<h3 class="subsubtitle method-title">flipY(flipY)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="InstantAction.html">InstantAction</a> flipY(<code>bool</code> flipY)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>bool</code> flipY</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>InstantAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/flipY3D_0" title="flipY3D(duration)"></a>
+							<h3 class="subsubtitle method-title">flipY3D(duration)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="GridBaseAction.html">GridBaseAction</a> flipY3D(<code>float</code> duration)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>GridBaseAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/follow_0" title="follow(node, [worldBoundary])"></a>
+							<h3 class="subsubtitle method-title">follow(node, [worldBoundary])</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="Action.html">Action</a> follow(<a href="Node.html">Node</a> node, <em>[<a href="Rect.html">Rect</a> worldBoundary]</em>)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><a href="Node.html">Node</a> node</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code>  Optional Non-null </code><a href="Rect.html">Rect</a> worldBoundary</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>Action</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/hide_0" title="hide()"></a>
+							<h3 class="subsubtitle method-title">hide()</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="InstantAction.html">InstantAction</a> hide()</div>
+							
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>InstantAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/jumpBy_0" title="jumpBy(duration, deltaPosition, height, jumps)"></a>
+							<h3 class="subsubtitle method-title">jumpBy(duration, deltaPosition, height, jumps)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="IntervalAction.html">IntervalAction</a> jumpBy(<code>float</code> duration, <a href="Point.html">Point</a> deltaPosition, <code>float</code> height, <code>int</code> jumps)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Point.html">Point</a> deltaPosition</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> height</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>int</code> jumps</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>IntervalAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/jumpTiles3D_0" title="jumpTiles3D(waves, amplitude, gridSize, duration)"></a>
+							<h3 class="subsubtitle method-title">jumpTiles3D(waves, amplitude, gridSize, duration)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="GridBaseAction.html">GridBaseAction</a> jumpTiles3D(<code>int</code> waves, <code>float</code> amplitude, <a href="Size.html">Size</a> gridSize, <code>float</code> duration)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>int</code> waves</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> amplitude</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Size.html">Size</a> gridSize</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>GridBaseAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/jumpTo_0" title="jumpTo(duration, position, height, jumps)"></a>
+							<h3 class="subsubtitle method-title">jumpTo(duration, position, height, jumps)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="IntervalAction.html">IntervalAction</a> jumpTo(<code>float</code> duration, <a href="Point.html">Point</a> position, <code>float</code> height, <code>int</code> jumps)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Point.html">Point</a> position</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> height</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>int</code> jumps</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>IntervalAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/lens3D_0" title="lens3D(pos, radius, gridSize, duration)"></a>
+							<h3 class="subsubtitle method-title">lens3D(pos, radius, gridSize, duration)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="GridBaseAction.html">GridBaseAction</a> lens3D(<a href="Point.html">Point</a> pos, <code>float</code> radius, <a href="Size.html">Size</a> gridSize, <code>float</code> duration)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Point.html">Point</a> pos</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> radius</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Size.html">Size</a> gridSize</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>GridBaseAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/liquid_0" title="liquid(waves, amplitude, gridSize, duration)"></a>
+							<h3 class="subsubtitle method-title">liquid(waves, amplitude, gridSize, duration)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="GridBaseAction.html">GridBaseAction</a> liquid(<code>int</code> waves, <code>float</code> amplitude, <a href="Size.html">Size</a> gridSize, <code>float</code> duration)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>int</code> waves</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> amplitude</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Size.html">Size</a> gridSize</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>GridBaseAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/moveBy_0" title="moveBy(duration, deltaPosition)"></a>
+							<h3 class="subsubtitle method-title">moveBy(duration, deltaPosition)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="IntervalAction.html">IntervalAction</a> moveBy(<code>float</code> duration, <a href="Point.html">Point</a> deltaPosition)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Point.html">Point</a> deltaPosition</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>IntervalAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/moveBy_1" title="moveBy(duration, deltaX, deltaY)"></a>
+							<h3 class="subsubtitle method-title">moveBy(duration, deltaX, deltaY)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="IntervalAction.html">IntervalAction</a> moveBy(<code>float</code> duration, <code>float</code> deltaX, <code>float</code> deltaY)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> deltaX</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> deltaY</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>IntervalAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/moveTo_0" title="moveTo(duration, position)"></a>
+							<h3 class="subsubtitle method-title">moveTo(duration, position)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="IntervalAction.html">IntervalAction</a> moveTo(<code>float</code> duration, <a href="Point.html">Point</a> position)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Point.html">Point</a> position</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>IntervalAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/moveTo_1" title="moveTo(duration, x, y)"></a>
+							<h3 class="subsubtitle method-title">moveTo(duration, x, y)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="IntervalAction.html">IntervalAction</a> moveTo(<code>float</code> duration, <code>float</code> x, <code>float</code> y)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> x</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> y</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>IntervalAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/orbitCamera_0" title="orbitCamera(duration, radius, deltaRadius, angleZ, deltaAngleZ, angleX, deltaAngleX)"></a>
+							<h3 class="subsubtitle method-title">orbitCamera(duration, radius, deltaRadius, angleZ, deltaAngleZ, angleX, deltaAngleX)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="IntervalAction.html">IntervalAction</a> orbitCamera(<code>float</code> duration, <code>float</code> radius, <code>float</code> deltaRadius, <code>float</code> angleZ, <code>float</code> deltaAngleZ, <code>float</code> angleX, <code>float</code> deltaAngleX)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> radius</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> deltaRadius</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> angleZ</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> deltaAngleZ</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> angleX</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> deltaAngleX</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>IntervalAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/pageTurn3D_0" title="pageTurn3D(gridSize, duration)"></a>
+							<h3 class="subsubtitle method-title">pageTurn3D(gridSize, duration)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="GridBaseAction.html">GridBaseAction</a> pageTurn3D(<a href="Size.html">Size</a> gridSize, <code>float</code> duration)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Size.html">Size</a> gridSize</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>GridBaseAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/place_0" title="place(pos)"></a>
+							<h3 class="subsubtitle method-title">place(pos)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="InstantAction.html">InstantAction</a> place(<a href="Point.html">Point</a> pos)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Point.html">Point</a> pos</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>InstantAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/repeat_0" title="repeat(action, times)"></a>
+							<h3 class="subsubtitle method-title">repeat(action, times)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="IntervalAction.html">IntervalAction</a> repeat(<a href="FiniteTimeAction.html">FiniteTimeAction</a> action, <code>int</code> times)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="FiniteTimeAction.html">FiniteTimeAction</a> action</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>int</code> times</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>IntervalAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/repeatForever_0" title="repeatForever(action)"></a>
+							<h3 class="subsubtitle method-title">repeatForever(action)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="Action.html">Action</a> repeatForever(<a href="IntervalAction.html">IntervalAction</a> action)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="IntervalAction.html">IntervalAction</a> action</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>Action</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/reuseGrid_0" title="reuseGrid(times)"></a>
+							<h3 class="subsubtitle method-title">reuseGrid(times)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="InstantAction.html">InstantAction</a> reuseGrid(<code>int</code> times)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>int</code> times</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>InstantAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/ripple3D_0" title="ripple3D(pos, radius, waves, amplitude, gridSize, duration)"></a>
+							<h3 class="subsubtitle method-title">ripple3D(pos, radius, waves, amplitude, gridSize, duration)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="GridBaseAction.html">GridBaseAction</a> ripple3D(<a href="Point.html">Point</a> pos, <code>float</code> radius, <code>int</code> waves, <code>float</code> amplitude, <a href="Size.html">Size</a> gridSize, <code>float</code> duration)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Point.html">Point</a> pos</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> radius</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>int</code> waves</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> amplitude</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Size.html">Size</a> gridSize</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>GridBaseAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/rotateBy_0" title="rotateBy(duration, deltaAngle)"></a>
+							<h3 class="subsubtitle method-title">rotateBy(duration, deltaAngle)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="IntervalAction.html">IntervalAction</a> rotateBy(<code>float</code> duration, <code>float</code> deltaAngle)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> deltaAngle</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>IntervalAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/rotateTo_0" title="rotateTo(duration, angle)"></a>
+							<h3 class="subsubtitle method-title">rotateTo(duration, angle)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="IntervalAction.html">IntervalAction</a> rotateTo(<code>float</code> duration, <code>float</code> angle)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> angle</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>IntervalAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/scaleBy_0" title="scaleBy(duration, deltaScaleXY)"></a>
+							<h3 class="subsubtitle method-title">scaleBy(duration, deltaScaleXY)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="IntervalAction.html">IntervalAction</a> scaleBy(<code>float</code> duration, <code>float</code> deltaScaleXY)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> deltaScaleXY</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>IntervalAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/scaleBy_1" title="scaleBy(duration, deltaScale)"></a>
+							<h3 class="subsubtitle method-title">scaleBy(duration, deltaScale)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="IntervalAction.html">IntervalAction</a> scaleBy(<code>float</code> duration, <a href="Vector2.html">Vector2</a> deltaScale)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Vector2.html">Vector2</a> deltaScale</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>IntervalAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/scaleTo_0" title="scaleTo(duration, scale)"></a>
+							<h3 class="subsubtitle method-title">scaleTo(duration, scale)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="IntervalAction.html">IntervalAction</a> scaleTo(<code>float</code> duration, <a href="Vector2.html">Vector2</a> scale)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Vector2.html">Vector2</a> scale</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>IntervalAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/scaleTo_1" title="scaleTo(duration, scaleX, scaleY)"></a>
+							<h3 class="subsubtitle method-title">scaleTo(duration, scaleX, scaleY)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="IntervalAction.html">IntervalAction</a> scaleTo(<code>float</code> duration, <code>float</code> scaleX, <code>float</code> scaleY)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> scaleX</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> scaleY</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>IntervalAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/sequence_0" title="sequence(action0, action1,...)"></a>
+							<h3 class="subsubtitle method-title">sequence(action0, action1,...)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="IntervalAction.html">IntervalAction</a> sequence(<a href="FiniteTimeAction.html">FiniteTimeAction</a> action0, <a href="FiniteTimeAction.html">FiniteTimeAction</a> action1,&hellip;)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="FiniteTimeAction.html">FiniteTimeAction</a> action0</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="FiniteTimeAction.html">FiniteTimeAction</a> action1</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>IntervalAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/shaky3D_0" title="shaky3D(range, shakeZ, gridSize, duration)"></a>
+							<h3 class="subsubtitle method-title">shaky3D(range, shakeZ, gridSize, duration)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="GridBaseAction.html">GridBaseAction</a> shaky3D(<code>int</code> range, <code>bool</code> shakeZ, <a href="Size.html">Size</a> gridSize, <code>float</code> duration)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>int</code> range</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>bool</code> shakeZ</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Size.html">Size</a> gridSize</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>GridBaseAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/shakyTiles3D_0" title="shakyTiles3D(range, shakeZ, gridSize, duration)"></a>
+							<h3 class="subsubtitle method-title">shakyTiles3D(range, shakeZ, gridSize, duration)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="GridBaseAction.html">GridBaseAction</a> shakyTiles3D(<code>int</code> range, <code>bool</code> shakeZ, <a href="Size.html">Size</a> gridSize, <code>float</code> duration)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>int</code> range</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>bool</code> shakeZ</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Size.html">Size</a> gridSize</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>GridBaseAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/shatteredTiles3D_0" title="shatteredTiles3D(range, shatterZ, gridSize, duration)"></a>
+							<h3 class="subsubtitle method-title">shatteredTiles3D(range, shatterZ, gridSize, duration)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="GridBaseAction.html">GridBaseAction</a> shatteredTiles3D(<code>int</code> range, <code>bool</code> shatterZ, <a href="Size.html">Size</a> gridSize, <code>float</code> duration)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>int</code> range</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>bool</code> shatterZ</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Size.html">Size</a> gridSize</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>GridBaseAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/show_0" title="show()"></a>
+							<h3 class="subsubtitle method-title">show()</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="InstantAction.html">InstantAction</a> show()</div>
+							
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>InstantAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/shuffleTiles_0" title="shuffleTiles(seed, gridSize, duration)"></a>
+							<h3 class="subsubtitle method-title">shuffleTiles(seed, gridSize, duration)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="GridBaseAction.html">GridBaseAction</a> shuffleTiles(<code>int</code> seed, <a href="Size.html">Size</a> gridSize, <code>float</code> duration)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>int</code> seed</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Size.html">Size</a> gridSize</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>GridBaseAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/skewBy_0" title="skewBy(duration, deltaSkew)"></a>
+							<h3 class="subsubtitle method-title">skewBy(duration, deltaSkew)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="IntervalAction.html">IntervalAction</a> skewBy(<code>float</code> duration, <a href="Vector2.html">Vector2</a> deltaSkew)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Vector2.html">Vector2</a> deltaSkew</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>IntervalAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/skewBy_1" title="skewBy(duration, deltaSkewX, deltaSkewY)"></a>
+							<h3 class="subsubtitle method-title">skewBy(duration, deltaSkewX, deltaSkewY)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="IntervalAction.html">IntervalAction</a> skewBy(<code>float</code> duration, <code>float</code> deltaSkewX, <code>float</code> deltaSkewY)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> deltaSkewX</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> deltaSkewY</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>IntervalAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/skewTo_0" title="skewTo(duration, skew)"></a>
+							<h3 class="subsubtitle method-title">skewTo(duration, skew)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="IntervalAction.html">IntervalAction</a> skewTo(<code>float</code> duration, <a href="Vector2.html">Vector2</a> skew)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Vector2.html">Vector2</a> skew</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>IntervalAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/skewTo_1" title="skewTo(duration, skewX, skewY)"></a>
+							<h3 class="subsubtitle method-title">skewTo(duration, skewX, skewY)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="IntervalAction.html">IntervalAction</a> skewTo(<code>float</code> duration, <code>float</code> skewX, <code>float</code> skewY)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> skewX</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> skewY</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>IntervalAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/spawn_0" title="spawn(action0, action1,...)"></a>
+							<h3 class="subsubtitle method-title">spawn(action0, action1,...)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="IntervalAction.html">IntervalAction</a> spawn(<a href="FiniteTimeAction.html">FiniteTimeAction</a> action0, <a href="FiniteTimeAction.html">FiniteTimeAction</a> action1,&hellip;)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="FiniteTimeAction.html">FiniteTimeAction</a> action0</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="FiniteTimeAction.html">FiniteTimeAction</a> action1</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>IntervalAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/speed_0" title="speed(action, speed)"></a>
+							<h3 class="subsubtitle method-title">speed(action, speed)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="Action.html">Action</a> speed(<a href="IntervalAction.html">IntervalAction</a> action, <code>float</code> speed)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><a href="IntervalAction.html">IntervalAction</a> action</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> speed</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>Action</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/splitColumns_0" title="splitColumns(cols, duration)"></a>
+							<h3 class="subsubtitle method-title">splitColumns(cols, duration)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="GridBaseAction.html">GridBaseAction</a> splitColumns(<code>int</code> cols, <code>float</code> duration)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>int</code> cols</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>GridBaseAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/splitRows_0" title="splitRows(rows, duration)"></a>
+							<h3 class="subsubtitle method-title">splitRows(rows, duration)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="GridBaseAction.html">GridBaseAction</a> splitRows(<code>int</code> rows, <code>float</code> duration)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>int</code> rows</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>GridBaseAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/stopGrid_0" title="stopGrid()"></a>
+							<h3 class="subsubtitle method-title">stopGrid()</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="InstantAction.html">InstantAction</a> stopGrid()</div>
+							
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>InstantAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/tintBy_0" title="tintBy(duration, r, g, b)"></a>
+							<h3 class="subsubtitle method-title">tintBy(duration, r, g, b)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="IntervalAction.html">IntervalAction</a> tintBy(<code>float</code> duration, <code>int</code> r, <code>int</code> g, <code>int</code> b)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>int</code> r</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>int</code> g</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>int</code> b</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>IntervalAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/tintBy_1" title="tintBy(duration, byColor)"></a>
+							<h3 class="subsubtitle method-title">tintBy(duration, byColor)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="IntervalAction.html">IntervalAction</a> tintBy(<code>float</code> duration, <a href="Color.html">color</a> byColor)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Color.html">color</a> byColor</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>IntervalAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/tintTo_0" title="tintTo(duration, r, g, b)"></a>
+							<h3 class="subsubtitle method-title">tintTo(duration, r, g, b)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="IntervalAction.html">IntervalAction</a> tintTo(<code>float</code> duration, <code>int</code> r, <code>int</code> g, <code>int</code> b)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>int</code> r</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>int</code> g</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>int</code> b</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>IntervalAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/toggleVisible_0" title="toggleVisible()"></a>
+							<h3 class="subsubtitle method-title">toggleVisible()</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="InstantAction.html">InstantAction</a> toggleVisible()</div>
+							
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>InstantAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/turnOffTiles_0" title="turnOffTiles(seed, gridSize, duration)"></a>
+							<h3 class="subsubtitle method-title">turnOffTiles(seed, gridSize, duration)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="GridBaseAction.html">GridBaseAction</a> turnOffTiles(<code>int</code> seed, <a href="Size.html">Size</a> gridSize, <code>float</code> duration)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>int</code> seed</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Size.html">Size</a> gridSize</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>GridBaseAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/twirl_0" title="twirl(pos, twirls, amplitude, gridSize, duration)"></a>
+							<h3 class="subsubtitle method-title">twirl(pos, twirls, amplitude, gridSize, duration)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="GridBaseAction.html">GridBaseAction</a> twirl(<a href="Point.html">Point</a> pos, <code>int</code> twirls, <code>float</code> amplitude, <a href="Size.html">Size</a> gridSize, <code>float</code> duration)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Point.html">Point</a> pos</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>int</code> twirls</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> amplitude</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Size.html">Size</a> gridSize</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>GridBaseAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/waves_0" title="waves(waves, amplitude, isHorizontal, isVertical, gridSize, duration)"></a>
+							<h3 class="subsubtitle method-title">waves(waves, amplitude, isHorizontal, isVertical, gridSize, duration)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="GridBaseAction.html">GridBaseAction</a> waves(<code>int</code> waves, <code>float</code> amplitude, <code>bool</code> isHorizontal, <code>bool</code> isVertical, <a href="Size.html">Size</a> gridSize, <code>float</code> duration)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>int</code> waves</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> amplitude</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>bool</code> isHorizontal</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>bool</code> isVertical</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Size.html">Size</a> gridSize</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>GridBaseAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/waves3D_0" title="waves3D(waves, amplitude, gridSize, duration)"></a>
+							<h3 class="subsubtitle method-title">waves3D(waves, amplitude, gridSize, duration)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="GridBaseAction.html">GridBaseAction</a> waves3D(<code>int</code> waves, <code>float</code> amplitude, <a href="Size.html">Size</a> gridSize, <code>float</code> duration)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>int</code> waves</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> amplitude</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Size.html">Size</a> gridSize</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>GridBaseAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/wavesTiles3D_0" title="wavesTiles3D(waves, amplitude, gridSize, duration)"></a>
+							<h3 class="subsubtitle method-title">wavesTiles3D(waves, amplitude, gridSize, duration)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="GridBaseAction.html">GridBaseAction</a> wavesTiles3D(<code>int</code> waves, <code>float</code> amplitude, <a href="Size.html">Size</a> gridSize, <code>float</code> duration)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>int</code> waves</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> amplitude</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Size.html">Size</a> gridSize</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> duration</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>GridBaseAction</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+					</div>
+
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+						<li><a href="index.html">Index</a></li>
+						<li><a href="hierarchy.html">Hierarchy</a></li>
+					</ul>
+				</div>
+								<div id="footer">
+									<hr/>
+									<div class="footer-copyright">
+										<p><span
+											class="copyright">&copy; 2012 Aphid Mobile. All rights reserved. (Revision: <span id="revision"></span>, last updated: <span id="update_time"></span>)</span>
+										<br/>
+										<span class="generator"><a target="_blank" href="http://github.com/openaphid">http://github.com/openaphid</a></span>
+										<!--span class="generator">Generated by <a
+											href="http://github.com/openaphid">OpenAphid Doc Generator 0.1</a>.</span-->
+										</p>
+									</div>
+								</div>
+				
+								<script type="text/javascript">//<![CDATA[
+								var lastUpdateEl = document.getElementById("update_time");
+								lastUpdateEl.innerHTML = aphiddoc.pageVersions["NamespaceActions"]["update"];
+								document.getElementById("revision").innerHTML = aphiddoc.pageVersions["NamespaceActions"]["revision"];
+								//]]></script>
+			</div>
+		</article>
+	</body>
+</html>
