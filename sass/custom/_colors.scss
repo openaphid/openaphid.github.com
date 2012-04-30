@@ -4,10 +4,22 @@
 
 $header-bg: #587058;
 $subtitle-color: lighten($header-bg, 58);
-$nav-bg: desaturate(lighten(#8fc17a, 18), 5);
+//$nav-bg: desaturate(lighten(#8fc17a, 18), 5);
+$nav-bg: #d7c014;
+$nav-bg: #4fbfee;
+
+$aphid-green: #d7c014;
+$aphid-blue: #4fbfee;
+
+
+$nav-bg: desaturate(lighten($aphid-blue, 10), 0);
 $nav-bg-front: image-url('noise.png');
 $nav-bg-back: linear-gradient(lighten($nav-bg, 8), $nav-bg, darken($nav-bg, 11));
-$sidebar-bg: desaturate(#eceff5, 8);
+
+$nav-color: desaturate(#262c33, 10);
+
+//$sidebar-bg: desaturate(#eceff5, 8);
+$sidebar-bg: desaturate(lighten($aphid-green, 60%), 8);
 $sidebar-link-color: saturate(#526f9a, 10);
 $sidebar-link-color-hover: darken(#7ab662, 9);
 $footer-bg: #ccc !default;
