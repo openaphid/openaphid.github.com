@@ -46,7 +46,7 @@ INFO 05/02/12,13:41:32: (developer mode) loading data 'player.png' from remote: 
 
 - Messages produced by `console.warn` and `console.error` are also displayed as notifications.
 
-With the developer mode of OpenAphid, the typical development process is in the following steps:
+With the developer mode of OpenAphid, the typical development process is as follows:
 
 1. Developer edits the JavaScript file with game logics and updates graphic files inside the bundle folder;
 
