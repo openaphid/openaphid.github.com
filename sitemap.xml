@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+    <url>
+        <loc>
+            http://openaphid.github.com/blog/2012/02/20/javascript-and-cocos2d-a-sneak-peek/
+        </loc>
+        <lastmod>2012-05-03T21:58:43+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://openaphid.github.com/blog/2012/04/29/openaphid-v0-dot-1-released/</loc>
+        <lastmod>2012-05-03T21:58:43+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://openaphid.github.com/blog/2012/05/02/develop-mode-of-openaphid/</loc>
+        <lastmod>2012-05-03T21:58:43+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://openaphid.github.com/blog/archives/</loc>
+        <lastmod>2012-05-03T21:58:43+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://openaphid.github.com/</loc>
+        <lastmod>2012-05-03T21:58:43+08:00</lastmod>
+    </url>
+</urlset>

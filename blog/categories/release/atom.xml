@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Release | OpenAphid]]></title>
+  <link href="http://openaphid.github.com/blog/categories/release/atom.xml" rel="self"/>
+  <link href="http://openaphid.github.com/"/>
+  <updated>2012-05-03T22:18:13+08:00</updated>
+  <id>http://openaphid.github.com/</id>
+  <author>
+    <name><![CDATA[Aphid Mobile]]></name>
+    <email><![CDATA[openaphid@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[OpenAphid v0.1 Released]]></title>
+    <link href="http://openaphid.github.com/blog/2012/04/29/openaphid-v0-dot-1-released/"/>
+    <updated>2012-04-29T20:11:00+08:00</updated>
+    <id>http://openaphid.github.com/blog/2012/04/29/openaphid-v0-dot-1-released</id>
+    <content type="html"><![CDATA[<p>We're excited to release OpenAphid v0.1, which is the first public version of the project.</p>
+
+<p>Three GitHub repositories have been created:</p>
+
+<!-- more -->
+
+
+<ul>
+<li><p><code>Runtime</code>: <a href="https://github.com/openaphid/Runtime">https://github.com/openaphid/Runtime</a>. As the core runtime of OpenAphid, it's an iOS static library project and is mainly written in C++. Besides porting the OpenGL ES rendering from <a href="http://www.cocos2d-iphone.org/">Cocos2d-iPhone</a>, it also manages the binding layer which exposes the 2D rendering as <a href="/api-doc/latest/index.html">JavaScript APIs</a>.</p></li>
+<li><p><code>Demos</code>: <a href="https://github.com/openaphid/Demos">https://github.com/openaphid/Demos</a>. This repository includes several demos of OpenAphid. <code>PortedDemos</code> contains four iOS applications which are ported from <a href="http://www.cocos2d-iphone.org/">Cocos2d-iPhone</a>: NodeTest, SpriteTest, EffectTest and AdvEffectTest. They demonstrate how to manipulate nodes, sprites and actions in JavaScript APIs. <code>TankBenchmarks</code> is the benchmark described in our <a href="/blog/2012/02/20/javascript-and-cocos2d-a-sneak-peek/">previous post</a>. The implementation by using <a href="https://developer.mobage.com/">ngCore</a> is also presented for your reference. You can build and run them on your iOS devices to reproduce the benchmark results.</p></li>
+<li><p><code>Boilerplate-iOS</code>: <a href="https://github.com/openaphid/Boilerplate-iOS">https://github.com/openaphid/Boilerplate-iOS</a>. It's a template project for developing iOS games with OpenAphid. It's a good start point if you want to play with the APIs of OpenAphid by yourself.</p></li>
+</ul>
+
+
+<p>The <a href="/api-doc/latest/index.html">JavaScript API references</a> of OpenAphid v0.1 is also available. It's a bit rough right now. We promise that it'll be improved in the future.</p>
+
+<h2>Highlights of OpenAphid v0.1</h2>
+
+<p>v0.1 is the start of OpenAphid. We admit that it's not ready for real product yet, but we'd like to present some characteristics of the project here.</p>
+
+<ul>
+<li><p>OpenAphid APIs can be considered as the "DOM" APIs for 2D games on mobile devices. The internal binding layer is implemented in the similar approach as <a href="http://www.webkit.org/">WebKit</a> does for binding native objects to the JavaScript engine;</p></li>
+<li><p>The memory occupied by native objects is managed automatically. Compared to some other script based game engines, OpenAphid doesn't provide destroy API at script level for any native objects. Native objects that are created in JavaScript are managed by the JavaScript garbage collector as other pure JavaScript objects.</p></li>
+<li><p>OpenAphid follows the standard specifications to implement some core features. Although the rendering system of OpenAphid is ported from Cocos2d-iPhone, which is not supported in browsers; the other APIs in OpenAphid are designed to follow W3C standards. For example, the <code>console</code> object in global scope is provided as it is in browsers; the <code>XMLHttpRequest</code> APIs are partially implemented in v0.1, and will be fully compatible to its W3C specification in a future release. And the touch event handling in OpenAphid is implemented as the same as in DOM, which is totally different from Cocos2d-iPhone.</p></li>
+<li><p>OpenAphid is fast and efficient. The benchmark result in the <a href="/blog/2012/02/20/javascript-and-cocos2d-a-sneak-peek/">previous post</a> has been updated by using v0.1, which is slightly faster. We also evaluated the memory usage of OpenAphid with the same benchmark (lower is better):</p></li>
+</ul>
+
+
+<p><img src="/images/tank_benchmark_mem_v0.1.jpg" title="Real memory" alt="Real memory usage of OpenAphid and ngcore" /></p>
+
+<blockquote><p>The data are captured by using the Activity Monitor of Xcode Instruments. The memory usage of the benchmark on ngcore v1.6 is presented for reference only.</p></blockquote>
+
+<h2>What's Next for OpenAphid</h2>
+
+<p>We're working hard to improve OpenAphid. Most efforts are spent on the following tasks:</p>
+
+<ul>
+<li><p>Ports more features from Cocos2d-iPhone, like physics support, audio support, etc;</p></li>
+<li><p>Supports Android OS;</p></li>
+<li><p>Provides binding APIs for integrating 3rd-party services. The binding system in OpenAphid Runtime is designed for the performance requirement of OpenGL ES rendering, but it's not suitable for general purpose. Another binding system is planned to bridge JavaScript codes and Objective-C(or Java on Android in the future releases) easily. The <code>Boilerplate-iOS</code> project will also be improved by integrating 3rd-party services, like analytics, in-app purchase, advertisement;</p></li>
+<li><p>Implements more W3C standard APIs, includes making XMLHttpRequest fully compatible to specifications, adding FileSystem and WebSocket supports, etc.</p></li>
+</ul>
+
+
+<p>Please feel free to contact us with your questions and suggestions via <code>openaphid At gmail.com</code>. We’d appreciate it for your kind help.</p>
+
+<h2>Special Thanks</h2>
+
+<p>We'd like to express our appreciation to <a href="http://wannadobre.carbonmade.com/">Oana Dobre</a>, who designed the cute aphid graphics and allowed us to use them for free.</p>
+]]></content>
+  </entry>
+  
+</feed>

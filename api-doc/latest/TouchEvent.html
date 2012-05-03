@@ -1,0 +1,400 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>TouchEvent Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="css/stylesPrint.css" />
+		<script type="text/javascript" src="js/toc.js"></script>
+		<script type="text/javascript" src="js/versions.js"></script>
+		<meta name="generator" content="OpenAphid Doc Generator 0.1"/>
+		<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-29340978-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  	</script>
+	</head>
+	<body>
+		<header id="top_header">
+		<div id="library" class="hideInXcode">
+						<h1><a id="libraryTitle" href="index.html">OpenAphid</a></h1>
+						<a id="developerHome" target="_blank" href="http://github.com/openaphid">Aphid Mobile</a>
+					</div>
+					
+					<div id="title" role="banner">
+						<h1 class="hideInXcode">TouchEvent Class Reference</h1>
+					</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table Of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+						<option value="top">Jump To&#133;</option>
+						<option value="overview">Overview</option>
+					
+						
+						<option value="tasks">Overview of Tasks</option>
+						
+					
+						<option value="attributes">Attributes</option>
+						<option value="//property/altKey_0">&nbsp;&nbsp;&nbsp;&nbsp;altKey</option>
+						<option value="//property/changedTouches_0">&nbsp;&nbsp;&nbsp;&nbsp;changedTouches</option>
+						<option value="//property/ctrlKey_0">&nbsp;&nbsp;&nbsp;&nbsp;ctrlKey</option>
+						<option value="//property/metaKey_0">&nbsp;&nbsp;&nbsp;&nbsp;metaKey</option>
+						<option value="//property/shiftKey_0">&nbsp;&nbsp;&nbsp;&nbsp;shiftKey</option>
+						<option value="//property/targetTouches_0">&nbsp;&nbsp;&nbsp;&nbsp;targetTouches</option>
+						<option value="//property/touches_0">&nbsp;&nbsp;&nbsp;&nbsp;touches</option>
+					
+					
+					</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+				
+				
+				<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Overview of Tasks</a></span><ul>
+					<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Attributes">Attributes</a></span></li>
+				</ul></li>
+				
+				
+				<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a	href="#attributes">Attributes</a></span>
+					<ul>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/altKey_0">altKey</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/changedTouches_0">changedTouches</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/ctrlKey_0">ctrlKey</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/metaKey_0">metaKey</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/shiftKey_0">shiftKey</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/targetTouches_0">targetTouches</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/touches_0">touches</a></span></li>
+					</ul>
+				</li>
+				
+				
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="TouchEvent Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+						<li><a href="index.html">Index</a></li>
+						<li><a href="hierarchy.html">Hierarchy</a></li>
+					</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">TouchEvent Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value"><a href="Event.html">Event</a></td>
+</tr>
+
+						</tbody></table></div>
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The <code>TouchEvent</code> class encapsulates information about a touch event.</p>
+
+<p><a href="http://www.w3.org/TR/touch-events/">Touch Events version 1</a> is implemented in OpenAphid. We&rsquo;re discussing about adding Safari extension attributes and high level guesture events in the future release, like <code>rotation</code>, <code>ongesturestart</code>, etc.</p>
+
+					</div>
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Overview of Tasks</h2>
+						<a title="Attributes" name="task_Attributes"></a>
+						<h3 class="subsubtitle task-title">Attributes</h3>
+						<ul class="task-list-col" style="max-width: 80%">
+							<li>Name</li>
+							<li>
+	<span class="tooltip">
+		<code><a href="#//property/altKey_0">altKey</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/changedTouches_0">changedTouches</a></code>
+		<span class="tooltip"><p>A list of <a href="Touch.html">Touch</a> objects representing all touches that changed in this event.</p>
+</span>
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/ctrlKey_0">ctrlKey</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/metaKey_0">metaKey</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/shiftKey_0">shiftKey</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/targetTouches_0">targetTouches</a></code>
+		<span class="tooltip"><p>A list of <a href="Touch.html">Touch</a> objects representing all touches associated with this target.</p>
+</span>
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/touches_0">touches</a></code>
+		<span class="tooltip"><p>A list of <a href="Touch.html">Touch</a> objects representing all touches associated with this event.</p>
+</span>
+	</span>
+</li>
+
+						</ul>
+						<ul class="task-list-col">
+							<li>Type</li>
+							<li>
+	<code>bool</code>
+</li>
+<li>
+	<code>TouchList</code>
+</li>
+<li>
+	<code>bool</code>
+</li>
+<li>
+	<code>bool</code>
+</li>
+<li>
+	<code>bool</code>
+</li>
+<li>
+	<code>TouchList</code>
+</li>
+<li>
+	<code>TouchList</code>
+</li>
+
+						</ul>
+						<ul class="task-list-col">
+							<li>Writability</li>
+							<li>
+		<code>readonly</code>
+</li>
+<li>
+		<code>readonly</code>
+</li>
+<li>
+		<code>readonly</code>
+</li>
+<li>
+		<code>readonly</code>
+</li>
+<li>
+		<code>readonly</code>
+</li>
+<li>
+		<code>readonly</code>
+</li>
+<li>
+		<code>readonly</code>
+</li>
+
+						</ul>
+												
+					</div>
+
+
+					<div class="section section-methods">
+						<a title="Attributes" name="attributes"></a>
+
+						<h2 class="subtitle subtitle-methods">Attributes</h2>
+						<div class="section-method">
+							<a name="//property/altKey_0" title="altKey"></a>
+							<h3 class="subsubtitle method-title">altKey</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>readonly</code> <code>bool</code> altKey</div>
+							
+							
+							
+							
+							<div class="method-subsection discussion-section">
+								<h4 class="method-subtitle">Discussion</h4>
+								<p>For W3C compatibility only, the value is always <code>false</code></p>
+
+							</div>
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/changedTouches_0" title="changedTouches"></a>
+							<h3 class="subsubtitle method-title">changedTouches</h3>
+							
+							
+							<div class="method-subsection brief-description">
+								<p>A list of <a href="Touch.html">Touch</a> objects representing all touches that changed in this event.</p>
+
+							</div>
+							
+							<div class="method-subsection method-declaration"><code>readonly</code> <a href="TouchList.html">TouchList</a> changedTouches</div>
+							
+							
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/ctrlKey_0" title="ctrlKey"></a>
+							<h3 class="subsubtitle method-title">ctrlKey</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>readonly</code> <code>bool</code> ctrlKey</div>
+							
+							
+							
+							
+							<div class="method-subsection discussion-section">
+								<h4 class="method-subtitle">Discussion</h4>
+								<p>For W3C compatibility only, the value is always <code>false</code></p>
+
+							</div>
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/metaKey_0" title="metaKey"></a>
+							<h3 class="subsubtitle method-title">metaKey</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>readonly</code> <code>bool</code> metaKey</div>
+							
+							
+							
+							
+							<div class="method-subsection discussion-section">
+								<h4 class="method-subtitle">Discussion</h4>
+								<p>For W3C compatibility only, the value is always <code>false</code></p>
+
+							</div>
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/shiftKey_0" title="shiftKey"></a>
+							<h3 class="subsubtitle method-title">shiftKey</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>readonly</code> <code>bool</code> shiftKey</div>
+							
+							
+							
+							
+							<div class="method-subsection discussion-section">
+								<h4 class="method-subtitle">Discussion</h4>
+								<p>For W3C compatibility only, the value is always <code>false</code></p>
+
+							</div>
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/targetTouches_0" title="targetTouches"></a>
+							<h3 class="subsubtitle method-title">targetTouches</h3>
+							
+							
+							<div class="method-subsection brief-description">
+								<p>A list of <a href="Touch.html">Touch</a> objects representing all touches associated with this target.</p>
+
+							</div>
+							
+							<div class="method-subsection method-declaration"><code>readonly</code> <a href="TouchList.html">TouchList</a> targetTouches</div>
+							
+							
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/touches_0" title="touches"></a>
+							<h3 class="subsubtitle method-title">touches</h3>
+							
+							
+							<div class="method-subsection brief-description">
+								<p>A list of <a href="Touch.html">Touch</a> objects representing all touches associated with this event.</p>
+
+							</div>
+							
+							<div class="method-subsection method-declaration"><code>readonly</code> <a href="TouchList.html">TouchList</a> touches</div>
+							
+							
+							
+							
+							
+							
+						</div>
+					</div>
+
+
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+						<li><a href="index.html">Index</a></li>
+						<li><a href="hierarchy.html">Hierarchy</a></li>
+					</ul>
+				</div>
+								<div id="footer">
+									<hr/>
+									<div class="footer-copyright">
+										<p><span
+											class="copyright">&copy; 2012 Aphid Mobile. All rights reserved. (Revision: <span id="revision"></span>, last updated: <span id="update_time"></span>)</span>
+										<br/>
+										<span class="generator"><a target="_blank" href="http://github.com/openaphid">http://github.com/openaphid</a></span>
+										<!--span class="generator">Generated by <a
+											href="http://github.com/openaphid">OpenAphid Doc Generator 0.1</a>.</span-->
+										</p>
+									</div>
+								</div>
+				
+								<script type="text/javascript">//<![CDATA[
+								var lastUpdateEl = document.getElementById("update_time");
+								lastUpdateEl.innerHTML = aphiddoc.pageVersions["TouchEvent"]["update"];
+								document.getElementById("revision").innerHTML = aphiddoc.pageVersions["TouchEvent"]["revision"];
+								//]]></script>
+			</div>
+		</article>
+	</body>
+</html>
