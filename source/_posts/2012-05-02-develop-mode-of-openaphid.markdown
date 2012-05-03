@@ -40,7 +40,7 @@ The main benefit of using developer mode is that it makes the game development s
 INFO 05/02/12,13:41:32: (developer mode) loading data 'player.png' from remote: http://129.158.217.36:18080/player.png
 ```
 
-- Internal warning and error messages are displayed as on-screen notifications besides logging in device console. Warning messages are in blue background color and errors are in red color. The screenshot below shows a notification about a syntax error in a JavaScript file:
+- Internal warning and error messages are displayed as on-screen notifications besides logging in device console. Warning messages are in blue background color and errors are in red color. The screenshot below shows a notification about a syntax error at line 17 in main.js:
 
 ![Error Notification](/images/developer-mode-error-notification.png "Notification")
 
