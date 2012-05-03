@@ -4,180 +4,180 @@ aphiddoc.pageVersions =
 ///versions
 {
   "OAGlobalObject": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   },
   "NamespaceiOS": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   },
   "NodeList": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   },
   "Action": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   },
   "Touch": {
-    "revision": 2,
-    "update": "2012-04-28"
+    "revision": 4,
+    "update": "2012-05-03"
   },
   "NamespaceG2D": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   },
   "Director": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   },
   "Scene": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   },
   "ParticleSystem": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   },
   "SpriteBatchNode": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   },
   "hierarchy": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   },
   "NamespaceActions": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   },
   "ProgressEvent": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   },
   "InstantAction": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   },
   "Size": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   },
   "Color": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   },
   "NamespaceCore": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   },
   "Node": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   },
   "Rect": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   },
   "Console": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   },
   "NamespaceAphid": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   },
   "TouchEvent": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   },
   "Texture2D": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   },
   "EaseAction": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   },
   "GridBaseAction": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   },
   "Vector2": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   },
   "ColorNode": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   },
   "GradientNode": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   },
   "IntervalAction": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   },
   "TouchList": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   },
   "Point": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   },
   "Vector3": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   },
   "Camera": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   },
   "index": {
-    "revision": 2,
-    "update": "2012-04-28"
+    "revision": 4,
+    "update": "2012-05-03"
   },
   "SpriteFrame": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   },
   "Animation": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   },
   "Font": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   },
   "Event": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   },
   "Sprite": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   },
   "FiniteTimeAction": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   },
   "LabelTTF": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   },
   "XMLHttpRequest": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   },
   "NamespaceJS": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   },
   "AffineTransformation": {
-    "revision": 3,
-    "update": "2012-04-28"
+    "revision": 5,
+    "update": "2012-05-03"
   }
 }
 ///end
