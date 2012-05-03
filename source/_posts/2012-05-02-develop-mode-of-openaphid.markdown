@@ -44,7 +44,9 @@ INFO 05/02/12,13:41:32: (developer mode) loading data 'player.png' from remote: 
 
 ![Error Notification](/images/developer-mode-error-notification.png "Notification")
 
-- Messages produced by `console.warn` and `console.error` are also displayed as notifications.
+- Messages produced by `console.warn` and `console.error` are also displayed as notifications;
+
+- Write access to read-only attributes of OpenAphid objects throws exception in developer mode.
 
 With the developer mode of OpenAphid, the typical development process is as follows:
 
