@@ -4,7 +4,7 @@
   <title><![CDATA[OpenAphid]]></title>
   <link href="http://openaphid.github.com/atom.xml" rel="self"/>
   <link href="http://openaphid.github.com/"/>
-  <updated>2012-05-03T22:18:13+08:00</updated>
+  <updated>2012-05-09T00:09:18+08:00</updated>
   <id>http://openaphid.github.com/</id>
   <author>
     <name><![CDATA[Aphid Mobile]]></name>
@@ -12,6 +12,66 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Tutorial: Handling Touch Events in OpenAphid v0.1.1]]></title>
+    <link href="http://openaphid.github.com/blog/2012/05/06/tutorial-handling-touch-events-in-openaphid-v0-dot-1-1/"/>
+    <updated>2012-05-06T21:54:00+08:00</updated>
+    <id>http://openaphid.github.com/blog/2012/05/06/tutorial-handling-touch-events-in-openaphid-v0-dot-1-1</id>
+    <content type="html"><![CDATA[<p>We are glad to release OpenAphid v0.1.1, which adds multitouch support and fixes several issues about touch handling. The detailed change log is following:</p>
+
+<!-- more -->
+
+
+<ul>
+<li>Supports multitouch events: adds <code>multipleTouchEnabled</code> attribute to <code>Director</code></li>
+<li>Adds <code>userInteractionEnabled</code> attribute to Node</li>
+<li>Fixes incorrect values of <code>event.touches</code> and <code>event.targetTouches</code> in <code>ontouchend</code> callback</li>
+<li>Adds a new constructor function to Color: <code>new Color(color, [alpha])</code></li>
+</ul>
+
+
+<h2>Basics of Touch Event Handling</h2>
+
+<p>Any instances of the <code>Node</code> class can be the <code>EventTarget</code> of touch events in OpenAphid. This is different from <a href="http://www.cocos2d-iphone.org/">cocos2d-iphone</a>, in which <code>CCLayer</code> is usually the target of touch event.</p>
+
+<p>Several attributes affect how a node handles touch events: <code>multipleTouchEnabled</code> of the <code>Director</code> class; <code>userInteractionEnabled</code>, <code>visible</code>, <code>touchEnabled</code>, and <code>contentSize</code> of the <code>Node</code> class.</p>
+
+<h2>Flow of Touch Event</h2>
+
+<p>The flow of a touch event goes through 2 phases: hit-testing and event bubbling.</p>
+
+<h3>Hit-Testing</h3>
+
+<p>When a touch happens on the device screen, OpenAphid follows the routine below to locate its event target:</p>
+
+<ol>
+<li><p>Hit-testing is used to find the sub-node of the running scene that is under a touch. This method proceeds recursively on each node in the node hierarchy.</p></li>
+<li><p>Hit-testing fails on a node and doesn&#8217;t proceed on its children if either <code>userInteractionEnabled</code> or <code>visible</code> is <code>false</code>.</p></li>
+<li><p>The testing fails on a node but proceeds on its children if its <code>touchEnabled</code> is <code>false</code></p></li>
+<li><p>If the <code>contentSize</code> if a node is zero, hit-testing is delegated to its children nodes; otherwise it proceeds when the touch took place inside the rectangle area defined by the <code>contentSize</code>.</p></li>
+<li><p>A node becomes the event target when it meets the following conditions: its <code>contentSize</code> is not zero and the touch location is inside it; hit-testing fails on any of its children but succeeds on it.</p></li>
+</ol>
+
+
+<h3>Event Bubbling</h3>
+
+<p>Once the event target of a touch is found by hit-testing, a touch event object is passed to its callback functions, and bubbling up to its ancestors of which <code>touchEnabled</code> is <code>true</code>. <code>event.stopPropagation</code> can be used to stop bubbling.</p>
+
+<h2>Interfaces of Touch Event</h2>
+
+<p>The APIs of touch event handling in OpenAphid are implemented to follow the specification of <a href="http://www.w3.org/TR/touch-events/">W3C DOM Touch Event Version 1</a>. There are already lots of guides about handling touches in DOM, which can be used as references for OpenAphid too. We&#8217;ve updated the <a href="https://github.com/openaphid/Demos">Demos</a> of OpenAphid to include a <code>TouchTest</code> application, which demonstrates three scenarios of touch handling:</p>
+
+<ul>
+<li><p>Handling a single touch event to drag a sprite.</p></li>
+<li><p>Handling multitouch events to move multiple sprites.</p></li>
+<li><p>Detecting pinch gesture to zoom in/out a sprite.</p></li>
+</ul>
+
+
+<p>Please checkout the <a href="https://github.com/openaphid/Demos">Demos</a> project for more details. We&#8217;re also going to implement gesture detection APIs in the future.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Tutorial: Developer Mode of OpenAphid]]></title>
