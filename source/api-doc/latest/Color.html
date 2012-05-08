@@ -25,7 +25,7 @@
 	<body>
 		<header id="top_header">
 		<div id="library" class="hideInXcode">
-						<h1><a id="libraryTitle" href="index.html">OpenAphid</a></h1>
+						<h1><a id="libraryTitle" href="index.html">OpenAphid v0.1.1</a></h1>
 						<a id="developerHome" target="_blank" href="http://github.com/openaphid">Aphid Mobile</a>
 					</div>
 					
@@ -46,7 +46,7 @@
 						<option value="tasks">Overview of Tasks</option>
 						
 						<option value="constructors">Constructors</option>
-						<option value="//constructor/Color_0">&nbsp;&nbsp;&nbsp;&nbsp;Color(color)</option>
+						<option value="//constructor/Color_0">&nbsp;&nbsp;&nbsp;&nbsp;Color(color, [a])</option>
 						<option value="//constructor/Color_1">&nbsp;&nbsp;&nbsp;&nbsp;Color(r, g, b, [a])</option>
 					
 						<option value="attributes">Attributes</option>
@@ -76,7 +76,7 @@
 				<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a	href="#constructors">Constructors</a></span>
 					<ul>
 						<li><span class="nodisclosure"></span><span class="sectionName"><a
-							href="#//constructor/Color_0">Color(color)</a></span></li>
+							href="#//constructor/Color_0">Color(color, [a])</a></span></li>
 						<li><span class="nodisclosure"></span><span class="sectionName"><a
 							href="#//constructor/Color_1">Color(r, g, b, [a])</a></span></li>
 					</ul>
@@ -145,8 +145,6 @@
 sprite.color = "red";
 
 sprite.color = 0xff0000; //RGB color
-
-sprite.color = 0xff0000ff; //RGBA color
 </code></pre>
 
 <p>Please refer to the W3C document of <a href="http://www.w3.org/TR/css3-color/#svg-color">Extended color keywords</a> to get the list of valid color names.</p>
@@ -159,7 +157,7 @@ sprite.color = 0xff0000ff; //RGBA color
 						<ul class="task-list-col">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//constructor/Color_0">Color(color)</a></code>
+		<code><a href="#//constructor/Color_0">Color(color, [a])</a></code>
 		
 	</span>
 </li>
@@ -268,17 +266,21 @@ sprite.color = 0xff0000ff; //RGBA color
 						<a title="Constructors" name="constructors"></a>
 						<h2 class="subtitle subtitle-methods">Constructors</h2>
 						<div class="section-method">
-							<a name="//constructor/Color_0" title="Color(color)"></a>
-							<h3 class="subsubtitle method-title">Color(color)</h3>
+							<a name="//constructor/Color_0" title="Color(color, [a])"></a>
+							<h3 class="subsubtitle method-title">Color(color, [a])</h3>
 							
 							
 							
-							<div class="method-subsection method-declaration"><code>new</code> Color(<a href="Color.html">color</a> color)</div>
+							<div class="method-subsection method-declaration"><code>new</code> Color(<a href="Color.html">color</a> color, <em>[<code>int</code> a]</em>)</div>
 							
 							<div class="method-subsection arguments-section parameters">
 								<h4 class="method-subtitle parameter-title">Parameters</h4>
 								<dl class="argument-def parameter-def">
 									<dt><code> Non-null </code><a href="Color.html">color</a> color</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code>  Optional </code><code>int</code> a</dt>
 									<dd></dd>
 								</dl>
 							</div>
