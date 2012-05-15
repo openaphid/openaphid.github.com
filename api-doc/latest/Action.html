@@ -1,0 +1,375 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>Action Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="css/stylesPrint.css" />
+		<script type="text/javascript" src="js/toc.js"></script>
+		<script type="text/javascript" src="js/versions.js"></script>
+		<meta name="generator" content="OpenAphid Doc Generator 0.1"/>
+		<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-29340978-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  	</script>
+	</head>
+	<body>
+		<header id="top_header">
+		<div id="library" class="hideInXcode">
+						<h1><a id="libraryTitle" href="index.html">OpenAphid v0.1.1</a></h1>
+						<a id="developerHome" target="_blank" href="http://github.com/openaphid">Aphid Mobile</a>
+					</div>
+					
+					<div id="title" role="banner">
+						<h1 class="hideInXcode">Action Class Reference</h1>
+					</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table Of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+						<option value="top">Jump To&#133;</option>
+						<option value="overview">Overview</option>
+					
+						
+						<option value="tasks">Overview of Tasks</option>
+						
+					
+						<option value="attributes">Attributes</option>
+						<option value="//property/baseType_0">&nbsp;&nbsp;&nbsp;&nbsp;baseType</option>
+						<option value="//property/isTimeReversed_0">&nbsp;&nbsp;&nbsp;&nbsp;isTimeReversed</option>
+						<option value="//property/typeName_0">&nbsp;&nbsp;&nbsp;&nbsp;typeName</option>
+					
+						<option value="functions">Functions</option>
+						<option value="//property/copy_0">&nbsp;&nbsp;&nbsp;&nbsp;copy()</option>
+						<option value="//property/reverse_0">&nbsp;&nbsp;&nbsp;&nbsp;reverse()</option>
+					
+					</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+				
+				
+				<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Overview of Tasks</a></span><ul>
+					<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Attributes">Attributes</a></span></li>
+					<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Functions">Functions</a></span></li>
+				</ul></li>
+				
+				
+				<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a	href="#attributes">Attributes</a></span>
+					<ul>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/baseType_0">baseType</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/isTimeReversed_0">isTimeReversed</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/typeName_0">typeName</a></span></li>
+					</ul>
+				</li>
+				
+				<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a	href="#functions">Functions</a></span>
+					<ul>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/copy_0">copy()</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/reverse_0">reverse()</a></span></li>
+					</ul>
+				</li>
+				
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="Action Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+						<li><a href="index.html">Index</a></li>
+						<li><a href="hierarchy.html">Hierarchy</a></li>
+					</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">Action Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">JavaScript Object</td>
+</tr>
+
+						</tbody></table></div>
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Base class of all actions that run on nodes. Actions can modify the properties of nodes to move, rotate and scale them or apply other visual effects.</p>
+
+<p>An action SHOULD run only on one node. Please use <code>action.copy()</code> to deep clone an action if the same action will be used on another node.</p>
+
+					</div>
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Overview of Tasks</h2>
+						<a title="Attributes" name="task_Attributes"></a>
+						<h3 class="subsubtitle task-title">Attributes</h3>
+						<ul class="task-list-col" style="max-width: 80%">
+							<li>Name</li>
+							<li>
+	<span class="tooltip">
+		<code><a href="#//property/baseType_0">baseType</a></code>
+		<span class="tooltip"><p>Type flags of an action</p>
+</span>
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/isTimeReversed_0">isTimeReversed</a></code>
+		<span class="tooltip"><p>Indicates whether the internal timing for an action is reversed or not</p>
+</span>
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/typeName_0">typeName</a></code>
+		<span class="tooltip"><p>Name of an action.</p>
+</span>
+	</span>
+</li>
+
+						</ul>
+						<ul class="task-list-col">
+							<li>Type</li>
+							<li>
+	<code>int</code>
+</li>
+<li>
+	<code>bool</code>
+</li>
+<li>
+	<code>string</code>
+</li>
+
+						</ul>
+						<ul class="task-list-col">
+							<li>Writability</li>
+							<li>
+		<code>readonly</code>
+</li>
+<li>
+		<code>readwrite</code>
+</li>
+<li>
+		<code>readonly</code>
+</li>
+
+						</ul>
+												<a title="Functions" name="task_Functions"></a>
+						<h3 class="subsubtitle task-title">Functions</h3>
+						<ul class="task-list-col" style="max-width: 80%">
+							<li>Signature</li>
+							<li>
+	<span class="tooltip">
+		<code><a href="#//property/copy_0">copy()</a></code>
+		<span class="tooltip"><p>Creates an deep copy of an action</p>
+</span>
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/reverse_0">reverse()</a></code>
+		<span class="tooltip"><p>Creates a reversed version of an action</p>
+</span>
+	</span>
+</li>
+
+						</ul>
+						<ul class="task-list-col">
+							<li>Return Type</li>
+							<li>
+	<code>Action</code>
+</li>
+<li>
+	<code>Action</code>
+</li>
+
+						</ul>
+												
+					</div>
+
+
+					<div class="section section-methods">
+						<a title="Attributes" name="attributes"></a>
+
+						<h2 class="subtitle subtitle-methods">Attributes</h2>
+						<div class="section-method">
+							<a name="//property/baseType_0" title="baseType"></a>
+							<h3 class="subsubtitle method-title">baseType</h3>
+							
+							
+							<div class="method-subsection brief-description">
+								<p>Type flags of an action</p>
+
+							</div>
+							
+							<div class="method-subsection method-declaration"><code>readonly</code> <code>int</code> baseType</div>
+							
+							
+							
+							
+							<div class="method-subsection discussion-section">
+								<h4 class="method-subtitle">Discussion</h4>
+								<p>The value is a combination of constants defined in <a href="NamespaceActions.html">NamespaceActions</a></p>
+
+							</div>
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/isTimeReversed_0" title="isTimeReversed"></a>
+							<h3 class="subsubtitle method-title">isTimeReversed</h3>
+							
+							
+							<div class="method-subsection brief-description">
+								<p>Indicates whether the internal timing for an action is reversed or not</p>
+
+							</div>
+							
+							<div class="method-subsection method-declaration"><code>readwrite</code> <code>bool</code> isTimeReversed</div>
+							
+							
+							
+							
+							<div class="method-subsection discussion-section">
+								<h4 class="method-subtitle">Discussion</h4>
+								<p>Default is <code>false</code>. This is provided as a replacement of CCReverseTimeAction defined in cocos2d-iphone</p>
+
+							</div>
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/typeName_0" title="typeName"></a>
+							<h3 class="subsubtitle method-title">typeName</h3>
+							
+							
+							<div class="method-subsection brief-description">
+								<p>Name of an action.</p>
+
+							</div>
+							
+							<div class="method-subsection method-declaration"><code>Non-null readonly</code> <code>string</code> typeName</div>
+							
+							
+							
+							
+							<div class="method-subsection discussion-section">
+								<h4 class="method-subtitle">Discussion</h4>
+								<p>For example, <code>aphid.g2d.actions.rotateBy(...)</code> returns an action with name <code>RotateByAction</code></p>
+
+							</div>
+							
+							
+						</div>
+					</div>
+
+					<div class="section section-methods">
+						<a title="Functions" name="functions"></a>
+
+						<h2 class="subtitle subtitle-methods">Functions</h2>
+						<div class="section-method">
+							<a name="//property/copy_0" title="copy()"></a>
+							<h3 class="subsubtitle method-title">copy()</h3>
+							
+							
+							<div class="method-subsection brief-description">
+								<p>Creates an deep copy of an action</p>
+
+							</div>
+							
+							<div class="method-subsection method-declaration"><a href="Action.html">Action</a> copy()</div>
+							
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>Action</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/reverse_0" title="reverse()"></a>
+							<h3 class="subsubtitle method-title">reverse()</h3>
+							
+							
+							<div class="method-subsection brief-description">
+								<p>Creates a reversed version of an action</p>
+
+							</div>
+							
+							<div class="method-subsection method-declaration"><a href="Action.html">Action</a> reverse()</div>
+							
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>Action</code></h4>
+								
+							</div>
+							
+							
+							<div class="method-subsection discussion-section">
+								<h4 class="method-subtitle">Discussion</h4>
+								<p>This method always returns a new instance of <code>Action</code>. A non-reversed copy is returned if there is no logical reversed version of the action, like <code>actions.moveTo(2, new Point(100, 100)).reverse()</code> returns the same value as <code>actions.moveTo(2, new Point(100, 100)).copy()</code></p>
+
+							</div>
+							
+							
+						</div>
+					</div>
+
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+						<li><a href="index.html">Index</a></li>
+						<li><a href="hierarchy.html">Hierarchy</a></li>
+					</ul>
+				</div>
+								<div id="footer">
+									<hr/>
+									<div class="footer-copyright">
+										<p><span
+											class="copyright">&copy; 2012 Aphid Mobile. All rights reserved. (Revision: <span id="revision"></span>, last updated: <span id="update_time"></span>)</span>
+										<br/>
+										<span class="generator"><a target="_blank" href="http://github.com/openaphid">http://github.com/openaphid</a></span>
+										<!--span class="generator">Generated by <a
+											href="http://github.com/openaphid">OpenAphid Doc Generator 0.1</a>.</span-->
+										</p>
+									</div>
+								</div>
+				
+								<script type="text/javascript">//<![CDATA[
+								var lastUpdateEl = document.getElementById("update_time");
+								lastUpdateEl.innerHTML = aphiddoc.pageVersions["Action"]["update"];
+								document.getElementById("revision").innerHTML = aphiddoc.pageVersions["Action"]["revision"];
+								//]]></script>
+			</div>
+		</article>
+	</body>
+</html>

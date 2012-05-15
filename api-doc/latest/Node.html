@@ -1,0 +1,2072 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>Node Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="css/stylesPrint.css" />
+		<script type="text/javascript" src="js/toc.js"></script>
+		<script type="text/javascript" src="js/versions.js"></script>
+		<meta name="generator" content="OpenAphid Doc Generator 0.1"/>
+		<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-29340978-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  	</script>
+	</head>
+	<body>
+		<header id="top_header">
+		<div id="library" class="hideInXcode">
+						<h1><a id="libraryTitle" href="index.html">OpenAphid v0.1.1</a></h1>
+						<a id="developerHome" target="_blank" href="http://github.com/openaphid">Aphid Mobile</a>
+					</div>
+					
+					<div id="title" role="banner">
+						<h1 class="hideInXcode">Node Class Reference</h1>
+					</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table Of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+						<option value="top">Jump To&#133;</option>
+						<option value="overview">Overview</option>
+					
+						<option value="overview_constructors">Overview of Constructors</option>
+						
+						<option value="tasks">Overview of Tasks</option>
+						
+						<option value="constructors">Constructors</option>
+						<option value="//constructor/Node_0">&nbsp;&nbsp;&nbsp;&nbsp;Node()</option>
+					
+						<option value="attributes">Attributes</option>
+						<option value="//property/anchor_0">&nbsp;&nbsp;&nbsp;&nbsp;anchor</option>
+						<option value="//property/anchorInPixels_0">&nbsp;&nbsp;&nbsp;&nbsp;anchorInPixels</option>
+						<option value="//property/boundingBox_0">&nbsp;&nbsp;&nbsp;&nbsp;boundingBox</option>
+						<option value="//property/boundingBoxInPixels_0">&nbsp;&nbsp;&nbsp;&nbsp;boundingBoxInPixels</option>
+						<option value="//property/camera_0">&nbsp;&nbsp;&nbsp;&nbsp;camera</option>
+						<option value="//property/children_0">&nbsp;&nbsp;&nbsp;&nbsp;children</option>
+						<option value="//property/contentSize_0">&nbsp;&nbsp;&nbsp;&nbsp;contentSize</option>
+						<option value="//property/contentSizeInPixels_0">&nbsp;&nbsp;&nbsp;&nbsp;contentSizeInPixels</option>
+						<option value="//property/isRelativeAnchor_0">&nbsp;&nbsp;&nbsp;&nbsp;isRelativeAnchor</option>
+						<option value="//property/isRunning_0">&nbsp;&nbsp;&nbsp;&nbsp;isRunning</option>
+						<option value="//property/onframeupdate_0">&nbsp;&nbsp;&nbsp;&nbsp;onframeupdate</option>
+						<option value="//property/ontouchcancel_0">&nbsp;&nbsp;&nbsp;&nbsp;ontouchcancel</option>
+						<option value="//property/ontouchend_0">&nbsp;&nbsp;&nbsp;&nbsp;ontouchend</option>
+						<option value="//property/ontouchmove_0">&nbsp;&nbsp;&nbsp;&nbsp;ontouchmove</option>
+						<option value="//property/ontouchstart_0">&nbsp;&nbsp;&nbsp;&nbsp;ontouchstart</option>
+						<option value="//property/parent_0">&nbsp;&nbsp;&nbsp;&nbsp;parent</option>
+						<option value="//property/position_0">&nbsp;&nbsp;&nbsp;&nbsp;position</option>
+						<option value="//property/positionInPixels_0">&nbsp;&nbsp;&nbsp;&nbsp;positionInPixels</option>
+						<option value="//property/rotation_0">&nbsp;&nbsp;&nbsp;&nbsp;rotation</option>
+						<option value="//property/scale_0">&nbsp;&nbsp;&nbsp;&nbsp;scale</option>
+						<option value="//property/skew_0">&nbsp;&nbsp;&nbsp;&nbsp;skew</option>
+						<option value="//property/tag_0">&nbsp;&nbsp;&nbsp;&nbsp;tag</option>
+						<option value="//property/touchEnabled_0">&nbsp;&nbsp;&nbsp;&nbsp;touchEnabled</option>
+						<option value="//property/userInteractionEnabled_0">&nbsp;&nbsp;&nbsp;&nbsp;userInteractionEnabled</option>
+						<option value="//property/visible_0">&nbsp;&nbsp;&nbsp;&nbsp;visible</option>
+						<option value="//property/zOrder_0">&nbsp;&nbsp;&nbsp;&nbsp;zOrder</option>
+					
+						<option value="functions">Functions</option>
+						<option value="//property/addChild_0">&nbsp;&nbsp;&nbsp;&nbsp;addChild(child, [z], [tag])</option>
+						<option value="//property/cleanup_0">&nbsp;&nbsp;&nbsp;&nbsp;cleanup()</option>
+						<option value="//property/convertParentToNodeSpace_0">&nbsp;&nbsp;&nbsp;&nbsp;convertParentToNodeSpace(p)</option>
+						<option value="//property/convertToNodeSpace_0">&nbsp;&nbsp;&nbsp;&nbsp;convertToNodeSpace(p)</option>
+						<option value="//property/convertToNodeSpaceAR_0">&nbsp;&nbsp;&nbsp;&nbsp;convertToNodeSpaceAR(p)</option>
+						<option value="//property/convertToWorldSpace_0">&nbsp;&nbsp;&nbsp;&nbsp;convertToWorldSpace(p)</option>
+						<option value="//property/convertToWorldSpaceAR_0">&nbsp;&nbsp;&nbsp;&nbsp;convertToWorldSpaceAR(p)</option>
+						<option value="//property/getChildByTag_0">&nbsp;&nbsp;&nbsp;&nbsp;getChildByTag(tag)</option>
+						<option value="//property/locationAROfTouch_0">&nbsp;&nbsp;&nbsp;&nbsp;locationAROfTouch(touch)</option>
+						<option value="//property/locationOfTouch_0">&nbsp;&nbsp;&nbsp;&nbsp;locationOfTouch(touch)</option>
+						<option value="//property/removeAllChildren_0">&nbsp;&nbsp;&nbsp;&nbsp;removeAllChildren([cleanup])</option>
+						<option value="//property/removeChild_0">&nbsp;&nbsp;&nbsp;&nbsp;removeChild(child, [cleanup])</option>
+						<option value="//property/removeChildByTag_0">&nbsp;&nbsp;&nbsp;&nbsp;removeChildByTag(tag, [cleanup])</option>
+						<option value="//property/removeFromParent_0">&nbsp;&nbsp;&nbsp;&nbsp;removeFromParent([cleanup])</option>
+						<option value="//property/reorderChild_0">&nbsp;&nbsp;&nbsp;&nbsp;reorderChild(child, z)</option>
+						<option value="//property/runAction_0">&nbsp;&nbsp;&nbsp;&nbsp;runAction(action)</option>
+						<option value="//property/scheduleTimer_0">&nbsp;&nbsp;&nbsp;&nbsp;scheduleTimer(callback, interval, [repeatTimes], [delay])</option>
+						<option value="//property/scheduleUpdate_0">&nbsp;&nbsp;&nbsp;&nbsp;scheduleUpdate()</option>
+						<option value="//property/stopAllActions_0">&nbsp;&nbsp;&nbsp;&nbsp;stopAllActions()</option>
+						<option value="//property/unscheduleAllTimers_0">&nbsp;&nbsp;&nbsp;&nbsp;unscheduleAllTimers()</option>
+						<option value="//property/unscheduleTimer_0">&nbsp;&nbsp;&nbsp;&nbsp;unscheduleTimer(callback)</option>
+						<option value="//property/unscheduleUpdate_0">&nbsp;&nbsp;&nbsp;&nbsp;unscheduleUpdate()</option>
+					
+						<option value="class_attributes">Class Attributes</option>
+						<option value="//property/INVALID_TAG_0">&nbsp;&nbsp;&nbsp;&nbsp;INVALID_TAG</option>
+					</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+				
+				<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview_constructors">Overview of Constructors</a></span></li>
+				
+				<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Overview of Tasks</a></span><ul>
+					<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Attributes">Attributes</a></span></li>
+					<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Handling Touch Events">Handling Touch Events</a></span></li>
+					<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Functions">Functions</a></span></li>
+					<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Converting Between Node Coordinate Systems">Converting Between Node Coordinate Systems</a></span></li>
+					<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Managing Actions">Managing Actions</a></span></li>
+					<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Managing Frame Update Event">Managing Frame Update Event</a></span></li>
+					<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Managing Timers">Managing Timers</a></span></li>
+					<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Class Attributes">Class Attributes</a></span></li>
+				</ul></li>
+				
+				<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a	href="#constructors">Constructors</a></span>
+					<ul>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//constructor/Node_0">Node()</a></span></li>
+					</ul>
+				</li>
+				
+				<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a	href="#attributes">Attributes</a></span>
+					<ul>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/anchor_0">anchor</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/anchorInPixels_0">anchorInPixels</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/boundingBox_0">boundingBox</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/boundingBoxInPixels_0">boundingBoxInPixels</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/camera_0">camera</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/children_0">children</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/contentSize_0">contentSize</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/contentSizeInPixels_0">contentSizeInPixels</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/isRelativeAnchor_0">isRelativeAnchor</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/isRunning_0">isRunning</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/onframeupdate_0">onframeupdate</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/ontouchcancel_0">ontouchcancel</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/ontouchend_0">ontouchend</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/ontouchmove_0">ontouchmove</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/ontouchstart_0">ontouchstart</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/parent_0">parent</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/position_0">position</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/positionInPixels_0">positionInPixels</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/rotation_0">rotation</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/scale_0">scale</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/skew_0">skew</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/tag_0">tag</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/touchEnabled_0">touchEnabled</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/userInteractionEnabled_0">userInteractionEnabled</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/visible_0">visible</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/zOrder_0">zOrder</a></span></li>
+					</ul>
+				</li>
+				
+				<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a	href="#functions">Functions</a></span>
+					<ul>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/addChild_0">addChild(child, [z], [tag])</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/cleanup_0">cleanup()</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/convertParentToNodeSpace_0">convertParentToNodeSpace(p)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/convertToNodeSpace_0">convertToNodeSpace(p)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/convertToNodeSpaceAR_0">convertToNodeSpaceAR(p)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/convertToWorldSpace_0">convertToWorldSpace(p)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/convertToWorldSpaceAR_0">convertToWorldSpaceAR(p)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/getChildByTag_0">getChildByTag(tag)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/locationAROfTouch_0">locationAROfTouch(touch)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/locationOfTouch_0">locationOfTouch(touch)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/removeAllChildren_0">removeAllChildren([cleanup])</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/removeChild_0">removeChild(child, [cleanup])</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/removeChildByTag_0">removeChildByTag(tag, [cleanup])</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/removeFromParent_0">removeFromParent([cleanup])</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/reorderChild_0">reorderChild(child, z)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/runAction_0">runAction(action)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/scheduleTimer_0">scheduleTimer(callback, interval, [repeatTimes], [delay])</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/scheduleUpdate_0">scheduleUpdate()</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/stopAllActions_0">stopAllActions()</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/unscheduleAllTimers_0">unscheduleAllTimers()</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/unscheduleTimer_0">unscheduleTimer(callback)</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/unscheduleUpdate_0">unscheduleUpdate()</a></span></li>
+					</ul>
+				</li>
+				
+				<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a	href="#class_attributes">Class Attributes</a></span>
+					<ul>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/INVALID_TAG_0">INVALID_TAG</a></span></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="Node Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+						<li><a href="index.html">Index</a></li>
+						<li><a href="hierarchy.html">Hierarchy</a></li>
+					</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">Node Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">JavaScript Object</td>
+</tr>
+<tr>
+	<td class="specification-title">Location</td>
+	<td class="specification-value"><a href="NamespaceG2D.html#//property/Node_0">aphid.g2d.Node</a></td>
+</tr>
+
+						</tbody></table></div>
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The <code>Node</code> class represents a basic display unit in OpenAphid. It defines a rectangular area on the screen and the interfaces to manage the content inside the area.</p>
+
+<p>The <code>Node</code> class itself provides basic behavior for controlling the position, visibility, size and other attributes of the rectangular area. More sophisticated content can be presented by its subclasses, like <a href="Sprite.html">Sprite</a>, <a href="ColorNode.html">ColorNode</a>, etc.</p>
+
+<p>The &lsquo;Node&rsquo; class also acts as a container to embed other nodes and manage visual hierarchies. This creates a parent-child relationship between the node being embedded (known as the <strong>subnode</strong>) and the parent node doing the embedding (known as <strong>parent node</strong>).</p>
+
+<p>A subnode&rsquo;s visible area is not clipped to the bounds of its parent node. A <code>clipToBounds</code> attributes will be implemented in a future release to accomplish the same clipping behavior as iOS UIView does.</p>
+
+<p>A parent node may contain multiple subnodes, but each subnode has only one parent node.</p>
+
+<p>The geometry of a node is defined by its <code>position</code>, <code>anchor</code> and <code>contentSize</code> attributes. </p>
+
+<h3 id="handling-touch-event">Handling Touch Event</h3>
+
+<p>A node can be the target to handle touch events. The <code>userInteractionEnabled</code> and <code>touchEnabled</code> attributes determine whether a node can handle touch events.</p>
+
+<p>If <code>userInteractionEnabled</code> of a node is <code>false</code>, then the node and its subnode cannot respond to any touch event; If <code>touchEnabled</code> is <code>false</code> while <code>userInteractionEnabled</code> is <code>true</code>, the node cannot respond to touch events, but its subnodes could handle touch events.</p>
+
+<p>OpenAphid uses hit-testing and the node hierarchy to find the node to receive the touch event. In hit-testing, the systems calls <code>hitTest</code>(internal C++ method) on the running scene; this method proceeds by recursively calling <code>pointInside</code>(internal C++ method) on each node in the node hierarchy that return <code>true</code>. The hit-testing proceeds down the hierarchy until it finds the subnode within whose bounds the touch took place.</p>
+
+<p>As the default <code>contentSize</code> of a node is <code>Size.zero</code>, <code>pointInside</code> ignores zero-sized node and proceeds to its children directly.</p>
+
+<p>For a node which wants to handle touch events, it needs to meet the following conditions:</p>
+
+<ol>
+  <li>The [#Node.userInteractionEnabled] attributes of the node and all its parent nodes are <code>true</code>;</li>
+  <li>The <a href="#//property/touchEnabled_0">touchEnabled</a> attribute is <code>true</code>;</li>
+  <li>The <a href="#//property/visible_0">visible</a> attribute is <code>true</code>;</li>
+  <li>A touch event takes place inside the bounds of the node.</li>
+</ol>
+
+<p>Please also refer to our blog post: <a href="http://openaphid.github.com/blog/2012/05/06/tutorial-handling-touch-events-in-openaphid-v0-dot-1-1/">Tutorial: Handling Touch Events in OpenAphid v0.1.1</a></p>
+
+
+					</div>
+					
+					<div class="section section-tasks">
+						<a title="OverviewConstructors" name="overview_constructors"></a>
+						<h2 class="subtitle subtitle-tasks">Overview of Constructors</h2>
+						<ul class="task-list-col">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//constructor/Node_0">Node()</a></code>
+		
+	</span>
+</li>
+
+						</ul>
+					</div>
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Overview of Tasks</h2>
+						<a title="Attributes" name="task_Attributes"></a>
+						<h3 class="subsubtitle task-title">Attributes</h3>
+						<ul class="task-list-col" style="max-width: 80%">
+							<li>Name</li>
+							<li>
+	<span class="tooltip">
+		<code><a href="#//property/anchor_0">anchor</a></code>
+		<span class="tooltip"><p>Defines the anchor point of the node&rsquo;s bounds rectangle.</p>
+</span>
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/anchorInPixels_0">anchorInPixels</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/boundingBox_0">boundingBox</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/boundingBoxInPixels_0">boundingBoxInPixels</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/camera_0">camera</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/children_0">children</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/contentSize_0">contentSize</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/contentSizeInPixels_0">contentSizeInPixels</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/isRelativeAnchor_0">isRelativeAnchor</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/isRunning_0">isRunning</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/onframeupdate_0">onframeupdate</a></code>
+		<span class="tooltip"><p>Registers a JavaScript callback, which can be invoked when updating each frame.</p>
+</span>
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/parent_0">parent</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/position_0">position</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/positionInPixels_0">positionInPixels</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/rotation_0">rotation</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/scale_0">scale</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/skew_0">skew</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/tag_0">tag</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/visible_0">visible</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/zOrder_0">zOrder</a></code>
+		<span class="tooltip"><p>Determines the display ordering of the node</p>
+</span>
+	</span>
+</li>
+
+						</ul>
+						<ul class="task-list-col">
+							<li>Type</li>
+							<li>
+	<code>Point</code>
+</li>
+<li>
+	<code>Point</code>
+</li>
+<li>
+	<code>Rect</code>
+</li>
+<li>
+	<code>Rect</code>
+</li>
+<li>
+	<code>Camera</code>
+</li>
+<li>
+	<code>NodeList</code>
+</li>
+<li>
+	<code>Size</code>
+</li>
+<li>
+	<code>Size</code>
+</li>
+<li>
+	<code>bool</code>
+</li>
+<li>
+	<code>bool</code>
+</li>
+<li>
+	<code>function</code>
+</li>
+<li>
+	<code>Node</code>
+</li>
+<li>
+	<code>Point</code>
+</li>
+<li>
+	<code>Point</code>
+</li>
+<li>
+	<code>float</code>
+</li>
+<li>
+	<code>Vector2</code>
+</li>
+<li>
+	<code>Vector2</code>
+</li>
+<li>
+	<code>int</code>
+</li>
+<li>
+	<code>bool</code>
+</li>
+<li>
+	<code>int</code>
+</li>
+
+						</ul>
+						<ul class="task-list-col">
+							<li>Writability</li>
+							<li>
+		<code>readwrite</code>
+</li>
+<li>
+		<code>readonly</code>
+</li>
+<li>
+		<code>readonly</code>
+</li>
+<li>
+		<code>readonly</code>
+</li>
+<li>
+		<code>readonly</code>
+</li>
+<li>
+		<code>readonly</code>
+</li>
+<li>
+		<code>readwrite</code>
+</li>
+<li>
+		<code>readwrite</code>
+</li>
+<li>
+		<code>readwrite</code>
+</li>
+<li>
+		<code>readonly</code>
+</li>
+<li>
+		<code>readwrite</code>
+</li>
+<li>
+		<code>readonly</code>
+</li>
+<li>
+		<code>readwrite</code>
+</li>
+<li>
+		<code>readwrite</code>
+</li>
+<li>
+		<code>readwrite</code>
+</li>
+<li>
+		<code>readwrite</code>
+</li>
+<li>
+		<code>readwrite</code>
+</li>
+<li>
+		<code>readwrite</code>
+</li>
+<li>
+		<code>readwrite</code>
+</li>
+<li>
+		<code>readonly</code>
+</li>
+
+						</ul>
+												<a title="Handling Touch Events" name="task_Handling Touch Events"></a>
+						<h3 class="subsubtitle task-title">Handling Touch Events</h3>
+						<ul class="task-list-col" style="max-width: 80%">
+							<li>Name</li>
+							<li>
+	<span class="tooltip">
+		<code><a href="#//property/ontouchcancel_0">ontouchcancel</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/ontouchend_0">ontouchend</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/ontouchmove_0">ontouchmove</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/ontouchstart_0">ontouchstart</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/touchEnabled_0">touchEnabled</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/userInteractionEnabled_0">userInteractionEnabled</a></code>
+		
+	</span>
+</li>
+
+						</ul>
+						<ul class="task-list-col">
+							<li>Type</li>
+							<li>
+	<code>function</code>
+</li>
+<li>
+	<code>function</code>
+</li>
+<li>
+	<code>function</code>
+</li>
+<li>
+	<code>function</code>
+</li>
+<li>
+	<code>bool</code>
+</li>
+<li>
+	<code>bool</code>
+</li>
+
+						</ul>
+						<ul class="task-list-col">
+							<li>Writability</li>
+							<li>
+		<code>readwrite</code>
+</li>
+<li>
+		<code>readwrite</code>
+</li>
+<li>
+		<code>readwrite</code>
+</li>
+<li>
+		<code>readwrite</code>
+</li>
+<li>
+		<code>readwrite</code>
+</li>
+<li>
+		<code>readwrite</code>
+</li>
+
+						</ul>
+												<a title="Functions" name="task_Functions"></a>
+						<h3 class="subsubtitle task-title">Functions</h3>
+						<ul class="task-list-col" style="max-width: 80%">
+							<li>Signature</li>
+							<li>
+	<span class="tooltip">
+		<code><a href="#//property/addChild_0">addChild(child, [z], [tag])</a></code>
+		<span class="tooltip"><p>Adds a node to the receiver&rsquo;s list of subnodes.</p>
+</span>
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/cleanup_0">cleanup()</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/getChildByTag_0">getChildByTag(tag)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/removeAllChildren_0">removeAllChildren([cleanup])</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/removeChild_0">removeChild(child, [cleanup])</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/removeChildByTag_0">removeChildByTag(tag, [cleanup])</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/removeFromParent_0">removeFromParent([cleanup])</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/reorderChild_0">reorderChild(child, z)</a></code>
+		
+	</span>
+</li>
+
+						</ul>
+						<ul class="task-list-col">
+							<li>Return Type</li>
+							<li>
+	<code>Node</code>
+</li>
+<li>
+	<code>void</code>
+</li>
+<li>
+	<code>Node</code>
+</li>
+<li>
+	<code>void</code>
+</li>
+<li>
+	<code>void</code>
+</li>
+<li>
+	<code>void</code>
+</li>
+<li>
+	<code>void</code>
+</li>
+<li>
+	<code>void</code>
+</li>
+
+						</ul>
+												<a title="Converting Between Node Coordinate Systems" name="task_Converting Between Node Coordinate Systems"></a>
+						<h3 class="subsubtitle task-title">Converting Between Node Coordinate Systems</h3>
+						<ul class="task-list-col" style="max-width: 80%">
+							<li>Signature</li>
+							<li>
+	<span class="tooltip">
+		<code><a href="#//property/convertParentToNodeSpace_0">convertParentToNodeSpace(p)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/convertToNodeSpace_0">convertToNodeSpace(p)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/convertToNodeSpaceAR_0">convertToNodeSpaceAR(p)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/convertToWorldSpace_0">convertToWorldSpace(p)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/convertToWorldSpaceAR_0">convertToWorldSpaceAR(p)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/locationAROfTouch_0">locationAROfTouch(touch)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/locationOfTouch_0">locationOfTouch(touch)</a></code>
+		
+	</span>
+</li>
+
+						</ul>
+						<ul class="task-list-col">
+							<li>Return Type</li>
+							<li>
+	<code>Point</code>
+</li>
+<li>
+	<code>Point</code>
+</li>
+<li>
+	<code>Point</code>
+</li>
+<li>
+	<code>Point</code>
+</li>
+<li>
+	<code>Point</code>
+</li>
+<li>
+	<code>Point</code>
+</li>
+<li>
+	<code>Point</code>
+</li>
+
+						</ul>
+												<a title="Managing Actions" name="task_Managing Actions"></a>
+						<h3 class="subsubtitle task-title">Managing Actions</h3>
+						<ul class="task-list-col" style="max-width: 80%">
+							<li>Signature</li>
+							<li>
+	<span class="tooltip">
+		<code><a href="#//property/runAction_0">runAction(action)</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/stopAllActions_0">stopAllActions()</a></code>
+		
+	</span>
+</li>
+
+						</ul>
+						<ul class="task-list-col">
+							<li>Return Type</li>
+							<li>
+	<code>void</code>
+</li>
+<li>
+	<code>void</code>
+</li>
+
+						</ul>
+												<a title="Managing Frame Update Event" name="task_Managing Frame Update Event"></a>
+						<h3 class="subsubtitle task-title">Managing Frame Update Event</h3>
+						<ul class="task-list-col" style="max-width: 80%">
+							<li>Signature</li>
+							<li>
+	<span class="tooltip">
+		<code><a href="#//property/scheduleUpdate_0">scheduleUpdate()</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/unscheduleUpdate_0">unscheduleUpdate()</a></code>
+		
+	</span>
+</li>
+
+						</ul>
+						<ul class="task-list-col">
+							<li>Return Type</li>
+							<li>
+	<code>void</code>
+</li>
+<li>
+	<code>void</code>
+</li>
+
+						</ul>
+												<a title="Managing Timers" name="task_Managing Timers"></a>
+						<h3 class="subsubtitle task-title">Managing Timers</h3>
+						<ul class="task-list-col" style="max-width: 80%">
+							<li>Signature</li>
+							<li>
+	<span class="tooltip">
+		<code><a href="#//property/scheduleTimer_0">scheduleTimer(callback, interval, [repeatTimes], [delay])</a></code>
+		<span class="tooltip"><p>Starts a timer.</p>
+</span>
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/unscheduleAllTimers_0">unscheduleAllTimers()</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
+		<code><a href="#//property/unscheduleTimer_0">unscheduleTimer(callback)</a></code>
+		
+	</span>
+</li>
+
+						</ul>
+						<ul class="task-list-col">
+							<li>Return Type</li>
+							<li>
+	<code>void</code>
+</li>
+<li>
+	<code>void</code>
+</li>
+<li>
+	<code>void</code>
+</li>
+
+						</ul>
+												<a title="Class Attributes" name="task_Class Attributes"></a>
+						<h3 class="subsubtitle task-title">Class Attributes</h3>
+						<ul class="task-list-col" style="max-width: 80%">
+							<li>Name</li>
+							<li>
+	<span class="tooltip">
+		<code><a href="#//property/INVALID_TAG_0">INVALID_TAG</a></code>
+		
+	</span>
+</li>
+
+						</ul>
+						<ul class="task-list-col">
+							<li>Type</li>
+							<li>
+	<code>int</code>
+</li>
+
+						</ul>
+						<ul class="task-list-col">
+							<li>Writability</li>
+							<li>
+		<code>readonly</code>
+</li>
+
+						</ul>
+												
+					</div>
+
+					<div class="section section-methods">
+						<a title="Constructors" name="constructors"></a>
+						<h2 class="subtitle subtitle-methods">Constructors</h2>
+						<div class="section-method">
+							<a name="//constructor/Node_0" title="Node()"></a>
+							<h3 class="subsubtitle method-title">Node()</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>new</code> Node()</div>
+							
+							
+							
+							
+							
+							
+						</div>
+					</div>
+
+					<div class="section section-methods">
+						<a title="Attributes" name="attributes"></a>
+
+						<h2 class="subtitle subtitle-methods">Attributes</h2>
+						<div class="section-method">
+							<a name="//property/anchor_0" title="anchor"></a>
+							<h3 class="subsubtitle method-title">anchor</h3>
+							
+							
+							<div class="method-subsection brief-description">
+								<p>Defines the anchor point of the node&rsquo;s bounds rectangle.</p>
+
+							</div>
+							
+							<div class="method-subsection method-declaration"><code>Non-null readwrite</code> <a href="Point.html">Point</a> anchor</div>
+							
+							
+							
+							
+							<div class="method-subsection discussion-section">
+								<h4 class="method-subtitle">Discussion</h4>
+								<p>Defaults to (0.0, 0.0), the left-bottom of the bounds rectangle.</p>
+
+<p><strong>Notes:</strong> the default value of <code>anchor</code> may be different in the subclasses of <code>Node</code>, like the default <code>anchor</code> of <code>Sprite</code> class is (0.5, 0.5), the center of its bounds rectangle. </p>
+
+							</div>
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/anchorInPixels_0" title="anchorInPixels"></a>
+							<h3 class="subsubtitle method-title">anchorInPixels</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>Non-null readonly</code> <a href="Point.html">Point</a> anchorInPixels</div>
+							
+							
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/boundingBox_0" title="boundingBox"></a>
+							<h3 class="subsubtitle method-title">boundingBox</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>Non-null readonly</code> <a href="Rect.html">Rect</a> boundingBox</div>
+							
+							
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/boundingBoxInPixels_0" title="boundingBoxInPixels"></a>
+							<h3 class="subsubtitle method-title">boundingBoxInPixels</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>Non-null readonly</code> <a href="Rect.html">Rect</a> boundingBoxInPixels</div>
+							
+							
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/camera_0" title="camera"></a>
+							<h3 class="subsubtitle method-title">camera</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>readonly</code> <a href="Camera.html">Camera</a> camera</div>
+							
+							
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/children_0" title="children"></a>
+							<h3 class="subsubtitle method-title">children</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>readonly</code> <a href="NodeList.html">NodeList</a> children</div>
+							
+							
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/contentSize_0" title="contentSize"></a>
+							<h3 class="subsubtitle method-title">contentSize</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>Non-null readwrite</code> <a href="Size.html">Size</a> contentSize</div>
+							
+							
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/contentSizeInPixels_0" title="contentSizeInPixels"></a>
+							<h3 class="subsubtitle method-title">contentSizeInPixels</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>Non-null readwrite</code> <a href="Size.html">Size</a> contentSizeInPixels</div>
+							
+							
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/isRelativeAnchor_0" title="isRelativeAnchor"></a>
+							<h3 class="subsubtitle method-title">isRelativeAnchor</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>readwrite</code> <code>bool</code> isRelativeAnchor</div>
+							
+							
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/isRunning_0" title="isRunning"></a>
+							<h3 class="subsubtitle method-title">isRunning</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>readonly</code> <code>bool</code> isRunning</div>
+							
+							
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/onframeupdate_0" title="onframeupdate"></a>
+							<h3 class="subsubtitle method-title">onframeupdate</h3>
+							
+							
+							<div class="method-subsection brief-description">
+								<p>Registers a JavaScript callback, which can be invoked when updating each frame.</p>
+
+							</div>
+							
+							<div class="method-subsection method-declaration"><code>readwrite</code> <code>function</code> onframeupdate</div>
+							
+							
+							
+							
+							<div class="method-subsection discussion-section">
+								<h4 class="method-subtitle">Discussion</h4>
+								<p>To make the registered callback be notified, <code>scheduleUpdate()</code> must be invoked to put the current node into the frame update event queue. <code>unscheduleUpdate</code> stops the node from receiving frame update.</p>
+
+<p>The callback function will receive two parameters: <code>target</code> and <code>deltaTime</code>. <code>target</code> is the node which was registered with the callback; <code>deltaTime</code> is the interval from last frame measured in seconds.</p>
+
+<pre><code>node.onframeupdate = function(target, deltaTime) {
+
+	};
+node.scheduleUpdate();
+</code></pre>
+
+<p>Set <code>null</code> to <code>onframeupdate</code> will also invoke <code>unscheduleUpdate</code> automatically.</p>
+
+							</div>
+							
+							
+							<div class="method-subsection see-also-section">
+								<h4 class="method-subtitle">See Also</h4>
+								<ul>
+									<li><code><p><a href="#//property/scheduleUpdate_0">scheduleUpdate</a></p>
+</code></li>
+									<li><code><p><a href="#//property/unscheduleUpdate_0">unscheduleUpdate</a></p>
+</code></li>
+								</ul>
+							</div>
+						</div>
+						<div class="section-method">
+							<a name="//property/ontouchcancel_0" title="ontouchcancel"></a>
+							<h3 class="subsubtitle method-title">ontouchcancel</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>readwrite</code> <code>function</code> ontouchcancel</div>
+							
+							
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/ontouchend_0" title="ontouchend"></a>
+							<h3 class="subsubtitle method-title">ontouchend</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>readwrite</code> <code>function</code> ontouchend</div>
+							
+							
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/ontouchmove_0" title="ontouchmove"></a>
+							<h3 class="subsubtitle method-title">ontouchmove</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>readwrite</code> <code>function</code> ontouchmove</div>
+							
+							
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/ontouchstart_0" title="ontouchstart"></a>
+							<h3 class="subsubtitle method-title">ontouchstart</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>readwrite</code> <code>function</code> ontouchstart</div>
+							
+							
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/parent_0" title="parent"></a>
+							<h3 class="subsubtitle method-title">parent</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>readonly</code> <a href="Node.html">Node</a> parent</div>
+							
+							
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/position_0" title="position"></a>
+							<h3 class="subsubtitle method-title">position</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>Non-null readwrite</code> <a href="Point.html">Point</a> position</div>
+							
+							
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/positionInPixels_0" title="positionInPixels"></a>
+							<h3 class="subsubtitle method-title">positionInPixels</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>Non-null readwrite</code> <a href="Point.html">Point</a> positionInPixels</div>
+							
+							
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/rotation_0" title="rotation"></a>
+							<h3 class="subsubtitle method-title">rotation</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>readwrite</code> <code>float</code> rotation</div>
+							
+							
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/scale_0" title="scale"></a>
+							<h3 class="subsubtitle method-title">scale</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>Non-null readwrite</code> <a href="Vector2.html">Vector2</a> scale</div>
+							
+							
+							
+							
+							<div class="method-subsection discussion-section">
+								<h4 class="method-subtitle">Discussion</h4>
+								<p>An <code>int</code> value is also valid; both <code>scale.x</code> and <code>scale.y</code> will be set to it.</p>
+
+							</div>
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/skew_0" title="skew"></a>
+							<h3 class="subsubtitle method-title">skew</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>Non-null readwrite</code> <a href="Vector2.html">Vector2</a> skew</div>
+							
+							
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/tag_0" title="tag"></a>
+							<h3 class="subsubtitle method-title">tag</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>readwrite</code> <code>int</code> tag</div>
+							
+							
+							
+							
+							<div class="method-subsection discussion-section">
+								<h4 class="method-subtitle">Discussion</h4>
+								<p><strong>Notes:</strong> this is a subject to change in the future release, it&rsquo;s planned to support <code>string</code> tags in OpenAphid as DOM does.</p>
+
+							</div>
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/touchEnabled_0" title="touchEnabled"></a>
+							<h3 class="subsubtitle method-title">touchEnabled</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>readwrite</code> <code>bool</code> touchEnabled</div>
+							
+							
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/userInteractionEnabled_0" title="userInteractionEnabled"></a>
+							<h3 class="subsubtitle method-title">userInteractionEnabled</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>readwrite</code> <code>bool</code> userInteractionEnabled</div>
+							
+							
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/visible_0" title="visible"></a>
+							<h3 class="subsubtitle method-title">visible</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>readwrite</code> <code>bool</code> visible</div>
+							
+							
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/zOrder_0" title="zOrder"></a>
+							<h3 class="subsubtitle method-title">zOrder</h3>
+							
+							
+							<div class="method-subsection brief-description">
+								<p>Determines the display ordering of the node</p>
+
+							</div>
+							
+							<div class="method-subsection method-declaration"><code>readonly</code> <code>int</code> zOrder</div>
+							
+							
+							
+							
+							<div class="method-subsection discussion-section">
+								<h4 class="method-subtitle">Discussion</h4>
+								<p>A node with smaller <code>zOrder</code> is displayed in front of other nodes.</p>
+
+							</div>
+							
+							
+						</div>
+					</div>
+
+					<div class="section section-methods">
+						<a title="Functions" name="functions"></a>
+
+						<h2 class="subtitle subtitle-methods">Functions</h2>
+						<div class="section-method">
+							<a name="//property/addChild_0" title="addChild(child, [z], [tag])"></a>
+							<h3 class="subsubtitle method-title">addChild(child, [z], [tag])</h3>
+							
+							
+							<div class="method-subsection brief-description">
+								<p>Adds a node to the receiver&rsquo;s list of subnodes.</p>
+
+							</div>
+							
+							<div class="method-subsection method-declaration"><a href="Node.html">Node</a> addChild(<a href="Node.html">Node</a> child, <em>[<code>int</code> z]</em>, <em>[<code>int</code> tag]</em>)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Node.html">Node</a> child</dt>
+									<dd><p>The node to be added</p>
+</dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code>  Optional </code><code>int</code> z</dt>
+									<dd><p>The <code>zOrder</code> of the new subnode</p>
+</dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code>  Optional </code><code>int</code> tag</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>Node</code></h4>
+								<p>The same receiver node of <code>addChild</code> is returned. It&rsquo;s helpful for method chaining.</p>
+
+							</div>
+							
+							
+							<div class="method-subsection discussion-section">
+								<h4 class="method-subtitle">Discussion</h4>
+								<p>The child node&rsquo;s <code>parent</code> is set to the receiver.</p>
+
+<p>Nodes can have only one parent node. If <code>child</code> already has a parent and that node is the receiver, <code>reorderChild</code> is invoked instead; if that parent node is not the receiver, this method makes <code>child</code> invoke <code>removeFromParent(false)</code> before adding it as a subnode.</p>
+
+<p><strong>Notes:</strong> adding a child which already has a parent node is usually not the expected behavior, OpenAphid displays a warning message about it in develop mode.</p>
+
+							</div>
+							
+							
+							<div class="method-subsection see-also-section">
+								<h4 class="method-subtitle">See Also</h4>
+								<ul>
+									<li><code><p><a href="#//property/cleanup_0">cleanup</a></p>
+</code></li>
+								</ul>
+							</div>
+						</div>
+						<div class="section-method">
+							<a name="//property/cleanup_0" title="cleanup()"></a>
+							<h3 class="subsubtitle method-title">cleanup()</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>void</code> cleanup()</div>
+							
+							
+							
+							
+							<div class="method-subsection discussion-section">
+								<h4 class="method-subtitle">Discussion</h4>
+								<p>The <code>cleanup</code> function does the following things:</p>
+
+<ol>
+  <li>Stops all actions, same as calling <code>stopAllActions</code> manually;</li>
+  <li>Prevents the node from receiving the frame update event, same as calling <code>unscheduleUpdate</code> manually;</li>
+  <li>Unschedule all timers, same as calling <code>unscheduleAllTimers</code> manually;</li>
+  <li>All children nodes will proceed with the three steps above recursively.</li>
+</ol>
+
+<p><strong>Notes:</strong> the values of <code>onframeupdate</code> and <code>ontouchxxx</code> will <strong>NOT</strong> be reset to <code>null</code>, they will keep their original values.</p>
+
+							</div>
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/convertParentToNodeSpace_0" title="convertParentToNodeSpace(p)"></a>
+							<h3 class="subsubtitle method-title">convertParentToNodeSpace(p)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="Point.html">Point</a> convertParentToNodeSpace(<a href="Point.html">Point</a> p)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Point.html">Point</a> p</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>Point</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/convertToNodeSpace_0" title="convertToNodeSpace(p)"></a>
+							<h3 class="subsubtitle method-title">convertToNodeSpace(p)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="Point.html">Point</a> convertToNodeSpace(<a href="Point.html">Point</a> p)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Point.html">Point</a> p</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>Point</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/convertToNodeSpaceAR_0" title="convertToNodeSpaceAR(p)"></a>
+							<h3 class="subsubtitle method-title">convertToNodeSpaceAR(p)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="Point.html">Point</a> convertToNodeSpaceAR(<a href="Point.html">Point</a> p)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Point.html">Point</a> p</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>Point</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/convertToWorldSpace_0" title="convertToWorldSpace(p)"></a>
+							<h3 class="subsubtitle method-title">convertToWorldSpace(p)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="Point.html">Point</a> convertToWorldSpace(<a href="Point.html">Point</a> p)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Point.html">Point</a> p</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>Point</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/convertToWorldSpaceAR_0" title="convertToWorldSpaceAR(p)"></a>
+							<h3 class="subsubtitle method-title">convertToWorldSpaceAR(p)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="Point.html">Point</a> convertToWorldSpaceAR(<a href="Point.html">Point</a> p)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Point.html">Point</a> p</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>Point</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/getChildByTag_0" title="getChildByTag(tag)"></a>
+							<h3 class="subsubtitle method-title">getChildByTag(tag)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="Node.html">Node</a> getChildByTag(<code>int</code> tag)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>int</code> tag</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>Node</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/locationAROfTouch_0" title="locationAROfTouch(touch)"></a>
+							<h3 class="subsubtitle method-title">locationAROfTouch(touch)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="Point.html">Point</a> locationAROfTouch(<a href="Touch.html">Touch</a> touch)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Touch.html">Touch</a> touch</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>Point</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/locationOfTouch_0" title="locationOfTouch(touch)"></a>
+							<h3 class="subsubtitle method-title">locationOfTouch(touch)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><a href="Point.html">Point</a> locationOfTouch(<a href="Touch.html">Touch</a> touch)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Touch.html">Touch</a> touch</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							<div class="method-subsection return">
+								<h4 class="method-subtitle parameter-title">Return Value:&nbsp;<code>Point</code></h4>
+								
+							</div>
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/removeAllChildren_0" title="removeAllChildren([cleanup])"></a>
+							<h3 class="subsubtitle method-title">removeAllChildren([cleanup])</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>void</code> removeAllChildren(<em>[<code>bool</code> cleanup]</em>)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code>  Optional </code><code>bool</code> cleanup</dt>
+									<dd><p>Set to <code>true</code> will invoke <code>cleanup</code> on each subnode after they&rsquo;re removed from the parent. Default is <code>true</code>.</p>
+</dd>
+								</dl>
+							</div>
+							
+							
+							
+							
+							
+							<div class="method-subsection see-also-section">
+								<h4 class="method-subtitle">See Also</h4>
+								<ul>
+									<li><code><p><a href="#//property/cleanup_0">cleanup</a></p>
+</code></li>
+								</ul>
+							</div>
+						</div>
+						<div class="section-method">
+							<a name="//property/removeChild_0" title="removeChild(child, [cleanup])"></a>
+							<h3 class="subsubtitle method-title">removeChild(child, [cleanup])</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>void</code> removeChild(<a href="Node.html">Node</a> child, <em>[<code>bool</code> cleanup]</em>)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><a href="Node.html">Node</a> child</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code>  Optional </code><code>bool</code> cleanup</dt>
+									<dd><p>Set to <code>true</code> will invoke <code>child.cleanup</code> after it&rsquo;s removed from the parent. Default is <code>true</code>.</p>
+</dd>
+								</dl>
+							</div>
+							
+							
+							
+							
+							
+							<div class="method-subsection see-also-section">
+								<h4 class="method-subtitle">See Also</h4>
+								<ul>
+									<li><code><p><a href="#//property/cleanup_0">cleanup</a></p>
+</code></li>
+								</ul>
+							</div>
+						</div>
+						<div class="section-method">
+							<a name="//property/removeChildByTag_0" title="removeChildByTag(tag, [cleanup])"></a>
+							<h3 class="subsubtitle method-title">removeChildByTag(tag, [cleanup])</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>void</code> removeChildByTag(<code>int</code> tag, <em>[<code>bool</code> cleanup]</em>)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>int</code> tag</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code>  Optional </code><code>bool</code> cleanup</dt>
+									<dd><p>Set to <code>true</code> will invoke <code>child.cleanup</code> after it&rsquo;s removed from the parent. Default is <code>true</code>.</p>
+</dd>
+								</dl>
+							</div>
+							
+							
+							
+							
+							
+							<div class="method-subsection see-also-section">
+								<h4 class="method-subtitle">See Also</h4>
+								<ul>
+									<li><code><p><a href="#//property/cleanup_0">cleanup</a></p>
+</code></li>
+								</ul>
+							</div>
+						</div>
+						<div class="section-method">
+							<a name="//property/removeFromParent_0" title="removeFromParent([cleanup])"></a>
+							<h3 class="subsubtitle method-title">removeFromParent([cleanup])</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>void</code> removeFromParent(<em>[<code>bool</code> cleanup]</em>)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code>  Optional </code><code>bool</code> cleanup</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/reorderChild_0" title="reorderChild(child, z)"></a>
+							<h3 class="subsubtitle method-title">reorderChild(child, z)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>void</code> reorderChild(<a href="Node.html">Node</a> child, <code>int</code> z)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><a href="Node.html">Node</a> child</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>int</code> z</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/runAction_0" title="runAction(action)"></a>
+							<h3 class="subsubtitle method-title">runAction(action)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>void</code> runAction(<a href="Action.html">Action</a> action)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><a href="Action.html">Action</a> action</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/scheduleTimer_0" title="scheduleTimer(callback, interval, [repeatTimes], [delay])"></a>
+							<h3 class="subsubtitle method-title">scheduleTimer(callback, interval, [repeatTimes], [delay])</h3>
+							
+							
+							<div class="method-subsection brief-description">
+								<p>Starts a timer.</p>
+
+							</div>
+							
+							<div class="method-subsection method-declaration"><code>void</code> scheduleTimer(<code>function</code> callback, <code>float</code> interval, <em>[<code>int</code> repeatTimes]</em>, <em>[<code>float</code> delay]</em>)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><code>function</code> callback</dt>
+									<dd></dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code> </code><code>float</code> interval</dt>
+									<dd><p>The number of seconds between firings of the time. </p>
+</dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code>  Optional </code><code>int</code> repeatTimes</dt>
+									<dd><p>The maximum firing times. Default is -1, which means unlimited firings.</p>
+</dd>
+								</dl>
+								<dl class="argument-def parameter-def">
+									<dt><code>  Optional </code><code>float</code> delay</dt>
+									<dd><p>The number of seconds before starting the timer. Default is 0.</p>
+</dd>
+								</dl>
+							</div>
+							
+							
+							
+							<div class="method-subsection discussion-section">
+								<h4 class="method-subtitle">Discussion</h4>
+								<p>A timer is started after <code>delay</code> time interval has elapsed and then invokes <code>callback</code> periodically with respect to the specified <code>interval</code>. If <code>repeatTimes</code> is a positive value, the timers will stop after being fired <code>repeatTimes</code>.&rdquo;</p>
+
+<p>The callback will receive three parameters: <code>target</code>, <code>callback</code> and <code>deltaTime</code>. <code>target</code> is the node which the timer started with; <code>callback</code> is the original function object passed in <code>scheduleTimer</code>; <code>deltaTime</code> is the elapsed time between firings.</p>
+
+<p>A scheduled timer can be manually stopped by using <code>unscheduleTimer()</code> or making <code>callback</code> return <code>false</code>:</p>
+
+<pre><code>//Starts a timer which fires every second.
+node.scheduleTimer(
+	function(target, callback, deltaTime) {
+		if (should stop firing)
+			return false; //or: target.unscheduleTimer(callback);
+		},
+	1.0);
+</code></pre>
+
+							</div>
+							
+							
+							<div class="method-subsection see-also-section">
+								<h4 class="method-subtitle">See Also</h4>
+								<ul>
+									<li><code><p><a href="#//property/unscheduleTimer_0">unscheduleTimer</a></p>
+</code></li>
+									<li><code><p><a href="#//property/unscheduleAllTimers_0">unscheduleAllTimers</a></p>
+</code></li>
+								</ul>
+							</div>
+						</div>
+						<div class="section-method">
+							<a name="//property/scheduleUpdate_0" title="scheduleUpdate()"></a>
+							<h3 class="subsubtitle method-title">scheduleUpdate()</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>void</code> scheduleUpdate()</div>
+							
+							
+							
+							
+							
+							
+							<div class="method-subsection see-also-section">
+								<h4 class="method-subtitle">See Also</h4>
+								<ul>
+									<li><code><p><a href="#//property/unscheduleUpdate_0">unscheduleUpdate</a></p>
+</code></li>
+									<li><code><p><a href="#//property/onframeupdate_0">onframeupdate</a></p>
+</code></li>
+								</ul>
+							</div>
+						</div>
+						<div class="section-method">
+							<a name="//property/stopAllActions_0" title="stopAllActions()"></a>
+							<h3 class="subsubtitle method-title">stopAllActions()</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>void</code> stopAllActions()</div>
+							
+							
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/unscheduleAllTimers_0" title="unscheduleAllTimers()"></a>
+							<h3 class="subsubtitle method-title">unscheduleAllTimers()</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>void</code> unscheduleAllTimers()</div>
+							
+							
+							
+							
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/unscheduleTimer_0" title="unscheduleTimer(callback)"></a>
+							<h3 class="subsubtitle method-title">unscheduleTimer(callback)</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>void</code> unscheduleTimer(<code>function</code> callback)</div>
+							
+							<div class="method-subsection arguments-section parameters">
+								<h4 class="method-subtitle parameter-title">Parameters</h4>
+								<dl class="argument-def parameter-def">
+									<dt><code> Non-null </code><code>function</code> callback</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							
+							
+							
+							
+							
+							<div class="method-subsection see-also-section">
+								<h4 class="method-subtitle">See Also</h4>
+								<ul>
+									<li><code><p><a href="#//property/scheduleTimer_0">scheduleTimer</a></p>
+</code></li>
+								</ul>
+							</div>
+						</div>
+						<div class="section-method">
+							<a name="//property/unscheduleUpdate_0" title="unscheduleUpdate()"></a>
+							<h3 class="subsubtitle method-title">unscheduleUpdate()</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>void</code> unscheduleUpdate()</div>
+							
+							
+							
+							
+							
+							
+							<div class="method-subsection see-also-section">
+								<h4 class="method-subtitle">See Also</h4>
+								<ul>
+									<li><code><p><a href="#//property/scheduleUpdate_0">scheduleUpdate</a></p>
+</code></li>
+									<li><code><p><a href="#//property/onframeupdate_0">onframeupdate</a></p>
+</code></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="section section-methods">
+						<a title="ClassAttributes" name="class_attributes"></a>
+
+						<h2 class="subtitle subtitle-methods">Class Attributes</h2>
+						<div class="section-method">
+							<a name="//property/INVALID_TAG_0" title="INVALID_TAG"></a>
+							<h3 class="subsubtitle method-title">Node.INVALID_TAG</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>readonly</code> <code>int</code> INVALID_TAG</div>
+							
+							
+							
+							
+							<div class="method-subsection discussion-section">
+								<h4 class="method-subtitle">Discussion</h4>
+								<p>Constant value: -1. <strong>Notes:</strong> this is a subject to change in the future release.</p>
+
+							</div>
+							
+							
+						</div>
+					</div>
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+						<li><a href="index.html">Index</a></li>
+						<li><a href="hierarchy.html">Hierarchy</a></li>
+					</ul>
+				</div>
+								<div id="footer">
+									<hr/>
+									<div class="footer-copyright">
+										<p><span
+											class="copyright">&copy; 2012 Aphid Mobile. All rights reserved. (Revision: <span id="revision"></span>, last updated: <span id="update_time"></span>)</span>
+										<br/>
+										<span class="generator"><a target="_blank" href="http://github.com/openaphid">http://github.com/openaphid</a></span>
+										<!--span class="generator">Generated by <a
+											href="http://github.com/openaphid">OpenAphid Doc Generator 0.1</a>.</span-->
+										</p>
+									</div>
+								</div>
+				
+								<script type="text/javascript">//<![CDATA[
+								var lastUpdateEl = document.getElementById("update_time");
+								lastUpdateEl.innerHTML = aphiddoc.pageVersions["Node"]["update"];
+								document.getElementById("revision").innerHTML = aphiddoc.pageVersions["Node"]["revision"];
+								//]]></script>
+			</div>
+		</article>
+	</body>
+</html>

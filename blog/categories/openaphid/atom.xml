@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: OpenAphid | OpenAphid]]></title>
+  <link href="http://openaphid.github.com/blog/categories/openaphid/atom.xml" rel="self"/>
+  <link href="http://openaphid.github.com/"/>
+  <updated>2012-05-15T22:42:32+08:00</updated>
+  <id>http://openaphid.github.com/</id>
+  <author>
+    <name><![CDATA[Aphid Mobile]]></name>
+    <email><![CDATA[openaphid@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[OpenAphid v0.1 Released]]></title>
+    <link href="http://openaphid.github.com/blog/2012/04/29/openaphid-v0-dot-1-released/"/>
+    <updated>2012-04-29T20:11:00+08:00</updated>
+    <id>http://openaphid.github.com/blog/2012/04/29/openaphid-v0-dot-1-released</id>
+    <content type="html"><![CDATA[<p>We're excited to release OpenAphid v0.1, which is the first public version of the project.</p>
+
+<p>Three GitHub repositories have been created:</p>
+
+<!-- more -->
+
+
+<ul>
+<li><p><code>Runtime</code>: <a href="https://github.com/openaphid/Runtime">https://github.com/openaphid/Runtime</a>. As the core runtime of OpenAphid, it's an iOS static library project and is mainly written in C++. Besides porting the OpenGL ES rendering from <a href="http://www.cocos2d-iphone.org/">Cocos2d-iPhone</a>, it also manages the binding layer which exposes the 2D rendering as <a href="/api-doc/latest/index.html">JavaScript APIs</a>.</p></li>
+<li><p><code>Demos</code>: <a href="https://github.com/openaphid/Demos">https://github.com/openaphid/Demos</a>. This repository includes several demos of OpenAphid. <code>PortedDemos</code> contains four iOS applications which are ported from <a href="http://www.cocos2d-iphone.org/">Cocos2d-iPhone</a>: NodeTest, SpriteTest, EffectTest and AdvEffectTest. They demonstrate how to manipulate nodes, sprites and actions in JavaScript APIs. <code>TankBenchmarks</code> is the benchmark described in our <a href="/blog/2012/02/20/javascript-and-cocos2d-a-sneak-peek/">previous post</a>. The implementation by using <a href="https://developer.mobage.com/">ngCore</a> is also presented for your reference. You can build and run them on your iOS devices to reproduce the benchmark results.</p></li>
+<li><p><code>Boilerplate-iOS</code>: <a href="https://github.com/openaphid/Boilerplate-iOS">https://github.com/openaphid/Boilerplate-iOS</a>. It's a template project for developing iOS games with OpenAphid. It's a good start point if you want to play with the APIs of OpenAphid by yourself.</p></li>
+</ul>
+
+
+<p>The <a href="/api-doc/latest/index.html">JavaScript API references</a> of OpenAphid v0.1 is also available. It's a bit rough right now. We promise that it'll be improved in the future.</p>
+
+<h2>Highlights of OpenAphid v0.1</h2>
+
+<p>v0.1 is the start of OpenAphid. We admit that it's not ready for real product yet, but we'd like to present some characteristics of the project here.</p>
+
+<ul>
+<li><p>OpenAphid APIs can be considered as the "DOM" APIs for 2D games on mobile devices. The internal binding layer is implemented in the similar approach as <a href="http://www.webkit.org/">WebKit</a> does for binding native objects to the JavaScript engine;</p></li>
+<li><p>The memory occupied by native objects is managed automatically. Compared to some other script based game engines, OpenAphid doesn't provide destroy API at script level for any native objects. Native objects that are created in JavaScript are managed by the JavaScript garbage collector as other pure JavaScript objects.</p></li>
+<li><p>OpenAphid follows the standard specifications to implement some core features. Although the rendering system of OpenAphid is ported from Cocos2d-iPhone, which is not supported in browsers; the other APIs in OpenAphid are designed to follow W3C standards. For example, the <code>console</code> object in global scope is provided as it is in browsers; the <code>XMLHttpRequest</code> APIs are partially implemented in v0.1, and will be fully compatible to its W3C specification in a future release. And the touch event handling in OpenAphid is implemented as the same as in DOM, which is totally different from Cocos2d-iPhone.</p></li>
+<li><p>OpenAphid is fast and efficient. The benchmark result in the <a href="/blog/2012/02/20/javascript-and-cocos2d-a-sneak-peek/">previous post</a> has been updated by using v0.1, which is slightly faster. We also evaluated the memory usage of OpenAphid with the same benchmark (lower is better):</p></li>
+</ul>
+
+
+<p><img src="/images/tank_benchmark_mem_v0.1.jpg" title="Real memory" alt="Real memory usage of OpenAphid and ngcore" /></p>
+
+<blockquote><p>The data are captured by using the Activity Monitor of Xcode Instruments. The memory usage of the benchmark on ngcore v1.6 is presented for reference only.</p></blockquote>
+
+<h2>What's Next for OpenAphid</h2>
+
+<p>We're working hard to improve OpenAphid. Most efforts are spent on the following tasks:</p>
+
+<ul>
+<li><p>Ports more features from Cocos2d-iPhone, like physics support, audio support, etc;</p></li>
+<li><p>Supports Android OS;</p></li>
+<li><p>Provides binding APIs for integrating 3rd-party services. The binding system in OpenAphid Runtime is designed for the performance requirement of OpenGL ES rendering, but it's not suitable for general purpose. Another binding system is planned to bridge JavaScript codes and Objective-C(or Java on Android in the future releases) easily. The <code>Boilerplate-iOS</code> project will also be improved by integrating 3rd-party services, like analytics, in-app purchase, advertisement;</p></li>
+<li><p>Implements more W3C standard APIs, includes making XMLHttpRequest fully compatible to specifications, adding FileSystem and WebSocket supports, etc.</p></li>
+</ul>
+
+
+<p>Please feel free to contact us with your questions and suggestions via <code>openaphid At gmail.com</code>. We’d appreciate it for your kind help.</p>
+
+<h2>Special Thanks</h2>
+
+<p>We'd like to express our appreciation to <a href="http://wannadobre.carbonmade.com/">Oana Dobre</a>, who designed the cute aphid graphics and allowed us to use them for free.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[JavaScript and Cocos2D-iPhone: a sneak peek of OpenAphid]]></title>
+    <link href="http://openaphid.github.com/blog/2012/02/20/javascript-and-cocos2d-a-sneak-peek/"/>
+    <updated>2012-02-20T23:26:00+08:00</updated>
+    <id>http://openaphid.github.com/blog/2012/02/20/javascript-and-cocos2d-a-sneak-peek</id>
+    <content type="html"><![CDATA[<h2>What is OpenAphid?</h2>
+
+<p><em>OpenAphid</em> is our secret OSS project to combine the power of JavaScript and <a href="http://www.cocos2d-iphone.org/">Cocos2d-iPhone</a> for native game development on mobile devices. It allows developers to write fast and native quality games in JavaScript language. The architecture of OpenAphid can be summarized as below:</p>
+
+<!-- more -->
+
+
+<p><img src="/images/architecture.jpg" title="Architecture of OpenAphid" alt="architecture" /></p>
+
+<p>A set of Cocos2D-style JavaScript APIs are provided for composing scenes, applying actions on nodes, handling events, etc. The core runtime of OpenAphid is wrote in C++, which adopts the architecture of Cocos2d-iPhone. The JavaScript binding module bridges the C++ runtime and the JavaScript engine, which allows games to use native features in pure JavaScript.</p>
+
+<p>We decided to implement the core of OpenAphid in C++ instead of reusing the Objective-C code base from Cocos2d-iPhone. The first reason is for portability. The current WIP version is for iOS only as Cocos2d-iPhone, but we'd like to support Android and other platforms after the iOS version is stable. The other consideration is for faster JavaScript binding. We want to reduce the performance overhead introduced by the script layer as small as possible.</p>
+
+<h2>Why use JavaScript?</h2>
+
+<p>JavaScript is one of the most popular programming languages in the world. OpenAphid enables developers using a familiar language for mobile game development, and it can also make the development cycle in a web speed.</p>
+
+<p>At the development stage, developers can save the script and reload it on devices to see the changes instantly. No need to compile and re-deploy anymore.</p>
+
+<p>OpenAphid is not the first one to bring JavaScript into native game development. There are several other frameworks which take the similar approaches. The most famous one is <a href="https://developer.mobage.com/">ngCore</a> from <a href="http://dena.jp/intl/">DeNA Co., Ltd</a>.</p>
+
+<h2>Performance Benchmark Setup</h2>
+
+<p>We adopt a benchmark program introduced in <a href="http://www.slideshare.net/devsumi/17a6smartphone-xplatform">a presentation of ngCore SDK</a>. The program is modified a bit and implemented in Cocos2d-iPhone, ngCore and OpenAphid. The benchmark is composed by several parts, let's describe them using APIs from OpenAphid:</p>
+
+<blockquote><p><strong> Updates at 2012-04-28: </strong> code snippets were updated according to the API changes in v0.1 release.</p></blockquote>
+
+<h5>A background image(Size 1024x1024)</h5>
+
+<p><code>javascript
+var scene = new aphid.g2d.Scene();
+var background = new aphid.g2d.Sprite(new aphid.g2d.Texture2D("background.png"));
+scene.addChild(background);
+</code></p>
+
+<h4>A frame-by-frame animation(5 frames)</h4>
+
+<p>The animation is made from a 320x64 size image, which is originally included in a sample project of ngCore SDK:</p>
+
+<p><img src="/images/tank.png" title="Tank" alt="tank animation" />
+``` javascript
+var texture = new aphid.g2d.Texture2D("tank.png");</p>
+
+<p>var frames = [];
+var imgSize = texture.contentSize;
+for (var i = 0; i &lt; 5; i++) {</p>
+
+<pre><code>var frame = new aphid.g2d.SpriteFrame(
+                                    texture, 
+                                    new aphid.core.Rect(
+                                                        imgSize.width * i / 5, 
+                                                        0, 
+                                                        imgSize.width / 5, 
+                                                        imgSize.height
+                                                        )
+                                    );
+frames.push(frame);
+</code></pre>
+
+<p>}
+```</p>
+
+<h4>Tank moves per frame inside the screen</h4>
+
+<p>Dozens of small tanks are added to the scene. Each of them has a random initial position and changes it during each frame.
+``` javascript
+var tank = {} //declare a namespace
+tank.maxTankCount = 1000;</p>
+
+<p>tank.Tank = function(texture) {</p>
+
+<pre><code>//fields
+this.sprite_ = new aphid.g2d.Sprite(texture);
+//the movement velocity and direction
+this.vx_ = Math.random() &gt; 0.5 ? 0.1 : -0.1;
+this.vy_ = Math.random() &gt; 0.5 ? 0.1 : -0.1;
+
+var winSize = aphid.g2d.director.winSize;
+//a random initial position
+this.sprite_.position = new aphid.core.Point(Math.random() * winSize.width, Math.random() * winSize.height);
+//setup and register frame update listener
+this.sprite_.onframeupdate = bind(this, this.handleFrameUpdate);
+this.sprite_.scheduleUpdate();
+</code></pre>
+
+<p>};</p>
+
+<p>tank.Tank.prototype.getSprite = function() {return this.sprite_;};</p>
+
+<p>tank.Tank.prototype.handleFrameUpdate = function(target, interval) {</p>
+
+<pre><code>    var p = this.sprite_.position;
+    p.x += interval * 1000 * this.vx_;
+    p.y += interval * 1000 * this.vy_;
+    var size = aphid.g2d.director.winSize;
+    if (p.x &lt; 0) {
+        p.x = 0;
+        this.vx_ = -this.vx_;
+    }
+
+    if (p.x &gt; size.width) {
+        p.x = size.width;
+        this.vx_ = -this.vx_;
+    }
+
+    if (p.y &lt; 0) {
+        p.y = 0;
+        this.vy_ = -this.vy_;
+    }
+
+    if (p.y &gt; size.height) {
+        p.y = size.height;
+        this.vy_ = -this.vy_;
+    }
+    this.sprite_.position = p;
+</code></pre>
+
+<p>};
+```</p>
+
+<h4>Apply animation and add tanks to the scene</h4>
+
+<p>After applying the animation, the size of tank sprite is 64x64.
+```javascript
+var animation = new aphid.g2d.Animation(frames, 0.05);
+var action = aphid.g2d.actions.repeatForever(</p>
+
+<pre><code>aphid.g2d.actions.animate(animation, false)
+);
+</code></pre>
+
+<p>for (var i = 0; i &lt; tank.maxTankCount; i++) {</p>
+
+<pre><code>var newTank = new tank.Tank(frames[0].texture);
+newTank.getSprite().runAction(action.copy());
+scene.addChild(newTank.getSprite());
+</code></pre>
+
+<p>}
+```</p>
+
+<h4>Run the scene</h4>
+
+<p>```javascript</p>
+
+<pre><code>var director = aphid.g2d.director;
+director.runScene(scene);
+</code></pre>
+
+<p>```</p>
+
+<p>A screenshot of the benchmark running with 100 tanks:</p>
+
+<p><img src="/images/screenshot_openaphid_100tanks.png" title="Screenshot" alt="screenshot of 100 tanks in OpenAphid" /></p>
+
+<h2>Benchmark Environment</h2>
+
+<p>The same benchmark is implemented in Cocos2d-iPhone, ngCore and OpenAphid. We tried to run it using the latest stable version of each:</p>
+
+<ul>
+<li><a href="http://www.cocos2d-iphone.org/download">Cocos2d-iPhone 1.0.1</a>. CCSpriteBatchNode is not used to make sure the benchmark share the same behavior in each framework. CC_DIRECTOR_FAST_FPS is also turned off for the same reason. CC_DIRECTOR_FPS_INTERVAL is set to 1.0f.</li>
+<li><a href="https://developer.mobage.com/">ngCore 1.6-20120209</a>. The performance of ngCore has improved a lot in this latest release than v0.9 which is used in the <a href="http://www.slideshare.net/devsumi/17a6smartphone-xplatform">presentation</a>.</li>
+<li>OpenAphid. An internal stable release is used to run the test.</li>
+</ul>
+
+
+<p>The benchmark is performed on an iPod Touch 3rd generation (32GB). The hardware specification can be found from its <a href="http://en.wikipedia.org/wiki/IPod_Touch">wikipedia page</a>.</p>
+
+<h3>Benchmark Results</h3>
+
+<p>The FPS data are recorded for running different number of tanks on each framework. The FPS of ngCore is not consistent, so we tracked both the high and low FPS data.</p>
+
+<blockquote><p><strong> Updates at 2012-04-28: </strong> benchmark results are updated by using OpenAphid v0.1 release.</p></blockquote>
+
+<p><img src="/images/tank_benchmark_fps_v0.1.jpg" title="Benchmark Results (Updated at 2012-04-28)" alt="performance benchmark" /></p>
+
+<p>OpenAphid gives a pleasant result. It's faster than ngCore and keeps 60 FPS when there are less than 200 tank sprites. The FPS is lower than Cocos2d-iPhone's when adding more tanks, it's acceptable as there are hundreds of native-to-JavaScript update callbacks to invoke during each frame. And we'll keep working to improve its performance.</p>
+
+<h2>When will OpenAphid be released?</h2>
+
+<p>OpenAphid is still under development. We're working hard to make the first public release available in the middle of April. All source codes will be public then. Please feel free to mail us with your questions and suggestions via <em>openaphid At gmail.com</em>. We'd appreciate it for your kind help.</p>
+]]></content>
+  </entry>
+  
+</feed>
