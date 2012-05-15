@@ -4,7 +4,7 @@
   <title><![CDATA[OpenAphid]]></title>
   <link href="http://openaphid.github.com/atom.xml" rel="self"/>
   <link href="http://openaphid.github.com/"/>
-  <updated>2012-05-09T00:09:18+08:00</updated>
+  <updated>2012-05-15T22:42:32+08:00</updated>
   <id>http://openaphid.github.com/</id>
   <author>
     <name><![CDATA[Aphid Mobile]]></name>
@@ -12,6 +12,31 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[OpenAphid 0.2 is Available]]></title>
+    <link href="http://openaphid.github.com/blog/2012/05/15/openaphid-0-dot-2-available/"/>
+    <updated>2012-05-15T22:28:00+08:00</updated>
+    <id>http://openaphid.github.com/blog/2012/05/15/openaphid-0-dot-2-available</id>
+    <content type="html"><![CDATA[<p>AphidMobile is pleased to announce the availability of OpenAphid 0.2.</p>
+
+<p>Highlights of the 0.2 release include:</p>
+
+<!-- more -->
+
+
+<ul>
+<li>New binding system for exposing Objective-C methods to JavaScript</li>
+<li>Hide <code>constructor</code> when enumerating attributs of an OpenAphid JavaScript object</li>
+<li>Fix incorrect value of <code>node.onframeupdate</code> when it&#8217;s not set; should be <code>null</code> instead of an invalid empty value</li>
+<li>Add a new target of <code>ObjCBindingTest</code> in <a href="https://github.com/openaphid/Demos">Demos</a></li>
+<li>Support Google Analytics iOS SDK in <a href="https://github.com/openaphid/Boilerplate-iOS">Boilerplate-iOS</a></li>
+</ul>
+
+
+<p>A new tutorial is coming in this week to introduce the new binding system for exposing Objective-C functions into JavaScript. Please stay tuned!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Tutorial: Handling Touch Events in OpenAphid v0.1.1]]></title>
