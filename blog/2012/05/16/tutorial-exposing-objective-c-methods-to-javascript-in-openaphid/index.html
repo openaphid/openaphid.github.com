@@ -1,0 +1,529 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Tutorial: Calling Objective-C Methods from JavaScript in OpenAphid - OpenAphid</title>
+  <meta name="author" content="Aphid Mobile">
+
+  
+  <meta name="description" content="OpenAphid 0.2 was shipped with a new binding system which can bridge JavaScript functions to Objective-C methods on demand. It&#8217;s useful for &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://openaphid.github.com/blog/2012/05/16/tutorial-exposing-objective-c-methods-to-javascript-in-openaphid">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="OpenAphid" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<!--link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css"-->
+
+<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-29340978-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+<h1><img src="/images/aphid-logo.png" width="64"><a href="/">OpenAphid</a></h1>
+  
+    <h2>JavaScript + Cocos2D for Native Mobile Games</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/api-doc/latest/index.html" target="_blank">API References</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Tutorial: Calling Objective-C Methods From JavaScript in OpenAphid</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-16T10:06:00+08:00" pubdate data-updated="true">May 16<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><a href="https://github.com/openaphid">OpenAphid</a> 0.2 was shipped with a new binding system which can bridge JavaScript functions to Objective-C methods on demand. It&#8217;s useful for games to integrate analytics services, monetization solutions, and social services, etc. In this tutorial, we&#8217;ll go through the binding system by demonstrating how to integrate <a href="https://developers.google.com/analytics/devguides/collection/ios/">Google Analytics iOS SDK</a> into OpenAphid.</p>
+
+<!-- more -->
+
+
+<h2>How to Access Objective-C Methods in JavaScript</h2>
+
+<p>The <code>OABindingProtocol</code> protocol, defined in <a href="https://github.com/openaphid/Runtime/blob/master/PreBuild/OABindingProtocol.h">OABindingProtocol.h</a>, defines a method <code>bindSelectors:</code> that you can implement in your Objective-C classes to expose their methods to the JavaScript environment. To make a method valid for export, its return type and all argument types must be the supported types below:</p>
+
+<h3>Type Conversion of Return Value from Objective-C to JavaScript</h3>
+
+<table class="aphid-table">
+    <tr>
+        <th>Objective-C</th>
+        <th>JavaScript</th>
+    </tr>
+    <tr>
+        <td>void</td> <td>undefined</td>
+    </tr>
+    <tr>
+        <td>nil or NSNull</td> <td>null</td>
+    </tr>
+    <tr>
+        <td>primitive numeric types<br/>(int, float, double, etc)</td> <td>number</td>
+    </tr>
+    <tr>
+        <td>NSNumber</td> <td>number</td>
+    </tr>
+    <tr>
+        <td>NSString</td> <td>string</td>
+    </tr>
+    <tr>
+        <td>NSArray</td> <td>array</td>
+    </tr>
+    <tr>
+        <td>NSDictionary</td> <td>object</td>
+    </tr>
+</table>
+
+
+<h3>Type Conversion of Argument Value from JavaScript to Objective-C</h3>
+
+<table class="aphid-table">
+    <tr>
+        <th>JavaScript</th> <th>Objective-C</th>
+    </tr>
+    <tr>
+        <td>undefined</td> <td>nil or NSNull</td>
+    </tr>
+    <tr>
+        <td>null</td> <td>nil or NSNull</td>
+    </tr>
+    <tr>
+        <td>number</td> <td>primitive number or NSNumber</td>
+    </tr>
+    <tr>
+        <td>string</td> <td>NSString</td>
+    </tr>
+    <tr>
+        <td>array</td> <td>NSArray</td>
+    </tr>
+    <tr>
+        <td>object except array</td> <td>NSDictionary</td>
+    </tr>
+</table>
+
+
+<p>For any method to export, it must be explicitly declared in the implementation of <code>bindSelectors:</code> in your Objective-C class. For example, the snippet below exports <code>[DatastoreBinding saveString:]</code> to JavaScript environment as <code>int saveString(string)</code>:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='objective-c'><span class='line'><span class="cp">#import &quot;OABindingProtocol&quot;</span>
+</span><span class='line'><span class="k">@interface</span> <span class="nc">DatastoreBinding</span> : <span class="nc">NSObject</span> <span class="o">&lt;</span><span class="n">OABindingProtocol</span><span class="o">&gt;</span>
+</span><span class='line'><span class="k">@end</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">@</span><span class="n">implementation</span> <span class="n">DatastoreBinding</span>
+</span><span class='line'><span class="o">-</span> <span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span> <span class="nl">saveString:</span><span class="p">(</span><span class="n">NSString</span><span class="o">*</span><span class="p">)</span><span class="n">content</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="p">[</span><span class="n">_myDatastore</span> <span class="nl">save:</span><span class="n">content</span><span class="p">];</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="cp">#pragma OABindingProtocol</span>
+</span><span class='line'><span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="nl">bindSelectors:</span><span class="p">(</span><span class="n">OABindingMap</span><span class="o">*</span><span class="p">)</span><span class="n">bindingMap</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="p">[</span><span class="n">bindingMap</span> <span class="nl">bindSelector:</span><span class="k">@selector</span><span class="p">(</span><span class="nl">saveString:</span><span class="p">)</span> <span class="nl">forName:</span><span class="s">@&quot;saveString&quot;</span><span class="p">];</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="k">@end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The binding object need be injected into JavaScript via <code>setScriptBinding:name:iOSOnly:</code> method of <a href="https://github.com/openaphid/Runtime/blob/master/PreBuild/OAGLViewController.h">OAGLViewController</a>:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='objective-c'><span class='line'><span class="k">-</span> <span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span><span class="nf">application:</span><span class="p">(</span><span class="n">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="nv">application</span> <span class="nf">didFinishLaunchingWithOptions:</span><span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">launchOptions</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="c1">//...</span>
+</span><span class='line'>  <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">viewController</span><span class="p">.</span><span class="n">glViewController</span> <span class="nl">setScriptBinding:</span><span class="p">[[[</span><span class="n">DatastoreBinding</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">]</span> <span class="n">autorelease</span><span class="p">]</span>
+</span><span class='line'>                                                    <span class="nl">name:</span><span class="s">@&quot;datastore&quot;</span>
+</span><span class='line'>                                                 <span class="nl">iOSOnly:</span><span class="n">YES</span>
+</span><span class='line'>   <span class="p">];</span>
+</span><span class='line'>  <span class="c1">//...</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>OpenAphid injects an instance of <code>DatastoreBinding</code> as a JavaScript object of <code>[object DynamicBinding]</code> into JavaScript environment. And its name is <code>datastore</code>. The <code>iOSOnly</code> argument manages the namespace which contains the injected object. If it&#8217;s <code>YES</code>, then the injected object can be accessed via <code>aphid.extios.datastore</code>; otherwise it can be accessed via <code>aphid.ext.datastore</code>.</p>
+
+<blockquote><p>Notes: the <code>iOSOnly</code> argument is actually designed for future compliance when OpenAphid supports both iOS and Android.</p></blockquote>
+
+<h2>Integration with Google Analytics in Boilerplate-iOS</h2>
+
+<p>Let&#8217;s see a more concrete example about integrating Google Analytics in <a href="https://github.com/openaphid/Boilerplate-iOS">Boilerplate-iOS</a>.</p>
+
+<p>After adding Google Analytics iOS SDK into the Xcode project by following its <a href="https://developers.google.com/analytics/devguides/collection/ios/devguide#gettingStarted">official instructions</a>. We create an Objective-C object to describe the binding in <a href="https://github.com/openaphid/Boilerplate-iOS/blob/master/Boilerplate/Boilerplate/OAGoogleAnalyticsBinding.h">OAGoogleAnalyticsBinding.h</a>:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='objective-c'><span class='line'><span class="k">@interface</span> <span class="nc">OAGoogleAnalyticsBinding</span> : <span class="nc">NSObject</span> <span class="o">&lt;</span><span class="n">OABindingProtocol</span><span class="o">&gt;</span>
+</span><span class='line'><span class="k">@end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then we add implementations of several methods in <a href="https://github.com/openaphid/Boilerplate-iOS/blob/master/Boilerplate/Boilerplate/OAGoogleAnalyticsBinding.m">OAGoogleAnalyticsBinding.m</a> that we want to invoke in JavaScript:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='objective-c'><span class='line'><span class="k">@implementation</span> <span class="nc">OAGoogleAnalyticsBinding</span>
+</span><span class='line'><span class="c1">//...</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="nf">startTrackerWithAccountID:</span><span class="p">(</span><span class="n">NSString</span><span class="o">*</span><span class="p">)</span><span class="nv">accountID</span> <span class="nf">despatchPeriod:</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="nv">period</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="p">[[</span><span class="n">GANTracker</span> <span class="n">sharedTracker</span><span class="p">]</span> <span class="nl">startTrackerWithAccountID:</span><span class="n">accountID</span> <span class="nl">dispatchPeriod:</span><span class="n">period</span> <span class="nl">delegate:</span><span class="nb">nil</span><span class="p">];</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">-</span> <span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span><span class="nf">trackPageview:</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">pageURL</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="k">return</span> <span class="p">[[</span><span class="n">GANTracker</span> <span class="n">sharedTracker</span><span class="p">]</span> <span class="nl">trackPageview:</span><span class="n">pageURL</span> <span class="nl">withError:</span><span class="nb">NULL</span><span class="p">];</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">//...</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The binding of the methods should be declared in the <code>bindSelectors:</code> method:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='objective-c'><span class='line'><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">bindSelectors:</span><span class="p">(</span><span class="n">OABindingMap</span> <span class="o">*</span><span class="p">)</span><span class="nv">bindingMap</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'><span class="p">[</span><span class="n">bindingMap</span> <span class="nl">bindSelector:</span><span class="k">@selector</span><span class="p">(</span><span class="nl">startTrackerWithAccountID:despatchPeriod:</span><span class="p">)</span>
+</span><span class='line'>                 <span class="nl">forName:</span><span class="s">@&quot;startTracker&quot;</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">//...</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">[</span><span class="n">bindingMap</span> <span class="nl">bindSelector:</span><span class="k">@selector</span><span class="p">(</span><span class="nl">trackPageview:</span><span class="p">)</span>
+</span><span class='line'>                 <span class="nl">forName:</span><span class="s">@&quot;trackPageView&quot;</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">//...</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then we can inject it into JavaScript as following code inside <a href="https://github.com/openaphid/Boilerplate-iOS/blob/master/Boilerplate/Boilerplate/OAAppDelegate.m">OAAppDelegate.m</a>:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='objective-c'><span class='line'><span class="k">-</span> <span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span><span class="nf">application:</span><span class="p">(</span><span class="n">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="nv">application</span> <span class="nf">didFinishLaunchingWithOptions:</span><span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">launchOptions</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="c1">//...</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">viewController</span><span class="p">.</span><span class="n">glViewController</span> <span class="nl">setScriptBinding:</span><span class="p">[[</span><span class="n">OAGoogleAnalyticsBinding</span> <span class="n">new</span><span class="p">]</span> <span class="n">autorelease</span><span class="p">]</span>
+</span><span class='line'>                                                    <span class="nl">name:</span><span class="s">@&quot;gat&quot;</span>
+</span><span class='line'>                                                 <span class="nl">iOSOnly:</span><span class="n">YES</span><span class="p">];</span>
+</span><span class='line'>  <span class="c1">//...</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now we can use Google Analytics in JavaScript to track the user&#8217;s behavior in games:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">gat</span> <span class="o">=</span> <span class="nx">aphid</span><span class="p">.</span><span class="nx">extios</span><span class="p">.</span><span class="nx">gat</span><span class="p">;</span> <span class="c1">//Google Analytics is injected as aphid.extios.gat</span>
+</span><span class='line'><span class="nx">gat</span><span class="p">.</span><span class="nx">startTracker</span><span class="p">(</span><span class="s2">&quot;UA-31741840-1&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span> <span class="c1">//start a tracker</span>
+</span><span class='line'><span class="nx">gat</span><span class="p">.</span><span class="nx">trackPageView</span><span class="p">(</span><span class="s2">&quot;main.js&quot;</span><span class="p">);</span> <span class="c1">//track a page view</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>We&#8217;re going to integrate more services into <a href="https://github.com/openaphid/Boilerplate-iOS">Boilerplate-iOS</a>, and make it be a better starter kit for game development with OpenAphid.</p>
+
+<p>If you have better ideas, please feel free to contact us via <code>openaphid@gmail.com</code> or raise an issue in our <a href="https://github.com/openaphid">github repositories</a>.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Aphid Mobile</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-16T10:06:00+08:00" pubdate data-updated="true">May 16<span>th</span>, 2012</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://openaphid.github.com/blog/2012/05/16/tutorial-exposing-objective-c-methods-to-javascript-in-openaphid/" data-via="openaphid" data-counturl="http://openaphid.github.com/blog/2012/05/16/tutorial-exposing-objective-c-methods-to-javascript-in-openaphid/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/05/15/openaphid-0-dot-2-available/" title="Previous Post: OpenAphid 0.2 is Available">&laquo; OpenAphid 0.2 is Available</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/05/16/tutorial-exposing-objective-c-methods-to-javascript-in-openaphid/">Tutorial: Calling Objective-C Methods from JavaScript in OpenAphid</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/05/15/openaphid-0-dot-2-available/">OpenAphid 0.2 is Available</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/05/06/tutorial-handling-touch-events-in-openaphid-v0-dot-1-1/">Tutorial: Handling Touch Events in OpenAphid v0.1.1</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/05/02/develop-mode-of-openaphid/">Tutorial: Developer Mode of OpenAphid</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/04/29/openaphid-v0-dot-1-released/">OpenAphid v0.1 Released</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/openaphid">@openaphid</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'openaphid',
+            count: 3,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("openaphid", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/openaphid" class="twitter-follow-button" data-show-count="false">Follow @openaphid</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+Copyright &copy; 2012 - Aphid Mobile - openaphid@gmail.com - 
+	<span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'openaphidblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://openaphid.github.com/blog/2012/05/16/tutorial-exposing-objective-c-methods-to-javascript-in-openaphid/';
+        var disqus_url = 'http://openaphid.github.com/blog/2012/05/16/tutorial-exposing-objective-c-methods-to-javascript-in-openaphid/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -4,7 +4,7 @@
   <title><![CDATA[OpenAphid]]></title>
   <link href="http://openaphid.github.com/atom.xml" rel="self"/>
   <link href="http://openaphid.github.com/"/>
-  <updated>2012-05-15T22:54:06+08:00</updated>
+  <updated>2012-05-16T16:20:46+08:00</updated>
   <id>http://openaphid.github.com/</id>
   <author>
     <name><![CDATA[Aphid Mobile]]></name>
@@ -12,6 +12,257 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Tutorial: Calling Objective-C Methods from JavaScript in OpenAphid]]></title>
+    <link href="http://openaphid.github.com/blog/2012/05/16/tutorial-exposing-objective-c-methods-to-javascript-in-openaphid/"/>
+    <updated>2012-05-16T10:06:00+08:00</updated>
+    <id>http://openaphid.github.com/blog/2012/05/16/tutorial-exposing-objective-c-methods-to-javascript-in-openaphid</id>
+    <content type="html"><![CDATA[<p><a href="https://github.com/openaphid">OpenAphid</a> 0.2 was shipped with a new binding system which can bridge JavaScript functions to Objective-C methods on demand. It&#8217;s useful for games to integrate analytics services, monetization solutions, and social services, etc. In this tutorial, we&#8217;ll go through the binding system by demonstrating how to integrate <a href="https://developers.google.com/analytics/devguides/collection/ios/">Google Analytics iOS SDK</a> into OpenAphid.</p>
+
+<!-- more -->
+
+
+<h2>How to Access Objective-C Methods in JavaScript</h2>
+
+<p>The <code>OABindingProtocol</code> protocol, defined in <a href="https://github.com/openaphid/Runtime/blob/master/PreBuild/OABindingProtocol.h">OABindingProtocol.h</a>, defines a method <code>bindSelectors:</code> that you can implement in your Objective-C classes to expose their methods to the JavaScript environment. To make a method valid for export, its return type and all argument types must be the supported types below:</p>
+
+<h3>Type Conversion of Return Value from Objective-C to JavaScript</h3>
+
+<table class="aphid-table">
+    <tr>
+        <th>Objective-C</th>
+        <th>JavaScript</th>
+    </tr>
+    <tr>
+        <td>void</td> <td>undefined</td>
+    </tr>
+    <tr>
+        <td>nil or NSNull</td> <td>null</td>
+    </tr>
+    <tr>
+        <td>primitive numeric types<br/>(int, float, double, etc)</td> <td>number</td>
+    </tr>
+    <tr>
+        <td>NSNumber</td> <td>number</td>
+    </tr>
+    <tr>
+        <td>NSString</td> <td>string</td>
+    </tr>
+    <tr>
+        <td>NSArray</td> <td>array</td>
+    </tr>
+    <tr>
+        <td>NSDictionary</td> <td>object</td>
+    </tr>
+</table>
+
+
+<h3>Type Conversion of Argument Value from JavaScript to Objective-C</h3>
+
+<table class="aphid-table">
+    <tr>
+        <th>JavaScript</th> <th>Objective-C</th>
+    </tr>
+    <tr>
+        <td>undefined</td> <td>nil or NSNull</td>
+    </tr>
+    <tr>
+        <td>null</td> <td>nil or NSNull</td>
+    </tr>
+    <tr>
+        <td>number</td> <td>primitive number or NSNumber</td>
+    </tr>
+    <tr>
+        <td>string</td> <td>NSString</td>
+    </tr>
+    <tr>
+        <td>array</td> <td>NSArray</td>
+    </tr>
+    <tr>
+        <td>object except array</td> <td>NSDictionary</td>
+    </tr>
+</table>
+
+
+<p>For any method to export, it must be explicitly declared in the implementation of <code>bindSelectors:</code> in your Objective-C class. For example, the snippet below exports <code>[DatastoreBinding saveString:]</code> to JavaScript environment as <code>int saveString(string)</code>:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='objective-c'><span class='line'><span class="cp">#import &quot;OABindingProtocol&quot;</span>
+</span><span class='line'><span class="k">@interface</span> <span class="nc">DatastoreBinding</span> : <span class="nc">NSObject</span> <span class="o">&lt;</span><span class="n">OABindingProtocol</span><span class="o">&gt;</span>
+</span><span class='line'><span class="k">@end</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">@</span><span class="n">implementation</span> <span class="n">DatastoreBinding</span>
+</span><span class='line'><span class="o">-</span> <span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span> <span class="nl">saveString:</span><span class="p">(</span><span class="n">NSString</span><span class="o">*</span><span class="p">)</span><span class="n">content</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="p">[</span><span class="n">_myDatastore</span> <span class="nl">save:</span><span class="n">content</span><span class="p">];</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="cp">#pragma OABindingProtocol</span>
+</span><span class='line'><span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="nl">bindSelectors:</span><span class="p">(</span><span class="n">OABindingMap</span><span class="o">*</span><span class="p">)</span><span class="n">bindingMap</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="p">[</span><span class="n">bindingMap</span> <span class="nl">bindSelector:</span><span class="k">@selector</span><span class="p">(</span><span class="nl">saveString:</span><span class="p">)</span> <span class="nl">forName:</span><span class="s">@&quot;saveString&quot;</span><span class="p">];</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="k">@end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The binding object need be injected into JavaScript via <code>setScriptBinding:name:iOSOnly:</code> method of <a href="https://github.com/openaphid/Runtime/blob/master/PreBuild/OAGLViewController.h">OAGLViewController</a>:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='objective-c'><span class='line'><span class="k">-</span> <span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span><span class="nf">application:</span><span class="p">(</span><span class="n">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="nv">application</span> <span class="nf">didFinishLaunchingWithOptions:</span><span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">launchOptions</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="c1">//...</span>
+</span><span class='line'>  <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">viewController</span><span class="p">.</span><span class="n">glViewController</span> <span class="nl">setScriptBinding:</span><span class="p">[[[</span><span class="n">DatastoreBinding</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">]</span> <span class="n">autorelease</span><span class="p">]</span>
+</span><span class='line'>                                                    <span class="nl">name:</span><span class="s">@&quot;datastore&quot;</span>
+</span><span class='line'>                                                 <span class="nl">iOSOnly:</span><span class="n">YES</span>
+</span><span class='line'>   <span class="p">];</span>
+</span><span class='line'>  <span class="c1">//...</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>OpenAphid injects an instance of <code>DatastoreBinding</code> as a JavaScript object of <code>[object DynamicBinding]</code> into JavaScript environment. And its name is <code>datastore</code>. The <code>iOSOnly</code> argument manages the namespace which contains the injected object. If it&#8217;s <code>YES</code>, then the injected object can be accessed via <code>aphid.extios.datastore</code>; otherwise it can be accessed via <code>aphid.ext.datastore</code>.</p>
+
+<blockquote><p>Notes: the <code>iOSOnly</code> argument is actually designed for future compliance when OpenAphid supports both iOS and Android.</p></blockquote>
+
+<h2>Integration with Google Analytics in Boilerplate-iOS</h2>
+
+<p>Let&#8217;s see a more concrete example about integrating Google Analytics in <a href="https://github.com/openaphid/Boilerplate-iOS">Boilerplate-iOS</a>.</p>
+
+<p>After adding Google Analytics iOS SDK into the Xcode project by following its <a href="https://developers.google.com/analytics/devguides/collection/ios/devguide#gettingStarted">official instructions</a>. We create an Objective-C object to describe the binding in <a href="https://github.com/openaphid/Boilerplate-iOS/blob/master/Boilerplate/Boilerplate/OAGoogleAnalyticsBinding.h">OAGoogleAnalyticsBinding.h</a>:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='objective-c'><span class='line'><span class="k">@interface</span> <span class="nc">OAGoogleAnalyticsBinding</span> : <span class="nc">NSObject</span> <span class="o">&lt;</span><span class="n">OABindingProtocol</span><span class="o">&gt;</span>
+</span><span class='line'><span class="k">@end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then we add implementations of several methods in <a href="https://github.com/openaphid/Boilerplate-iOS/blob/master/Boilerplate/Boilerplate/OAGoogleAnalyticsBinding.m">OAGoogleAnalyticsBinding.m</a> that we want to invoke in JavaScript:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='objective-c'><span class='line'><span class="k">@implementation</span> <span class="nc">OAGoogleAnalyticsBinding</span>
+</span><span class='line'><span class="c1">//...</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="nf">startTrackerWithAccountID:</span><span class="p">(</span><span class="n">NSString</span><span class="o">*</span><span class="p">)</span><span class="nv">accountID</span> <span class="nf">despatchPeriod:</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="nv">period</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="p">[[</span><span class="n">GANTracker</span> <span class="n">sharedTracker</span><span class="p">]</span> <span class="nl">startTrackerWithAccountID:</span><span class="n">accountID</span> <span class="nl">dispatchPeriod:</span><span class="n">period</span> <span class="nl">delegate:</span><span class="nb">nil</span><span class="p">];</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">-</span> <span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span><span class="nf">trackPageview:</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">pageURL</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="k">return</span> <span class="p">[[</span><span class="n">GANTracker</span> <span class="n">sharedTracker</span><span class="p">]</span> <span class="nl">trackPageview:</span><span class="n">pageURL</span> <span class="nl">withError:</span><span class="nb">NULL</span><span class="p">];</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">//...</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The binding of the methods should be declared in the <code>bindSelectors:</code> method:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='objective-c'><span class='line'><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">bindSelectors:</span><span class="p">(</span><span class="n">OABindingMap</span> <span class="o">*</span><span class="p">)</span><span class="nv">bindingMap</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'><span class="p">[</span><span class="n">bindingMap</span> <span class="nl">bindSelector:</span><span class="k">@selector</span><span class="p">(</span><span class="nl">startTrackerWithAccountID:despatchPeriod:</span><span class="p">)</span>
+</span><span class='line'>                 <span class="nl">forName:</span><span class="s">@&quot;startTracker&quot;</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">//...</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">[</span><span class="n">bindingMap</span> <span class="nl">bindSelector:</span><span class="k">@selector</span><span class="p">(</span><span class="nl">trackPageview:</span><span class="p">)</span>
+</span><span class='line'>                 <span class="nl">forName:</span><span class="s">@&quot;trackPageView&quot;</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">//...</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then we can inject it into JavaScript as following code inside <a href="https://github.com/openaphid/Boilerplate-iOS/blob/master/Boilerplate/Boilerplate/OAAppDelegate.m">OAAppDelegate.m</a>:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='objective-c'><span class='line'><span class="k">-</span> <span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span><span class="nf">application:</span><span class="p">(</span><span class="n">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="nv">application</span> <span class="nf">didFinishLaunchingWithOptions:</span><span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">launchOptions</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="c1">//...</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">viewController</span><span class="p">.</span><span class="n">glViewController</span> <span class="nl">setScriptBinding:</span><span class="p">[[</span><span class="n">OAGoogleAnalyticsBinding</span> <span class="n">new</span><span class="p">]</span> <span class="n">autorelease</span><span class="p">]</span>
+</span><span class='line'>                                                    <span class="nl">name:</span><span class="s">@&quot;gat&quot;</span>
+</span><span class='line'>                                                 <span class="nl">iOSOnly:</span><span class="n">YES</span><span class="p">];</span>
+</span><span class='line'>  <span class="c1">//...</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now we can use Google Analytics in JavaScript to track the user&#8217;s behavior in games:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">gat</span> <span class="o">=</span> <span class="nx">aphid</span><span class="p">.</span><span class="nx">extios</span><span class="p">.</span><span class="nx">gat</span><span class="p">;</span> <span class="c1">//Google Analytics is injected as aphid.extios.gat</span>
+</span><span class='line'><span class="nx">gat</span><span class="p">.</span><span class="nx">startTracker</span><span class="p">(</span><span class="s2">&quot;UA-31741840-1&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span> <span class="c1">//start a tracker</span>
+</span><span class='line'><span class="nx">gat</span><span class="p">.</span><span class="nx">trackPageView</span><span class="p">(</span><span class="s2">&quot;main.js&quot;</span><span class="p">);</span> <span class="c1">//track a page view</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>We&#8217;re going to integrate more services into <a href="https://github.com/openaphid/Boilerplate-iOS">Boilerplate-iOS</a>, and make it be a better starter kit for game development with OpenAphid.</p>
+
+<p>If you have better ideas, please feel free to contact us via <code>openaphid@gmail.com</code> or raise an issue in our <a href="https://github.com/openaphid">github repositories</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[OpenAphid 0.2 is Available]]></title>
