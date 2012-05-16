@@ -107,7 +107,7 @@ The binding object need be injected into JavaScript via `setScriptBinding:name:i
 
 OpenAphid injects an instance of `DatastoreBinding` as a JavaScript object of `[object DynamicBinding]` into JavaScript environment. And its name is `datastore`. The `iOSOnly` argument manages the namespace which contains the injected object. If it's `YES`, then the injected object can be accessed via `aphid.extios.datastore`; otherwise it can be accessed via `aphid.ext.datastore`. 
 
-> Notes: the `iOSOnly` argument is actually designed for future compilance when OpenAphid supports both iOS and Android.
+> Notes: the `iOSOnly` argument is actually designed for future compliance when OpenAphid supports both iOS and Android.
 
 ## Integration with Google Analytics in Boilerplate-iOS
 
