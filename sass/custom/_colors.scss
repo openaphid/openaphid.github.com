@@ -13,6 +13,7 @@ $aphid-blue: #4fbfee;
 
 $link-color-visited: #888;
 $sidebar-color: #666;
+$sidebar-color: #111;
 
 $nav-bg: desaturate(lighten($aphid-blue, 10), 0);
 $nav-bg-front: image-url('noise.png');
@@ -45,6 +46,20 @@ $footer-bg-back: linear-gradient(lighten($footer-bg, 8), $footer-bg, darken($foo
 
 /* To use the light Solarized highlighting theme uncomment the following line */
 //$solarized: light;
+
+$test_blue : #0000c0;
+
+$base03 : #f5f5f5;
+$base02 : #bbb;
+$base01 : #666;
+$base2 : gray;
+$solar-yellow : black;
+$solar-orange : $test_blue;
+$solar-red : $test_blue;
+$solar-magenta:   black;
+$solar-blue : black;
+$solar-cyan : green;
+$solar-green : #155080;
 
 /* If you want to tweak the Solarized colors you can do that here */
 //$base03:          #002b36; //darkest blue
