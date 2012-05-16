@@ -107,7 +107,8 @@ p, li {
 }
 
 .pre-code {
-  @include selection(adjust-color($base03, $lightness: 23%, $saturation: -65%), $text-shadow: $base03 0 1px);
+  //@include selection(adjust-color($base03, $lightness: 23%, $saturation: -65%), $text-shadow: $base03 0 1px);
+  @include selection(lighten($aphid-blue, 30), $text-shadow: $base03 0 1px);
   font-family: $mono !important;
   overflow: scroll;
   overflow-y: hidden;
