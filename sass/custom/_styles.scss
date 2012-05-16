@@ -82,6 +82,34 @@ article p {
   margin-bottom: 1em;
 }
 
+/* Table */
+.aphid-table {
+	border-style:solid;
+	border-width:1px;
+	border-color:#e7e3e7;
+	margin-bottom: 10px;
+}
+
+.aphid-table th, .aphid-table td {
+	border-style:dashed;
+  border-width:1px;
+  border-color:#e7e3e7;
+  padding: 6px;
+}
+
+.aphid-table th {
+	border-style:solid;
+  font-weight:bold;
+  background-color: rgb(34,34,34);
+	color: white;
+}
+
+.aphid-table td {
+	color: rgb(128, 128, 128);
+}
+
+
+
 /* ----- Sidebar ----- */
 
 
