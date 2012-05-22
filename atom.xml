@@ -4,7 +4,7 @@
   <title><![CDATA[OpenAphid]]></title>
   <link href="http://openaphid.github.com/atom.xml" rel="self"/>
   <link href="http://openaphid.github.com/"/>
-  <updated>2012-05-16T16:27:42+08:00</updated>
+  <updated>2012-05-22T16:53:32+08:00</updated>
   <id>http://openaphid.github.com/</id>
   <author>
     <name><![CDATA[Aphid Mobile]]></name>
@@ -12,6 +12,237 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How to Implement Flipboard Animation on Android]]></title>
+    <link href="http://openaphid.github.com/blog/2012/05/21/how-to-implement-flipboard-animation-on-android/"/>
+    <updated>2012-05-21T22:14:00+08:00</updated>
+    <id>http://openaphid.github.com/blog/2012/05/21/how-to-implement-flipboard-animation-on-android</id>
+    <content type="html"><![CDATA[<p>The demo in this post was born when we&#8217;re working on the Android port of <a href="https://github.com/openaphid">OpenAphid</a>. One of our engineers is a huge fan of <a href="http://www.flipboard.com">Flipboard iOS</a>. He decided to implement its page flip animation on Android.</p>
+
+<p>If you don&#8217;t know about the effect, please install the APK file of our demo app to see how it looks:</p>
+
+<!-- more -->
+
+
+<p><a href="http://openaphid.github.com/images/AndroidFlip.apk">http://openaphid.github.com/images/AndroidFlip.apk</a></p>
+
+<p>The full source codes of the demo application is also available at Github:</p>
+
+<p><a href="https://github.com/openaphid/android-flip">https://github.com/openaphid/android-flip</a></p>
+
+<h2>Overview</h2>
+
+<p>The Flipboard animation is easy to achieve on iOS by using Core Animation. Things get a bit difficult on Android:</p>
+
+<ul>
+<li><p>The view animation framework on Android is not flexible and efficient for versions prior to 3.0;</p></li>
+<li><p>The Android layout system makes it even harder for advanced animation;</p></li>
+</ul>
+
+
+<p>In order to apply flip effect for views with arbitrary structures and make the animation run smoothly, several tricks are used in our approach. OpenGL ES is used to render the animation for efficiency; a special view container is implemented to grab content of a view to OpenGL ES. Let&#8217;s go through them one by one.</p>
+
+<h2>View Hierarchy</h2>
+
+<p>Our demo app displays two LinearLayouts at the same time: <a href="https://github.com/openaphid/android-flip/blob/master/res/layout/first_page.xml">R.layout.first_page</a> and <a href="https://github.com/openaphid/android-flip/blob/master/res/layout/second_page.xml">R.layout.second_page</a>.</p>
+
+<p><img src="http://openaphid.github.com/images/flip-first-page.jpg" title="'first_page'" >
+<img src="http://openaphid.github.com/images/flip-second-page.jpg" title="'second_page'" ></p>
+
+<p>The first page is displayed over the second page. We took a screenshot when the first page flipped by 75 degrees:</p>
+
+<p><img src="http://openaphid.github.com/images/flip-75-degree.jpg"></p>
+
+<p>When the first page is flipping, its top half stays still while the bottom half flips around the horizontal center axis of the page; part of the second page is visible during the animation.</p>
+
+<h2>Custom ViewGroup</h2>
+
+<p>A custom <code>ViewGroup</code>, <a href="https://github.com/openaphid/android-flip/blob/master/src/com/aphidmobile/flip/FlipViewGroup.java">FlipViewGroup</a>, is used to manage the visibility of the two pages and serve content to OpenGL ES. Besides using a <code>LinkedList</code> to manage normal sub-views, it also contains a <code>GLSurfaceView</code> to play animation:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">private</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">View</span><span class="o">&gt;</span> <span class="n">flipViews</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">View</span><span class="o">&gt;();</span>
+</span><span class='line'><span class="kd">private</span> <span class="n">GLSurfaceView</span> <span class="n">surfaceView</span><span class="o">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The GLSurfaceView is added as a sub-view automatically. The <code>onLayout</code> method of <code>FlipViewGroup</code> is overridden to monitor the changes of view dimension:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'> <span class="k">for</span> <span class="o">(</span><span class="n">View</span> <span class="n">child</span> <span class="o">:</span> <span class="n">flipViews</span><span class="o">)</span>
+</span><span class='line'>      <span class="n">child</span><span class="o">.</span><span class="na">layout</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">r</span> <span class="o">-</span> <span class="n">l</span><span class="o">,</span> <span class="n">b</span> <span class="o">-</span> <span class="n">t</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">if</span> <span class="o">(</span><span class="n">changed</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>      <span class="kt">int</span> <span class="n">w</span> <span class="o">=</span> <span class="n">r</span> <span class="o">-</span> <span class="n">l</span><span class="o">;</span>
+</span><span class='line'>      <span class="kt">int</span> <span class="n">h</span> <span class="o">=</span> <span class="n">b</span> <span class="o">-</span> <span class="n">t</span><span class="o">;</span>
+</span><span class='line'>      <span class="n">surfaceView</span><span class="o">.</span><span class="na">layout</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">w</span><span class="o">,</span> <span class="n">h</span><span class="o">);</span>
+</span><span class='line'>      
+</span><span class='line'>      <span class="k">if</span> <span class="o">(</span><span class="n">width</span> <span class="o">!=</span> <span class="n">w</span> <span class="o">||</span> <span class="n">height</span> <span class="o">!=</span> <span class="n">h</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>          <span class="n">width</span> <span class="o">=</span> <span class="n">w</span><span class="o">;</span>
+</span><span class='line'>          <span class="n">height</span> <span class="o">=</span> <span class="n">h</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="k">if</span> <span class="o">(</span><span class="n">flipping</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">flipViews</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span> <span class="o">{</span>
+</span><span class='line'>              <span class="n">View</span> <span class="n">view</span> <span class="o">=</span> <span class="n">flipViews</span><span class="o">.</span><span class="na">getLast</span><span class="o">();</span>
+</span><span class='line'>              <span class="n">renderer</span><span class="o">.</span><span class="na">updateTexture</span><span class="o">(</span><span class="n">view</span><span class="o">);</span>
+</span><span class='line'>              <span class="n">view</span><span class="o">.</span><span class="na">setVisibility</span><span class="o">(</span><span class="n">View</span><span class="o">.</span><span class="na">INVISIBLE</span><span class="o">);</span>
+</span><span class='line'>          <span class="o">}</span>
+</span><span class='line'>      <span class="o">}</span>
+</span><span class='line'>  <span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>As in line 14 to line 16, when a change of view dimension is detected and flipping is on, the OpenGL render updates the texture by taking a screenshot of the top view; then the top view is hidden while the <code>GLSurfaceView</code> will display its content with flip animation.</p>
+
+<h2>GrabIt</h2>
+
+<p><a href="https://github.com/openaphid/android-flip/blob/master/src/com/aphidmobile/flip/GrabIt.java">GrabIt</a> is a small utility to convert the content of a view to a <code>Bitmap</code>. The result bitmap will be used to construct the texture for <code>GLSurfaceView</code>.</p>
+
+<h2>Setup of GLSurfaceView and Renderer</h2>
+
+<p>The <code>GLSurfaceView</code> instance is setup to use the following configurations:</p>
+
+<ul>
+<li>A RGBA_8888 surface with 16-bit depth buffer;</li>
+<li>It&#8217;s displayed on the top of the window;</li>
+<li>A custom renderer: <code>FlipRenderer</code>;</li>
+<li>The desired PixelFormat of the surface should support translucency;</li>
+<li>The rendering mode is set to make the renderer be called repeatedly;</li>
+</ul>
+
+
+<p>The <a href="https://github.com/openaphid/android-flip/blob/master/src/com/aphidmobile/flip/FlipRenderer.java">FlipRenderer</a> maps the OpenGL pixels to 2D screen pixels one-by-one which is similar to what OpenAphid does for 2D games. And the origin of the coordinate system is bottom left.</p>
+
+<p>The actual drawing process is managed in the instance of <code>FlipCards</code>.</p>
+
+<h2>FlipCards</h2>
+
+<p><a href="https://github.com/openaphid/android-flip/blob/master/src/com/aphidmobile/flip/FlipCards.java">FlipCards</a> manages the content and structure of flip animation. It accepts a bitmap, which should be the screenshot of the first page, to build the texture for rendering. The texture is binded to two instances of <code>Card</code> object. <code>topCard</code> renders the top half, which stays still; <code>bottomCard</code> draws the flipping effect of the bottom half.</p>
+
+<h2>Card</h2>
+
+<p><a href="https://github.com/openaphid/android-flip/blob/master/src/com/aphidmobile/flip/Card.java">Card</a> represents a quadrilateral in OpenGL space. Its <code>angle</code> property controls the flip angle, which is accomplished by the following OpenGL codes:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'> <span class="k">if</span> <span class="o">(</span><span class="n">angle</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>      <span class="n">gl</span><span class="o">.</span><span class="na">glTranslatef</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">cardVertices</span><span class="o">[</span><span class="mi">1</span><span class="o">],</span> <span class="mi">0</span><span class="n">f</span><span class="o">);</span>
+</span><span class='line'>      <span class="n">gl</span><span class="o">.</span><span class="na">glRotatef</span><span class="o">(-</span><span class="n">angle</span><span class="o">,</span> <span class="mi">1</span><span class="n">f</span><span class="o">,</span> <span class="mi">0</span><span class="n">f</span><span class="o">,</span> <span class="mi">0</span><span class="n">f</span><span class="o">);</span>
+</span><span class='line'>      <span class="n">gl</span><span class="o">.</span><span class="na">glTranslatef</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="o">-</span><span class="n">cardVertices</span><span class="o">[</span><span class="mi">1</span><span class="o">],</span> <span class="mi">0</span><span class="n">f</span><span class="o">);</span>
+</span><span class='line'>  <span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>A <code>Card</code> instance also takes a texture to bind to it. Let&#8217;s take the <code>topCard</code> of <code>FlipCards</code> for example:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'>     <span class="n">topCard</span><span class="o">.</span><span class="na">setTexture</span><span class="o">(</span><span class="n">texture</span><span class="o">);</span>
+</span><span class='line'>  
+</span><span class='line'>      <span class="n">topCard</span><span class="o">.</span><span class="na">setCardVertices</span><span class="o">(</span><span class="k">new</span> <span class="kt">float</span><span class="o">[]{</span>
+</span><span class='line'>          <span class="mi">0</span><span class="n">f</span><span class="o">,</span> <span class="n">bitmap</span><span class="o">.</span><span class="na">getHeight</span><span class="o">(),</span> <span class="mi">0</span><span class="n">f</span><span class="o">,</span>                     <span class="c1">//top left</span>
+</span><span class='line'>          <span class="mi">0</span><span class="n">f</span><span class="o">,</span> <span class="n">bitmap</span><span class="o">.</span><span class="na">getHeight</span><span class="o">()</span> <span class="o">/</span> <span class="mf">2.0f</span><span class="o">,</span> <span class="mi">0</span><span class="n">f</span><span class="o">,</span>              <span class="c1">//bottom left</span>
+</span><span class='line'>          <span class="n">bitmap</span><span class="o">.</span><span class="na">getWidth</span><span class="o">(),</span> <span class="n">bitmap</span><span class="o">.</span><span class="na">getHeight</span><span class="o">()</span> <span class="o">/</span> <span class="mi">2</span><span class="n">f</span><span class="o">,</span> <span class="mi">0</span><span class="n">f</span><span class="o">,</span> <span class="c1">//bottom right</span>
+</span><span class='line'>          <span class="n">bitmap</span><span class="o">.</span><span class="na">getWidth</span><span class="o">(),</span> <span class="n">bitmap</span><span class="o">.</span><span class="na">getHeight</span><span class="o">(),</span> <span class="mi">0</span><span class="n">f</span>       <span class="c1">//top right</span>
+</span><span class='line'>      <span class="o">});</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">topCard</span><span class="o">.</span><span class="na">setTextureCoordinates</span><span class="o">(</span><span class="k">new</span> <span class="kt">float</span><span class="o">[]{</span>
+</span><span class='line'>          <span class="mi">0</span><span class="n">f</span><span class="o">,</span> <span class="mi">0</span><span class="n">f</span><span class="o">,</span>
+</span><span class='line'>          <span class="mi">0</span><span class="o">,</span> <span class="n">bitmap</span><span class="o">.</span><span class="na">getHeight</span><span class="o">()</span> <span class="o">/</span> <span class="mi">2</span><span class="n">f</span> <span class="o">/</span> <span class="o">(</span><span class="kt">float</span><span class="o">)</span> <span class="n">texture</span><span class="o">.</span><span class="na">getHeight</span><span class="o">(),</span>
+</span><span class='line'>          <span class="n">bitmap</span><span class="o">.</span><span class="na">getWidth</span><span class="o">()</span> <span class="o">/</span> <span class="o">(</span><span class="kt">float</span><span class="o">)</span> <span class="n">texture</span><span class="o">.</span><span class="na">getWidth</span><span class="o">(),</span> <span class="n">bitmap</span><span class="o">.</span><span class="na">getHeight</span><span class="o">()</span> <span class="o">/</span> <span class="mi">2</span><span class="n">f</span> <span class="o">/</span> <span class="o">(</span><span class="kt">float</span><span class="o">)</span> <span class="n">texture</span><span class="o">.</span><span class="na">getHeight</span><span class="o">(),</span>
+</span><span class='line'>          <span class="n">bitmap</span><span class="o">.</span><span class="na">getWidth</span><span class="o">()</span> <span class="o">/</span> <span class="o">(</span><span class="kt">float</span><span class="o">)</span> <span class="n">texture</span><span class="o">.</span><span class="na">getWidth</span><span class="o">(),</span> <span class="mi">0</span><span class="n">f</span>
+</span><span class='line'>      <span class="o">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The vertices of <code>topCard</code> are set to make the card at the top half of the application screen. And its texture coordinates are set to render the top half of the first page.</p>
+
+<p>In order to make the flip effect more realistic, a gray rectangle is rendered to cover the appealed area of the second page, which looks like a shadow of the flipping card casting on the second page.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'> <span class="k">if</span> <span class="o">(</span><span class="n">angle</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>      <span class="n">gl</span><span class="o">.</span><span class="na">glDisable</span><span class="o">(</span><span class="n">GL_LIGHTING</span><span class="o">);</span>
+</span><span class='line'>      <span class="n">gl</span><span class="o">.</span><span class="na">glDisable</span><span class="o">(</span><span class="n">GL_DEPTH_TEST</span><span class="o">);</span>
+</span><span class='line'>      <span class="kt">float</span> <span class="n">w</span> <span class="o">=</span> <span class="n">cardVertices</span><span class="o">[</span><span class="mi">9</span><span class="o">]</span> <span class="o">-</span> <span class="n">cardVertices</span><span class="o">[</span><span class="mi">0</span><span class="o">];</span> <span class="c1">//shadow width</span>
+</span><span class='line'>      <span class="kt">float</span> <span class="n">h</span> <span class="o">=</span> <span class="o">(</span><span class="n">cardVertices</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">-</span> <span class="n">cardVertices</span><span class="o">[</span><span class="mi">4</span><span class="o">])</span> <span class="o">*</span> <span class="o">(</span><span class="mi">1</span><span class="n">f</span> <span class="o">-</span> <span class="n">FloatMath</span><span class="o">.</span><span class="na">cos</span><span class="o">(</span><span class="n">d2r</span><span class="o">(</span><span class="n">angle</span><span class="o">)));</span> <span class="c1">//shadow height</span>
+</span><span class='line'>      <span class="kt">float</span> <span class="n">z</span> <span class="o">=</span> <span class="o">(</span><span class="n">cardVertices</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">-</span> <span class="n">cardVertices</span><span class="o">[</span><span class="mi">4</span><span class="o">])</span> <span class="o">*</span> <span class="n">FloatMath</span><span class="o">.</span><span class="na">sin</span><span class="o">(</span><span class="n">d2r</span><span class="o">(</span><span class="n">angle</span><span class="o">));</span>    <span class="c1">//z index of the top side of shadow</span>
+</span><span class='line'>      <span class="kt">float</span><span class="o">[]</span> <span class="n">shadowVertices</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">float</span><span class="o">[]{</span>
+</span><span class='line'>          <span class="n">cardVertices</span><span class="o">[</span><span class="mi">0</span><span class="o">],</span> <span class="n">h</span> <span class="o">+</span> <span class="n">cardVertices</span><span class="o">[</span><span class="mi">4</span><span class="o">],</span> <span class="n">z</span><span class="o">,</span>
+</span><span class='line'>          <span class="n">cardVertices</span><span class="o">[</span><span class="mi">3</span><span class="o">],</span> <span class="n">cardVertices</span><span class="o">[</span><span class="mi">4</span><span class="o">],</span> <span class="mi">0</span><span class="n">f</span><span class="o">,</span>
+</span><span class='line'>          <span class="n">w</span><span class="o">,</span> <span class="n">cardVertices</span><span class="o">[</span><span class="mi">7</span><span class="o">],</span> <span class="mi">0</span><span class="n">f</span><span class="o">,</span>
+</span><span class='line'>          <span class="n">w</span><span class="o">,</span> <span class="n">h</span> <span class="o">+</span> <span class="n">cardVertices</span><span class="o">[</span><span class="mi">4</span><span class="o">],</span> <span class="n">z</span>
+</span><span class='line'>      <span class="o">};</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="kt">float</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mi">1</span><span class="n">f</span> <span class="o">*</span> <span class="o">(</span><span class="mi">90</span><span class="n">f</span> <span class="o">-</span> <span class="n">angle</span><span class="o">)</span> <span class="o">/</span> <span class="mi">90</span><span class="n">f</span><span class="o">;</span> <span class="c1">//shadow alpha</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">gl</span><span class="o">.</span><span class="na">glColor4f</span><span class="o">(</span><span class="mi">0</span><span class="n">f</span><span class="o">,</span> <span class="mf">0.0f</span><span class="o">,</span> <span class="mi">0</span><span class="n">f</span><span class="o">,</span> <span class="n">alpha</span><span class="o">);</span>
+</span><span class='line'>      <span class="n">gl</span><span class="o">.</span><span class="na">glVertexPointer</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span> <span class="n">GL_FLOAT</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">toFloatBuffer</span><span class="o">(</span><span class="n">shadowVertices</span><span class="o">));</span>
+</span><span class='line'>      <span class="n">gl</span><span class="o">.</span><span class="na">glDrawElements</span><span class="o">(</span><span class="n">GL_TRIANGLES</span><span class="o">,</span> <span class="n">indices</span><span class="o">.</span><span class="na">length</span><span class="o">,</span> <span class="n">GL_UNSIGNED_SHORT</span><span class="o">,</span> <span class="n">indexBuffer</span><span class="o">);</span>
+</span><span class='line'>      <span class="n">gl</span><span class="o">.</span><span class="na">glEnable</span><span class="o">(</span><span class="n">GL_DEPTH_TEST</span><span class="o">);</span>
+</span><span class='line'>      <span class="n">gl</span><span class="o">.</span><span class="na">glEnable</span><span class="o">(</span><span class="n">GL_LIGHTING</span><span class="o">);</span>
+</span><span class='line'>  <span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The snippets above should cover the core concepts of our approach. You can fork the project to support more effects as we can see in Flipboard iPhone, like page flip following touch moves, flip over of a page, and book flip effect etc.</p>
+
+<p>BTW, we&#8217;re tackling some technical problems of OpenAphid Android version. Will keep you posted if a stable version is ready.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Tutorial: Calling Objective-C Methods from JavaScript in OpenAphid]]></title>
