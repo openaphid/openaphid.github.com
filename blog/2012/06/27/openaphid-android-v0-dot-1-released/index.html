@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Tutorial: Handling Touch Events in OpenAphid v0.1.1 - OpenAphid</title>
+  <title>OpenAphid Android v0.1 released - OpenAphid</title>
   <meta name="author" content="Aphid Mobile">
 
   
-  <meta name="description" content="We are glad to release OpenAphid v0.1.1, which adds multitouch support and fixes several issues about touch handling. The detailed change log is &hellip;">
+  <meta name="description" content="We&#8217;re excited to release the first version of OpenAphid which supports Android OS. OpenAphid is now a cross platform 2D game engine with both &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://openaphid.github.com/blog/2012/05/06/tutorial-handling-touch-events-in-openaphid-v0-dot-1-1">
+  <link rel="canonical" href="http://openaphid.github.com/blog/2012/06/27/openaphid-android-v0-dot-1-released">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -76,7 +76,7 @@
   
   <header>
     
-      <h1 class="entry-title">Tutorial: Handling Touch Events in OpenAphid v0.1.1</h1>
+      <h1 class="entry-title">OpenAphid Android v0.1 Released</h1>
     
     
       <p class="meta">
@@ -92,65 +92,75 @@
   
 
 
-<time datetime="2012-05-06T21:54:00+08:00" pubdate data-updated="true">May 6<span>th</span>, 2012</time>
+<time datetime="2012-06-27T08:22:00+08:00" pubdate data-updated="true">Jun 27<span>th</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>We are glad to release OpenAphid v0.1.1, which adds multitouch support and fixes several issues about touch handling. The detailed change log is following:</p>
+<div class="entry-content"><p>We&#8217;re excited to release the first version of OpenAphid which supports Android OS. OpenAphid is now a cross platform 2D game engine with both iOS and Android support.</p>
+
+<p>Several github repositories have been updated, please check them out for more details:</p>
 
 <!-- more -->
 
 
 <ul>
-<li>Supports multitouch events: adds <code>multipleTouchEnabled</code> attribute to <code>Director</code></li>
-<li>Adds <code>userInteractionEnabled</code> attribute to Node</li>
-<li>Fixes incorrect values of <code>event.touches</code> and <code>event.targetTouches</code> in <code>ontouchend</code> callback</li>
-<li>Adds a new constructor function to Color: <code>new Color(color, [alpha])</code></li>
+<li><p><a href="https://github.com/openaphid/Runtime">https://github.com/openaphid/Runtime</a> is updated with the Android related codes. You can check it out and build it with Android NDK.</p></li>
+<li><p><a href="https://github.com/openaphid/Demos">https://github.com/openaphid/Demos</a> is also refreshed with the Android project files. You can download the prebuilt APK files to test them on your Android devices: <a href="https://github.com/openaphid/Demos/blob/master/Android/Demos/apk/OpenAphid-Android-Demos.apk">OpenAphid-Android-Demos.apk</a></p></li>
 </ul>
 
 
-<h2>Basics of Touch Event Handling</h2>
+<h2>Highlights and Limitations of OpenAphid Android v0.1</h2>
 
-<p>Any instances of the <code>Node</code> class can be the <code>EventTarget</code> of touch events in OpenAphid. This is different from <a href="http://www.cocos2d-iphone.org/">cocos2d-iphone</a>, in which <code>CCLayer</code> is usually the target of touch event.</p>
-
-<p>Several attributes affect how a node handles touch events: <code>multipleTouchEnabled</code> of the <code>Director</code> class; <code>userInteractionEnabled</code>, <code>visible</code>, <code>touchEnabled</code>, and <code>contentSize</code> of the <code>Node</code> class.</p>
-
-<h2>Flow of Touch Event</h2>
-
-<p>The flow of a touch event goes through 2 phases: hit-testing and event bubbling.</p>
-
-<h3>Hit-Testing</h3>
-
-<p>When a touch happens on the device screen, OpenAphid follows the routine below to locate its event target:</p>
-
-<ol>
-<li><p>Hit-testing is used to find the sub-node of the running scene that is under a touch. This method proceeds recursively on each node in the node hierarchy.</p></li>
-<li><p>Hit-testing fails on a node and doesn&#8217;t proceed on its children if either <code>userInteractionEnabled</code> or <code>visible</code> is <code>false</code>.</p></li>
-<li><p>The testing fails on a node but proceeds on its children if its <code>touchEnabled</code> is <code>false</code></p></li>
-<li><p>If the <code>contentSize</code> if a node is zero, hit-testing is delegated to its children nodes; otherwise it proceeds when the touch took place inside the rectangle area defined by the <code>contentSize</code>.</p></li>
-<li><p>A node becomes the event target when it meets the following conditions: its <code>contentSize</code> is not zero and the touch location is inside it; hit-testing fails on any of its children but succeeds on it.</p></li>
-</ol>
-
-
-<h3>Event Bubbling</h3>
-
-<p>Once the event target of a touch is found by hit-testing, a touch event object is passed to its callback functions, and bubbling up to its ancestors of which <code>touchEnabled</code> is <code>true</code>. <code>event.stopPropagation</code> can be used to stop bubbling.</p>
-
-<h2>Interfaces of Touch Event</h2>
-
-<p>The APIs of touch event handling in OpenAphid are implemented to follow the specification of <a href="http://www.w3.org/TR/touch-events/">W3C DOM Touch Event Version 1</a>. There are already lots of guides about handling touches in DOM, which can be used as references for OpenAphid too. We&#8217;ve updated the <a href="https://github.com/openaphid/Demos">Demos</a> of OpenAphid to include a <code>TouchTest</code> application, which demonstrates three scenarios of touch handling:</p>
+<p>It&#8217;s the beginning of cross platform support of OpenAphid. Please consider it as an alpha release. But we&#8217;d like to summarize some implementation highlights here:</p>
 
 <ul>
-<li><p>Handling a single touch event to drag a sprite.</p></li>
-<li><p>Handling multitouch events to move multiple sprites.</p></li>
-<li><p>Detecting pinch gesture to zoom in/out a sprite.</p></li>
+<li><p>The core runtime shares the same code base with the iOS version, which makes new features can be added to both platforms in the future.</p></li>
+<li><p>The same JavaScript engine is used on both platforms, which saves us from building a proxy layer to support different engines on different platforms as other solutions do. It also brings better performance which we&#8217;ll prove later.</p></li>
+<li><p>The project is built with the standard Android NDK, no private or undocumented APIs are used.</p></li>
 </ul>
 
 
-<p>Please checkout the <a href="https://github.com/openaphid/Demos">Demos</a> project for more details. We&#8217;re also going to implement gesture detection APIs in the future.</p>
+<p>This release is lack of several important features comparing to the iOS version. We&#8217;re planning another release to make it catch up in the near future.</p>
+
+<ul>
+<li><p>The native library is built for <code>armeabi-v7a</code> only in this release. <code>armeabi</code> support will be included in the next release.</p></li>
+<li><p><code>JavaScript JIT compiler</code> is not enabled. We&#8217;ve done some experiments to enable it on Android OS, which shows promising performance gains for computation intensive tasks and regular expressions. But we decided to disable it now as we didn&#8217;t spend enough time on evaluating its stability.</p></li>
+<li><p><code>JavaScript to Dalvik Java binding</code> is not implemented. <code>XMLHttpRequest</code> and <code>multitouch</code> supports are absent too.</p></li>
+<li><p>This version doesn&#8217;t reload textures automatically when the GL context is destroyed. It simply finishes the activity if GL context is lost. We&#8217;re working on a better way to handle it.</p></li>
+</ul>
+
+
+<h2>Performance Benchmark</h2>
+
+<p>The same tank program as introduced in our <a href="/blog/2012/02/20/javascript-and-cocos2d-a-sneak-peek/">previous post</a> is used to evaluate the performance of OpenAphid on Android OS. Several other Android 2D game engines are chose as references:</p>
+
+<ul>
+<li><p><a href="http://www.cocos2d-x.org/projects/cocos2d-x/wiki/Download">cocos2d-x 1.0.1-0.13.0</a>, a C++ port of <code>cocos2d-iphone</code> which supports Android OS.</p></li>
+<li><p><a href="http://code.google.com/p/cocos2d-android-1/">cocos2d-android-1</a>, another port of <code>cocos2d-iphone</code> which is implemented in pure Java.</p></li>
+<li><p><a href="https://developer.mobage.com/">Ngcore 1.8</a>, a commercial game engine from DeNA which also uses JavaScript and OpenGL ES.</p></li>
+</ul>
+
+
+<p>The benchmark is performed on a <a href="http://developer.motorola.com/products/defyplus-mb526/">Motorola DEFY+ MB526</a> phone, which has a 1GHz processor and a 854x480 sized screen. Its Android OS version is 2.3.6.</p>
+
+<p>We captured the average FPS in 5 seconds for displaying different number of tanks with each engine:</p>
+
+<p><img src="/images/tank_banckmark_android_v0.1.jpg" title="Benchmark Results" alt="performance benchmark" /></p>
+
+<p>OpenAphid shows great performance again as we can tell from this chart. It&#8217;s on par with <code>cocos2d-x</code>, and faster than others.</p>
+
+<p><code>cocos2d-android-1</code> suffers from the frequently GC pauses of Dalvik VM as observed from logcat. <code>Ngcore</code> is the slowest engine once again, and its rendering is also buggy in this test. The dirty area in black color should have been cleared in the screenshot below, we&#8217;ve filed a bug report about it to Ngcore:</p>
+
+<p><img src="/images/ngcore_rendering_bug.jpg" title="Demonstrating the rendering bug of Ngcore" alt="Ngcore Rendering Bug" /></p>
+
+<h2>About the Next Release</h2>
+
+<p>The next release will make the Android version have all features as the iOS version does. JavaScript to Dalvik Java binding APIs will be introduced to make integrating 3rd-party services become cross platform too. We&#8217;ll add new features simultaneously on both iOS and Android versions after that release.</p>
+
+<p>Stay Tuned!</p>
 </div>
 
 
@@ -173,7 +183,7 @@
   
 
 
-<time datetime="2012-05-06T21:54:00+08:00" pubdate data-updated="true">May 6<span>th</span>, 2012</time>
+<time datetime="2012-06-27T08:22:00+08:00" pubdate data-updated="true">Jun 27<span>th</span>, 2012</time>
       
 
 
@@ -181,7 +191,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://openaphid.github.com/blog/2012/05/06/tutorial-handling-touch-events-in-openaphid-v0-dot-1-1/" data-via="openaphid" data-counturl="http://openaphid.github.com/blog/2012/05/06/tutorial-handling-touch-events-in-openaphid-v0-dot-1-1/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://openaphid.github.com/blog/2012/06/27/openaphid-android-v0-dot-1-released/" data-via="openaphid" data-counturl="http://openaphid.github.com/blog/2012/06/27/openaphid-android-v0-dot-1-released/" >Tweet</a>
   
   
   
@@ -190,10 +200,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/05/02/develop-mode-of-openaphid/" title="Previous Post: Tutorial: Developer Mode of OpenAphid">&laquo; Tutorial: Developer Mode of OpenAphid</a>
+        <a class="basic-alignment left" href="/blog/2012/05/21/how-to-implement-flipboard-animation-on-android/" title="Previous Post: How to Implement Flipboard Animation on Android">&laquo; How to Implement Flipboard Animation on Android</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2012/05/15/openaphid-0-dot-2-available/" title="Next Post: OpenAphid 0.2 is Available">OpenAphid 0.2 is Available &raquo;</a>
       
     </p>
   </footer>
@@ -305,8 +313,8 @@ Copyright &copy; 2012 - Aphid Mobile - openaphid@gmail.com -
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://openaphid.github.com/blog/2012/05/06/tutorial-handling-touch-events-in-openaphid-v0-dot-1-1/';
-        var disqus_url = 'http://openaphid.github.com/blog/2012/05/06/tutorial-handling-touch-events-in-openaphid-v0-dot-1-1/';
+        var disqus_identifier = 'http://openaphid.github.com/blog/2012/06/27/openaphid-android-v0-dot-1-released/';
+        var disqus_url = 'http://openaphid.github.com/blog/2012/06/27/openaphid-android-v0-dot-1-released/';
         var disqus_script = 'embed.js';
       
     (function () {

@@ -34,14 +34,20 @@
         <loc>
             http://openaphid.github.com/blog/2012/05/21/how-to-implement-flipboard-animation-on-android/
         </loc>
-        <lastmod>2012-05-22T16:53:32+08:00</lastmod>
+        <lastmod>2012-06-27T13:46:05+08:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://openaphid.github.com/blog/2012/06/27/openaphid-android-v0-dot-1-released/
+        </loc>
+        <lastmod>2012-06-27T22:12:04+08:00</lastmod>
     </url>
     <url>
         <loc>http://openaphid.github.com/blog/archives/</loc>
-        <lastmod>2012-05-22T16:53:32+08:00</lastmod>
+        <lastmod>2012-06-27T22:12:04+08:00</lastmod>
     </url>
     <url>
         <loc>http://openaphid.github.com/</loc>
-        <lastmod>2012-05-22T16:53:32+08:00</lastmod>
+        <lastmod>2012-06-27T22:12:04+08:00</lastmod>
     </url>
 </urlset>
