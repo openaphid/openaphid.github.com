@@ -34,7 +34,7 @@ This release is lack of several important features comparing to the iOS version.
 
 - `JavaScript JIT compiler` is not enabled. We've done some experiments to enable it on Android OS, which shows promising performance gains for computation intensive tasks and regular expressions. But we decided to disable it now as we didn't spend enough time on evaluating its stability.
 
-- `JavaScript to Dalvik Java binding` is not implemented. `XMLHttpRequest` is absent too.
+- `JavaScript to Dalvik Java binding` is not implemented. `XMLHttpRequest` and `multitouch` supports are absent too.
 
 - This version doesn't reload textures automatically when the GL context is destroyed. It simply finishes the activity if GL context is lost. We're working on a better way to handle it.
 
