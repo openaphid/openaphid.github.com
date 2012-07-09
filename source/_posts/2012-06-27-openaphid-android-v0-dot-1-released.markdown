@@ -14,9 +14,7 @@ Several github repositories have been updated, please check them out for more de
 
 - [https://github.com/openaphid/Runtime](https://github.com/openaphid/Runtime) is updated with the Android related codes. You can check it out and build it with Android NDK.
 
-- [https://github.com/openaphid/Demos](https://github.com/openaphid/Demos) is also refreshed with the Android project files. You can download the prebuilt APK files to test them on your Android devices: [https://github.com/openaphid/Demos](https://github.com/openaphid/Demos)
-
-- [https://github.com/openaphid/Boilerplate-iOS](https://github.com/openaphid/Boilerplate-iOS) is a new template project for developing Android games with OpenAphid.
+- [https://github.com/openaphid/Demos](https://github.com/openaphid/Demos) is also refreshed with the Android project files. You can download the prebuilt APK files to test them on your Android devices: [OpenAphid-Android-Demos.apk](https://github.com/openaphid/Demos/blob/master/Android/Demos/apk/OpenAphid-Android-Demos.apk)
 
 ## Highlights and Limitations of OpenAphid Android v0.1
 
@@ -62,6 +60,6 @@ OpenAphid shows great performance again as we can tell from this chart. It's on 
 
 ## About the Next Release
 
-The next release will make the Android version catch up all features as the iOS version. JavaScript to Dalvik Java binding APIs will be introduced to make integrating 3rd-party services become cross platform too. We'll add new features simultaneously to both iOS and Android versions after that release.
+The next release will make the Android version have all features as the iOS version does. JavaScript to Dalvik Java binding APIs will be introduced to make integrating 3rd-party services become cross platform too. We'll add new features simultaneously on both iOS and Android versions after that release.
 
 Stay Tuned!
