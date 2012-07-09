@@ -4,7 +4,7 @@
   <title><![CDATA[OpenAphid]]></title>
   <link href="http://openaphid.github.com/atom.xml" rel="self"/>
   <link href="http://openaphid.github.com/"/>
-  <updated>2012-06-27T22:12:04+08:00</updated>
+  <updated>2012-07-09T15:18:21+08:00</updated>
   <id>http://openaphid.github.com/</id>
   <author>
     <name><![CDATA[Aphid Mobile]]></name>
@@ -12,6 +12,26 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[OpenAphid Android v0.1.5 Released]]></title>
+    <link href="http://openaphid.github.com/blog/2012/07/09/openaphid-android-v0-dot-1-5-released/"/>
+    <updated>2012-07-09T15:02:00+08:00</updated>
+    <id>http://openaphid.github.com/blog/2012/07/09/openaphid-android-v0-dot-1-5-released</id>
+    <content type="html"><![CDATA[<p>We&#8217;re pleased to release v0.1.5 of OpenAphid Android.</p>
+
+<p>Highlights of this release includes:</p>
+
+<ul>
+<li><p>Support multitouch on Android</p></li>
+<li><p>Enhanced single touch handling when multiple fingers are on screen</p></li>
+<li><p>Public APIs for Java to JavaScript method binding</p></li>
+</ul>
+
+
+<p><a href="https://github.com/openaphid/Demos">https://github.com/openaphid/Demos</a> is also updated with two new demos: <a href="https://github.com/openaphid/Demos/blob/master/Android/Demos/assets/demo.bundle/touch_test.js">touch_test.js</a> and <a href="https://github.com/openaphid/Demos/blob/master/Android/Demos/assets/demo.bundle/binding_test.js">binding_test.js</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[OpenAphid Android v0.1 released]]></title>
