@@ -165,19 +165,21 @@ Then we can inject it into JavaScript as following code inside [OAAppDelegate.m]
 
 	[self.viewController.glViewController setScriptBinding:[[OAGoogleAnalyticsBinding new] autorelease]  
                                                     name:@"gat" 
-                                                 iOSOnly:YES];
+                                                 iOSOnly:NO];
 	//...
 }
 
 ```
+> ** Updates at 07-09-2012: ** `iOSOnly` has been changed from `YES` to `NO` to match its Android version.
 
 Now we can use Google Analytics in JavaScript to track the user's behavior in games:
 
 ```javascript
-var gat = aphid.extios.gat; //Google Analytics is injected as aphid.extios.gat
+var gat = aphid.ext.gat; //Google Analytics is injected as aphid.ext.gat
 gat.startTracker("UA-31741840-1", 10); //start a tracker
 gat.trackPageView("main.js"); //track a page view
 ```
+> ** Updates at 07-09-2012: ** Since `iOSOnly` has been set to `NO`, the JavaScript namespace for `gat` is switched to `aphid.ext` from `aphid.extios`
 
 We're going to integrate more services into [Boilerplate-iOS](https://github.com/openaphid/Boilerplate-iOS), and make it be a better starter kit for game development with OpenAphid.
 
