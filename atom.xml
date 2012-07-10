@@ -4,7 +4,7 @@
   <title><![CDATA[OpenAphid]]></title>
   <link href="http://openaphid.github.com/atom.xml" rel="self"/>
   <link href="http://openaphid.github.com/"/>
-  <updated>2012-07-09T15:34:22+08:00</updated>
+  <updated>2012-07-10T21:13:56+08:00</updated>
   <id>http://openaphid.github.com/</id>
   <author>
     <name><![CDATA[Aphid Mobile]]></name>
@@ -12,6 +12,161 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Tutorial: Exposing Java Methods to JavaScript in OpenAphid]]></title>
+    <link href="http://openaphid.github.com/blog/2012/07/10/tutorial-exposing-java-methods-to-javascript-in-openaphid/"/>
+    <updated>2012-07-10T14:39:00+08:00</updated>
+    <id>http://openaphid.github.com/blog/2012/07/10/tutorial-exposing-java-methods-to-javascript-in-openaphid</id>
+    <content type="html"><![CDATA[<p><a href="https://github.com/openaphid">OpenAphid</a> for Android v0.1.5 supports exposing Java methods as JavaScript functions, which is helpful for integrating 3rd-party services into games. The binding APIs are similar to its <a href="http://openaphid.github.com/blog/2012/05/16/tutorial-exposing-objective-c-methods-to-javascript-in-openaphid/">iOS version</a>.</p>
+
+<!-- more -->
+
+
+<h2>How to Expose Java Methods to JavaScript</h2>
+
+<p>Any public Java methods with supported return type and parameter types, can be exposed as JavaScript functions via <a href="https://github.com/openaphid/Runtime/blob/master/PreBuild/Android/src/org/openaphid/bind/AphidJSFunction.java">@AphidJSFunction</a> annotation. An instance with exposed methods can be injected into JavaScript engine as a plain JavaScript object by using <a href="https://github.com/openaphid/Runtime/blob/master/PreBuild/Android/src/org/openaphid/gl/AphidRenderer.java">AphidRenderer.setScriptBinding(String name, Object bindingObject, boolean androidOnly)</a>. The injected object will be placed inside <code>aphid.ext</code> or <code>aphid.extandroid</code> namespaces, which is managed by the <code>androidOnly</code> parameter.</p>
+
+<h3>Example of @AphidJSFunction</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">BindingTest4</span> <span class="o">{</span>   
+</span><span class='line'>  <span class="nd">@AphidJSFunction</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;add&quot;</span><span class="o">,</span> <span class="n">isInUIThread</span><span class="o">=</span><span class="kc">true</span><span class="o">)</span>
+</span><span class='line'>  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">addInMainThread</span><span class="o">(</span><span class="kt">int</span> <span class="n">i1</span><span class="o">,</span> <span class="kt">int</span> <span class="n">i2</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>      <span class="n">UI</span><span class="o">.</span><span class="na">assertInMainThread</span><span class="o">();</span>
+</span><span class='line'>      <span class="k">return</span> <span class="n">i1</span> <span class="o">+</span> <span class="n">i2</span><span class="o">;</span>
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">//in onCreate() method of AphidActivity</span>
+</span><span class='line'><span class="n">glSurfaceView</span><span class="o">.</span><span class="na">getAphidRenderer</span><span class="o">().</span><span class="na">setScriptBinding</span><span class="o">(</span><span class="s">&quot;test4&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">BindingTest4</span><span class="o">(),</span> <span class="kc">false</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The snippet above injects an instance of Java class <code>BindingTest4</code> to JavaScript as <code>aphid.ext.test4</code>. Its method <code>addInMainThread()</code> can be accessed via <code>aphid.ext.test4.add()</code> in JavaScript.</p>
+
+<p>The <code>AphidJSFunction</code> annotation supports two optional element-value pairs: <code>name</code> and <code>isInUIThread</code>. <code>name</code> declares a custom function name to JavaScript, the Java method name is used if it&#8217;s not specified; <code>isInUIThread</code> controls the thread to invoke the Java method, its default value is <code>false</code>. In OpenAphid for Android, JavaScript runs inside the GL thread. Setting <code>isInUIThread</code> to <code>true</code> makes the Java method run inside the UI thread; the execution of JavaScript is blocked in the GL thread until the Java method returns from the UI thread.</p>
+
+<h3>Type Conversion of Return Value from Java to JavaScript</h3>
+
+<table class="aphid-table">
+    <tr>
+        <th>Java</th>
+        <th>JavaScript</th>
+    </tr>
+    <tr>
+        <td>void</td> <td>undefined</td>
+    </tr>
+    <tr>
+        <td>null</td> <td>null</td>
+    </tr>
+    <tr>
+        <td>boolean</td> <td>bool</td>
+    </tr>
+    <tr>
+        <td>primitive numeric types<br/>(short, char, int, long, float, double)</td> <td>number</td>
+    </tr>
+    <tr>
+        <td>String</td> <td>string</td>
+    </tr>
+    <tr>
+        <td>List</td> <td>array</td>
+    </tr>
+    <tr>
+        <td>Map</td> <td>object</td>
+    </tr>
+</table>
+
+
+<h3>Type Conversion of Parameter Value from JavaScript to Java</h3>
+
+<table class="aphid-table">
+    <tr>
+        <th>JavaScript</th> <th>Java</th>
+    </tr>
+    <tr>
+        <td>undefined</td> <td>null</td>
+    </tr>
+    <tr>
+        <td>null</td> <td>null</td>
+    </tr>
+    <tr>
+        <td>number</td> <td>corresponding primitive numeric type</td>
+    </tr>
+    <tr>
+        <td>string</td> <td>String</td>
+    </tr>
+    <tr>
+        <td>array</td> <td>List</td>
+    </tr>
+    <tr>
+        <td>object except array</td> <td>Map</td>
+    </tr>
+</table>
+
+
+<p>Strict type checking is performed during conversion, which throws a JavaScript exception if the types are mismatched.</p>
+
+<h2>Integration with Google Analytics in Boilerplate-Android</h2>
+
+<p>Let&#8217;s illustrate how to integrate Google Analytics SDK into OpenAphid for Android. All source codes can be found in the <a href="https://github.com/openaphid/Boilerplate-Android">Boilerplate-Android</a> project.</p>
+
+<p>After adding Google Analytics Android SDK into our project as described in its <a href="https://developers.google.com/analytics/devguides/collection/android/devguide#gettingStarted">official document</a>, we create a Java class <a href="https://github.com/openaphid/Boilerplate-Android/blob/master/src/org/openaphid/thirdparty/ga/GoogleAnalyticsBinding.java">GoogleAnalyticsBinding</a> to bridge JavaScript and Google Analytics SDK. <code>GoogleAnalyticsBinding</code> makes the exposed functions have identical signatures as its iOS version, which enables the same script file(<a href="https://github.com/openaphid/Boilerplate-iOS/blob/master/Boilerplate/game.bundle/main.js">main.js</a>) to run on both platforms.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">GoogleAnalyticsBinding</span> <span class="o">{</span>
+</span><span class='line'>  <span class="c1">//...</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nd">@AphidJSFunction</span><span class="o">(</span><span class="n">isInUIThread</span> <span class="o">=</span> <span class="kc">true</span><span class="o">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;setCustomVariableForScope&quot;</span><span class="o">)</span>
+</span><span class='line'>  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setCustomVariable</span><span class="o">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">,</span> <span class="n">String</span> <span class="n">name</span><span class="o">,</span> <span class="n">String</span> <span class="n">value</span><span class="o">,</span> <span class="kt">int</span> <span class="n">scope</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>      <span class="n">GoogleAnalyticsTracker</span><span class="o">.</span><span class="na">getInstance</span><span class="o">()</span>
+</span><span class='line'>              <span class="o">.</span><span class="na">setCustomVar</span><span class="o">(</span><span class="n">index</span><span class="o">,</span> <span class="n">name</span><span class="o">,</span> <span class="n">value</span><span class="o">,</span> <span class="n">scope</span><span class="o">);</span>
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">//...</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then we can inject an instance into JavaScript namespace <code>aphid.ext</code> as what we do in iOS version:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">glSurfaceView</span><span class="o">.</span><span class="na">getAphidRenderer</span><span class="o">().</span><span class="na">setScriptBinding</span><span class="o">(</span>
+</span><span class='line'>  <span class="s">&quot;gat&quot;</span><span class="o">,</span>
+</span><span class='line'>  <span class="k">new</span> <span class="nf">GoogleAnalyticsBinding</span><span class="o">(),</span>
+</span><span class='line'>  <span class="kc">false</span>   <span class="c1">//place inside aphid.ext namespace</span>
+</span><span class='line'>  <span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now all Google Analytics APIs can be accessed by the same JavaScript functions inside <code>aphid.ext.gat</code> on both iOS and Android.</p>
+
+<p>That&#8217;s all for this tutorial. We&#8217;re working on OpenAphid for Android v0.2, which implements <code>XMLHttpRequest</code> APIs as what we already have in iOS version.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[OpenAphid Android v0.1.5 Released]]></title>
@@ -562,22 +717,26 @@
 </span><span class='line'>
 </span><span class='line'>  <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">viewController</span><span class="p">.</span><span class="n">glViewController</span> <span class="nl">setScriptBinding:</span><span class="p">[[</span><span class="n">OAGoogleAnalyticsBinding</span> <span class="n">new</span><span class="p">]</span> <span class="n">autorelease</span><span class="p">]</span>
 </span><span class='line'>                                                    <span class="nl">name:</span><span class="s">@&quot;gat&quot;</span>
-</span><span class='line'>                                                 <span class="nl">iOSOnly:</span><span class="n">YES</span><span class="p">];</span>
+</span><span class='line'>                                                 <span class="nl">iOSOnly:</span><span class="n">NO</span><span class="p">];</span>
 </span><span class='line'>  <span class="c1">//...</span>
 </span><span class='line'><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
 
+
+<blockquote><p><strong> Updates at 07-09-2012: </strong> <code>iOSOnly</code> has been changed from <code>YES</code> to <code>NO</code> to match its Android version.</p></blockquote>
 
 <p>Now we can use Google Analytics in JavaScript to track the user&#8217;s behavior in games:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">gat</span> <span class="o">=</span> <span class="nx">aphid</span><span class="p">.</span><span class="nx">extios</span><span class="p">.</span><span class="nx">gat</span><span class="p">;</span> <span class="c1">//Google Analytics is injected as aphid.extios.gat</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">gat</span> <span class="o">=</span> <span class="nx">aphid</span><span class="p">.</span><span class="nx">ext</span><span class="p">.</span><span class="nx">gat</span><span class="p">;</span> <span class="c1">//Google Analytics is injected as aphid.ext.gat</span>
 </span><span class='line'><span class="nx">gat</span><span class="p">.</span><span class="nx">startTracker</span><span class="p">(</span><span class="s2">&quot;UA-31741840-1&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span> <span class="c1">//start a tracker</span>
 </span><span class='line'><span class="nx">gat</span><span class="p">.</span><span class="nx">trackPageView</span><span class="p">(</span><span class="s2">&quot;main.js&quot;</span><span class="p">);</span> <span class="c1">//track a page view</span>
 </span></code></pre></td></tr></table></div></figure>
 
+
+<blockquote><p><strong> Updates at 07-09-2012: </strong> Since <code>iOSOnly</code> has been set to <code>NO</code>, the JavaScript namespace for <code>gat</code> is switched to <code>aphid.ext</code> from <code>aphid.extios</code></p></blockquote>
 
 <p>We&#8217;re going to integrate more services into <a href="https://github.com/openaphid/Boilerplate-iOS">Boilerplate-iOS</a>, and make it be a better starter kit for game development with OpenAphid.</p>
 

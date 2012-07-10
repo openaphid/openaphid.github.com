@@ -322,22 +322,26 @@
 </span><span class='line'>
 </span><span class='line'>  <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">viewController</span><span class="p">.</span><span class="n">glViewController</span> <span class="nl">setScriptBinding:</span><span class="p">[[</span><span class="n">OAGoogleAnalyticsBinding</span> <span class="n">new</span><span class="p">]</span> <span class="n">autorelease</span><span class="p">]</span>
 </span><span class='line'>                                                    <span class="nl">name:</span><span class="s">@&quot;gat&quot;</span>
-</span><span class='line'>                                                 <span class="nl">iOSOnly:</span><span class="n">YES</span><span class="p">];</span>
+</span><span class='line'>                                                 <span class="nl">iOSOnly:</span><span class="n">NO</span><span class="p">];</span>
 </span><span class='line'>  <span class="c1">//...</span>
 </span><span class='line'><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
 
+
+<blockquote><p><strong> Updates at 07-09-2012: </strong> <code>iOSOnly</code> has been changed from <code>YES</code> to <code>NO</code> to match its Android version.</p></blockquote>
 
 <p>Now we can use Google Analytics in JavaScript to track the user&#8217;s behavior in games:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">gat</span> <span class="o">=</span> <span class="nx">aphid</span><span class="p">.</span><span class="nx">extios</span><span class="p">.</span><span class="nx">gat</span><span class="p">;</span> <span class="c1">//Google Analytics is injected as aphid.extios.gat</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">gat</span> <span class="o">=</span> <span class="nx">aphid</span><span class="p">.</span><span class="nx">ext</span><span class="p">.</span><span class="nx">gat</span><span class="p">;</span> <span class="c1">//Google Analytics is injected as aphid.ext.gat</span>
 </span><span class='line'><span class="nx">gat</span><span class="p">.</span><span class="nx">startTracker</span><span class="p">(</span><span class="s2">&quot;UA-31741840-1&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span> <span class="c1">//start a tracker</span>
 </span><span class='line'><span class="nx">gat</span><span class="p">.</span><span class="nx">trackPageView</span><span class="p">(</span><span class="s2">&quot;main.js&quot;</span><span class="p">);</span> <span class="c1">//track a page view</span>
 </span></code></pre></td></tr></table></div></figure>
 
+
+<blockquote><p><strong> Updates at 07-09-2012: </strong> Since <code>iOSOnly</code> has been set to <code>NO</code>, the JavaScript namespace for <code>gat</code> is switched to <code>aphid.ext</code> from <code>aphid.extios</code></p></blockquote>
 
 <p>We&#8217;re going to integrate more services into <a href="https://github.com/openaphid/Boilerplate-iOS">Boilerplate-iOS</a>, and make it be a better starter kit for game development with OpenAphid.</p>
 
@@ -405,6 +409,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/07/10/tutorial-exposing-java-methods-to-javascript-in-openaphid/">Tutorial: Exposing Java Methods to JavaScript in OpenAphid</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/07/09/openaphid-android-v0-dot-1-5-released/">OpenAphid Android v0.1.5 Released</a>
       </li>
     
@@ -418,10 +426,6 @@
     
       <li class="post">
         <a href="/blog/2012/05/16/tutorial-exposing-objective-c-methods-to-javascript-in-openaphid/">Tutorial: Calling Objective-C Methods from JavaScript in OpenAphid</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/05/15/openaphid-0-dot-2-available/">OpenAphid 0.2 is Available</a>
       </li>
     
   </ul>
