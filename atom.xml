@@ -4,7 +4,7 @@
   <title><![CDATA[OpenAphid]]></title>
   <link href="http://openaphid.github.com/atom.xml" rel="self"/>
   <link href="http://openaphid.github.com/"/>
-  <updated>2012-07-10T21:13:56+08:00</updated>
+  <updated>2012-07-28T00:48:32+08:00</updated>
   <id>http://openaphid.github.com/</id>
   <author>
     <name><![CDATA[Aphid Mobile]]></name>
@@ -12,6 +12,47 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How to Handle Touch Events in Flip Animation]]></title>
+    <link href="http://openaphid.github.com/blog/2012/07/27/how-to-handle-touch-events-for-flip-animation/"/>
+    <updated>2012-07-27T23:20:00+08:00</updated>
+    <id>http://openaphid.github.com/blog/2012/07/27/how-to-handle-touch-events-for-flip-animation</id>
+    <content type="html"><![CDATA[<p>This short post explains how to handle touch events for the flip animation introduced in our <a href="http://openaphid.github.com/blog/2012/05/21/how-to-implement-flipboard-animation-on-android/">previous post</a>.</p>
+
+<p>The full source codes of the demo application are available at Github:</p>
+
+<p><a href="https://github.com/openaphid/android-flip/Demo-Touch/">https://github.com/openaphid/android-flip/Demo-Touch/</a></p>
+
+<p>A pre-built APK file is also present for your Android devices:</p>
+
+<p><a href="https://github.com/openaphid/android-flip/Demo-Touch/APK/Flip-Touch.apk">https://github.com/openaphid/android-flip/Demo-Touch/APK/Flip-Touch.apk</a></p>
+
+<!-- more -->
+
+
+<p>The new demo app adds two new features compared to the previous one:</p>
+
+<ul>
+<li><p>Supports flipping over between two views. <a href="https://github.com/openaphid/android-flip/blob/master/Demo-Touch/src/com/aphidmobile/flip/FlipCards.java">FlipCards.java</a> takes screenshots of the front and back views, which are used to construct the textures for the translucent <code>GLSurfaceView</code>. The flip animation is rendered by four instances of <a href="https://github.com/openaphid/android-flip/blob/master/Demo-Touch/src/com/aphidmobile/flip/Card.java">Card</a>. Please refer to the <a href="https://github.com/openaphid/android-flip/blob/master/Demo-Touch/src/com/aphidmobile/flip/FlipCards.java">draw(GL10 gl)</a> method for more details.</p></li>
+<li><p>Flip angle can be controlled by touch events. Angle is calculated according to the relative movement of touches. The logic can be found in the <a href="https://github.com/openaphid/android-flip/blob/master/Demo-Touch/src/com/aphidmobile/flip/FlipCards.java">handleTouchEvent(MotionEvent event)</a> method.</p></li>
+</ul>
+
+
+<h2>Future Enhancements</h2>
+
+<p>The demo app is just a prove of concept. It can be enhanced to be a component for general scenarios:</p>
+
+<ul>
+<li><p>To support a <code>Adapter</code> as its data source to load views dynamically and lazily.</p></li>
+<li><p>To implement similar APIs like <code>ListView</code></p></li>
+<li><p>To support other fancy effects that can be implemented in OpenGL ES.</p></li>
+</ul>
+
+
+<p>But I&#8217;m sorry that I&#8217;ll be in a long trip at south Asia with my family. Both <code>android-flip</code> and <code>OpenAphid</code> will not be updated until I come back. You can still reach me via email if you have any questions.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Tutorial: Exposing Java Methods to JavaScript in OpenAphid]]></title>

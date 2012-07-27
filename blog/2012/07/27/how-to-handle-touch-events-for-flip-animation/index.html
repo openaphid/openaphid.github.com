@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>OpenAphid Android v0.1.5 Released - OpenAphid</title>
+  <title>How to Handle Touch Events in Flip Animation - OpenAphid</title>
   <meta name="author" content="Aphid Mobile">
 
   
-  <meta name="description" content="We&#8217;re pleased to release v0.1.5 of OpenAphid Android. Highlights of this release includes: Support multitouch on Android
-Enhanced single touch &hellip;">
+  <meta name="description" content="This short post explains how to handle touch events for the flip animation introduced in our previous post. The full source codes of the demo &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@ Enhanced single touch &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://openaphid.github.com/blog/2012/07/09/openaphid-android-v0-dot-1-5-released">
+  <link rel="canonical" href="http://openaphid.github.com/blog/2012/07/27/how-to-handle-touch-events-for-flip-animation">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -77,7 +76,7 @@ Enhanced single touch &hellip;">
   
   <header>
     
-      <h1 class="entry-title">OpenAphid Android v0.1.5 Released</h1>
+      <h1 class="entry-title">How to Handle Touch Events in Flip Animation</h1>
     
     
       <p class="meta">
@@ -93,25 +92,46 @@ Enhanced single touch &hellip;">
   
 
 
-<time datetime="2012-07-09T15:02:00+08:00" pubdate data-updated="true">Jul 9<span>th</span>, 2012</time>
+<time datetime="2012-07-27T23:20:00+08:00" pubdate data-updated="true">Jul 27<span>th</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>We&#8217;re pleased to release v0.1.5 of OpenAphid Android.</p>
+<div class="entry-content"><p>This short post explains how to handle touch events for the flip animation introduced in our <a href="/blog/2012/05/21/how-to-implement-flipboard-animation-on-android/">previous post</a>.</p>
 
-<p>Highlights of this release includes:</p>
+<p>The full source codes of the demo application are available at Github:</p>
+
+<p><a href="https://github.com/openaphid/android-flip/Demo-Touch/">https://github.com/openaphid/android-flip/Demo-Touch/</a></p>
+
+<p>A pre-built APK file is also present for your Android devices:</p>
+
+<p><a href="https://github.com/openaphid/android-flip/Demo-Touch/APK/Flip-Touch.apk">https://github.com/openaphid/android-flip/Demo-Touch/APK/Flip-Touch.apk</a></p>
+
+<!-- more -->
+
+
+<p>The new demo app adds two new features compared to the previous one:</p>
 
 <ul>
-<li><p>Support multitouch on Android</p></li>
-<li><p>Enhanced single touch handling when multiple fingers are on screen</p></li>
-<li><p>Public APIs for Java to JavaScript method binding</p></li>
+<li><p>Supports flipping over between two views. <a href="https://github.com/openaphid/android-flip/blob/master/Demo-Touch/src/com/aphidmobile/flip/FlipCards.java">FlipCards.java</a> takes screenshots of the front and back views, which are used to construct the textures for the translucent <code>GLSurfaceView</code>. The flip animation is rendered by four instances of <a href="https://github.com/openaphid/android-flip/blob/master/Demo-Touch/src/com/aphidmobile/flip/Card.java">Card</a>. Please refer to the <a href="https://github.com/openaphid/android-flip/blob/master/Demo-Touch/src/com/aphidmobile/flip/FlipCards.java">draw(GL10 gl)</a> method for more details.</p></li>
+<li><p>Flip angle can be controlled by touch events. Angle is calculated according to the relative movement of touches. The logic can be found in the <a href="https://github.com/openaphid/android-flip/blob/master/Demo-Touch/src/com/aphidmobile/flip/FlipCards.java">handleTouchEvent(MotionEvent event)</a> method.</p></li>
 </ul>
 
 
-<p><a href="https://github.com/openaphid/Demos">https://github.com/openaphid/Demos</a> is also updated with two new demos: <a href="https://github.com/openaphid/Demos/blob/master/Android/Demos/assets/demo.bundle/touch_test.js">touch_test.js</a> and <a href="https://github.com/openaphid/Demos/blob/master/Android/Demos/assets/demo.bundle/binding_test.js">binding_test.js</a></p>
+<h2>Future Enhancements</h2>
+
+<p>The demo app is just a prove of concept. It can be enhanced to be a component for general scenarios:</p>
+
+<ul>
+<li><p>To support a <code>Adapter</code> as its data source to load views dynamically and lazily.</p></li>
+<li><p>To implement similar APIs like <code>ListView</code></p></li>
+<li><p>To support other fancy effects that can be implemented in OpenGL ES.</p></li>
+</ul>
+
+
+<p>But I&#8217;m sorry that I&#8217;ll be in a long trip at south Asia with my family. Both <code>android-flip</code> and <code>OpenAphid</code> will not be updated until I come back. You can still reach me via email if you have any questions.</p>
 </div>
 
 
@@ -134,7 +154,7 @@ Enhanced single touch &hellip;">
   
 
 
-<time datetime="2012-07-09T15:02:00+08:00" pubdate data-updated="true">Jul 9<span>th</span>, 2012</time>
+<time datetime="2012-07-27T23:20:00+08:00" pubdate data-updated="true">Jul 27<span>th</span>, 2012</time>
       
 
 
@@ -142,7 +162,7 @@ Enhanced single touch &hellip;">
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://openaphid.github.com/blog/2012/07/09/openaphid-android-v0-dot-1-5-released/" data-via="openaphid" data-counturl="http://openaphid.github.com/blog/2012/07/09/openaphid-android-v0-dot-1-5-released/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://openaphid.github.com/blog/2012/07/27/how-to-handle-touch-events-for-flip-animation/" data-via="openaphid" data-counturl="http://openaphid.github.com/blog/2012/07/27/how-to-handle-touch-events-for-flip-animation/" >Tweet</a>
   
   
   
@@ -151,10 +171,8 @@ Enhanced single touch &hellip;">
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/06/27/openaphid-android-v0-dot-1-released/" title="Previous Post: OpenAphid Android v0.1 released">&laquo; OpenAphid Android v0.1 released</a>
+        <a class="basic-alignment left" href="/blog/2012/07/10/tutorial-exposing-java-methods-to-javascript-in-openaphid/" title="Previous Post: Tutorial: Exposing Java Methods to JavaScript in OpenAphid">&laquo; Tutorial: Exposing Java Methods to JavaScript in OpenAphid</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2012/07/10/tutorial-exposing-java-methods-to-javascript-in-openaphid/" title="Next Post: Tutorial: Exposing Java Methods to JavaScript in OpenAphid">Tutorial: Exposing Java Methods to JavaScript in OpenAphid &raquo;</a>
       
     </p>
   </footer>
@@ -266,8 +284,8 @@ Copyright &copy; 2012 - Aphid Mobile - openaphid@gmail.com -
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://openaphid.github.com/blog/2012/07/09/openaphid-android-v0-dot-1-5-released/';
-        var disqus_url = 'http://openaphid.github.com/blog/2012/07/09/openaphid-android-v0-dot-1-5-released/';
+        var disqus_identifier = 'http://openaphid.github.com/blog/2012/07/27/how-to-handle-touch-events-for-flip-animation/';
+        var disqus_url = 'http://openaphid.github.com/blog/2012/07/27/how-to-handle-touch-events-for-flip-animation/';
         var disqus_script = 'embed.js';
       
     (function () {
