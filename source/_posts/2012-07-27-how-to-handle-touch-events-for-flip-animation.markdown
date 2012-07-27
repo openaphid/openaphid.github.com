@@ -34,6 +34,6 @@ The demo app is just a prove of concept. It can be enhanced to be a component fo
 
 - To support other fancy effects that can be implemented in OpenGL ES.
 
-But I'm sorry that I'll be in a long trip at south Asia with my family. Both `android-flip` and `OpenAphid` will not be updated until I come back. You can still reach me via email if you have any questions. 
+But I'm sorry that I'll be in a long trip with my family. Both `android-flip` and `OpenAphid` will not be updated until I come back. You can still reach me via email if you have any questions. 
 
 
