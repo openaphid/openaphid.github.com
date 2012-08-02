@@ -10,11 +10,22 @@
 		<script type="text/javascript" src="js/toc.js"></script>
 		<script type="text/javascript" src="js/versions.js"></script>
 		<meta name="generator" content="OpenAphid Doc Generator 0.1"/>
+		<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-29340978-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  	</script>
 	</head>
 	<body>
 		<header id="top_header">
 		<div id="library" class="hideInXcode">
-						<h1><a id="libraryTitle" href="index.html">OpenAphid</a></h1>
+						<h1><a id="libraryTitle" href="index.html">OpenAphid v0.2</a></h1>
 						<a id="developerHome" target="_blank" href="http://github.com/openaphid">Aphid Mobile</a>
 					</div>
 					
@@ -37,6 +48,7 @@
 						<option value="//property/contentScaleFactor_0">&nbsp;&nbsp;&nbsp;&nbsp;contentScaleFactor</option>
 						<option value="//property/displayFPS_0">&nbsp;&nbsp;&nbsp;&nbsp;displayFPS</option>
 						<option value="//property/fpsInterval_0">&nbsp;&nbsp;&nbsp;&nbsp;fpsInterval</option>
+						<option value="//property/multipleTouchEnabled_0">&nbsp;&nbsp;&nbsp;&nbsp;multipleTouchEnabled</option>
 						<option value="//property/runningScene_0">&nbsp;&nbsp;&nbsp;&nbsp;runningScene</option>
 						<option value="//property/winSize_0">&nbsp;&nbsp;&nbsp;&nbsp;winSize</option>
 						<option value="//property/winSizeInPixels_0">&nbsp;&nbsp;&nbsp;&nbsp;winSizeInPixels</option>
@@ -67,6 +79,8 @@
 							href="#//property/displayFPS_0">displayFPS</a></span></li>
 						<li><span class="nodisclosure"></span><span class="sectionName"><a
 							href="#//property/fpsInterval_0">fpsInterval</a></span></li>
+						<li><span class="nodisclosure"></span><span class="sectionName"><a
+							href="#//property/multipleTouchEnabled_0">multipleTouchEnabled</a></span></li>
 						<li><span class="nodisclosure"></span><span class="sectionName"><a
 							href="#//property/runningScene_0">runningScene</a></span></li>
 						<li><span class="nodisclosure"></span><span class="sectionName"><a
@@ -140,6 +154,12 @@
 </li>
 <li>
 	<span class="tooltip">
+		<code><a href="#//property/multipleTouchEnabled_0">multipleTouchEnabled</a></code>
+		
+	</span>
+</li>
+<li>
+	<span class="tooltip">
 		<code><a href="#//property/runningScene_0">runningScene</a></code>
 		
 	</span>
@@ -170,6 +190,9 @@
 	<code>float</code>
 </li>
 <li>
+	<code>bool</code>
+</li>
+<li>
 	<code>Scene</code>
 </li>
 <li>
@@ -183,6 +206,9 @@
 						<ul class="task-list-col">
 							<li>Writability</li>
 							<li>
+		<code>readwrite</code>
+</li>
+<li>
 		<code>readwrite</code>
 </li>
 <li>
@@ -296,7 +322,26 @@
 							
 							<div class="method-subsection discussion-section">
 								<h4 class="method-subtitle">Discussion</h4>
-								<p>Default: 1.0f</p>
+								<p>Default: <code>1.0f</code></p>
+
+							</div>
+							
+							
+						</div>
+						<div class="section-method">
+							<a name="//property/multipleTouchEnabled_0" title="multipleTouchEnabled"></a>
+							<h3 class="subsubtitle method-title">multipleTouchEnabled</h3>
+							
+							
+							
+							<div class="method-subsection method-declaration"><code>readwrite</code> <code>bool</code> multipleTouchEnabled</div>
+							
+							
+							
+							
+							<div class="method-subsection discussion-section">
+								<h4 class="method-subtitle">Discussion</h4>
+								<p>Default: <code>false</code></p>
 
 							</div>
 							
