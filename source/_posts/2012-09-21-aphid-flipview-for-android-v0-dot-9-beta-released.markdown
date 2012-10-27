@@ -8,13 +8,13 @@ categories:
 
 I'm happy to announce the first release of [Aphid FlipView](https://github.com/openaphid/android-flip), an Android UI component which help add flipping animation in your application. Please download and install the pre-built demo APK file to check out it in action:
 
-<!-- more -->
-
 [https://github.com/openaphid/android-flip/tree/master/FlipView/Demo/APK](https://github.com/openaphid/android-flip/tree/master/FlipView/Demo/APK)
 
 I'm also glad to use some pictures captured during my trip to build one of the demos:
 
-![screenshot](/images/aphid-flipview-v0.9.jpg "Screenshot of Aphid FlipView v0.9")
+![screenshot](/images/flipview-demo.gif "Screenshot of Aphid FlipView v0.9")
+
+<!-- more -->
 
 
 The work is derived from the previous demos as described in [post 1](/blog/2012/07/27/how-to-handle-touch-events-for-flip-animation/) and [post 2](http://openaphid.github.com/blog/2012/05/21/how-to-implement-flipboard-animation-on-android/). Besides the core animation effect, the v0.9 also fixes issues and adds features requested by several friends:
