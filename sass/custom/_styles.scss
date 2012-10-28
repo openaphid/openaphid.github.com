@@ -13,8 +13,8 @@ body > div > div { background-image: none; }
 
 
 body > header{
-  background: none;
-  padding: 1.6em 0 1em 0
+  background: url("/images/aphid-page-bg.png") no-repeat scroll top right;
+  padding: 0.5em 0 1em 0
 }
 
 body > header h1{
@@ -69,6 +69,14 @@ h3 { font-size: 1em; }
 h1 span{
   font-weight: normal;
   color: #E0841B;
+}
+
+#content .blog-index article {
+  padding-top: 1em;
+}
+
+article > footer {
+  padding-bottom: 1em;
 }
 
 article h2, article h3, article header{
@@ -171,7 +179,7 @@ body > footer{
     -moz-border-radius: 0.4em;
     -webkit-border-radius: 0.4em;
     border-radius:0.4em;
-    margin-bottom: 1.2em;
+    margin-bottom: 0.4em;
   }
 
   body > footer{

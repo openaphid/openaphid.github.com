@@ -8,23 +8,26 @@ $subtitle-color: lighten($header-bg, 58);
 $nav-bg: #d7c014;
 $nav-bg: #4fbfee;
 
-$aphid-green: #d7c014;
-$aphid-blue: #4fbfee;
+$aphid-green: #8FC43F;//#d7c014;
+$aphid-blue: #2A6C89;//#4fbfee;
+$aphid-blue-light: #4fbfee;
 
 $link-color-visited: #888;
 $sidebar-color: #666;
 $sidebar-color: #111;
 
-$nav-bg: desaturate(lighten($aphid-blue, 10), 0);
+$nav-bg: desaturate(lighten($aphid-blue-light, 10), 0);
 $nav-bg-front: image-url('noise.png');
 $nav-bg-back: linear-gradient(lighten($nav-bg, 8), $nav-bg, darken($nav-bg, 11));
 
 $nav-color: desaturate(#262c33, 10);
 
 //$sidebar-bg: desaturate(#eceff5, 8);
-$sidebar-bg: desaturate(lighten($aphid-green, 60%), 8);
-$sidebar-link-color: saturate(#526f9a, 10);
-$sidebar-link-color-hover: darken(#7ab662, 9);
+$sidebar-bg: desaturate(lighten($aphid-green, 30%), 20);
+//$sidebar-link-color: saturate(#526f9a, 0);
+$sidebar-link-color: saturate($aphid-blue, 0);
+//$sidebar-link-color-hover: darken(#7ab662, 9);
+$sidebar-link-color-hover: darken($aphid-blue, 30);
 $footer-bg: #ccc !default;
 $footer-bg-front: image-url('noise.png');
 $footer-bg-back: linear-gradient(lighten($footer-bg, 8), $footer-bg, darken($footer-bg, 11));
