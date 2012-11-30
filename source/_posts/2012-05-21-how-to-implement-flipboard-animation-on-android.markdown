@@ -3,7 +3,7 @@ layout: post
 title: "How to Implement Flipboard Animation on Android"
 date: 2012-05-21 22:14
 comments: true
-categories: 
+categories: [FlipView]
 ---
 
 The demo in this post was born when we're working on the Android port of [OpenAphid](https://github.com/openaphid). One of our engineers is a huge fan of [Flipboard iOS](http://www.flipboard.com). He decided to implement its page flip animation on Android. 

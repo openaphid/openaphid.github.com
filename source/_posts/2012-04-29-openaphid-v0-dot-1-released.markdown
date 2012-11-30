@@ -3,7 +3,7 @@ layout: post
 title: "OpenAphid v0.1 Released"
 date: 2012-04-29 20:11
 comments: true
-categories: [OpenAphid, iOS, Release] 
+categories: [OpenAphid-Engine, Release] 
 ---
 
 We're excited to release OpenAphid v0.1, which is the first public version of the project.

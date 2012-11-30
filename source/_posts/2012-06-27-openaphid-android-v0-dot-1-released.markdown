@@ -3,7 +3,7 @@ layout: post
 title: "OpenAphid Android v0.1 released"
 date: 2012-06-27 08:22
 comments: true
-categories: 
+categories: [OpenAphid-Engine, Release]
 ---
 
 We're excited to release the first version of OpenAphid which supports Android OS. OpenAphid is now a cross platform 2D game engine with both iOS and Android support.

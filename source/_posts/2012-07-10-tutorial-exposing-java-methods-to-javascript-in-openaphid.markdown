@@ -3,7 +3,7 @@ layout: post
 title: "Tutorial: Exposing Java Methods to JavaScript in OpenAphid"
 date: 2012-07-10 14:39
 comments: true
-categories: 
+categories: [OpenAphid-Engine, Tutorial]
 ---
 
 [OpenAphid](https://github.com/openaphid) for Android v0.1.5 supports exposing Java methods as JavaScript functions, which is helpful for integrating 3rd-party services into games. The binding APIs are similar to its [iOS version](/blog/2012/05/16/tutorial-exposing-objective-c-methods-to-javascript-in-openaphid/).

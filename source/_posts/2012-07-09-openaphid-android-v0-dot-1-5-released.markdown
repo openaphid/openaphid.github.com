@@ -3,7 +3,7 @@ layout: post
 title: "OpenAphid Android v0.1.5 Released"
 date: 2012-07-09 15:02
 comments: true
-categories: 
+categories: [OpenAphid-Engine, Release]
 ---
 
 We're pleased to release v0.1.5 of OpenAphid Android.

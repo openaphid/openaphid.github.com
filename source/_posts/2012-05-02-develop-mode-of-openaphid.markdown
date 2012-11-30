@@ -3,7 +3,7 @@ layout: post
 title: "Tutorial: Developer Mode of OpenAphid"
 date: 2012-05-02 14:52
 comments: true
-categories: [Tutorial, iOS]
+categories: [Tutorial, OpenAphid-Engine]
 ---
 
 `Developer Mode` is a feature to speed up developing games with OpenAphid. The behavior of OpenAphid changes if the developer mode is turned on.

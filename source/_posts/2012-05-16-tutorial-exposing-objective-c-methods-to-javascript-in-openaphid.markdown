@@ -3,7 +3,7 @@ layout: post
 title: "Tutorial: Calling Objective-C Methods from JavaScript in OpenAphid"
 date: 2012-05-16 10:06
 comments: true
-categories: 
+categories: [OpenAphid-Engine, Tutorial]
 ---
 
 [OpenAphid](https://github.com/openaphid) 0.2 was shipped with a new binding system which can bridge JavaScript functions to Objective-C methods on demand. It's useful for games to integrate analytics services, monetization solutions, and social services, etc. In this tutorial, we'll go through the binding system by demonstrating how to integrate [Google Analytics iOS SDK](https://developers.google.com/analytics/devguides/collection/ios/) into OpenAphid. 

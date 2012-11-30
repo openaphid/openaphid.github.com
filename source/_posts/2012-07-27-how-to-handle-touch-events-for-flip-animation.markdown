@@ -3,7 +3,7 @@ layout: post
 title: "How to Handle Touch Events in Flip Animation"
 date: 2012-07-27 23:20
 comments: true
-categories: 
+categories: [FlipView]
 ---
 
 This short post explains how to handle touch events for the flip animation introduced in our [previous post](/blog/2012/05/21/how-to-implement-flipboard-animation-on-android/).
