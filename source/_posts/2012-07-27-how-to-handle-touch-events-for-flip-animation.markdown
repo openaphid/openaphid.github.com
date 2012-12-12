@@ -6,6 +6,8 @@ comments: true
 categories: [FlipView]
 ---
 
+> ** Updates at 2012-12-12: ** Please checkout [FlipView](/blog/categories/flipview/) for an improved solution.
+
 This short post explains how to handle touch events for the flip animation introduced in our [previous post](/blog/2012/05/21/how-to-implement-flipboard-animation-on-android/).
 
 The full source codes of the demo application are available at Github:

@@ -6,6 +6,8 @@ comments: true
 categories: [FlipView]
 ---
 
+> ** Updates at 2012-12-12: ** Please check out [FlipView](/blog/categories/flipview/) for an improved solution.
+
 The demo in this post was born when we're working on the Android port of [OpenAphid](https://github.com/openaphid). One of our engineers is a huge fan of [Flipboard iOS](http://www.flipboard.com). He decided to implement its page flip animation on Android. 
 
 If you don't know about the effect, please install the APK file of our demo app to see how it looks:
