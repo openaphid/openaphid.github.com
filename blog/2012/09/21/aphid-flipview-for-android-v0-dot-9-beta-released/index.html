@@ -1,0 +1,433 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>FlipView for Android v0.9 Beta Released - OpenAphid</title>
+  <meta name="author" content="Aphid Mobile">
+
+  
+  <meta name="description" content="I&#8217;m happy to announce the first release of FlipView, an Android UI component which help add flipping animation in your application. Please &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://openaphid.github.com/blog/2012/09/21/aphid-flipview-for-android-v0-dot-9-beta-released">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="OpenAphid" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<!--link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css"-->
+
+<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-29340978-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+<h1><img src="/images/aphid-logo-new.png" width="64"><a href="/">OpenAphid</a></h1>
+  
+    <h2>JavaScript + Cocos2D for Native iOS/Android Games</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/api-doc/latest/index.html" target="_blank">API References</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">FlipView for Android v0.9 Beta Released</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-21T15:11:00+08:00" pubdate data-updated="true">Sep 21<span>st</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I&#8217;m happy to announce the first release of <a href="https://github.com/openaphid/android-flip">FlipView</a>, an Android UI component which help add flipping animation in your application. Please download and install the pre-built demo APK file to check out it in action:</p>
+
+<p><a href="https://github.com/openaphid/android-flip/tree/master/FlipView/Demo/APK">https://github.com/openaphid/android-flip/tree/master/FlipView/Demo/APK</a></p>
+
+<p>I&#8217;m also glad to use some pictures captured during my trip to build one of the demos:</p>
+
+<p><img src="/images/flipview-demo.gif" title="Screenshot of Aphid FlipView v0.9" alt="screenshot" /></p>
+
+<!-- more -->
+
+
+<p>The work is derived from the previous demos as described in <a href="/blog/2012/07/27/how-to-handle-touch-events-for-flip-animation/">post 1</a> and <a href="http://openaphid.github.com/blog/2012/05/21/how-to-implement-flipboard-animation-on-android/">post 2</a>. Besides the core animation effect, the v0.9 also fixes issues and adds features requested by several friends:</p>
+
+<ul>
+<li><p><code>Adapter</code> is supported for adding multiple pages into a sequence of flipping animation.</p></li>
+<li><p>Touch events are correctly dispatched to views in each page, which allows using buttons or other controls in pages.</p></li>
+<li><p>Bouncing effect is added for the first and last pages.</p></li>
+<li><p>Less flicker when starting and ending the animation.</p></li>
+<li><p>Less CPU resource is used when the animation is idle.</p></li>
+</ul>
+
+
+<h2>Core Classes</h2>
+
+<p>The component is released as an <a href="https://github.com/openaphid/android-flip/tree/master/FlipView/FlipLibrary">Android Library Project</a>. The core class is the <a href="https://github.com/openaphid/android-flip/blob/master/FlipView/FlipLibrary/src/com/aphidmobile/flip/FlipViewController.java">FlipViewController</a>.</p>
+
+<p>The general routine of setting up <code>FlipViewController</code> is straightforward:</p>
+
+<ul>
+<li>Creates an instance of <code>FlipViewController</code>:</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">FlipViewController</span> <span class="n">flipView</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FlipViewController</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Provides an adapter as the data source. It&#8217;s very similar to the setup logic for a <code>ListView</code>:</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'> <span class="n">flipView</span><span class="o">.</span><span class="na">setAdapter</span><span class="o">(</span><span class="k">new</span> <span class="n">BaseAdapter</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>      <span class="nd">@Override</span>
+</span><span class='line'>      <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getCount</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>          <span class="k">return</span> <span class="n">count</span><span class="o">;</span>
+</span><span class='line'>      <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="nd">@Override</span>
+</span><span class='line'>      <span class="kd">public</span> <span class="n">Object</span> <span class="nf">getItem</span><span class="o">(</span><span class="kt">int</span> <span class="n">position</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>          <span class="k">return</span> <span class="n">position</span><span class="o">;</span>
+</span><span class='line'>      <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="nd">@Override</span>
+</span><span class='line'>      <span class="kd">public</span> <span class="kt">long</span> <span class="nf">getItemId</span><span class="o">(</span><span class="kt">int</span> <span class="n">position</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>          <span class="k">return</span> <span class="n">position</span><span class="o">;</span>
+</span><span class='line'>      <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="nd">@Override</span>
+</span><span class='line'>      <span class="kd">public</span> <span class="n">View</span> <span class="nf">getView</span><span class="o">(</span><span class="kt">int</span> <span class="n">position</span><span class="o">,</span> <span class="n">View</span> <span class="n">convertView</span><span class="o">,</span> <span class="n">ViewGroup</span> <span class="n">parent</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>          <span class="c1">//setup a view by either reusing the convertView or creating a new one.                </span>
+</span><span class='line'>          <span class="k">return</span> <span class="n">view</span><span class="o">;</span>
+</span><span class='line'>      <span class="o">}</span>
+</span><span class='line'>  <span class="o">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><p>Adds the instance of <code>FlipViewController</code> into your view hierarchy.</p></li>
+<li><p>Invokes <code>onPause</code> and <code>onResume</code> of <code>FlipViewController</code> correspondingly in your activity&#8217;s life-cycle methods.</p></li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="nd">@Override</span>
+</span><span class='line'><span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onResume</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>  <span class="kd">super</span><span class="o">.</span><span class="na">onResume</span><span class="o">();</span>
+</span><span class='line'>  <span class="n">flipView</span><span class="o">.</span><span class="na">onResume</span><span class="o">();</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nd">@Override</span>
+</span><span class='line'><span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onPause</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>  <span class="kd">super</span><span class="o">.</span><span class="na">onPause</span><span class="o">();</span>
+</span><span class='line'>  <span class="n">flipView</span><span class="o">.</span><span class="na">onPause</span><span class="o">();</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Please also refer to the demo project for more details:</p>
+
+<p><a href="https://github.com/openaphid/android-flip/tree/master/FlipView/Demo">https://github.com/openaphid/android-flip/tree/master/FlipView/Demo</a></p>
+
+<h2>Important Notes</h2>
+
+<p>There are some facts about the component which you should pay special attention to:</p>
+
+<ul>
+<li><p>It&#8217;s recommended to use only ONE instance per activity. As the animation is implemented in a <code>GLSurfaceView</code>, using multiple instances in one activity may cause serious compatible problems on some Android devices.</p></li>
+<li><p>Vertical scroll in sub-views may not work as the touch events are consumed by the animation.</p></li>
+<li><p>I don&#8217;t have enough resources to test its compatibility across all Android OS versions and devices. Please verify it after integrating it in your project.</p></li>
+</ul>
+
+
+<p>Please use <a href="https://github.com/openaphid/android-flip/issues">Github issues</a> to report any problems and request more features. Thanks in advance.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Aphid Mobile</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-21T15:11:00+08:00" pubdate data-updated="true">Sep 21<span>st</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/flipview/'>FlipView</a>, <a class='category' href='/blog/categories/release/'>Release</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://openaphid.github.com/blog/2012/09/21/aphid-flipview-for-android-v0-dot-9-beta-released/" data-via="openaphid" data-counturl="http://openaphid.github.com/blog/2012/09/21/aphid-flipview-for-android-v0-dot-9-beta-released/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/07/27/how-to-handle-touch-events-for-flip-animation/" title="Previous Post: How to Handle Touch Events in Flip Animation">&laquo; How to Handle Touch Events in Flip Animation</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/12/12/flipview-for-android-v0-dot-9-6-released/" title="Next Post: FlipView for Android v0.9.6 Released">FlipView for Android v0.9.6 Released &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/12/12/flipview-for-android-v0-dot-9-6-released/">FlipView for Android v0.9.6 Released</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/21/aphid-flipview-for-android-v0-dot-9-beta-released/">FlipView for Android v0.9 Beta Released</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/07/27/how-to-handle-touch-events-for-flip-animation/">How to Handle Touch Events in Flip Animation</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/07/10/tutorial-exposing-java-methods-to-javascript-in-openaphid/">Tutorial: Exposing Java Methods to JavaScript in OpenAphid</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/07/09/openaphid-android-v0-dot-1-5-released/">OpenAphid Android v0.1.5 Released</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Categories</h1>
+    <ul id="category-list"><li><a href='/blog/categories/flipview'>FlipView (4)</a></li><li><a href='/blog/categories/openaphid-engine'>OpenAphid-Engine (9)</a></li><li><a href='/blog/categories/release'>Release (6)</a></li><li><a href='/blog/categories/tutorial'>Tutorial (4)</a></li></ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/openaphid">@openaphid</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'openaphid',
+            count: 3,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("openaphid", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/openaphid" class="twitter-follow-button" data-show-count="false">Follow @openaphid</a>
+  
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+Copyright &copy; 2012 - Aphid Mobile - openaphid@gmail.com - 
+	<span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span> - 
+	<span class="credit">Artworks Designed by <a href="http://wannadobre.carbonmade.com/">Oana Dobre</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'openaphidblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://openaphid.github.com/blog/2012/09/21/aphid-flipview-for-android-v0-dot-9-beta-released/';
+        var disqus_url = 'http://openaphid.github.com/blog/2012/09/21/aphid-flipview-for-android-v0-dot-9-beta-released/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

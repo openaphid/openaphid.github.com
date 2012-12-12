@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: FlipView | OpenAphid]]></title>
+  <link href="http://openaphid.github.com/blog/categories/flipview/atom.xml" rel="self"/>
+  <link href="http://openaphid.github.com/"/>
+  <updated>2012-12-12T16:29:35+08:00</updated>
+  <id>http://openaphid.github.com/</id>
+  <author>
+    <name><![CDATA[Aphid Mobile]]></name>
+    <email><![CDATA[openaphid@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[FlipView for Android v0.9.6 Released]]></title>
+    <link href="http://openaphid.github.com/blog/2012/12/12/flipview-for-android-v0-dot-9-6-released/"/>
+    <updated>2012-12-12T15:59:00+08:00</updated>
+    <id>http://openaphid.github.com/blog/2012/12/12/flipview-for-android-v0-dot-9-6-released</id>
+    <content type="html"><![CDATA[<p><a href="https://github.com/openaphid/android-flip">FlipView</a> v0.9.6 is released with various bug fixes and enhancements.</p>
+
+<p><img src="/images/flipview-horizontal-demo.gif" title="Screenshot of Aphid FlipView v0.9.5" alt="screenshot" /></p>
+
+<h2>Release Notes</h2>
+
+<!-- more -->
+
+
+<p>For a complete change list please checkout our <a href="https://github.com/openaphid/android-flip/issues/milestones?state=closed">issue tracker</a></p>
+
+<h3>v0.9.6, Dec 12th 2012</h3>
+
+<h4>New Features:</h4>
+
+<ul>
+<li><p>Adds fling support. (<a href="https://github.com/openaphid/android-flip/pull/10">Pull #10</a>, <a href="https://github.com/openaphid/android-flip/issues/20">Issue #20</a>)</p></li>
+<li><p>Adds XML configuration support. (<a href="https://github.com/openaphid/android-flip/issues/13">Issue #13</a>)</p></li>
+<li><p>Adds several new demos.</p></li>
+</ul>
+
+
+<h4>Bug Fixes</h4>
+
+<ul>
+<li>Fixes several bugs when flipping. (<a href="https://github.com/openaphid/android-flip/issues/17">Issue #17</a>, <a href="https://github.com/openaphid/android-flip/issues/16">Issue #16</a>, <a href="https://github.com/openaphid/android-flip/issues/15">Issue #15</a>, <a href="https://github.com/openaphid/android-flip/issues/14">Issue #14</a>)</li>
+</ul>
+
+
+<h4>Thanks</h4>
+
+<ul>
+<li>Special thanks to <a href="https://github.com/iPaulPro">@iPaulPro</a> for his outstanding contributions.</li>
+</ul>
+
+
+<h3>v0.9.5, Nov 9th 2012</h3>
+
+<h4>New Features:</h4>
+
+<ul>
+<li><p>Supports flipping horizontally. (<a href="https://github.com/openaphid/android-flip/pull/6">Pull Request 6.</a>. Thanks to <a href="https://github.com/alexmedearis">@axexmedearis</a> for the contribution)</p></li>
+<li><p>Supports event listener to get notified when flipping finishes. (<a href="https://github.com/openaphid/android-flip/issues/3">Issue #3</a>)</p></li>
+<li><p>Supports content reloading when flipping. (<a href="https://github.com/openaphid/android-flip/issues/3">Issue #4</a>)</p></li>
+</ul>
+
+
+<h4>Bug Fixes</h4>
+
+<ul>
+<li>Incorrect rendering of shadow in horizontal mode. (<a href="https://github.com/openaphid/android-flip/issues/7">Issue #7</a>)</li>
+</ul>
+
+
+<h3>v0.9, Sep 21st 2012</h3>
+
+<p>First release</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[FlipView for Android v0.9 Beta Released]]></title>
+    <link href="http://openaphid.github.com/blog/2012/09/21/aphid-flipview-for-android-v0-dot-9-beta-released/"/>
+    <updated>2012-09-21T15:11:00+08:00</updated>
+    <id>http://openaphid.github.com/blog/2012/09/21/aphid-flipview-for-android-v0-dot-9-beta-released</id>
+    <content type="html"><![CDATA[<p>I'm happy to announce the first release of <a href="https://github.com/openaphid/android-flip">FlipView</a>, an Android UI component which help add flipping animation in your application. Please download and install the pre-built demo APK file to check out it in action:</p>
+
+<p><a href="https://github.com/openaphid/android-flip/tree/master/FlipView/Demo/APK">https://github.com/openaphid/android-flip/tree/master/FlipView/Demo/APK</a></p>
+
+<p>I'm also glad to use some pictures captured during my trip to build one of the demos:</p>
+
+<p><img src="/images/flipview-demo.gif" title="Screenshot of Aphid FlipView v0.9" alt="screenshot" /></p>
+
+<!-- more -->
+
+
+<p>The work is derived from the previous demos as described in <a href="/blog/2012/07/27/how-to-handle-touch-events-for-flip-animation/">post 1</a> and <a href="http://openaphid.github.com/blog/2012/05/21/how-to-implement-flipboard-animation-on-android/">post 2</a>. Besides the core animation effect, the v0.9 also fixes issues and adds features requested by several friends:</p>
+
+<ul>
+<li><p><code>Adapter</code> is supported for adding multiple pages into a sequence of flipping animation.</p></li>
+<li><p>Touch events are correctly dispatched to views in each page, which allows using buttons or other controls in pages.</p></li>
+<li><p>Bouncing effect is added for the first and last pages.</p></li>
+<li><p>Less flicker when starting and ending the animation.</p></li>
+<li><p>Less CPU resource is used when the animation is idle.</p></li>
+</ul>
+
+
+<h2>Core Classes</h2>
+
+<p>The component is released as an <a href="https://github.com/openaphid/android-flip/tree/master/FlipView/FlipLibrary">Android Library Project</a>. The core class is the <a href="https://github.com/openaphid/android-flip/blob/master/FlipView/FlipLibrary/src/com/aphidmobile/flip/FlipViewController.java">FlipViewController</a>.</p>
+
+<p>The general routine of setting up <code>FlipViewController</code> is straightforward:</p>
+
+<ul>
+<li>Creates an instance of <code>FlipViewController</code>:</li>
+</ul>
+
+
+<p>```java</p>
+
+<pre><code>FlipViewController flipView = new FlipViewController(context);
+</code></pre>
+
+<p>```</p>
+
+<ul>
+<li>Provides an adapter as the data source. It's very similar to the setup logic for a <code>ListView</code>:</li>
+</ul>
+
+
+<p>```java</p>
+
+<pre><code>    flipView.setAdapter(new BaseAdapter() {
+        @Override
+        public int getCount() {
+            return count;
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return position;
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            //setup a view by either reusing the convertView or creating a new one.             
+            return view;
+        }
+    });
+</code></pre>
+
+<p>```</p>
+
+<ul>
+<li><p>Adds the instance of <code>FlipViewController</code> into your view hierarchy.</p></li>
+<li><p>Invokes <code>onPause</code> and <code>onResume</code> of <code>FlipViewController</code> correspondingly in your activity's life-cycle methods.</p></li>
+</ul>
+
+
+<p>```java</p>
+
+<pre><code>@Override
+protected void onResume() {
+    super.onResume();
+    flipView.onResume();
+}
+
+@Override
+protected void onPause() {
+    super.onPause();
+    flipView.onPause();
+}
+</code></pre>
+
+<p>```</p>
+
+<p>Please also refer to the demo project for more details:</p>
+
+<p><a href="https://github.com/openaphid/android-flip/tree/master/FlipView/Demo">https://github.com/openaphid/android-flip/tree/master/FlipView/Demo</a></p>
+
+<h2>Important Notes</h2>
+
+<p>There are some facts about the component which you should pay special attention to:</p>
+
+<ul>
+<li><p>It's recommended to use only ONE instance per activity. As the animation is implemented in a <code>GLSurfaceView</code>, using multiple instances in one activity may cause serious compatible problems on some Android devices.</p></li>
+<li><p>Vertical scroll in sub-views may not work as the touch events are consumed by the animation.</p></li>
+<li><p>I don't have enough resources to test its compatibility across all Android OS versions and devices. Please verify it after integrating it in your project.</p></li>
+</ul>
+
+
+<p>Please use <a href="https://github.com/openaphid/android-flip/issues">Github issues</a> to report any problems and request more features. Thanks in advance.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to Handle Touch Events in Flip Animation]]></title>
+    <link href="http://openaphid.github.com/blog/2012/07/27/how-to-handle-touch-events-for-flip-animation/"/>
+    <updated>2012-07-27T23:20:00+08:00</updated>
+    <id>http://openaphid.github.com/blog/2012/07/27/how-to-handle-touch-events-for-flip-animation</id>
+    <content type="html"><![CDATA[<p>This short post explains how to handle touch events for the flip animation introduced in our <a href="/blog/2012/05/21/how-to-implement-flipboard-animation-on-android/">previous post</a>.</p>
+
+<p>The full source codes of the demo application are available at Github:</p>
+
+<p><a href="https://github.com/openaphid/android-flip/blob/master/Demo-Touch/">https://github.com/openaphid/android-flip/blob/master/Demo-Touch/</a></p>
+
+<p>A pre-built APK file is also present for your Android devices:</p>
+
+<p><a href="https://github.com/openaphid/android-flip/blob/master/Demo-Touch/APK/Flip-Touch.apk">https://github.com/openaphid/android-flip/blob/master/Demo-Touch/APK/Flip-Touch.apk</a></p>
+
+<blockquote><p><strong> Updated at 2012-08-17: </strong> Fixed the broken links to the project and the APK file.</p></blockquote>
+
+<!-- more -->
+
+
+<p>The new demo app adds two new features compared to the previous one:</p>
+
+<ul>
+<li><p>Supports flipping over between two views. <a href="https://github.com/openaphid/android-flip/blob/master/Demo-Touch/src/com/aphidmobile/flip/FlipCards.java">FlipCards.java</a> takes screenshots of the front and back views, which are used to construct the textures for the translucent <code>GLSurfaceView</code>. The flip animation is rendered by four instances of <a href="https://github.com/openaphid/android-flip/blob/master/Demo-Touch/src/com/aphidmobile/flip/Card.java">Card</a>. Please refer to the <a href="https://github.com/openaphid/android-flip/blob/master/Demo-Touch/src/com/aphidmobile/flip/FlipCards.java">draw(GL10 gl)</a> method for more details.</p></li>
+<li><p>Flip angle can be controlled by touch events. Angle is calculated according to the relative movement of touches. The logic can be found in the <a href="https://github.com/openaphid/android-flip/blob/master/Demo-Touch/src/com/aphidmobile/flip/FlipCards.java">handleTouchEvent(MotionEvent event)</a> method.</p></li>
+</ul>
+
+
+<h2>Future Enhancements</h2>
+
+<p>The demo app is just a prove of concept. It can be enhanced to be a component for general scenarios:</p>
+
+<ul>
+<li><p>To support a <code>Adapter</code> as its data source to load views dynamically and lazily.</p></li>
+<li><p>To implement similar APIs like <code>ListView</code></p></li>
+<li><p>To support other fancy effects that can be implemented in OpenGL ES.</p></li>
+</ul>
+
+
+<p>But I'm sorry that I'll be in a long trip with my family. Both <code>android-flip</code> and <code>OpenAphid</code> will not be updated until I come back. You can still reach me via email if you have any questions.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to Implement Flipboard Animation on Android]]></title>
+    <link href="http://openaphid.github.com/blog/2012/05/21/how-to-implement-flipboard-animation-on-android/"/>
+    <updated>2012-05-21T22:14:00+08:00</updated>
+    <id>http://openaphid.github.com/blog/2012/05/21/how-to-implement-flipboard-animation-on-android</id>
+    <content type="html"><![CDATA[<p>The demo in this post was born when we're working on the Android port of <a href="https://github.com/openaphid">OpenAphid</a>. One of our engineers is a huge fan of <a href="http://www.flipboard.com">Flipboard iOS</a>. He decided to implement its page flip animation on Android.</p>
+
+<p>If you don't know about the effect, please install the APK file of our demo app to see how it looks:</p>
+
+<!-- more -->
+
+
+<p><a href="http://openaphid.github.com/images/AndroidFlip.apk">http://openaphid.github.com/images/AndroidFlip.apk</a></p>
+
+<p>The full source codes of the demo application is also available at Github:</p>
+
+<p><a href="https://github.com/openaphid/android-flip">https://github.com/openaphid/android-flip</a></p>
+
+<h2>Overview</h2>
+
+<p>The Flipboard animation is easy to achieve on iOS by using Core Animation. Things get a bit difficult on Android:</p>
+
+<ul>
+<li><p>The view animation framework on Android is not flexible and efficient for versions prior to 3.0;</p></li>
+<li><p>The Android layout system makes it even harder for advanced animation;</p></li>
+</ul>
+
+
+<p>In order to apply flip effect for views with arbitrary structures and make the animation run smoothly, several tricks are used in our approach. OpenGL ES is used to render the animation for efficiency; a special view container is implemented to grab content of a view to OpenGL ES. Let's go through them one by one.</p>
+
+<h2>View Hierarchy</h2>
+
+<p>Our demo app displays two LinearLayouts at the same time: <a href="https://github.com/openaphid/android-flip/blob/master/res/layout/first_page.xml">R.layout.first_page</a> and <a href="https://github.com/openaphid/android-flip/blob/master/res/layout/second_page.xml">R.layout.second_page</a>.</p>
+
+<p><img src="/images/flip-first-page.jpg" title="'first_page'" >
+<img src="/images/flip-second-page.jpg" title="'second_page'" ></p>
+
+<p>The first page is displayed over the second page. We took a screenshot when the first page flipped by 75 degrees:</p>
+
+<p><img src="/images/flip-75-degree.jpg"></p>
+
+<p>When the first page is flipping, its top half stays still while the bottom half flips around the horizontal center axis of the page; part of the second page is visible during the animation.</p>
+
+<h2>Custom ViewGroup</h2>
+
+<p>A custom <code>ViewGroup</code>, <a href="https://github.com/openaphid/android-flip/blob/master/src/com/aphidmobile/flip/FlipViewGroup.java">FlipViewGroup</a>, is used to manage the visibility of the two pages and serve content to OpenGL ES. Besides using a <code>LinkedList</code> to manage normal sub-views, it also contains a <code>GLSurfaceView</code> to play animation:</p>
+
+<p><code>java
+private LinkedList&lt;View&gt; flipViews = new LinkedList&lt;View&gt;();
+private GLSurfaceView surfaceView;
+</code></p>
+
+<p>The GLSurfaceView is added as a sub-view automatically. The <code>onLayout</code> method of <code>FlipViewGroup</code> is overridden to monitor the changes of view dimension:</p>
+
+<p>```java</p>
+
+<pre><code>    for (View child : flipViews)
+        child.layout(0, 0, r - l, b - t);
+
+    if (changed) {
+        int w = r - l;
+        int h = b - t;
+        surfaceView.layout(0, 0, w, h);
+
+        if (width != w || height != h) {
+            width = w;
+            height = h;
+
+            if (flipping &amp;&amp; !flipViews.isEmpty()) {
+                View view = flipViews.getLast(); 
+                renderer.updateTexture(view);
+                view.setVisibility(View.INVISIBLE);
+            }
+        }
+    }
+</code></pre>
+
+<p>```</p>
+
+<p>As in line 14 to line 16, when a change of view dimension is detected and flipping is on, the OpenGL render updates the texture by taking a screenshot of the top view; then the top view is hidden while the <code>GLSurfaceView</code> will display its content with flip animation.</p>
+
+<h2>GrabIt</h2>
+
+<p><a href="https://github.com/openaphid/android-flip/blob/master/src/com/aphidmobile/flip/GrabIt.java">GrabIt</a> is a small utility to convert the content of a view to a <code>Bitmap</code>. The result bitmap will be used to construct the texture for <code>GLSurfaceView</code>.</p>
+
+<h2>Setup of GLSurfaceView and Renderer</h2>
+
+<p>The <code>GLSurfaceView</code> instance is setup to use the following configurations:</p>
+
+<ul>
+<li>A RGBA_8888 surface with 16-bit depth buffer;</li>
+<li>It's displayed on the top of the window;</li>
+<li>A custom renderer: <code>FlipRenderer</code>;</li>
+<li>The desired PixelFormat of the surface should support translucency;</li>
+<li>The rendering mode is set to make the renderer be called repeatedly;</li>
+</ul>
+
+
+<p>The <a href="https://github.com/openaphid/android-flip/blob/master/src/com/aphidmobile/flip/FlipRenderer.java">FlipRenderer</a> maps the OpenGL pixels to 2D screen pixels one-by-one which is similar to what OpenAphid does for 2D games. And the origin of the coordinate system is bottom left.</p>
+
+<p>The actual drawing process is managed in the instance of <code>FlipCards</code>.</p>
+
+<h2>FlipCards</h2>
+
+<p><a href="https://github.com/openaphid/android-flip/blob/master/src/com/aphidmobile/flip/FlipCards.java">FlipCards</a> manages the content and structure of flip animation. It accepts a bitmap, which should be the screenshot of the first page, to build the texture for rendering. The texture is binded to two instances of <code>Card</code> object. <code>topCard</code> renders the top half, which stays still; <code>bottomCard</code> draws the flipping effect of the bottom half.</p>
+
+<h2>Card</h2>
+
+<p><a href="https://github.com/openaphid/android-flip/blob/master/src/com/aphidmobile/flip/Card.java">Card</a> represents a quadrilateral in OpenGL space. Its <code>angle</code> property controls the flip angle, which is accomplished by the following OpenGL codes:</p>
+
+<p>```java</p>
+
+<pre><code>    if (angle &gt; 0) {
+        gl.glTranslatef(0, cardVertices[1], 0f);
+        gl.glRotatef(-angle, 1f, 0f, 0f);
+        gl.glTranslatef(0, -cardVertices[1], 0f);
+    }
+</code></pre>
+
+<p>```</p>
+
+<p>A <code>Card</code> instance also takes a texture to bind to it. Let's take the <code>topCard</code> of <code>FlipCards</code> for example:</p>
+
+<p>```java</p>
+
+<pre><code>        topCard.setTexture(texture);
+
+        topCard.setCardVertices(new float[]{
+            0f, bitmap.getHeight(), 0f,                     //top left
+            0f, bitmap.getHeight() / 2.0f, 0f,              //bottom left
+            bitmap.getWidth(), bitmap.getHeight() / 2f, 0f, //bottom right
+            bitmap.getWidth(), bitmap.getHeight(), 0f       //top right
+        });
+
+        topCard.setTextureCoordinates(new float[]{
+            0f, 0f,
+            0, bitmap.getHeight() / 2f / (float) texture.getHeight(),
+            bitmap.getWidth() / (float) texture.getWidth(), bitmap.getHeight() / 2f / (float) texture.getHeight(),
+            bitmap.getWidth() / (float) texture.getWidth(), 0f
+        });
+</code></pre>
+
+<p>```</p>
+
+<p>The vertices of <code>topCard</code> are set to make the card at the top half of the application screen. And its texture coordinates are set to render the top half of the first page.</p>
+
+<p>In order to make the flip effect more realistic, a gray rectangle is rendered to cover the appealed area of the second page, which looks like a shadow of the flipping card casting on the second page.</p>
+
+<p>```java</p>
+
+<pre><code>    if (angle &gt; 0) {
+        gl.glDisable(GL_LIGHTING);
+        gl.glDisable(GL_DEPTH_TEST);
+        float w = cardVertices[9] - cardVertices[0];    //shadow width
+        float h = (cardVertices[1] - cardVertices[4]) * (1f - FloatMath.cos(d2r(angle))); //shadow height
+        float z = (cardVertices[1] - cardVertices[4]) * FloatMath.sin(d2r(angle));  //z index of the top side of shadow
+        float[] shadowVertices = new float[]{
+            cardVertices[0], h + cardVertices[4], z,
+            cardVertices[3], cardVertices[4], 0f,
+            w, cardVertices[7], 0f,
+            w, h + cardVertices[4], z
+        };
+
+        float alpha = 1f * (90f - angle) / 90f; //shadow alpha
+
+        gl.glColor4f(0f, 0.0f, 0f, alpha);
+        gl.glVertexPointer(3, GL_FLOAT, 0, toFloatBuffer(shadowVertices));
+        gl.glDrawElements(GL_TRIANGLES, indices.length, GL_UNSIGNED_SHORT, indexBuffer);
+        gl.glEnable(GL_DEPTH_TEST);
+        gl.glEnable(GL_LIGHTING);
+    }
+</code></pre>
+
+<p>```</p>
+
+<p>The snippets above should cover the core concepts of our approach. You can fork the project to support more effects as we can see in Flipboard iPhone, like page flip following touch moves, flip over of a page, and book flip effect etc.</p>
+
+<p>BTW, we're tackling some technical problems of OpenAphid Android version. Will keep you posted if a stable version is ready.</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -4,7 +4,7 @@
   <title><![CDATA[OpenAphid]]></title>
   <link href="http://openaphid.github.com/atom.xml" rel="self"/>
   <link href="http://openaphid.github.com/"/>
-  <updated>2012-07-28T00:48:32+08:00</updated>
+  <updated>2012-12-12T16:29:35+08:00</updated>
   <id>http://openaphid.github.com/</id>
   <author>
     <name><![CDATA[Aphid Mobile]]></name>
@@ -12,6 +12,216 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[FlipView for Android v0.9.6 Released]]></title>
+    <link href="http://openaphid.github.com/blog/2012/12/12/flipview-for-android-v0-dot-9-6-released/"/>
+    <updated>2012-12-12T15:59:00+08:00</updated>
+    <id>http://openaphid.github.com/blog/2012/12/12/flipview-for-android-v0-dot-9-6-released</id>
+    <content type="html"><![CDATA[<p><a href="https://github.com/openaphid/android-flip">FlipView</a> v0.9.6 is released with various bug fixes and enhancements.</p>
+
+<p><img src="http://openaphid.github.com/images/flipview-horizontal-demo.gif" title="Screenshot of Aphid FlipView v0.9.5" alt="screenshot" /></p>
+
+<h2>Release Notes</h2>
+
+<!-- more -->
+
+
+<p>For a complete change list please checkout our <a href="https://github.com/openaphid/android-flip/issues/milestones?state=closed">issue tracker</a></p>
+
+<h3>v0.9.6, Dec 12th 2012</h3>
+
+<h4>New Features:</h4>
+
+<ul>
+<li><p>Adds fling support. (<a href="https://github.com/openaphid/android-flip/pull/10">Pull #10</a>, <a href="https://github.com/openaphid/android-flip/issues/20">Issue #20</a>)</p></li>
+<li><p>Adds XML configuration support. (<a href="https://github.com/openaphid/android-flip/issues/13">Issue #13</a>)</p></li>
+<li><p>Adds several new demos.</p></li>
+</ul>
+
+
+<h4>Bug Fixes</h4>
+
+<ul>
+<li>Fixes several bugs when flipping. (<a href="https://github.com/openaphid/android-flip/issues/17">Issue #17</a>, <a href="https://github.com/openaphid/android-flip/issues/16">Issue #16</a>, <a href="https://github.com/openaphid/android-flip/issues/15">Issue #15</a>, <a href="https://github.com/openaphid/android-flip/issues/14">Issue #14</a>)</li>
+</ul>
+
+
+<h4>Thanks</h4>
+
+<ul>
+<li>Special thanks to <a href="https://github.com/iPaulPro">@iPaulPro</a> for his outstanding contributions.</li>
+</ul>
+
+
+<h3>v0.9.5, Nov 9th 2012</h3>
+
+<h4>New Features:</h4>
+
+<ul>
+<li><p>Supports flipping horizontally. (<a href="https://github.com/openaphid/android-flip/pull/6">Pull Request 6.</a>. Thanks to <a href="https://github.com/alexmedearis">@axexmedearis</a> for the contribution)</p></li>
+<li><p>Supports event listener to get notified when flipping finishes. (<a href="https://github.com/openaphid/android-flip/issues/3">Issue #3</a>)</p></li>
+<li><p>Supports content reloading when flipping. (<a href="https://github.com/openaphid/android-flip/issues/3">Issue #4</a>)</p></li>
+</ul>
+
+
+<h4>Bug Fixes</h4>
+
+<ul>
+<li>Incorrect rendering of shadow in horizontal mode. (<a href="https://github.com/openaphid/android-flip/issues/7">Issue #7</a>)</li>
+</ul>
+
+
+<h3>v0.9, Sep 21st 2012</h3>
+
+<p>First release</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[FlipView for Android v0.9 Beta Released]]></title>
+    <link href="http://openaphid.github.com/blog/2012/09/21/aphid-flipview-for-android-v0-dot-9-beta-released/"/>
+    <updated>2012-09-21T15:11:00+08:00</updated>
+    <id>http://openaphid.github.com/blog/2012/09/21/aphid-flipview-for-android-v0-dot-9-beta-released</id>
+    <content type="html"><![CDATA[<p>I&#8217;m happy to announce the first release of <a href="https://github.com/openaphid/android-flip">FlipView</a>, an Android UI component which help add flipping animation in your application. Please download and install the pre-built demo APK file to check out it in action:</p>
+
+<p><a href="https://github.com/openaphid/android-flip/tree/master/FlipView/Demo/APK">https://github.com/openaphid/android-flip/tree/master/FlipView/Demo/APK</a></p>
+
+<p>I&#8217;m also glad to use some pictures captured during my trip to build one of the demos:</p>
+
+<p><img src="http://openaphid.github.com/images/flipview-demo.gif" title="Screenshot of Aphid FlipView v0.9" alt="screenshot" /></p>
+
+<!-- more -->
+
+
+<p>The work is derived from the previous demos as described in <a href="http://openaphid.github.com/blog/2012/07/27/how-to-handle-touch-events-for-flip-animation/">post 1</a> and <a href="http://openaphid.github.com/blog/2012/05/21/how-to-implement-flipboard-animation-on-android/">post 2</a>. Besides the core animation effect, the v0.9 also fixes issues and adds features requested by several friends:</p>
+
+<ul>
+<li><p><code>Adapter</code> is supported for adding multiple pages into a sequence of flipping animation.</p></li>
+<li><p>Touch events are correctly dispatched to views in each page, which allows using buttons or other controls in pages.</p></li>
+<li><p>Bouncing effect is added for the first and last pages.</p></li>
+<li><p>Less flicker when starting and ending the animation.</p></li>
+<li><p>Less CPU resource is used when the animation is idle.</p></li>
+</ul>
+
+
+<h2>Core Classes</h2>
+
+<p>The component is released as an <a href="https://github.com/openaphid/android-flip/tree/master/FlipView/FlipLibrary">Android Library Project</a>. The core class is the <a href="https://github.com/openaphid/android-flip/blob/master/FlipView/FlipLibrary/src/com/aphidmobile/flip/FlipViewController.java">FlipViewController</a>.</p>
+
+<p>The general routine of setting up <code>FlipViewController</code> is straightforward:</p>
+
+<ul>
+<li>Creates an instance of <code>FlipViewController</code>:</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">FlipViewController</span> <span class="n">flipView</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FlipViewController</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Provides an adapter as the data source. It&#8217;s very similar to the setup logic for a <code>ListView</code>:</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'> <span class="n">flipView</span><span class="o">.</span><span class="na">setAdapter</span><span class="o">(</span><span class="k">new</span> <span class="n">BaseAdapter</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>      <span class="nd">@Override</span>
+</span><span class='line'>      <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getCount</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>          <span class="k">return</span> <span class="n">count</span><span class="o">;</span>
+</span><span class='line'>      <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="nd">@Override</span>
+</span><span class='line'>      <span class="kd">public</span> <span class="n">Object</span> <span class="nf">getItem</span><span class="o">(</span><span class="kt">int</span> <span class="n">position</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>          <span class="k">return</span> <span class="n">position</span><span class="o">;</span>
+</span><span class='line'>      <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="nd">@Override</span>
+</span><span class='line'>      <span class="kd">public</span> <span class="kt">long</span> <span class="nf">getItemId</span><span class="o">(</span><span class="kt">int</span> <span class="n">position</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>          <span class="k">return</span> <span class="n">position</span><span class="o">;</span>
+</span><span class='line'>      <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="nd">@Override</span>
+</span><span class='line'>      <span class="kd">public</span> <span class="n">View</span> <span class="nf">getView</span><span class="o">(</span><span class="kt">int</span> <span class="n">position</span><span class="o">,</span> <span class="n">View</span> <span class="n">convertView</span><span class="o">,</span> <span class="n">ViewGroup</span> <span class="n">parent</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>          <span class="c1">//setup a view by either reusing the convertView or creating a new one.                </span>
+</span><span class='line'>          <span class="k">return</span> <span class="n">view</span><span class="o">;</span>
+</span><span class='line'>      <span class="o">}</span>
+</span><span class='line'>  <span class="o">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><p>Adds the instance of <code>FlipViewController</code> into your view hierarchy.</p></li>
+<li><p>Invokes <code>onPause</code> and <code>onResume</code> of <code>FlipViewController</code> correspondingly in your activity&#8217;s life-cycle methods.</p></li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="nd">@Override</span>
+</span><span class='line'><span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onResume</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>  <span class="kd">super</span><span class="o">.</span><span class="na">onResume</span><span class="o">();</span>
+</span><span class='line'>  <span class="n">flipView</span><span class="o">.</span><span class="na">onResume</span><span class="o">();</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nd">@Override</span>
+</span><span class='line'><span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onPause</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>  <span class="kd">super</span><span class="o">.</span><span class="na">onPause</span><span class="o">();</span>
+</span><span class='line'>  <span class="n">flipView</span><span class="o">.</span><span class="na">onPause</span><span class="o">();</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Please also refer to the demo project for more details:</p>
+
+<p><a href="https://github.com/openaphid/android-flip/tree/master/FlipView/Demo">https://github.com/openaphid/android-flip/tree/master/FlipView/Demo</a></p>
+
+<h2>Important Notes</h2>
+
+<p>There are some facts about the component which you should pay special attention to:</p>
+
+<ul>
+<li><p>It&#8217;s recommended to use only ONE instance per activity. As the animation is implemented in a <code>GLSurfaceView</code>, using multiple instances in one activity may cause serious compatible problems on some Android devices.</p></li>
+<li><p>Vertical scroll in sub-views may not work as the touch events are consumed by the animation.</p></li>
+<li><p>I don&#8217;t have enough resources to test its compatibility across all Android OS versions and devices. Please verify it after integrating it in your project.</p></li>
+</ul>
+
+
+<p>Please use <a href="https://github.com/openaphid/android-flip/issues">Github issues</a> to report any problems and request more features. Thanks in advance.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How to Handle Touch Events in Flip Animation]]></title>
@@ -22,11 +232,13 @@
 
 <p>The full source codes of the demo application are available at Github:</p>
 
-<p><a href="https://github.com/openaphid/android-flip/Demo-Touch/">https://github.com/openaphid/android-flip/Demo-Touch/</a></p>
+<p><a href="https://github.com/openaphid/android-flip/blob/master/Demo-Touch/">https://github.com/openaphid/android-flip/blob/master/Demo-Touch/</a></p>
 
 <p>A pre-built APK file is also present for your Android devices:</p>
 
-<p><a href="https://github.com/openaphid/android-flip/Demo-Touch/APK/Flip-Touch.apk">https://github.com/openaphid/android-flip/Demo-Touch/APK/Flip-Touch.apk</a></p>
+<p><a href="https://github.com/openaphid/android-flip/blob/master/Demo-Touch/APK/Flip-Touch.apk">https://github.com/openaphid/android-flip/blob/master/Demo-Touch/APK/Flip-Touch.apk</a></p>
+
+<blockquote><p><strong> Updated at 2012-08-17: </strong> Fixed the broken links to the project and the APK file.</p></blockquote>
 
 <!-- more -->
 
@@ -50,7 +262,7 @@
 </ul>
 
 
-<p>But I&#8217;m sorry that I&#8217;ll be in a long trip at south Asia with my family. Both <code>android-flip</code> and <code>OpenAphid</code> will not be updated until I come back. You can still reach me via email if you have any questions.</p>
+<p>But I&#8217;m sorry that I&#8217;ll be in a long trip with my family. Both <code>android-flip</code> and <code>OpenAphid</code> will not be updated until I come back. You can still reach me via email if you have any questions.</p>
 ]]></content>
   </entry>
   
@@ -918,7 +1130,7 @@
 
 
 <ul>
-<li>Internal warning and error messages are displayed as on-screen notifications besides logging in device console. Warning messages are in blue background color and errors are in red color. The screenshot below shows a notification about a syntax error in a JavaScript file:</li>
+<li>Internal warning and error messages are displayed as on-screen notifications besides logging in device console. Warning messages are in blue background color and errors are in red color. The screenshot below shows a notification about a syntax error at line 17 in main.js:</li>
 </ul>
 
 
