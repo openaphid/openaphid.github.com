@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: OpenAphid-Engine | OpenAphid]]></title>
+  <title><![CDATA[Category: OpenAphid-Engine | OpenAphid-Engine]]></title>
   <link href="http://openaphid.github.com/blog/categories/openaphid-engine/atom.xml" rel="self"/>
   <link href="http://openaphid.github.com/"/>
-  <updated>2013-01-02T14:30:46+08:00</updated>
+  <updated>2013-01-14T11:43:53+08:00</updated>
   <id>http://openaphid.github.com/</id>
   <author>
     <name><![CDATA[Aphid Mobile]]></name>
@@ -14,11 +14,11 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Tutorial: Exposing Java Methods to JavaScript in OpenAphid]]></title>
+    <title type="html"><![CDATA[Tutorial: Exposing Java Methods to JavaScript in OpenAphid-Engine]]></title>
     <link href="http://openaphid.github.com/blog/2012/07/10/tutorial-exposing-java-methods-to-javascript-in-openaphid/"/>
     <updated>2012-07-10T14:39:00+08:00</updated>
     <id>http://openaphid.github.com/blog/2012/07/10/tutorial-exposing-java-methods-to-javascript-in-openaphid</id>
-    <content type="html"><![CDATA[<p><a href="https://github.com/openaphid">OpenAphid</a> for Android v0.1.5 supports exposing Java methods as JavaScript functions, which is helpful for integrating 3rd-party services into games. The binding APIs are similar to its <a href="/blog/2012/05/16/tutorial-exposing-objective-c-methods-to-javascript-in-openaphid/">iOS version</a>.</p>
+    <content type="html"><![CDATA[<p><a href="https://github.com/openaphid">OpenAphid-Engine</a> for Android v0.1.5 supports exposing Java methods as JavaScript functions, which is helpful for integrating 3rd-party services into games. The binding APIs are similar to its <a href="/blog/2012/05/16/tutorial-exposing-objective-c-methods-to-javascript-in-openaphid/">iOS version</a>.</p>
 
 <!-- more -->
 
@@ -47,7 +47,7 @@ glSurfaceView.getAphidRenderer().setScriptBinding("test4", new BindingTest4(), f
 
 <p>The snippet above injects an instance of Java class <code>BindingTest4</code> to JavaScript as <code>aphid.ext.test4</code>. Its method <code>addInMainThread()</code> can be accessed via <code>aphid.ext.test4.add()</code> in JavaScript.</p>
 
-<p>The <code>AphidJSFunction</code> annotation supports two optional element-value pairs: <code>name</code> and <code>isInUIThread</code>. <code>name</code> declares a custom function name to JavaScript, the Java method name is used if it's not specified; <code>isInUIThread</code> controls the thread to invoke the Java method, its default value is <code>false</code>. In OpenAphid for Android, JavaScript runs inside the GL thread. Setting <code>isInUIThread</code> to <code>true</code> makes the Java method run inside the UI thread; the execution of JavaScript is blocked in the GL thread until the Java method returns from the UI thread.</p>
+<p>The <code>AphidJSFunction</code> annotation supports two optional element-value pairs: <code>name</code> and <code>isInUIThread</code>. <code>name</code> declares a custom function name to JavaScript, the Java method name is used if it's not specified; <code>isInUIThread</code> controls the thread to invoke the Java method, its default value is <code>false</code>. In OpenAphid-Engine for Android, JavaScript runs inside the GL thread. Setting <code>isInUIThread</code> to <code>true</code> makes the Java method run inside the UI thread; the execution of JavaScript is blocked in the GL thread until the Java method returns from the UI thread.</p>
 
 <h3>Type Conversion of Return Value from Java to JavaScript</h3>
 
@@ -111,7 +111,7 @@ glSurfaceView.getAphidRenderer().setScriptBinding("test4", new BindingTest4(), f
 
 <h2>Integration with Google Analytics in Boilerplate-Android</h2>
 
-<p>Let's illustrate how to integrate Google Analytics SDK into OpenAphid for Android. All source codes can be found in the <a href="https://github.com/openaphid/Boilerplate-Android">Boilerplate-Android</a> project.</p>
+<p>Let's illustrate how to integrate Google Analytics SDK into OpenAphid-Engine for Android. All source codes can be found in the <a href="https://github.com/openaphid/Boilerplate-Android">Boilerplate-Android</a> project.</p>
 
 <p>After adding Google Analytics Android SDK into our project as described in its <a href="https://developers.google.com/analytics/devguides/collection/android/devguide#gettingStarted">official document</a>, we create a Java class <a href="https://github.com/openaphid/Boilerplate-Android/blob/master/src/org/openaphid/thirdparty/ga/GoogleAnalyticsBinding.java">GoogleAnalyticsBinding</a> to bridge JavaScript and Google Analytics SDK. <code>GoogleAnalyticsBinding</code> makes the exposed functions have identical signatures as its iOS version, which enables the same script file(<a href="https://github.com/openaphid/Boilerplate-iOS/blob/master/Boilerplate/game.bundle/main.js">main.js</a>) to run on both platforms.</p>
 
@@ -147,16 +147,16 @@ false   //place inside aphid.ext namespace
 
 <p>Now all Google Analytics APIs can be accessed by the same JavaScript functions inside <code>aphid.ext.gat</code> on both iOS and Android.</p>
 
-<p>That's all for this tutorial. We're working on OpenAphid for Android v0.2, which implements <code>XMLHttpRequest</code> APIs as what we already have in iOS version.</p>
+<p>That's all for this tutorial. We're working on OpenAphid-Engine for Android v0.2, which implements <code>XMLHttpRequest</code> APIs as what we already have in iOS version.</p>
 ]]></content>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[OpenAphid Android v0.1.5 Released]]></title>
+    <title type="html"><![CDATA[OpenAphid-Engine Android v0.1.5 Released]]></title>
     <link href="http://openaphid.github.com/blog/2012/07/09/openaphid-android-v0-dot-1-5-released/"/>
     <updated>2012-07-09T15:02:00+08:00</updated>
     <id>http://openaphid.github.com/blog/2012/07/09/openaphid-android-v0-dot-1-5-released</id>
-    <content type="html"><![CDATA[<p>We're pleased to release v0.1.5 of OpenAphid Android.</p>
+    <content type="html"><![CDATA[<p>We're pleased to release v0.1.5 of OpenAphid-Engine Android.</p>
 
 <p>Highlights of this release includes:</p>
 
@@ -172,11 +172,11 @@ false   //place inside aphid.ext namespace
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[OpenAphid Android v0.1 released]]></title>
+    <title type="html"><![CDATA[OpenAphid-Engine Android v0.1 released]]></title>
     <link href="http://openaphid.github.com/blog/2012/06/27/openaphid-android-v0-dot-1-released/"/>
     <updated>2012-06-27T08:22:00+08:00</updated>
     <id>http://openaphid.github.com/blog/2012/06/27/openaphid-android-v0-dot-1-released</id>
-    <content type="html"><![CDATA[<p>We're excited to release the first version of OpenAphid which supports Android OS. OpenAphid is now a cross platform 2D game engine with both iOS and Android support.</p>
+    <content type="html"><![CDATA[<p>We're excited to release the first version of OpenAphid-Engine which supports Android OS. OpenAphid-Engine is now a cross platform 2D game engine with both iOS and Android support.</p>
 
 <p>Several github repositories have been updated, please check them out for more details:</p>
 
@@ -189,9 +189,9 @@ false   //place inside aphid.ext namespace
 </ul>
 
 
-<h2>Highlights and Limitations of OpenAphid Android v0.1</h2>
+<h2>Highlights and Limitations of OpenAphid-Engine Android v0.1</h2>
 
-<p>It's the beginning of cross platform support of OpenAphid. Please consider it as an alpha release. But we'd like to summarize some implementation highlights here:</p>
+<p>It's the beginning of cross platform support of OpenAphid-Engine. Please consider it as an alpha release. But we'd like to summarize some implementation highlights here:</p>
 
 <ul>
 <li><p>The core runtime shares the same code base with the iOS version, which makes new features can be added to both platforms in the future.</p></li>
@@ -212,7 +212,7 @@ false   //place inside aphid.ext namespace
 
 <h2>Performance Benchmark</h2>
 
-<p>The same tank program as introduced in our <a href="/blog/2012/02/20/javascript-and-cocos2d-a-sneak-peek/">previous post</a> is used to evaluate the performance of OpenAphid on Android OS. Several other Android 2D game engines are chose as references:</p>
+<p>The same tank program as introduced in our <a href="/blog/2012/02/20/javascript-and-cocos2d-a-sneak-peek/">previous post</a> is used to evaluate the performance of OpenAphid-Engine on Android OS. Several other Android 2D game engines are chose as references:</p>
 
 <ul>
 <li><p><a href="http://www.cocos2d-x.org/projects/cocos2d-x/wiki/Download">cocos2d-x 1.0.1-0.13.0</a>, a C++ port of <code>cocos2d-iphone</code> which supports Android OS.</p></li>
@@ -227,7 +227,7 @@ false   //place inside aphid.ext namespace
 
 <p><img src="/images/tank_banckmark_android_v0.1.jpg" title="Benchmark Results" alt="performance benchmark" /></p>
 
-<p>OpenAphid shows great performance again as we can tell from this chart. It's on par with <code>cocos2d-x</code>, and faster than others.</p>
+<p>OpenAphid-Engine shows great performance again as we can tell from this chart. It's on par with <code>cocos2d-x</code>, and faster than others.</p>
 
 <p><code>cocos2d-android-1</code> suffers from the frequently GC pauses of Dalvik VM as observed from logcat. <code>Ngcore</code> is the slowest engine once again, and its rendering is also buggy in this test. The dirty area in black color should have been cleared in the screenshot below, we've filed a bug report about it to Ngcore:</p>
 
@@ -242,11 +242,11 @@ false   //place inside aphid.ext namespace
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Tutorial: Calling Objective-C Methods from JavaScript in OpenAphid]]></title>
+    <title type="html"><![CDATA[Tutorial: Calling Objective-C Methods from JavaScript in OpenAphid-Engine]]></title>
     <link href="http://openaphid.github.com/blog/2012/05/16/tutorial-exposing-objective-c-methods-to-javascript-in-openaphid/"/>
     <updated>2012-05-16T10:06:00+08:00</updated>
     <id>http://openaphid.github.com/blog/2012/05/16/tutorial-exposing-objective-c-methods-to-javascript-in-openaphid</id>
-    <content type="html"><![CDATA[<p><a href="https://github.com/openaphid">OpenAphid</a> 0.2 was shipped with a new binding system which can bridge JavaScript functions to Objective-C methods on demand. It's useful for games to integrate analytics services, monetization solutions, and social services, etc. In this tutorial, we'll go through the binding system by demonstrating how to integrate <a href="https://developers.google.com/analytics/devguides/collection/ios/">Google Analytics iOS SDK</a> into OpenAphid.</p>
+    <content type="html"><![CDATA[<p><a href="https://github.com/openaphid">OpenAphid-Engine</a> 0.2 was shipped with a new binding system which can bridge JavaScript functions to Objective-C methods on demand. It's useful for games to integrate analytics services, monetization solutions, and social services, etc. In this tutorial, we'll go through the binding system by demonstrating how to integrate <a href="https://developers.google.com/analytics/devguides/collection/ios/">Google Analytics iOS SDK</a> into OpenAphid-Engine.</p>
 
 <!-- more -->
 
@@ -360,9 +360,9 @@ false   //place inside aphid.ext namespace
 <p>}
 ```</p>
 
-<p>OpenAphid injects an instance of <code>DatastoreBinding</code> as a JavaScript object of <code>[object DynamicBinding]</code> into JavaScript environment. And its name is <code>datastore</code>. The <code>iOSOnly</code> argument manages the namespace which contains the injected object. If it's <code>YES</code>, then the injected object can be accessed via <code>aphid.extios.datastore</code>; otherwise it can be accessed via <code>aphid.ext.datastore</code>.</p>
+<p>OpenAphid-Engine injects an instance of <code>DatastoreBinding</code> as a JavaScript object of <code>[object DynamicBinding]</code> into JavaScript environment. And its name is <code>datastore</code>. The <code>iOSOnly</code> argument manages the namespace which contains the injected object. If it's <code>YES</code>, then the injected object can be accessed via <code>aphid.extios.datastore</code>; otherwise it can be accessed via <code>aphid.ext.datastore</code>.</p>
 
-<blockquote><p>Notes: the <code>iOSOnly</code> argument is actually designed for future compliance when OpenAphid supports both iOS and Android.</p></blockquote>
+<blockquote><p>Notes: the <code>iOSOnly</code> argument is actually designed for future compliance when OpenAphid-Engine supports both iOS and Android.</p></blockquote>
 
 <h2>Integration with Google Analytics in Boilerplate-iOS</h2>
 
@@ -447,18 +447,18 @@ gat.trackPageView("main.js"); //track a page view
 
 <blockquote><p><strong> Updates at 07-09-2012: </strong> Since <code>iOSOnly</code> has been set to <code>NO</code>, the JavaScript namespace for <code>gat</code> is switched to <code>aphid.ext</code> from <code>aphid.extios</code></p></blockquote>
 
-<p>We're going to integrate more services into <a href="https://github.com/openaphid/Boilerplate-iOS">Boilerplate-iOS</a>, and make it be a better starter kit for game development with OpenAphid.</p>
+<p>We're going to integrate more services into <a href="https://github.com/openaphid/Boilerplate-iOS">Boilerplate-iOS</a>, and make it be a better starter kit for game development with OpenAphid-Engine.</p>
 
 <p>If you have better ideas, please feel free to contact us via <code>openaphid@gmail.com</code> or raise an issue in our <a href="https://github.com/openaphid">github repositories</a>.</p>
 ]]></content>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[OpenAphid 0.2 is Available]]></title>
+    <title type="html"><![CDATA[OpenAphid-Engine 0.2 is Available]]></title>
     <link href="http://openaphid.github.com/blog/2012/05/15/openaphid-0-dot-2-available/"/>
     <updated>2012-05-15T22:28:00+08:00</updated>
     <id>http://openaphid.github.com/blog/2012/05/15/openaphid-0-dot-2-available</id>
-    <content type="html"><![CDATA[<p>AphidMobile is pleased to announce the availability of OpenAphid 0.2.</p>
+    <content type="html"><![CDATA[<p>AphidMobile is pleased to announce the availability of OpenAphid-Engine 0.2.</p>
 
 <p>Highlights of the 0.2 release include:</p>
 
@@ -467,7 +467,7 @@ gat.trackPageView("main.js"); //track a page view
 
 <ul>
 <li>New binding system for exposing Objective-C methods to JavaScript</li>
-<li>Hide <code>constructor</code> when enumerating attributs of an OpenAphid JavaScript object</li>
+<li>Hide <code>constructor</code> when enumerating attributes of an OpenAphid-Engine JavaScript object</li>
 <li>Fix incorrect value of <code>node.onframeupdate</code> when it's not set; should be <code>null</code> instead of an invalid empty value</li>
 <li>Add a new target of <code>ObjCBindingTest</code> in <a href="https://github.com/openaphid/Demos">Demos</a></li>
 <li>Support Google Analytics iOS SDK in <a href="https://github.com/openaphid/Boilerplate-iOS">Boilerplate-iOS</a></li>

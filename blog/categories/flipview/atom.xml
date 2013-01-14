@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: FlipView | OpenAphid]]></title>
+  <title><![CDATA[Category: FlipView | OpenAphid-Engine]]></title>
   <link href="http://openaphid.github.com/blog/categories/flipview/atom.xml" rel="self"/>
   <link href="http://openaphid.github.com/"/>
-  <updated>2013-01-02T14:30:46+08:00</updated>
+  <updated>2013-01-14T11:43:53+08:00</updated>
   <id>http://openaphid.github.com/</id>
   <author>
     <name><![CDATA[Aphid Mobile]]></name>
@@ -209,11 +209,11 @@ protected void onPause() {
 
 <p>The full source codes of the demo application are available at Github:</p>
 
-<p><a href="https://github.com/openaphid/android-flip/blob/master/Demo-Touch/">https://github.com/openaphid/android-flip/blob/master/Demo-Touch/</a></p>
+<p><a href="https://github.com/openaphid/android-flip/tree/master/Legacy/Demo-Touch/">https://github.com/openaphid/android-flip/tree/master/Legacy/Demo-Touch/</a></p>
 
 <p>A pre-built APK file is also present for your Android devices:</p>
 
-<p><a href="https://github.com/openaphid/android-flip/blob/master/Demo-Touch/APK/Flip-Touch.apk">https://github.com/openaphid/android-flip/blob/master/Demo-Touch/APK/Flip-Touch.apk</a></p>
+<p><a href="https://github.com/openaphid/android-flip/blob/master/Legacy/Demo-Touch/APK/Flip-Touch.apk">https://github.com/openaphid/android-flip/blob/master/Legacy/Demo-Touch/APK/Flip-Touch.apk</a></p>
 
 <blockquote><p><strong> Updated at 2012-08-17: </strong> Fixed the broken links to the project and the APK file.</p></blockquote>
 
@@ -239,7 +239,7 @@ protected void onPause() {
 </ul>
 
 
-<p>But I'm sorry that I'll be in a long trip with my family. Both <code>android-flip</code> and <code>OpenAphid</code> will not be updated until I come back. You can still reach me via email if you have any questions.</p>
+<p>But I'm sorry that I'll be in a long trip with my family. Both <code>android-flip</code> and <code>OpenAphid-Engine</code> will not be updated until I come back. You can still reach me via email if you have any questions.</p>
 ]]></content>
   </entry>
   
@@ -250,7 +250,7 @@ protected void onPause() {
     <id>http://openaphid.github.com/blog/2012/05/21/how-to-implement-flipboard-animation-on-android</id>
     <content type="html"><![CDATA[<blockquote><p><strong> Updates at 2012-12-12: </strong> Please check out <a href="/blog/categories/flipview/">FlipView</a> for an improved solution.</p></blockquote>
 
-<p>The demo in this post was born when we're working on the Android port of <a href="https://github.com/openaphid">OpenAphid</a>. One of our engineers is a huge fan of <a href="http://www.flipboard.com">Flipboard iOS</a>. He decided to implement its page flip animation on Android.</p>
+<p>The demo in this post was born when we're working on the Android port of <a href="https://github.com/openaphid">OpenAphid-Engine</a>. One of our engineers is a huge fan of <a href="http://www.flipboard.com">Flipboard iOS</a>. He decided to implement its page flip animation on Android.</p>
 
 <p>If you don't know about the effect, please install the APK file of our demo app to see how it looks:</p>
 
@@ -343,7 +343,7 @@ private GLSurfaceView surfaceView;
 </ul>
 
 
-<p>The <a href="https://github.com/openaphid/android-flip/blob/master/src/com/aphidmobile/flip/FlipRenderer.java">FlipRenderer</a> maps the OpenGL pixels to 2D screen pixels one-by-one which is similar to what OpenAphid does for 2D games. And the origin of the coordinate system is bottom left.</p>
+<p>The <a href="https://github.com/openaphid/android-flip/blob/master/src/com/aphidmobile/flip/FlipRenderer.java">FlipRenderer</a> maps the OpenGL pixels to 2D screen pixels one-by-one which is similar to what OpenAphid-Engine does for 2D games. And the origin of the coordinate system is bottom left.</p>
 
 <p>The actual drawing process is managed in the instance of <code>FlipCards</code>.</p>
 
@@ -422,7 +422,7 @@ private GLSurfaceView surfaceView;
 
 <p>The snippets above should cover the core concepts of our approach. You can fork the project to support more effects as we can see in Flipboard iPhone, like page flip following touch moves, flip over of a page, and book flip effect etc.</p>
 
-<p>BTW, we're tackling some technical problems of OpenAphid Android version. Will keep you posted if a stable version is ready.</p>
+<p>BTW, we're tackling some technical problems of OpenAphid-Engine Android version. Will keep you posted if a stable version is ready.</p>
 ]]></content>
   </entry>
   

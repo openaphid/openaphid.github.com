@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Tutorial: Handling Touch Events in OpenAphid v0.1.1 - OpenAphid</title>
+  <title>Tutorial: Handling Touch Events in OpenAphid-Engine v0.1.1 - OpenAphid-Engine</title>
   <meta name="author" content="Aphid Mobile">
 
   
-  <meta name="description" content="We are glad to release OpenAphid v0.1.1, which adds multitouch support and fixes several issues about touch handling. The detailed change log is &hellip;">
+  <meta name="description" content="We are glad to release OpenAphid-Engine v0.1.1, which adds multitouch support and fixes several issues about touch handling. The detailed change log &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -24,7 +24,7 @@
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="/javascripts/ender.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="OpenAphid" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="OpenAphid-Engine" type="application/atom+xml">
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <!--link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css"-->
@@ -50,9 +50,9 @@
 
 <body   >
   <header role="banner"><hgroup>
-<h1><img src="/images/aphid-logo-new.png" width="64"><a href="/">OpenAphid</a></h1>
+<h1><img src="/images/aphid-logo-new.png" width="64"><a href="/">OpenAphid-Engine</a></h1>
   
-    <h2>JavaScript + Cocos2D for Native iOS/Android Games</h2>
+    <h2>JavaScript Powered Game Engine for Native iOS/Android Apps</h2>
   
 </hgroup>
 
@@ -76,7 +76,7 @@
   
   <header>
     
-      <h1 class="entry-title">Tutorial: Handling Touch Events in OpenAphid v0.1.1</h1>
+      <h1 class="entry-title">Tutorial: Handling Touch Events in OpenAphid-Engine v0.1.1</h1>
     
     
       <p class="meta">
@@ -99,7 +99,7 @@
   </header>
 
 
-<div class="entry-content"><p>We are glad to release OpenAphid v0.1.1, which adds multitouch support and fixes several issues about touch handling. The detailed change log is following:</p>
+<div class="entry-content"><p>We are glad to release OpenAphid-Engine v0.1.1, which adds multitouch support and fixes several issues about touch handling. The detailed change log is following:</p>
 
 <!-- more -->
 
@@ -114,7 +114,7 @@
 
 <h2>Basics of Touch Event Handling</h2>
 
-<p>Any instances of the <code>Node</code> class can be the <code>EventTarget</code> of touch events in OpenAphid. This is different from <a href="http://www.cocos2d-iphone.org/">cocos2d-iphone</a>, in which <code>CCLayer</code> is usually the target of touch event.</p>
+<p>Any instances of the <code>Node</code> class can be the <code>EventTarget</code> of touch events in OpenAphid-Engine. This is different from <a href="http://www.cocos2d-iphone.org/">cocos2d-iphone</a>, in which <code>CCLayer</code> is usually the target of touch event.</p>
 
 <p>Several attributes affect how a node handles touch events: <code>multipleTouchEnabled</code> of the <code>Director</code> class; <code>userInteractionEnabled</code>, <code>visible</code>, <code>touchEnabled</code>, and <code>contentSize</code> of the <code>Node</code> class.</p>
 
@@ -124,7 +124,7 @@
 
 <h3>Hit-Testing</h3>
 
-<p>When a touch happens on the device screen, OpenAphid follows the routine below to locate its event target:</p>
+<p>When a touch happens on the device screen, OpenAphid-Engine follows the routine below to locate its event target:</p>
 
 <ol>
 <li><p>Hit-testing is used to find the sub-node of the running scene that is under a touch. This method proceeds recursively on each node in the node hierarchy.</p></li>
@@ -141,7 +141,7 @@
 
 <h2>Interfaces of Touch Event</h2>
 
-<p>The APIs of touch event handling in OpenAphid are implemented to follow the specification of <a href="http://www.w3.org/TR/touch-events/">W3C DOM Touch Event Version 1</a>. There are already lots of guides about handling touches in DOM, which can be used as references for OpenAphid too. We&#8217;ve updated the <a href="https://github.com/openaphid/Demos">Demos</a> of OpenAphid to include a <code>TouchTest</code> application, which demonstrates three scenarios of touch handling:</p>
+<p>The APIs of touch event handling in OpenAphid-Engine are implemented to follow the specification of <a href="http://www.w3.org/TR/touch-events/">W3C DOM Touch Event Version 1</a>. There are already lots of guides about handling touches in DOM, which can be used as references for OpenAphid-Engine too. We&#8217;ve updated the <a href="https://github.com/openaphid/Demos">Demos</a> of OpenAphid-Engine to include a <code>TouchTest</code> application, which demonstrates three scenarios of touch handling:</p>
 
 <ul>
 <li><p>Handling a single touch event to drag a sprite.</p></li>
@@ -196,10 +196,10 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/05/02/develop-mode-of-openaphid/" title="Previous Post: Tutorial: Developer Mode of OpenAphid">&laquo; Tutorial: Developer Mode of OpenAphid</a>
+        <a class="basic-alignment left" href="/blog/2012/05/02/develop-mode-of-openaphid/" title="Previous Post: Tutorial: Developer Mode of OpenAphid-Engine">&laquo; Tutorial: Developer Mode of OpenAphid-Engine</a>
       
       
-        <a class="basic-alignment right" href="/blog/2012/05/15/openaphid-0-dot-2-available/" title="Next Post: OpenAphid 0.2 is Available">OpenAphid 0.2 is Available &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2012/05/15/openaphid-0-dot-2-available/" title="Next Post: OpenAphid-Engine 0.2 is Available">OpenAphid-Engine 0.2 is Available &raquo;</a>
       
     </p>
   </footer>
@@ -236,7 +236,7 @@
       </li>
     
       <li class="post">
-        <a href="/blog/2012/07/10/tutorial-exposing-java-methods-to-javascript-in-openaphid/">Tutorial: Exposing Java Methods to JavaScript in OpenAphid</a>
+        <a href="/blog/2012/07/10/tutorial-exposing-java-methods-to-javascript-in-openaphid/">Tutorial: Exposing Java Methods to JavaScript in OpenAphid-Engine</a>
       </li>
     
   </ul>

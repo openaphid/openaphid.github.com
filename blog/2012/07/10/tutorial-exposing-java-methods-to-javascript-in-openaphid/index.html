@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Tutorial: Exposing Java Methods to JavaScript in OpenAphid - OpenAphid</title>
+  <title>Tutorial: Exposing Java Methods to JavaScript in OpenAphid-Engine - OpenAphid-Engine</title>
   <meta name="author" content="Aphid Mobile">
 
   
-  <meta name="description" content="OpenAphid for Android v0.1.5 supports exposing Java methods as JavaScript functions, which is helpful for integrating 3rd-party services into games. &hellip;">
+  <meta name="description" content="OpenAphid-Engine for Android v0.1.5 supports exposing Java methods as JavaScript functions, which is helpful for integrating 3rd-party services into &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -24,7 +24,7 @@
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="/javascripts/ender.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="OpenAphid" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="OpenAphid-Engine" type="application/atom+xml">
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <!--link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css"-->
@@ -50,9 +50,9 @@
 
 <body   >
   <header role="banner"><hgroup>
-<h1><img src="/images/aphid-logo-new.png" width="64"><a href="/">OpenAphid</a></h1>
+<h1><img src="/images/aphid-logo-new.png" width="64"><a href="/">OpenAphid-Engine</a></h1>
   
-    <h2>JavaScript + Cocos2D for Native iOS/Android Games</h2>
+    <h2>JavaScript Powered Game Engine for Native iOS/Android Apps</h2>
   
 </hgroup>
 
@@ -76,7 +76,7 @@
   
   <header>
     
-      <h1 class="entry-title">Tutorial: Exposing Java Methods to JavaScript in OpenAphid</h1>
+      <h1 class="entry-title">Tutorial: Exposing Java Methods to JavaScript in OpenAphid-Engine</h1>
     
     
       <p class="meta">
@@ -99,7 +99,7 @@
   </header>
 
 
-<div class="entry-content"><p><a href="https://github.com/openaphid">OpenAphid</a> for Android v0.1.5 supports exposing Java methods as JavaScript functions, which is helpful for integrating 3rd-party services into games. The binding APIs are similar to its <a href="/blog/2012/05/16/tutorial-exposing-objective-c-methods-to-javascript-in-openaphid/">iOS version</a>.</p>
+<div class="entry-content"><p><a href="https://github.com/openaphid">OpenAphid-Engine</a> for Android v0.1.5 supports exposing Java methods as JavaScript functions, which is helpful for integrating 3rd-party services into games. The binding APIs are similar to its <a href="/blog/2012/05/16/tutorial-exposing-objective-c-methods-to-javascript-in-openaphid/">iOS version</a>.</p>
 
 <!-- more -->
 
@@ -135,7 +135,7 @@
 
 <p>The snippet above injects an instance of Java class <code>BindingTest4</code> to JavaScript as <code>aphid.ext.test4</code>. Its method <code>addInMainThread()</code> can be accessed via <code>aphid.ext.test4.add()</code> in JavaScript.</p>
 
-<p>The <code>AphidJSFunction</code> annotation supports two optional element-value pairs: <code>name</code> and <code>isInUIThread</code>. <code>name</code> declares a custom function name to JavaScript, the Java method name is used if it&#8217;s not specified; <code>isInUIThread</code> controls the thread to invoke the Java method, its default value is <code>false</code>. In OpenAphid for Android, JavaScript runs inside the GL thread. Setting <code>isInUIThread</code> to <code>true</code> makes the Java method run inside the UI thread; the execution of JavaScript is blocked in the GL thread until the Java method returns from the UI thread.</p>
+<p>The <code>AphidJSFunction</code> annotation supports two optional element-value pairs: <code>name</code> and <code>isInUIThread</code>. <code>name</code> declares a custom function name to JavaScript, the Java method name is used if it&#8217;s not specified; <code>isInUIThread</code> controls the thread to invoke the Java method, its default value is <code>false</code>. In OpenAphid-Engine for Android, JavaScript runs inside the GL thread. Setting <code>isInUIThread</code> to <code>true</code> makes the Java method run inside the UI thread; the execution of JavaScript is blocked in the GL thread until the Java method returns from the UI thread.</p>
 
 <h3>Type Conversion of Return Value from Java to JavaScript</h3>
 
@@ -199,7 +199,7 @@
 
 <h2>Integration with Google Analytics in Boilerplate-Android</h2>
 
-<p>Let&#8217;s illustrate how to integrate Google Analytics SDK into OpenAphid for Android. All source codes can be found in the <a href="https://github.com/openaphid/Boilerplate-Android">Boilerplate-Android</a> project.</p>
+<p>Let&#8217;s illustrate how to integrate Google Analytics SDK into OpenAphid-Engine for Android. All source codes can be found in the <a href="https://github.com/openaphid/Boilerplate-Android">Boilerplate-Android</a> project.</p>
 
 <p>After adding Google Analytics Android SDK into our project as described in its <a href="https://developers.google.com/analytics/devguides/collection/android/devguide#gettingStarted">official document</a>, we create a Java class <a href="https://github.com/openaphid/Boilerplate-Android/blob/master/src/org/openaphid/thirdparty/ga/GoogleAnalyticsBinding.java">GoogleAnalyticsBinding</a> to bridge JavaScript and Google Analytics SDK. <code>GoogleAnalyticsBinding</code> makes the exposed functions have identical signatures as its iOS version, which enables the same script file(<a href="https://github.com/openaphid/Boilerplate-iOS/blob/master/Boilerplate/game.bundle/main.js">main.js</a>) to run on both platforms.</p>
 
@@ -245,7 +245,7 @@
 
 <p>Now all Google Analytics APIs can be accessed by the same JavaScript functions inside <code>aphid.ext.gat</code> on both iOS and Android.</p>
 
-<p>That&#8217;s all for this tutorial. We&#8217;re working on OpenAphid for Android v0.2, which implements <code>XMLHttpRequest</code> APIs as what we already have in iOS version.</p>
+<p>That&#8217;s all for this tutorial. We&#8217;re working on OpenAphid-Engine for Android v0.2, which implements <code>XMLHttpRequest</code> APIs as what we already have in iOS version.</p>
 </div>
 
 
@@ -291,7 +291,7 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/07/09/openaphid-android-v0-dot-1-5-released/" title="Previous Post: OpenAphid Android v0.1.5 Released">&laquo; OpenAphid Android v0.1.5 Released</a>
+        <a class="basic-alignment left" href="/blog/2012/07/09/openaphid-android-v0-dot-1-5-released/" title="Previous Post: OpenAphid-Engine Android v0.1.5 Released">&laquo; OpenAphid-Engine Android v0.1.5 Released</a>
       
       
         <a class="basic-alignment right" href="/blog/2012/07/27/how-to-handle-touch-events-for-flip-animation/" title="Next Post: How to Handle Touch Events in Flip Animation">How to Handle Touch Events in Flip Animation &raquo;</a>
@@ -331,7 +331,7 @@
       </li>
     
       <li class="post">
-        <a href="/blog/2012/07/10/tutorial-exposing-java-methods-to-javascript-in-openaphid/">Tutorial: Exposing Java Methods to JavaScript in OpenAphid</a>
+        <a href="/blog/2012/07/10/tutorial-exposing-java-methods-to-javascript-in-openaphid/">Tutorial: Exposing Java Methods to JavaScript in OpenAphid-Engine</a>
       </li>
     
   </ul>

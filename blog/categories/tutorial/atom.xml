@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Tutorial | OpenAphid]]></title>
+  <title><![CDATA[Category: Tutorial | OpenAphid-Engine]]></title>
   <link href="http://openaphid.github.com/blog/categories/tutorial/atom.xml" rel="self"/>
   <link href="http://openaphid.github.com/"/>
-  <updated>2013-01-02T14:30:46+08:00</updated>
+  <updated>2013-01-14T11:43:53+08:00</updated>
   <id>http://openaphid.github.com/</id>
   <author>
     <name><![CDATA[Aphid Mobile]]></name>
@@ -14,11 +14,11 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Tutorial: Exposing Java Methods to JavaScript in OpenAphid]]></title>
+    <title type="html"><![CDATA[Tutorial: Exposing Java Methods to JavaScript in OpenAphid-Engine]]></title>
     <link href="http://openaphid.github.com/blog/2012/07/10/tutorial-exposing-java-methods-to-javascript-in-openaphid/"/>
     <updated>2012-07-10T14:39:00+08:00</updated>
     <id>http://openaphid.github.com/blog/2012/07/10/tutorial-exposing-java-methods-to-javascript-in-openaphid</id>
-    <content type="html"><![CDATA[<p><a href="https://github.com/openaphid">OpenAphid</a> for Android v0.1.5 supports exposing Java methods as JavaScript functions, which is helpful for integrating 3rd-party services into games. The binding APIs are similar to its <a href="/blog/2012/05/16/tutorial-exposing-objective-c-methods-to-javascript-in-openaphid/">iOS version</a>.</p>
+    <content type="html"><![CDATA[<p><a href="https://github.com/openaphid">OpenAphid-Engine</a> for Android v0.1.5 supports exposing Java methods as JavaScript functions, which is helpful for integrating 3rd-party services into games. The binding APIs are similar to its <a href="/blog/2012/05/16/tutorial-exposing-objective-c-methods-to-javascript-in-openaphid/">iOS version</a>.</p>
 
 <!-- more -->
 
@@ -47,7 +47,7 @@ glSurfaceView.getAphidRenderer().setScriptBinding("test4", new BindingTest4(), f
 
 <p>The snippet above injects an instance of Java class <code>BindingTest4</code> to JavaScript as <code>aphid.ext.test4</code>. Its method <code>addInMainThread()</code> can be accessed via <code>aphid.ext.test4.add()</code> in JavaScript.</p>
 
-<p>The <code>AphidJSFunction</code> annotation supports two optional element-value pairs: <code>name</code> and <code>isInUIThread</code>. <code>name</code> declares a custom function name to JavaScript, the Java method name is used if it's not specified; <code>isInUIThread</code> controls the thread to invoke the Java method, its default value is <code>false</code>. In OpenAphid for Android, JavaScript runs inside the GL thread. Setting <code>isInUIThread</code> to <code>true</code> makes the Java method run inside the UI thread; the execution of JavaScript is blocked in the GL thread until the Java method returns from the UI thread.</p>
+<p>The <code>AphidJSFunction</code> annotation supports two optional element-value pairs: <code>name</code> and <code>isInUIThread</code>. <code>name</code> declares a custom function name to JavaScript, the Java method name is used if it's not specified; <code>isInUIThread</code> controls the thread to invoke the Java method, its default value is <code>false</code>. In OpenAphid-Engine for Android, JavaScript runs inside the GL thread. Setting <code>isInUIThread</code> to <code>true</code> makes the Java method run inside the UI thread; the execution of JavaScript is blocked in the GL thread until the Java method returns from the UI thread.</p>
 
 <h3>Type Conversion of Return Value from Java to JavaScript</h3>
 
@@ -111,7 +111,7 @@ glSurfaceView.getAphidRenderer().setScriptBinding("test4", new BindingTest4(), f
 
 <h2>Integration with Google Analytics in Boilerplate-Android</h2>
 
-<p>Let's illustrate how to integrate Google Analytics SDK into OpenAphid for Android. All source codes can be found in the <a href="https://github.com/openaphid/Boilerplate-Android">Boilerplate-Android</a> project.</p>
+<p>Let's illustrate how to integrate Google Analytics SDK into OpenAphid-Engine for Android. All source codes can be found in the <a href="https://github.com/openaphid/Boilerplate-Android">Boilerplate-Android</a> project.</p>
 
 <p>After adding Google Analytics Android SDK into our project as described in its <a href="https://developers.google.com/analytics/devguides/collection/android/devguide#gettingStarted">official document</a>, we create a Java class <a href="https://github.com/openaphid/Boilerplate-Android/blob/master/src/org/openaphid/thirdparty/ga/GoogleAnalyticsBinding.java">GoogleAnalyticsBinding</a> to bridge JavaScript and Google Analytics SDK. <code>GoogleAnalyticsBinding</code> makes the exposed functions have identical signatures as its iOS version, which enables the same script file(<a href="https://github.com/openaphid/Boilerplate-iOS/blob/master/Boilerplate/game.bundle/main.js">main.js</a>) to run on both platforms.</p>
 
@@ -147,16 +147,16 @@ false   //place inside aphid.ext namespace
 
 <p>Now all Google Analytics APIs can be accessed by the same JavaScript functions inside <code>aphid.ext.gat</code> on both iOS and Android.</p>
 
-<p>That's all for this tutorial. We're working on OpenAphid for Android v0.2, which implements <code>XMLHttpRequest</code> APIs as what we already have in iOS version.</p>
+<p>That's all for this tutorial. We're working on OpenAphid-Engine for Android v0.2, which implements <code>XMLHttpRequest</code> APIs as what we already have in iOS version.</p>
 ]]></content>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Tutorial: Calling Objective-C Methods from JavaScript in OpenAphid]]></title>
+    <title type="html"><![CDATA[Tutorial: Calling Objective-C Methods from JavaScript in OpenAphid-Engine]]></title>
     <link href="http://openaphid.github.com/blog/2012/05/16/tutorial-exposing-objective-c-methods-to-javascript-in-openaphid/"/>
     <updated>2012-05-16T10:06:00+08:00</updated>
     <id>http://openaphid.github.com/blog/2012/05/16/tutorial-exposing-objective-c-methods-to-javascript-in-openaphid</id>
-    <content type="html"><![CDATA[<p><a href="https://github.com/openaphid">OpenAphid</a> 0.2 was shipped with a new binding system which can bridge JavaScript functions to Objective-C methods on demand. It's useful for games to integrate analytics services, monetization solutions, and social services, etc. In this tutorial, we'll go through the binding system by demonstrating how to integrate <a href="https://developers.google.com/analytics/devguides/collection/ios/">Google Analytics iOS SDK</a> into OpenAphid.</p>
+    <content type="html"><![CDATA[<p><a href="https://github.com/openaphid">OpenAphid-Engine</a> 0.2 was shipped with a new binding system which can bridge JavaScript functions to Objective-C methods on demand. It's useful for games to integrate analytics services, monetization solutions, and social services, etc. In this tutorial, we'll go through the binding system by demonstrating how to integrate <a href="https://developers.google.com/analytics/devguides/collection/ios/">Google Analytics iOS SDK</a> into OpenAphid-Engine.</p>
 
 <!-- more -->
 
@@ -270,9 +270,9 @@ false   //place inside aphid.ext namespace
 <p>}
 ```</p>
 
-<p>OpenAphid injects an instance of <code>DatastoreBinding</code> as a JavaScript object of <code>[object DynamicBinding]</code> into JavaScript environment. And its name is <code>datastore</code>. The <code>iOSOnly</code> argument manages the namespace which contains the injected object. If it's <code>YES</code>, then the injected object can be accessed via <code>aphid.extios.datastore</code>; otherwise it can be accessed via <code>aphid.ext.datastore</code>.</p>
+<p>OpenAphid-Engine injects an instance of <code>DatastoreBinding</code> as a JavaScript object of <code>[object DynamicBinding]</code> into JavaScript environment. And its name is <code>datastore</code>. The <code>iOSOnly</code> argument manages the namespace which contains the injected object. If it's <code>YES</code>, then the injected object can be accessed via <code>aphid.extios.datastore</code>; otherwise it can be accessed via <code>aphid.ext.datastore</code>.</p>
 
-<blockquote><p>Notes: the <code>iOSOnly</code> argument is actually designed for future compliance when OpenAphid supports both iOS and Android.</p></blockquote>
+<blockquote><p>Notes: the <code>iOSOnly</code> argument is actually designed for future compliance when OpenAphid-Engine supports both iOS and Android.</p></blockquote>
 
 <h2>Integration with Google Analytics in Boilerplate-iOS</h2>
 
@@ -357,18 +357,18 @@ gat.trackPageView("main.js"); //track a page view
 
 <blockquote><p><strong> Updates at 07-09-2012: </strong> Since <code>iOSOnly</code> has been set to <code>NO</code>, the JavaScript namespace for <code>gat</code> is switched to <code>aphid.ext</code> from <code>aphid.extios</code></p></blockquote>
 
-<p>We're going to integrate more services into <a href="https://github.com/openaphid/Boilerplate-iOS">Boilerplate-iOS</a>, and make it be a better starter kit for game development with OpenAphid.</p>
+<p>We're going to integrate more services into <a href="https://github.com/openaphid/Boilerplate-iOS">Boilerplate-iOS</a>, and make it be a better starter kit for game development with OpenAphid-Engine.</p>
 
 <p>If you have better ideas, please feel free to contact us via <code>openaphid@gmail.com</code> or raise an issue in our <a href="https://github.com/openaphid">github repositories</a>.</p>
 ]]></content>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Tutorial: Handling Touch Events in OpenAphid v0.1.1]]></title>
+    <title type="html"><![CDATA[Tutorial: Handling Touch Events in OpenAphid-Engine v0.1.1]]></title>
     <link href="http://openaphid.github.com/blog/2012/05/06/tutorial-handling-touch-events-in-openaphid-v0-dot-1-1/"/>
     <updated>2012-05-06T21:54:00+08:00</updated>
     <id>http://openaphid.github.com/blog/2012/05/06/tutorial-handling-touch-events-in-openaphid-v0-dot-1-1</id>
-    <content type="html"><![CDATA[<p>We are glad to release OpenAphid v0.1.1, which adds multitouch support and fixes several issues about touch handling. The detailed change log is following:</p>
+    <content type="html"><![CDATA[<p>We are glad to release OpenAphid-Engine v0.1.1, which adds multitouch support and fixes several issues about touch handling. The detailed change log is following:</p>
 
 <!-- more -->
 
@@ -383,7 +383,7 @@ gat.trackPageView("main.js"); //track a page view
 
 <h2>Basics of Touch Event Handling</h2>
 
-<p>Any instances of the <code>Node</code> class can be the <code>EventTarget</code> of touch events in OpenAphid. This is different from <a href="http://www.cocos2d-iphone.org/">cocos2d-iphone</a>, in which <code>CCLayer</code> is usually the target of touch event.</p>
+<p>Any instances of the <code>Node</code> class can be the <code>EventTarget</code> of touch events in OpenAphid-Engine. This is different from <a href="http://www.cocos2d-iphone.org/">cocos2d-iphone</a>, in which <code>CCLayer</code> is usually the target of touch event.</p>
 
 <p>Several attributes affect how a node handles touch events: <code>multipleTouchEnabled</code> of the <code>Director</code> class; <code>userInteractionEnabled</code>, <code>visible</code>, <code>touchEnabled</code>, and <code>contentSize</code> of the <code>Node</code> class.</p>
 
@@ -393,7 +393,7 @@ gat.trackPageView("main.js"); //track a page view
 
 <h3>Hit-Testing</h3>
 
-<p>When a touch happens on the device screen, OpenAphid follows the routine below to locate its event target:</p>
+<p>When a touch happens on the device screen, OpenAphid-Engine follows the routine below to locate its event target:</p>
 
 <ol>
 <li><p>Hit-testing is used to find the sub-node of the running scene that is under a touch. This method proceeds recursively on each node in the node hierarchy.</p></li>
@@ -410,7 +410,7 @@ gat.trackPageView("main.js"); //track a page view
 
 <h2>Interfaces of Touch Event</h2>
 
-<p>The APIs of touch event handling in OpenAphid are implemented to follow the specification of <a href="http://www.w3.org/TR/touch-events/">W3C DOM Touch Event Version 1</a>. There are already lots of guides about handling touches in DOM, which can be used as references for OpenAphid too. We've updated the <a href="https://github.com/openaphid/Demos">Demos</a> of OpenAphid to include a <code>TouchTest</code> application, which demonstrates three scenarios of touch handling:</p>
+<p>The APIs of touch event handling in OpenAphid-Engine are implemented to follow the specification of <a href="http://www.w3.org/TR/touch-events/">W3C DOM Touch Event Version 1</a>. There are already lots of guides about handling touches in DOM, which can be used as references for OpenAphid-Engine too. We've updated the <a href="https://github.com/openaphid/Demos">Demos</a> of OpenAphid-Engine to include a <code>TouchTest</code> application, which demonstrates three scenarios of touch handling:</p>
 
 <ul>
 <li><p>Handling a single touch event to drag a sprite.</p></li>
@@ -424,11 +424,11 @@ gat.trackPageView("main.js"); //track a page view
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Tutorial: Developer Mode of OpenAphid]]></title>
+    <title type="html"><![CDATA[Tutorial: Developer Mode of OpenAphid-Engine]]></title>
     <link href="http://openaphid.github.com/blog/2012/05/02/develop-mode-of-openaphid/"/>
     <updated>2012-05-02T14:52:00+08:00</updated>
     <id>http://openaphid.github.com/blog/2012/05/02/develop-mode-of-openaphid</id>
-    <content type="html"><![CDATA[<p><code>Developer Mode</code> is a feature to speed up developing games with OpenAphid. The behavior of OpenAphid changes if the developer mode is turned on.</p>
+    <content type="html"><![CDATA[<p><code>Developer Mode</code> is a feature to speed up developing games with OpenAphid-Engine. The behavior of OpenAphid-Engine changes if the developer mode is turned on.</p>
 
 <!-- more -->
 
@@ -447,7 +447,7 @@ gat.trackPageView("main.js"); //track a page view
 <p>```</p>
 
 <ol>
-<li><p>Setting the value of the <code>developMode</code> parameter to <code>YES</code> enables the developer mode of OpenAphid;</p></li>
+<li><p>Setting the value of the <code>developMode</code> parameter to <code>YES</code> enables the developer mode of OpenAphid-Engine;</p></li>
 <li><p>An HTTP server should be used to host the content inside the bundle folder specified by <code>configBundleName</code>. The value for the <code>baseURL</code> parameter should be set to the server address too. A ruby based tiny HTTP server is included in our boilerplate project, please refer to the <code>web_server.rb</code> and <code>start_dev_server.sh</code> files for more details;</p></li>
 <li><p>The application should be built and re-deployed to devices with the new settings.</p></li>
 </ol>
@@ -461,7 +461,7 @@ gat.trackPageView("main.js"); //track a page view
 
 <ul>
 <li><p>JavaScript files are fetched from the HTTP server. If you want to see the result of your changes in the game script, you only need to re-open the app;</p></li>
-<li><p>Graphics resources are fetched remotely too. For example, a texture can be created by using <code>new aphid.g2d.Texture2D("player.png")</code>; the <code>player.png</code> file is fetched via <code>http://129.158.217.36:18080/player.png</code> in developer mode. OpenAphid Runtime also prints a log about it as following:</p></li>
+<li><p>Graphics resources are fetched remotely too. For example, a texture can be created by using <code>new aphid.g2d.Texture2D("player.png")</code>; the <code>player.png</code> file is fetched via <code>http://129.158.217.36:18080/player.png</code> in developer mode. OpenAphid-Engine Runtime also prints a log about it as following:</p></li>
 </ul>
 
 
@@ -478,11 +478,11 @@ INFO 05/02/12,13:41:32: (developer mode) loading data 'player.png' from remote: 
 
 <ul>
 <li><p>Messages produced by <code>console.warn</code> and <code>console.error</code> are also displayed as notifications;</p></li>
-<li><p>Write access to read-only attributes of OpenAphid objects throws exception in developer mode.</p></li>
+<li><p>Write access to read-only attributes of OpenAphid-Engine objects throws exception in developer mode.</p></li>
 </ul>
 
 
-<p>With the developer mode of OpenAphid, the typical development process is as follows:</p>
+<p>With the developer mode of OpenAphid-Engine, the typical development process is as follows:</p>
 
 <ol>
 <li><p>Developer edits the JavaScript file with game logics and updates graphic files inside the bundle folder;</p></li>
@@ -491,7 +491,7 @@ INFO 05/02/12,13:41:32: (developer mode) loading data 'player.png' from remote: 
 </ol>
 
 
-<p>Hope you like the developer mode of OpenAphid. We'll improve it constantly to make game development easier. Please feel free to contact us if you have any suggestions.</p>
+<p>Hope you like the developer mode of OpenAphid-Engine. We'll improve it constantly to make game development easier. Please feel free to contact us if you have any suggestions.</p>
 ]]></content>
   </entry>
   

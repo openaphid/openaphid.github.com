@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Tutorial: Developer Mode of OpenAphid - OpenAphid</title>
+  <title>Tutorial: Developer Mode of OpenAphid-Engine - OpenAphid-Engine</title>
   <meta name="author" content="Aphid Mobile">
 
   
-  <meta name="description" content="Developer Mode is a feature to speed up developing games with OpenAphid. The behavior of OpenAphid changes if the developer mode is turned on. How to &hellip;">
+  <meta name="description" content="Developer Mode is a feature to speed up developing games with OpenAphid-Engine. The behavior of OpenAphid-Engine changes if the developer mode is &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -24,7 +24,7 @@
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="/javascripts/ender.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="OpenAphid" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="OpenAphid-Engine" type="application/atom+xml">
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <!--link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css"-->
@@ -50,9 +50,9 @@
 
 <body   >
   <header role="banner"><hgroup>
-<h1><img src="/images/aphid-logo-new.png" width="64"><a href="/">OpenAphid</a></h1>
+<h1><img src="/images/aphid-logo-new.png" width="64"><a href="/">OpenAphid-Engine</a></h1>
   
-    <h2>JavaScript + Cocos2D for Native iOS/Android Games</h2>
+    <h2>JavaScript Powered Game Engine for Native iOS/Android Apps</h2>
   
 </hgroup>
 
@@ -76,7 +76,7 @@
   
   <header>
     
-      <h1 class="entry-title">Tutorial: Developer Mode of OpenAphid</h1>
+      <h1 class="entry-title">Tutorial: Developer Mode of OpenAphid-Engine</h1>
     
     
       <p class="meta">
@@ -99,7 +99,7 @@
   </header>
 
 
-<div class="entry-content"><p><code>Developer Mode</code> is a feature to speed up developing games with OpenAphid. The behavior of OpenAphid changes if the developer mode is turned on.</p>
+<div class="entry-content"><p><code>Developer Mode</code> is a feature to speed up developing games with OpenAphid-Engine. The behavior of OpenAphid-Engine changes if the developer mode is turned on.</p>
 
 <!-- more -->
 
@@ -118,7 +118,7 @@
 
 
 <ol>
-<li><p>Setting the value of the <code>developMode</code> parameter to <code>YES</code> enables the developer mode of OpenAphid;</p></li>
+<li><p>Setting the value of the <code>developMode</code> parameter to <code>YES</code> enables the developer mode of OpenAphid-Engine;</p></li>
 <li><p>An HTTP server should be used to host the content inside the bundle folder specified by <code>configBundleName</code>. The value for the <code>baseURL</code> parameter should be set to the server address too. A ruby based tiny HTTP server is included in our boilerplate project, please refer to the <code>web_server.rb</code> and <code>start_dev_server.sh</code> files for more details;</p></li>
 <li><p>The application should be built and re-deployed to devices with the new settings.</p></li>
 </ol>
@@ -132,7 +132,7 @@
 
 <ul>
 <li><p>JavaScript files are fetched from the HTTP server. If you want to see the result of your changes in the game script, you only need to re-open the app;</p></li>
-<li><p>Graphics resources are fetched remotely too. For example, a texture can be created by using <code>new aphid.g2d.Texture2D("player.png")</code>; the <code>player.png</code> file is fetched via <code>http://129.158.217.36:18080/player.png</code> in developer mode. OpenAphid Runtime also prints a log about it as following:</p></li>
+<li><p>Graphics resources are fetched remotely too. For example, a texture can be created by using <code>new aphid.g2d.Texture2D("player.png")</code>; the <code>player.png</code> file is fetched via <code>http://129.158.217.36:18080/player.png</code> in developer mode. OpenAphid-Engine Runtime also prints a log about it as following:</p></li>
 </ul>
 
 
@@ -150,11 +150,11 @@
 
 <ul>
 <li><p>Messages produced by <code>console.warn</code> and <code>console.error</code> are also displayed as notifications;</p></li>
-<li><p>Write access to read-only attributes of OpenAphid objects throws exception in developer mode.</p></li>
+<li><p>Write access to read-only attributes of OpenAphid-Engine objects throws exception in developer mode.</p></li>
 </ul>
 
 
-<p>With the developer mode of OpenAphid, the typical development process is as follows:</p>
+<p>With the developer mode of OpenAphid-Engine, the typical development process is as follows:</p>
 
 <ol>
 <li><p>Developer edits the JavaScript file with game logics and updates graphic files inside the bundle folder;</p></li>
@@ -163,7 +163,7 @@
 </ol>
 
 
-<p>Hope you like the developer mode of OpenAphid. We&#8217;ll improve it constantly to make game development easier. Please feel free to contact us if you have any suggestions.</p>
+<p>Hope you like the developer mode of OpenAphid-Engine. We&#8217;ll improve it constantly to make game development easier. Please feel free to contact us if you have any suggestions.</p>
 </div>
 
 
@@ -209,10 +209,10 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/04/29/openaphid-v0-dot-1-released/" title="Previous Post: OpenAphid v0.1 Released">&laquo; OpenAphid v0.1 Released</a>
+        <a class="basic-alignment left" href="/blog/2012/04/29/openaphid-v0-dot-1-released/" title="Previous Post: OpenAphid-Engine v0.1 Released">&laquo; OpenAphid-Engine v0.1 Released</a>
       
       
-        <a class="basic-alignment right" href="/blog/2012/05/06/tutorial-handling-touch-events-in-openaphid-v0-dot-1-1/" title="Next Post: Tutorial: Handling Touch Events in OpenAphid v0.1.1">Tutorial: Handling Touch Events in OpenAphid v0.1.1 &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2012/05/06/tutorial-handling-touch-events-in-openaphid-v0-dot-1-1/" title="Next Post: Tutorial: Handling Touch Events in OpenAphid-Engine v0.1.1">Tutorial: Handling Touch Events in OpenAphid-Engine v0.1.1 &raquo;</a>
       
     </p>
   </footer>
@@ -249,7 +249,7 @@
       </li>
     
       <li class="post">
-        <a href="/blog/2012/07/10/tutorial-exposing-java-methods-to-javascript-in-openaphid/">Tutorial: Exposing Java Methods to JavaScript in OpenAphid</a>
+        <a href="/blog/2012/07/10/tutorial-exposing-java-methods-to-javascript-in-openaphid/">Tutorial: Exposing Java Methods to JavaScript in OpenAphid-Engine</a>
       </li>
     
   </ul>
