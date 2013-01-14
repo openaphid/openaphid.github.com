@@ -12,11 +12,11 @@ This short post explains how to handle touch events for the flip animation intro
 
 The full source codes of the demo application are available at Github:
 
-[https://github.com/openaphid/android-flip/blob/master/Demo-Touch/](https://github.com/openaphid/android-flip/blob/master/Demo-Touch/)
+[https://github.com/openaphid/android-flip/tree/master/Legacy/Demo-Touch/](https://github.com/openaphid/android-flip/tree/master/Legacy/Demo-Touch/)
 
 A pre-built APK file is also present for your Android devices:
 
-[https://github.com/openaphid/android-flip/blob/master/Demo-Touch/APK/Flip-Touch.apk](https://github.com/openaphid/android-flip/blob/master/Demo-Touch/APK/Flip-Touch.apk)
+[https://github.com/openaphid/android-flip/blob/master/Legacy/Demo-Touch/APK/Flip-Touch.apk](https://github.com/openaphid/android-flip/blob/master/Legacy/Demo-Touch/APK/Flip-Touch.apk)
 
 > ** Updated at 2012-08-17: ** Fixed the broken links to the project and the APK file.
 
@@ -38,6 +38,6 @@ The demo app is just a prove of concept. It can be enhanced to be a component fo
 
 - To support other fancy effects that can be implemented in OpenGL ES.
 
-But I'm sorry that I'll be in a long trip with my family. Both `android-flip` and `OpenAphid` will not be updated until I come back. You can still reach me via email if you have any questions. 
+But I'm sorry that I'll be in a long trip with my family. Both `android-flip` and `OpenAphid-Engine` will not be updated until I come back. You can still reach me via email if you have any questions. 
 
 

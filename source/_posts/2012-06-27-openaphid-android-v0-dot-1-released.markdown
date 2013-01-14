@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "OpenAphid Android v0.1 released"
+title: "OpenAphid-Engine Android v0.1 released"
 date: 2012-06-27 08:22
 comments: true
 categories: [OpenAphid-Engine, Release]
 ---
 
-We're excited to release the first version of OpenAphid which supports Android OS. OpenAphid is now a cross platform 2D game engine with both iOS and Android support.
+We're excited to release the first version of OpenAphid-Engine which supports Android OS. OpenAphid-Engine is now a cross platform 2D game engine with both iOS and Android support.
 
 Several github repositories have been updated, please check them out for more details:
 
@@ -16,9 +16,9 @@ Several github repositories have been updated, please check them out for more de
 
 - [https://github.com/openaphid/Demos](https://github.com/openaphid/Demos) is also refreshed with the Android project files. You can download the prebuilt APK files to test them on your Android devices: [OpenAphid-Android-Demos.apk](https://github.com/openaphid/Demos/blob/master/Android/Demos/apk/OpenAphid-Android-Demos.apk)
 
-## Highlights and Limitations of OpenAphid Android v0.1
+## Highlights and Limitations of OpenAphid-Engine Android v0.1
 
-It's the beginning of cross platform support of OpenAphid. Please consider it as an alpha release. But we'd like to summarize some implementation highlights here:
+It's the beginning of cross platform support of OpenAphid-Engine. Please consider it as an alpha release. But we'd like to summarize some implementation highlights here:
 
 - The core runtime shares the same code base with the iOS version, which makes new features can be added to both platforms in the future.
 
@@ -38,7 +38,7 @@ This release is lack of several important features comparing to the iOS version.
 
 ## Performance Benchmark
 
-The same tank program as introduced in our [previous post](/blog/2012/02/20/javascript-and-cocos2d-a-sneak-peek/) is used to evaluate the performance of OpenAphid on Android OS. Several other Android 2D game engines are chose as references:
+The same tank program as introduced in our [previous post](/blog/2012/02/20/javascript-and-cocos2d-a-sneak-peek/) is used to evaluate the performance of OpenAphid-Engine on Android OS. Several other Android 2D game engines are chose as references:
 
 - [cocos2d-x 1.0.1-0.13.0](http://www.cocos2d-x.org/projects/cocos2d-x/wiki/Download), a C++ port of `cocos2d-iphone` which supports Android OS.
 
@@ -52,7 +52,7 @@ We captured the average FPS in 5 seconds for displaying different number of tank
 
 ![performance benchmark](/images/tank_banckmark_android_v0.1.jpg "Benchmark Results")
 
-OpenAphid shows great performance again as we can tell from this chart. It's on par with `cocos2d-x`, and faster than others. 
+OpenAphid-Engine shows great performance again as we can tell from this chart. It's on par with `cocos2d-x`, and faster than others. 
 
 `cocos2d-android-1` suffers from the frequently GC pauses of Dalvik VM as observed from logcat. `Ngcore` is the slowest engine once again, and its rendering is also buggy in this test. The dirty area in black color should have been cleared in the screenshot below, we've filed a bug report about it to Ngcore:
 

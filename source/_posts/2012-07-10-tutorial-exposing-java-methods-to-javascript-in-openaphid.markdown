@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "Tutorial: Exposing Java Methods to JavaScript in OpenAphid"
+title: "Tutorial: Exposing Java Methods to JavaScript in OpenAphid-Engine"
 date: 2012-07-10 14:39
 comments: true
 categories: [OpenAphid-Engine, Tutorial]
 ---
 
-[OpenAphid](https://github.com/openaphid) for Android v0.1.5 supports exposing Java methods as JavaScript functions, which is helpful for integrating 3rd-party services into games. The binding APIs are similar to its [iOS version](/blog/2012/05/16/tutorial-exposing-objective-c-methods-to-javascript-in-openaphid/).
+[OpenAphid-Engine](https://github.com/openaphid) for Android v0.1.5 supports exposing Java methods as JavaScript functions, which is helpful for integrating 3rd-party services into games. The binding APIs are similar to its [iOS version](/blog/2012/05/16/tutorial-exposing-objective-c-methods-to-javascript-in-openaphid/).
 
 <!-- more -->
 
@@ -31,7 +31,7 @@ glSurfaceView.getAphidRenderer().setScriptBinding("test4", new BindingTest4(), f
 
 The snippet above injects an instance of Java class `BindingTest4` to JavaScript as `aphid.ext.test4`. Its method `addInMainThread()` can be accessed via `aphid.ext.test4.add()` in JavaScript.
 
-The `AphidJSFunction` annotation supports two optional element-value pairs: `name` and `isInUIThread`. `name` declares a custom function name to JavaScript, the Java method name is used if it's not specified; `isInUIThread` controls the thread to invoke the Java method, its default value is `false`. In OpenAphid for Android, JavaScript runs inside the GL thread. Setting `isInUIThread` to `true` makes the Java method run inside the UI thread; the execution of JavaScript is blocked in the GL thread until the Java method returns from the UI thread.
+The `AphidJSFunction` annotation supports two optional element-value pairs: `name` and `isInUIThread`. `name` declares a custom function name to JavaScript, the Java method name is used if it's not specified; `isInUIThread` controls the thread to invoke the Java method, its default value is `false`. In OpenAphid-Engine for Android, JavaScript runs inside the GL thread. Setting `isInUIThread` to `true` makes the Java method run inside the UI thread; the execution of JavaScript is blocked in the GL thread until the Java method returns from the UI thread.
 
 ### Type Conversion of Return Value from Java to JavaScript
 
@@ -93,7 +93,7 @@ Strict type checking is performed during conversion, which throws a JavaScript e
 
 ## Integration with Google Analytics in Boilerplate-Android
 
-Let's illustrate how to integrate Google Analytics SDK into OpenAphid for Android. All source codes can be found in the [Boilerplate-Android](https://github.com/openaphid/Boilerplate-Android) project.
+Let's illustrate how to integrate Google Analytics SDK into OpenAphid-Engine for Android. All source codes can be found in the [Boilerplate-Android](https://github.com/openaphid/Boilerplate-Android) project.
 
 After adding Google Analytics Android SDK into our project as described in its [official document](https://developers.google.com/analytics/devguides/collection/android/devguide#gettingStarted), we create a Java class [GoogleAnalyticsBinding](https://github.com/openaphid/Boilerplate-Android/blob/master/src/org/openaphid/thirdparty/ga/GoogleAnalyticsBinding.java) to bridge JavaScript and Google Analytics SDK. `GoogleAnalyticsBinding` makes the exposed functions have identical signatures as its iOS version, which enables the same script file([main.js](https://github.com/openaphid/Boilerplate-iOS/blob/master/Boilerplate/game.bundle/main.js)) to run on both platforms.
 
@@ -123,4 +123,4 @@ glSurfaceView.getAphidRenderer().setScriptBinding(
 
 Now all Google Analytics APIs can be accessed by the same JavaScript functions inside `aphid.ext.gat` on both iOS and Android.
 
-That's all for this tutorial. We're working on OpenAphid for Android v0.2, which implements `XMLHttpRequest` APIs as what we already have in iOS version.
+That's all for this tutorial. We're working on OpenAphid-Engine for Android v0.2, which implements `XMLHttpRequest` APIs as what we already have in iOS version.

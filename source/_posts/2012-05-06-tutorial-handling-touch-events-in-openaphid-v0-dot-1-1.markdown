@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "Tutorial: Handling Touch Events in OpenAphid v0.1.1"
+title: "Tutorial: Handling Touch Events in OpenAphid-Engine v0.1.1"
 date: 2012-05-06 21:54
 comments: true
 categories: [OpenAphid-Engine, Tutorial]
 ---
 
-We are glad to release OpenAphid v0.1.1, which adds multitouch support and fixes several issues about touch handling. The detailed change log is following:
+We are glad to release OpenAphid-Engine v0.1.1, which adds multitouch support and fixes several issues about touch handling. The detailed change log is following:
 
 <!-- more -->
 
@@ -17,7 +17,7 @@ We are glad to release OpenAphid v0.1.1, which adds multitouch support and fixes
 
 ## Basics of Touch Event Handling
 
-Any instances of the `Node` class can be the `EventTarget` of touch events in OpenAphid. This is different from [cocos2d-iphone](http://www.cocos2d-iphone.org/), in which `CCLayer` is usually the target of touch event.
+Any instances of the `Node` class can be the `EventTarget` of touch events in OpenAphid-Engine. This is different from [cocos2d-iphone](http://www.cocos2d-iphone.org/), in which `CCLayer` is usually the target of touch event.
 
 Several attributes affect how a node handles touch events: `multipleTouchEnabled` of the `Director` class; `userInteractionEnabled`, `visible`, `touchEnabled`, and `contentSize` of the `Node` class.
 
@@ -27,7 +27,7 @@ The flow of a touch event goes through 2 phases: hit-testing and event bubbling.
 
 ### Hit-Testing
 
-When a touch happens on the device screen, OpenAphid follows the routine below to locate its event target:
+When a touch happens on the device screen, OpenAphid-Engine follows the routine below to locate its event target:
 
 1. Hit-testing is used to find the sub-node of the running scene that is under a touch. This method proceeds recursively on each node in the node hierarchy.
 
@@ -45,7 +45,7 @@ Once the event target of a touch is found by hit-testing, a touch event object i
 
 ## Interfaces of Touch Event
 
-The APIs of touch event handling in OpenAphid are implemented to follow the specification of [W3C DOM Touch Event Version 1](http://www.w3.org/TR/touch-events/). There are already lots of guides about handling touches in DOM, which can be used as references for OpenAphid too. We've updated the [Demos](https://github.com/openaphid/Demos) of OpenAphid to include a `TouchTest` application, which demonstrates three scenarios of touch handling:
+The APIs of touch event handling in OpenAphid-Engine are implemented to follow the specification of [W3C DOM Touch Event Version 1](http://www.w3.org/TR/touch-events/). There are already lots of guides about handling touches in DOM, which can be used as references for OpenAphid-Engine too. We've updated the [Demos](https://github.com/openaphid/Demos) of OpenAphid-Engine to include a `TouchTest` application, which demonstrates three scenarios of touch handling:
 
 - Handling a single touch event to drag a sprite.
 

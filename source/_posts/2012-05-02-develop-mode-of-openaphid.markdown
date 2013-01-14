@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "Tutorial: Developer Mode of OpenAphid"
+title: "Tutorial: Developer Mode of OpenAphid-Engine"
 date: 2012-05-02 14:52
 comments: true
 categories: [Tutorial, OpenAphid-Engine]
 ---
 
-`Developer Mode` is a feature to speed up developing games with OpenAphid. The behavior of OpenAphid changes if the developer mode is turned on.
+`Developer Mode` is a feature to speed up developing games with OpenAphid-Engine. The behavior of OpenAphid-Engine changes if the developer mode is turned on.
 
 <!-- more -->
 
@@ -20,7 +20,7 @@ Open your project with Xcode and locate the following lines in `OAAppDelegate.m`
                                            developMode:YES];
 ```
 
-1. Setting the value of the `developMode` parameter to `YES` enables the developer mode of OpenAphid;
+1. Setting the value of the `developMode` parameter to `YES` enables the developer mode of OpenAphid-Engine;
 
 2. An HTTP server should be used to host the content inside the bundle folder specified by `configBundleName`. The value for the `baseURL` parameter should be set to the server address too. A ruby based tiny HTTP server is included in our boilerplate project, please refer to the `web_server.rb` and `start_dev_server.sh` files for more details;
 
@@ -34,7 +34,7 @@ The main benefit of using developer mode is that it makes the game development s
 
 - JavaScript files are fetched from the HTTP server. If you want to see the result of your changes in the game script, you only need to re-open the app;
 
-- Graphics resources are fetched remotely too. For example, a texture can be created by using `new aphid.g2d.Texture2D("player.png")`; the `player.png` file is fetched via `http://129.158.217.36:18080/player.png` in developer mode. OpenAphid Runtime also prints a log about it as following:
+- Graphics resources are fetched remotely too. For example, a texture can be created by using `new aphid.g2d.Texture2D("player.png")`; the `player.png` file is fetched via `http://129.158.217.36:18080/player.png` in developer mode. OpenAphid-Engine Runtime also prints a log about it as following:
 
 ```
 INFO 05/02/12,13:41:32: (developer mode) loading data 'player.png' from remote: http://129.158.217.36:18080/player.png
@@ -46,9 +46,9 @@ INFO 05/02/12,13:41:32: (developer mode) loading data 'player.png' from remote: 
 
 - Messages produced by `console.warn` and `console.error` are also displayed as notifications;
 
-- Write access to read-only attributes of OpenAphid objects throws exception in developer mode.
+- Write access to read-only attributes of OpenAphid-Engine objects throws exception in developer mode.
 
-With the developer mode of OpenAphid, the typical development process is as follows:
+With the developer mode of OpenAphid-Engine, the typical development process is as follows:
 
 1. Developer edits the JavaScript file with game logics and updates graphic files inside the bundle folder;
 
@@ -56,4 +56,4 @@ With the developer mode of OpenAphid, the typical development process is as foll
 
 3. Following the on-screen notifications and console logs to diagnose mistakes in JavaScript files.
 
-Hope you like the developer mode of OpenAphid. We'll improve it constantly to make game development easier. Please feel free to contact us if you have any suggestions.
+Hope you like the developer mode of OpenAphid-Engine. We'll improve it constantly to make game development easier. Please feel free to contact us if you have any suggestions.

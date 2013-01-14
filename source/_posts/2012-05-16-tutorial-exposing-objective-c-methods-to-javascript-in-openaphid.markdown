@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "Tutorial: Calling Objective-C Methods from JavaScript in OpenAphid"
+title: "Tutorial: Calling Objective-C Methods from JavaScript in OpenAphid-Engine"
 date: 2012-05-16 10:06
 comments: true
 categories: [OpenAphid-Engine, Tutorial]
 ---
 
-[OpenAphid](https://github.com/openaphid) 0.2 was shipped with a new binding system which can bridge JavaScript functions to Objective-C methods on demand. It's useful for games to integrate analytics services, monetization solutions, and social services, etc. In this tutorial, we'll go through the binding system by demonstrating how to integrate [Google Analytics iOS SDK](https://developers.google.com/analytics/devguides/collection/ios/) into OpenAphid. 
+[OpenAphid-Engine](https://github.com/openaphid) 0.2 was shipped with a new binding system which can bridge JavaScript functions to Objective-C methods on demand. It's useful for games to integrate analytics services, monetization solutions, and social services, etc. In this tutorial, we'll go through the binding system by demonstrating how to integrate [Google Analytics iOS SDK](https://developers.google.com/analytics/devguides/collection/ios/) into OpenAphid-Engine. 
 
 <!-- more -->
 
@@ -105,9 +105,9 @@ The binding object need be injected into JavaScript via `setScriptBinding:name:i
 }
 ```
 
-OpenAphid injects an instance of `DatastoreBinding` as a JavaScript object of `[object DynamicBinding]` into JavaScript environment. And its name is `datastore`. The `iOSOnly` argument manages the namespace which contains the injected object. If it's `YES`, then the injected object can be accessed via `aphid.extios.datastore`; otherwise it can be accessed via `aphid.ext.datastore`. 
+OpenAphid-Engine injects an instance of `DatastoreBinding` as a JavaScript object of `[object DynamicBinding]` into JavaScript environment. And its name is `datastore`. The `iOSOnly` argument manages the namespace which contains the injected object. If it's `YES`, then the injected object can be accessed via `aphid.extios.datastore`; otherwise it can be accessed via `aphid.ext.datastore`. 
 
-> Notes: the `iOSOnly` argument is actually designed for future compliance when OpenAphid supports both iOS and Android.
+> Notes: the `iOSOnly` argument is actually designed for future compliance when OpenAphid-Engine supports both iOS and Android.
 
 ## Integration with Google Analytics in Boilerplate-iOS
 
@@ -181,6 +181,6 @@ gat.trackPageView("main.js"); //track a page view
 ```
 > ** Updates at 07-09-2012: ** Since `iOSOnly` has been set to `NO`, the JavaScript namespace for `gat` is switched to `aphid.ext` from `aphid.extios`
 
-We're going to integrate more services into [Boilerplate-iOS](https://github.com/openaphid/Boilerplate-iOS), and make it be a better starter kit for game development with OpenAphid.
+We're going to integrate more services into [Boilerplate-iOS](https://github.com/openaphid/Boilerplate-iOS), and make it be a better starter kit for game development with OpenAphid-Engine.
 
 If you have better ideas, please feel free to contact us via `openaphid@gmail.com` or raise an issue in our [github repositories](https://github.com/openaphid). 

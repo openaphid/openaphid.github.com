@@ -10,9 +10,9 @@ categories:
 
 Happy New Year 2013!
 
-## Release Notes
-
 <!-- more -->
+
+## Release Notes
 
 For a complete change list please checkout our [issue tracker](https://github.com/openaphid/android-flip/issues/milestones?state=closed)
 

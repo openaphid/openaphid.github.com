@@ -12,7 +12,7 @@ body > div > div { background-image: none; }
 /* ----- header ----- */
 
 
-body > header{
+body > header {
   background: url("/images/aphid-page-bg.png") no-repeat scroll top right;
   padding: 0.5em 0 1em 0
 }
@@ -62,9 +62,15 @@ blockquote {
 
 h1 { font-size: 2em; }
 
-h2 {font-size: 1.4em;}
+h2 {
+  font-size: 1.4em;
+  color: #555;
+}
 
-h3 { font-size: 1em; }
+h3 {
+  font-size: 1em;
+  color: #666;
+}
 
 h1 span{
   font-weight: normal;
@@ -83,7 +89,7 @@ article h2, article h3, article header{
   font-weight: bold;
 }
 
-.blog-index article h1 a:hover{ text-decoration: none; }
+//.blog-index article h1 a:hover{ text-decoration: none; }
 
 article p {
   text-align:justify;
@@ -123,7 +129,7 @@ article p {
 
 aside.sidebar section h1 { letter-spacing: 0.1em; }
 
-aside.sidebar a { text-decoration: none; }
+aside.sidebar a:link { text-decoration: none; }
 
 .toggle-sidebar{display: none;}
 

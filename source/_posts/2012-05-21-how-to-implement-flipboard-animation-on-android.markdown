@@ -8,7 +8,7 @@ categories: [FlipView]
 
 > ** Updates at 2012-12-12: ** Please check out [FlipView](/blog/categories/flipview/) for an improved solution.
 
-The demo in this post was born when we're working on the Android port of [OpenAphid](https://github.com/openaphid). One of our engineers is a huge fan of [Flipboard iOS](http://www.flipboard.com). He decided to implement its page flip animation on Android. 
+The demo in this post was born when we're working on the Android port of [OpenAphid-Engine](https://github.com/openaphid). One of our engineers is a huge fan of [Flipboard iOS](http://www.flipboard.com). He decided to implement its page flip animation on Android. 
 
 If you don't know about the effect, please install the APK file of our demo app to see how it looks:
 <!-- more -->
@@ -91,7 +91,7 @@ The `GLSurfaceView` instance is setup to use the following configurations:
 - The desired PixelFormat of the surface should support translucency;
 - The rendering mode is set to make the renderer be called repeatedly;
 
-The [FlipRenderer](https://github.com/openaphid/android-flip/blob/master/src/com/aphidmobile/flip/FlipRenderer.java) maps the OpenGL pixels to 2D screen pixels one-by-one which is similar to what OpenAphid does for 2D games. And the origin of the coordinate system is bottom left.
+The [FlipRenderer](https://github.com/openaphid/android-flip/blob/master/src/com/aphidmobile/flip/FlipRenderer.java) maps the OpenGL pixels to 2D screen pixels one-by-one which is similar to what OpenAphid-Engine does for 2D games. And the origin of the coordinate system is bottom left.
 
 The actual drawing process is managed in the instance of `FlipCards`.
 
@@ -161,4 +161,4 @@ In order to make the flip effect more realistic, a gray rectangle is rendered to
 
 The snippets above should cover the core concepts of our approach. You can fork the project to support more effects as we can see in Flipboard iPhone, like page flip following touch moves, flip over of a page, and book flip effect etc. 
 
-BTW, we're tackling some technical problems of OpenAphid Android version. Will keep you posted if a stable version is ready.
+BTW, we're tackling some technical problems of OpenAphid-Engine Android version. Will keep you posted if a stable version is ready.
