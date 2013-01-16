@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Release | OpenAphid-Engine]]></title>
   <link href="http://openaphid.github.com/blog/categories/release/atom.xml" rel="self"/>
   <link href="http://openaphid.github.com/"/>
-  <updated>2013-01-14T11:43:53+08:00</updated>
+  <updated>2013-01-16T15:41:22+08:00</updated>
   <id>http://openaphid.github.com/</id>
   <author>
     <name><![CDATA[Aphid Mobile]]></name>
@@ -12,6 +12,51 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[OpenAphid-Engine v0.2.1f Release and Discontinuation Announcement]]></title>
+    <link href="http://openaphid.github.com/blog/2013/01/14/openaphid-engine-v0-dot-2-1f-and-discontinuation-announcement/"/>
+    <updated>2013-01-14T14:09:00+08:00</updated>
+    <id>http://openaphid.github.com/blog/2013/01/14/openaphid-engine-v0-dot-2-1f-and-discontinuation-announcement</id>
+    <content type="html"><![CDATA[<p><a href="https://github.com/openaphid/runtime" title="OpenAphid-Engine">OpenAphid-Engine</a> was born as an exploration project at 2012 first half-year when I quit my day job. Its mission was to figure out the most efficient way to integrate a full JavaScript engine within native iOS/Android games.</p>
+
+<!-- more -->
+
+
+<p>The development went perfectly well as it even outperformed the commercial solution of <a href="https://developer.mobage.com/" title="ngCore">ngCore</a> from DeNA. I really enjoyed the pleasure brought by tackling technical problems to make the engine support both iOS and Android with high performance. I also gained precious experiences after studying source codes of JavaScriptCore and other great open source projects.</p>
+
+<p>But I failed to find enough time working on it after I started a long travel plan with my family at Aug 2012. After careful consideration, I have decided it's time to sunset the project as I'm going to find a long-term job again. For developers who are also interested at using a JavaScript engine within native apps, I'll write two or three more articles in these days to share some pieces of knowledge collected during the development of <a href="https://github.com/openaphid/runtime" title="OpenAphid-Engine">OpenAphid-Engine</a>.</p>
+
+<p>v0.2.1f is the final update of <a href="https://github.com/openaphid/runtime" title="OpenAphid-Engine">OpenAphid-Engine</a>. The release comes with bug fixes for iOS6 support and performance improvements on Android. The <a href="https://github.com/openaphid/Demos/tree/master/iOS">iOS demo project</a> has been revamped by merging separated demos into one single app. It also illustrates the ability to use <a href="http://coffeescript.org/" title="CoffeeScript">CoffeeScript</a> and <a href="http://www.typescriptlang.org/" title="TypeScript">TypeScript</a> to write games with <a href="https://github.com/openaphid/runtime" title="OpenAphid-Engine">OpenAphid-Engine</a>.</p>
+
+<h2>Release notes of OpenAphid-Engine v0.2.1f</h2>
+
+<ul>
+<li><p>(Android) Adds <code>libOpenAphid_JIT.so</code> which includes a JIT enabled JavaScriptCore. It can significantly boost performance for computation intense tasks in JavaScript. For instance, the running time of <code>fibonacci(30)</code> drops to ~140ms from ~780ms on a Nexus 7, while Java on Dalvik VM takes 280ms～350ms to finish the calculation.
+<code>javascript
+function fibonacci(n) { return n &lt; 2 ? n : (fib(n-1) + fib(n-2)); }
+</code></p></li>
+<li><p>(Android) Improves rendering performance when a texture has premultiplied alpha values.</p></li>
+<li><p>(Android) Fixes a crash when loading JNI libs on Android 4.0+ devices by using toolchains from Android NDK r8c.</p></li>
+<li><p>(Android) Demo app has been refined. <a href="https://github.com/openaphid/Demos/tree/master/Android/Demos/apk">APK files</a>.</p></li>
+<li><p>(iOS) Orientation on iOS6 now works correctly.</p></li>
+<li><p>(iOS) Fixes compilation errors under llvm_4.1.</p></li>
+<li><p>(iOS) New all-in-one demo app with ARC enabled. <a href="https://github.com/openaphid/Demos/tree/master/iOS">Project files</a>.</p></li>
+<li><p>Samples of using CoffeeScript and TypeScript with <a href="https://github.com/openaphid/runtime" title="OpenAphid-Engine">OpenAphid-Engine</a>. Please refer to <a href="https://github.com/openaphid/Demos/blob/master/iOS/OpenAphid-Demos/demo.bundle/coffee_tank.coffee">coffee_tank.coffee</a> and <a href="https://github.com/openaphid/Demos/blob/master/iOS/OpenAphid-Demos/demo.bundle/type_tank.ts">type_tank.ts</a> for more details.</p></li>
+</ul>
+
+
+<p><img src="/images/openaphid-0.2.1f-demos.png" title="Screenshot of New iOS&amp;Android Demo App" alt="screenshot" /></p>
+
+<h2>About Github Repositories</h2>
+
+<p>The main source codes of <a href="https://github.com/openaphid/Runtime">OpenAphid Runtime</a> and <a href="https://github.com/openaphid/AJ">AJ</a> (the modified JavaScript Engine) have been moved into folders named <code>DISCONTINUED</code>.</p>
+
+<h2>Acknowledgments</h2>
+
+<p>I appreciate everyone's support to <a href="https://github.com/openaphid/runtime" title="OpenAphid-Engine">OpenAphid-Engine</a>. And special thanks to <a href="http://wannadobre.carbonmade.com/">Wanna Dobre</a>, who kindly designed the wonderful <a href="http://wannad.deviantart.com/gallery/#/d4zzsk5">aphid character</a> for the project and for this blog site.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[FlipView for Android v0.9.6 Released]]></title>
@@ -285,31 +330,6 @@ protected void onPause() {
 <p>The next release will make the Android version have all features as the iOS version does. JavaScript to Dalvik Java binding APIs will be introduced to make integrating 3rd-party services become cross platform too. We'll add new features simultaneously on both iOS and Android versions after that release.</p>
 
 <p>Stay Tuned!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[OpenAphid-Engine 0.2 is Available]]></title>
-    <link href="http://openaphid.github.com/blog/2012/05/15/openaphid-0-dot-2-available/"/>
-    <updated>2012-05-15T22:28:00+08:00</updated>
-    <id>http://openaphid.github.com/blog/2012/05/15/openaphid-0-dot-2-available</id>
-    <content type="html"><![CDATA[<p>AphidMobile is pleased to announce the availability of OpenAphid-Engine 0.2.</p>
-
-<p>Highlights of the 0.2 release include:</p>
-
-<!-- more -->
-
-
-<ul>
-<li>New binding system for exposing Objective-C methods to JavaScript</li>
-<li>Hide <code>constructor</code> when enumerating attributes of an OpenAphid-Engine JavaScript object</li>
-<li>Fix incorrect value of <code>node.onframeupdate</code> when it's not set; should be <code>null</code> instead of an invalid empty value</li>
-<li>Add a new target of <code>ObjCBindingTest</code> in <a href="https://github.com/openaphid/Demos">Demos</a></li>
-<li>Support Google Analytics iOS SDK in <a href="https://github.com/openaphid/Boilerplate-iOS">Boilerplate-iOS</a></li>
-</ul>
-
-
-<p>A new tutorial is coming in this week to introduce the new binding system for exposing Objective-C functions into JavaScript. Please stay tuned!</p>
 ]]></content>
   </entry>
   
