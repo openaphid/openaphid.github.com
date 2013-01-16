@@ -4,7 +4,7 @@
   <title><![CDATA[OpenAphid-Engine]]></title>
   <link href="http://openaphid.github.com/atom.xml" rel="self"/>
   <link href="http://openaphid.github.com/"/>
-  <updated>2013-01-16T15:41:22+08:00</updated>
+  <updated>2013-01-16T21:26:49+08:00</updated>
   <id>http://openaphid.github.com/</id>
   <author>
     <name><![CDATA[Aphid Mobile]]></name>
@@ -563,7 +563,8 @@
 </ul>
 
 
-<h2>Performance Benchmark</h2>
+<h2 id="benchmark">Performance Benchmark</h2>
+
 
 <p>The same tank program as introduced in our <a href="http://openaphid.github.com/blog/2012/02/20/javascript-and-cocos2d-a-sneak-peek/">previous post</a> is used to evaluate the performance of OpenAphid-Engine on Android OS. Several other Android 2D game engines are chose as references:</p>
 
@@ -1533,7 +1534,8 @@
 
 <p>The benchmark is performed on an iPod Touch 3rd generation (32GB). The hardware specification can be found from its <a href="http://en.wikipedia.org/wiki/IPod_Touch">wikipedia page</a>.</p>
 
-<h3>Benchmark Results</h3>
+<h3 id="benchmark">Benchmark Results</h3>
+
 
 <p>The FPS data are recorded for running different number of tanks on each framework. The FPS of ngCore is not consistent, so we tracked both the high and low FPS data.</p>
 
