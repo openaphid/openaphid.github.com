@@ -36,7 +36,7 @@ This release is lack of several important features comparing to the iOS version.
 
 - This version doesn't reload textures automatically when the GL context is destroyed. It simply finishes the activity if GL context is lost. We're working on a better way to handle it.
 
-## Performance Benchmark
+<h2 id="benchmark">Performance Benchmark</h2>
 
 The same tank program as introduced in our [previous post](/blog/2012/02/20/javascript-and-cocos2d-a-sneak-peek/) is used to evaluate the performance of OpenAphid-Engine on Android OS. Several other Android 2D game engines are chose as references:
 

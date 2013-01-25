@@ -111,6 +111,10 @@ article p {
   padding: 6px;
 }
 
+.aphid-table td {
+  color: rgb(128, 128, 128);
+}
+
 .aphid-table th {
 	border-style:solid;
   font-weight:bold;
@@ -118,11 +122,10 @@ article p {
 	color: white;
 }
 
-.aphid-table td {
-	color: rgb(128, 128, 128);
+.aphid-table-main-col {
+  font-weight:bold;
+  color: black !important;
 }
-
-
 
 /* ----- Sidebar ----- */
 

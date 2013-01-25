@@ -143,7 +143,7 @@ The same benchmark is implemented in Cocos2d-iPhone, ngCore and OpenAphid-Engine
 
 The benchmark is performed on an iPod Touch 3rd generation (32GB). The hardware specification can be found from its [wikipedia page](http://en.wikipedia.org/wiki/IPod_Touch).
 
-### Benchmark Results
+<h3 id="benchmark">Benchmark Results</h3>
 The FPS data are recorded for running different number of tanks on each framework. The FPS of ngCore is not consistent, so we tracked both the high and low FPS data.
 
 > ** Updates at 2012-04-28: ** benchmark results are updated by using OpenAphid-Engine v0.1 release.
