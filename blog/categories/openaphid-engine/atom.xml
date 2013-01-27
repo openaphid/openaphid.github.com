@@ -4,7 +4,7 @@
   <title><![CDATA[Category: OpenAphid-Engine | OpenAphid-Engine]]></title>
   <link href="http://openaphid.github.com/blog/categories/openaphid-engine/atom.xml" rel="self"/>
   <link href="http://openaphid.github.com/"/>
-  <updated>2013-01-16T21:26:49+08:00</updated>
+  <updated>2013-01-27T23:31:20+08:00</updated>
   <id>http://openaphid.github.com/</id>
   <author>
     <name><![CDATA[Aphid Mobile]]></name>
@@ -12,6 +12,150 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Part I: How to Choose a JavaScript Engine for iOS and Android Development]]></title>
+    <link href="http://openaphid.github.com/blog/2013/01/17/part-i-how-to-choose-a-javascript-engine-for-ios-and-android-apps/"/>
+    <updated>2013-01-17T15:30:00+08:00</updated>
+    <id>http://openaphid.github.com/blog/2013/01/17/part-i-how-to-choose-a-javascript-engine-for-ios-and-android-apps</id>
+    <content type="html"><![CDATA[<blockquote><p>DISCLAIMER: the post contains my personal opinions on the subject. I would appreciate it if you could correct my mistakes.</p></blockquote>
+
+<p>Back to the time when I started <a href="https://github.com/openaphid/runtime" title="OpenAphid-Engine">OpenAphid-Engine</a>, there were already several similar iOS/Android projects. These projects, either commercial or open source, expose their core features by JavaScript language. For instance, <a href="http://www.appcelerator.com/platform/titanium-sdk/" title="Titanium">Titanium</a> and <a href="http://phonegap.com/" title="PhoneGap">PhoneGap</a> allow developers to use JavaScript to build native iOS/Android apps; <a href="https://developer.mobage.com/" title="ngCore">ngCore</a> enables building cross platform games by pure JavaScript. JavaScript language has been chosen as a first-class citizen as it's one of the most popular programming language. It eases the learning curve and easily attracts developers into a new product ecosystem.</p>
+
+<!-- more -->
+
+
+<h2>How to Support JavaScript on iOS/Android</h2>
+
+<p>There are two main approaches to support JavaScript in an iOS/Android app. One method is to leverage the system browser component, <a href="http://developer.apple.com/library/ios/#documentation/uikit/reference/UIWebView_Class/Reference/Reference.html" title="UIWebView">UIWebView</a> on iOS and <a href="http://developer.android.com/reference/android/webkit/WebView.html" title="WebView">WebView</a> on Android; the other way is to compile and integrate a full-featured JavaScript engine.</p>
+
+<p>Using the system component is easy to implement but it's inflexible and inefficient. <a href="http://developer.android.com/reference/android/webkit/WebView.html" title="WebView">WebView</a> provides <a href="http://developer.android.com/reference/android/webkit/WebView.html#addJavascriptInterface%28java.lang.Object,%20java.lang.String%29">addJavascriptInterface</a> to inject Java classes into JavaScript context. But it only supports primitive data types which brings restrictions to API design; it's also unstable and crashes on Android simulator 2.3 and some real devices according to <a href="http://code.google.com/p/android/issues/detail?id=12987">issue #12987</a>. Things are worse on iOS, <a href="http://developer.apple.com/library/ios/#documentation/uikit/reference/UIWebView_Class/Reference/Reference.html" title="UIWebView">UIWebView</a> doesn't have public APIs to support direct interaction from JavaScript to Objective-C (You have to use private APIs to achieve the same functionality of <a href="http://developer.android.com/reference/android/webkit/WebView.html#addJavascriptInterface%28java.lang.Object,%20java.lang.String%29">addJavascriptInterface</a>).</p>
+
+<p><a href="http://phonegap.com/" title="PhoneGap">PhoneGap</a> is the most famous project that is built upon <a href="http://developer.apple.com/library/ios/#documentation/uikit/reference/UIWebView_Class/Reference/Reference.html" title="UIWebView">UIWebView</a> and <a href="http://developer.android.com/reference/android/webkit/WebView.html" title="WebView">WebView</a>. Developers are forced to use callbacks to retrieve return values from its JavaScript APIs, which is complex and inefficient especially for games.</p>
+
+<p>Some earlier versions of <a href="https://developer.mobage.com/" title="ngCore">ngCore</a> also relied on <a href="http://developer.apple.com/library/ios/#documentation/uikit/reference/UIWebView_Class/Reference/Reference.html" title="UIWebView">UIWebView</a> in order to support iOS. This mechanism has been replaced because of the awful performance.</p>
+
+<p>In order to get better performance, flexibility and compatibility, it becomes popular by embedding a full featured JavaScript engine in native apps.</p>
+
+<h2>Choices of JavaScript Engines</h2>
+
+<p>As far as I know, four JavaScript engines could be built and ran on iOS or Android: <a href="http://trac.webkit.org/wiki/JavaScriptCore" title="JavaScriptCore">JavaScriptCore</a>, <a href="https://developer.mozilla.org/en/docs/SpiderMonkey" title="SpiderMonkey">SpiderMonkey</a>, <a href="http://code.google.com/p/v8/" title="V8">V8</a> and <a href="https://developer.mozilla.org/en-US/docs/Rhino" title="Rhino">Rhino</a>. The table below lists their compatibilities on iOS and Android.</p>
+
+<table class="aphid-table">
+    <tr>
+        <th></th>
+        <th>iOS</th>
+        <th>Android</th>
+    </tr>
+    <tr>
+        <td class="aphid-table-main-col">JavaScriptCore</td> <td>Interpreter only</td> <td>Interpreter and JIT</td> 
+    </tr>
+    <tr>
+        <td class="aphid-table-main-col">SpiderMonkey</td> <td>Interpreter only</td> <td>Interpreter and JIT</td> 
+    </tr>
+    <tr>
+        <td class="aphid-table-main-col">V8</td> <td>JIT only for jailbroken devices</td> <td>JIT</td> 
+    </tr>
+    <tr>
+        <td class="aphid-table-main-col">Rhino</td> <td>Unsupported</td> <td>Interpreter</td> 
+    </tr>
+</table>
+
+
+<p>When I was searching for the right JavaScript engine for <a href="https://github.com/openaphid/runtime" title="OpenAphid-Engine">OpenAphid-Engine</a>, my evaluation focused on the following metrics:</p>
+
+<ul>
+<li><p>Compatibility. The engine should support both iOS and Android, and work on both simulators and devices, which requires it support both ARM and x86.</p></li>
+<li><p>Stability. It should stably work on both platforms and supported CPU architectures.</p></li>
+<li><p>Extensibility. Extending the engine to add native features should be easy. For example, <a href="https://github.com/openaphid/runtime" title="OpenAphid-Engine">OpenAphid-Engine</a> required a bridge layer to access OpenGL ES from JavaScript.</p></li>
+<li><p>Performance. It's boiled down to two primary factors: fast JavaScript evaluation, and efficient binding mechanism with low overhead. <a href="https://github.com/openaphid/runtime" title="OpenAphid-Engine">OpenAphid-Engine</a> may trigger hundreds of OpenGL ES calls from JavaScript to render a single frame. The rendering would be slow if the overhead is much more significant than normal JavaScript routines.</p></li>
+<li><p>Small footprint. The memory footprint and binary size of the executable file should be small.</p></li>
+</ul>
+
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Rhino" title="Rhino">Rhino</a> and <a href="http://code.google.com/p/v8/" title="V8">V8</a> were out first since they don't support iOS. I really wanted to build <a href="https://github.com/openaphid/runtime" title="OpenAphid-Engine">OpenAphid-Engine</a> with <a href="http://code.google.com/p/v8/" title="V8">V8</a>, which showed great performance and elegant code structure during my preliminary experiment on Android. But I got disappointed due to the fact that <a href="http://code.google.com/p/v8/" title="V8">V8</a> only employed a JIT mode while iOS doesn't allow JIT unless on a jailbroken device. Please refer to <a href="http://code.google.com/p/v8/issues/detail?id=1312">issue #1312</a> if you need more technical details.</p>
+
+<p>I debated a lot between <a href="http://trac.webkit.org/wiki/JavaScriptCore" title="JavaScriptCore">JavaScriptCore</a> and <a href="https://developer.mozilla.org/en/docs/SpiderMonkey" title="SpiderMonkey">SpiderMonkey</a>. After successfully built them on iOS and Android, I applied benchmarks and experiments to find the better one.</p>
+
+<p><a href="https://developer.mozilla.org/en/docs/SpiderMonkey" title="SpiderMonkey">SpiderMonkey</a> is available under a more friendly license, but it lost in nearly all of my measurements compared to <a href="http://trac.webkit.org/wiki/JavaScriptCore" title="JavaScriptCore">JavaScriptCore</a>. It generated larger binary file size (about 1.3MB larger for ARMv7); JavaScript evaluation was slower and the performance overhead of bridging JavaScript and C++ was also more significant. One more reason that pushed me away was that my build of <a href="https://developer.mozilla.org/en/docs/SpiderMonkey" title="SpiderMonkey">SpiderMonkey</a> randomly crashed on iOS simulator.</p>
+
+<p>The performance of a JavaScript engine can be affected by many factors, like the version of build toolchains, the version of engines, and the OS types etc. The chart below lists the running times of several micro-benchmarks with different builds of engines on an <a href="http://en.wikipedia.org/wiki/IPod_Touch#Specifications">iPod Touch 4</a>. Please check out the <a href="https://docs.google.com/spreadsheet/ccc?key=0AmitMpjPL_UEdGVVdmlwWDBTa0lEbnlQWmw4dlNmTGc">Google Doc</a> if you're interested at the precise running times.</p>
+
+<p><img src="/images/js-engine-benchmark-ipod-touch4.png" title="Benchmark Results of JavaScriptCore and SpiderMonkeys on iPod Touch 4" alt="benchmark" /></p>
+
+<blockquote><ul>
+<li><p><a href="http://trac.webkit.org/wiki/JavaScriptCore" title="JavaScriptCore">JavaScriptCore</a> is the clear winner by a large margin.</p></li>
+<li><p>I failed to find my build of <a href="https://developer.mozilla.org/en/docs/SpiderMonkey" title="SpiderMonkey">SpiderMonkey</a>, so I leveraged three other custom builds from <a href="http://cocos2d-iphone.googlecode.com/files/cocos2d-iphone-2.1-beta4.tar.gz">Cocos2d-iPhone-2.1-beta4</a>, <a href="http://cocos2d-x.googlecode.com/files/cocos2d-2.1beta3-x-2.1.0.zip">Cocos2d-x-2.1-beta3</a> and <a href="https://github.com/couchbaselabs/iMonkey">iMonkey</a>.</p></li>
+<li><p>All test apps were built with LLVM 4.1 in release mode; all engines ran in interpreter mode restricted by iOS.</p></li>
+<li><p>Explanations of some benchmarks:</p>
+
+<ul>
+<li><p><code>1m-js_loop</code> runs an empty loop for one million times.</p></li>
+<li><p><code>1m-native_function</code> invokes an injected native function for 1M times while the native function simply returns undefined.</p></li>
+<li><p><code>1m-js_function</code> is similar to the one above except the function is written in JavaScript.</p></li>
+<li><p><code>fib(30)</code> calculates Fibonacci(30) in a recursive manner.</p></li>
+<li><p><code>sudoku-5</code> solves five Sudoku problems with the algorithm from <a href="https://github.com/attractivechaos/plb/blob/master/sudoku/sudoku_v2.js">this project</a>.</p></li>
+</ul>
+</li>
+<li><p><code>1m-native_function</code> for <a href="http://trac.webkit.org/wiki/JavaScriptCore" title="JavaScriptCore">JavaScriptCore</a> was implemented by its portable <a href="http://trac.webkit.org/browser/trunk/Source/JavaScriptCore/API">C APIs</a>, which is not the most efficient way to inject native functions.</p></li>
+<li><p><a href="https://developer.mozilla.org/en/docs/SpiderMonkey" title="SpiderMonkey">SpiderMonkey</a> is fast on desktop with its advanced method tracing JIT. But it's a whole different story on iOS devices.</p></li>
+<li><p>The build from <a href="https://github.com/couchbaselabs/iMonkey">iMonkey</a> was faster than other <a href="https://developer.mozilla.org/en/docs/SpiderMonkey" title="SpiderMonkey">SpiderMonkey</a> builds in most benchmarks.</p></li>
+<li><p>It's definitely possible to get better performance from <a href="https://developer.mozilla.org/en/docs/SpiderMonkey" title="SpiderMonkey">SpiderMonkey</a> on iOS. <a href="https://developer.mobage.com/" title="ngCore">ngCore</a> 1.10 for iOS managed to embed a custom build, which outperformed other <a href="https://developer.mozilla.org/en/docs/SpiderMonkey" title="SpiderMonkey">SpiderMonkey</a> variants.</p></li>
+</ul>
+</blockquote>
+
+<h2>Adventure with JavaScriptCore</h2>
+
+<p>My study proceeded further after I settled down with <a href="http://trac.webkit.org/wiki/JavaScriptCore" title="JavaScriptCore">JavaScriptCore</a>:</p>
+
+<ol>
+<li><p>The running time of <code>1m-native_function</code> was over six times longer than <code>1m-js_function</code> and <code>1m-Math.abs(0)</code> on <a href="http://trac.webkit.org/wiki/JavaScriptCore" title="JavaScriptCore">JavaScriptCore</a>. I also observed the similar performance issue on accessing properties of injected native objects.</p></li>
+<li><p>The <a href="http://trac.webkit.org/browser/trunk/Source/JavaScriptCore/API">C APIs</a> had a clean design but was lack of flexible memory management APIs. It seems difficult to resolve issues caused by <a href="http://stackoverflow.com/questions/10092619/precise-explanation-of-javascript-dom-circular-reference-issue">circular references</a> without deeper cooperation with the internal garbage collector.</p></li>
+<li><p>There were many release versions of <a href="http://trac.webkit.org/wiki/JavaScriptCore" title="JavaScriptCore">JavaScriptCore</a> available. The best one should be fast and compact for <a href="https://github.com/openaphid/runtime" title="OpenAphid-Engine">OpenAphid-Engine</a>.</p></li>
+</ol>
+
+
+<p>I abandoned the original plan of using the <a href="http://trac.webkit.org/browser/trunk/Source/JavaScriptCore/API">C APIs</a> in order to solve problem 1 and 2. The version of JSC from iOS 4.3.3 was used, as it's faster than the version from iOS 5 in interpreter mode with a smaller binary executable file.</p>
+
+<h2>Engines Used in Other Products</h2>
+
+<p>During the development of <a href="https://github.com/openaphid/runtime" title="OpenAphid-Engine">OpenAphid-Engine</a>, I always kept my eyes on other products. The table below summarizes the JavaScript engines they are using underneath.</p>
+
+<table class="aphid-table">
+    <tr>
+        <th></th>
+        <th>iOS</th>
+        <th>Android</th>
+    </tr>
+    <tr>
+        <td class="aphid-table-main-col">ngCore 1.6 and above</td> <td>UIWebView</td> <td>V8</td> 
+    </tr>
+    <tr>
+        <td class="aphid-table-main-col">ngCore 1.7 and later</td> <td>SpiderMonkey</td> <td>V8</td> 
+    </tr>
+    <tr>
+        <td class="aphid-table-main-col">Titanium</td> <td>JavaScriptCore</td> <td>V8 or Rhino</td> 
+    </tr>
+    <tr>
+        <td class="aphid-table-main-col">Cocos2D-x JavaScript</td> <td>SpiderMonkey</td> <td>SpiderMonkey</td> 
+    </tr>
+    <tr>
+        <td class="aphid-table-main-col">CocoonJS</td> <td>JavaScriptCore</td> <td>JavaScriptCore</td> 
+    </tr>
+    <tr>
+        <td class="aphid-table-main-col">Ejecta</td> <td>JavaScriptCore</td> <td>Unsupported</td> 
+    </tr>
+    <tr>
+        <td class="aphid-table-main-col">directCanvas</td> <td>JavaScriptCore</td> <td>No clue</td> 
+    </tr>
+</table>
+
+
+<h2>Next Story in Series</h2>
+
+<p>I will post my opinions on comparing <a href="https://developer.mobage.com/" title="ngCore">ngCore</a> to <a href="https://github.com/openaphid/runtime" title="OpenAphid-Engine">OpenAphid-Engine</a>. Stay tuned!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[OpenAphid-Engine v0.2.1f Release and Discontinuation Announcement]]></title>
@@ -284,218 +428,6 @@ false   //place inside aphid.ext namespace
 <p>The next release will make the Android version have all features as the iOS version does. JavaScript to Dalvik Java binding APIs will be introduced to make integrating 3rd-party services become cross platform too. We'll add new features simultaneously on both iOS and Android versions after that release.</p>
 
 <p>Stay Tuned!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Tutorial: Calling Objective-C Methods from JavaScript in OpenAphid-Engine]]></title>
-    <link href="http://openaphid.github.com/blog/2012/05/16/tutorial-exposing-objective-c-methods-to-javascript-in-openaphid/"/>
-    <updated>2012-05-16T10:06:00+08:00</updated>
-    <id>http://openaphid.github.com/blog/2012/05/16/tutorial-exposing-objective-c-methods-to-javascript-in-openaphid</id>
-    <content type="html"><![CDATA[<p><a href="https://github.com/openaphid">OpenAphid-Engine</a> 0.2 was shipped with a new binding system which can bridge JavaScript functions to Objective-C methods on demand. It's useful for games to integrate analytics services, monetization solutions, and social services, etc. In this tutorial, we'll go through the binding system by demonstrating how to integrate <a href="https://developers.google.com/analytics/devguides/collection/ios/">Google Analytics iOS SDK</a> into OpenAphid-Engine.</p>
-
-<!-- more -->
-
-
-<h2>How to Access Objective-C Methods in JavaScript</h2>
-
-<p>The <code>OABindingProtocol</code> protocol, defined in <a href="https://github.com/openaphid/Runtime/blob/master/PreBuild/OABindingProtocol.h">OABindingProtocol.h</a>, defines a method <code>bindSelectors:</code> that you can implement in your Objective-C classes to expose their methods to the JavaScript environment. To make a method valid for export, its return type and all argument types must be the supported types below:</p>
-
-<h3>Type Conversion of Return Value from Objective-C to JavaScript</h3>
-
-<table class="aphid-table">
-    <tr>
-        <th>Objective-C</th>
-        <th>JavaScript</th>
-    </tr>
-    <tr>
-        <td>void</td> <td>undefined</td>
-    </tr>
-    <tr>
-        <td>nil or NSNull</td> <td>null</td>
-    </tr>
-    <tr>
-        <td>primitive numeric types<br/>(int, float, double, etc)</td> <td>number</td>
-    </tr>
-    <tr>
-        <td>NSNumber</td> <td>number</td>
-    </tr>
-    <tr>
-        <td>NSString</td> <td>string</td>
-    </tr>
-    <tr>
-        <td>NSArray</td> <td>array</td>
-    </tr>
-    <tr>
-        <td>NSDictionary</td> <td>object</td>
-    </tr>
-</table>
-
-
-<h3>Type Conversion of Argument Value from JavaScript to Objective-C</h3>
-
-<table class="aphid-table">
-    <tr>
-        <th>JavaScript</th> <th>Objective-C</th>
-    </tr>
-    <tr>
-        <td>undefined</td> <td>nil or NSNull</td>
-    </tr>
-    <tr>
-        <td>null</td> <td>nil or NSNull</td>
-    </tr>
-    <tr>
-        <td>number</td> <td>primitive number or NSNumber</td>
-    </tr>
-    <tr>
-        <td>string</td> <td>NSString</td>
-    </tr>
-    <tr>
-        <td>array</td> <td>NSArray</td>
-    </tr>
-    <tr>
-        <td>object except array</td> <td>NSDictionary</td>
-    </tr>
-</table>
-
-
-<p>For any method to export, it must be explicitly declared in the implementation of <code>bindSelectors:</code> in your Objective-C class. For example, the snippet below exports <code>[DatastoreBinding saveString:]</code> to JavaScript environment as <code>int saveString(string)</code>:</p>
-
-<p>```objective-c</p>
-
-<h1>import "OABindingProtocol"</h1>
-
-<p>@interface DatastoreBinding : NSObject <OABindingProtocol>
-@end</p>
-
-<p>@implementation DatastoreBinding
-- (BOOL) saveString:(NSString*)content
-{
-  [_myDatastore save:content];
-}</p>
-
-<h1>pragma OABindingProtocol</h1>
-
-<ul>
-<li>(void) bindSelectors:(OABindingMap*)bindingMap
-{
-  [bindingMap bindSelector:@selector(saveString:) forName:@"saveString"];
-}
-@end
-```</li>
-</ul>
-
-
-<p>The binding object need be injected into JavaScript via <code>setScriptBinding:name:iOSOnly:</code> method of <a href="https://github.com/openaphid/Runtime/blob/master/PreBuild/OAGLViewController.h">OAGLViewController</a>:</p>
-
-<p>```objective-c
-- (BOOL)application:(UIApplication <em>)application didFinishLaunchingWithOptions:(NSDictionary </em>)launchOptions
-{</p>
-
-<pre><code>//...
-[self.viewController.glViewController setScriptBinding:[[[DatastoreBinding alloc] init] autorelease] 
-                                                name:@"datastore" 
-                                             iOSOnly:YES
-</code></pre>
-
-<p>   ];</p>
-
-<pre><code>//...
-</code></pre>
-
-<p>}
-```</p>
-
-<p>OpenAphid-Engine injects an instance of <code>DatastoreBinding</code> as a JavaScript object of <code>[object DynamicBinding]</code> into JavaScript environment. And its name is <code>datastore</code>. The <code>iOSOnly</code> argument manages the namespace which contains the injected object. If it's <code>YES</code>, then the injected object can be accessed via <code>aphid.extios.datastore</code>; otherwise it can be accessed via <code>aphid.ext.datastore</code>.</p>
-
-<blockquote><p>Notes: the <code>iOSOnly</code> argument is actually designed for future compliance when OpenAphid-Engine supports both iOS and Android.</p></blockquote>
-
-<h2>Integration with Google Analytics in Boilerplate-iOS</h2>
-
-<p>Let's see a more concrete example about integrating Google Analytics in <a href="https://github.com/openaphid/Boilerplate-iOS">Boilerplate-iOS</a>.</p>
-
-<p>After adding Google Analytics iOS SDK into the Xcode project by following its <a href="https://developers.google.com/analytics/devguides/collection/ios/devguide#gettingStarted">official instructions</a>. We create an Objective-C object to describe the binding in <a href="https://github.com/openaphid/Boilerplate-iOS/blob/master/Boilerplate/Boilerplate/OAGoogleAnalyticsBinding.h">OAGoogleAnalyticsBinding.h</a>:</p>
-
-<p><code>objective-c
-@interface OAGoogleAnalyticsBinding : NSObject &lt;OABindingProtocol&gt;
-@end
-</code></p>
-
-<p>Then we add implementations of several methods in <a href="https://github.com/openaphid/Boilerplate-iOS/blob/master/Boilerplate/Boilerplate/OAGoogleAnalyticsBinding.m">OAGoogleAnalyticsBinding.m</a> that we want to invoke in JavaScript:</p>
-
-<p>```objective-c
-@implementation OAGoogleAnalyticsBinding
-//...</p>
-
-<ul>
-<li><p>(void) startTrackerWithAccountID:(NSString*)accountID despatchPeriod:(int)period
-{
-  [[GANTracker sharedTracker] startTrackerWithAccountID:accountID dispatchPeriod:period delegate:nil];
-}</p></li>
-<li><p>(BOOL)trackPageview:(NSString *)pageURL
-{
-  return [[GANTracker sharedTracker] trackPageview:pageURL withError:NULL];
-}</p></li>
-</ul>
-
-
-<p>//...
-```</p>
-
-<p>The binding of the methods should be declared in the <code>bindSelectors:</code> method:</p>
-
-<p>```objective-c
-- (void)bindSelectors:(OABindingMap *)bindingMap
-{
-[bindingMap bindSelector:@selector(startTrackerWithAccountID:despatchPeriod:)</p>
-
-<pre><code>             forName:@"startTracker"];
-</code></pre>
-
-<p>//...</p>
-
-<p>[bindingMap bindSelector:@selector(trackPageview:)</p>
-
-<pre><code>             forName:@"trackPageView"];
-</code></pre>
-
-<p>//...
-}
-```</p>
-
-<p>Then we can inject it into JavaScript as following code inside <a href="https://github.com/openaphid/Boilerplate-iOS/blob/master/Boilerplate/Boilerplate/OAAppDelegate.m">OAAppDelegate.m</a>:</p>
-
-<p>```objective-c
-- (BOOL)application:(UIApplication <em>)application didFinishLaunchingWithOptions:(NSDictionary </em>)launchOptions
-{</p>
-
-<pre><code>//...
-
-[self.viewController.glViewController setScriptBinding:[[OAGoogleAnalyticsBinding new] autorelease]  
-                                                name:@"gat" 
-                                             iOSOnly:NO];
-//...
-</code></pre>
-
-<p>}</p>
-
-<p>```</p>
-
-<blockquote><p><strong> Updates at 07-09-2012: </strong> <code>iOSOnly</code> has been changed from <code>YES</code> to <code>NO</code> to match its Android version.</p></blockquote>
-
-<p>Now we can use Google Analytics in JavaScript to track the user's behavior in games:</p>
-
-<p><code>javascript
-var gat = aphid.ext.gat; //Google Analytics is injected as aphid.ext.gat
-gat.startTracker("UA-31741840-1", 10); //start a tracker
-gat.trackPageView("main.js"); //track a page view
-</code></p>
-
-<blockquote><p><strong> Updates at 07-09-2012: </strong> Since <code>iOSOnly</code> has been set to <code>NO</code>, the JavaScript namespace for <code>gat</code> is switched to <code>aphid.ext</code> from <code>aphid.extios</code></p></blockquote>
-
-<p>We're going to integrate more services into <a href="https://github.com/openaphid/Boilerplate-iOS">Boilerplate-iOS</a>, and make it be a better starter kit for game development with OpenAphid-Engine.</p>
-
-<p>If you have better ideas, please feel free to contact us via <code>openaphid@gmail.com</code> or raise an issue in our <a href="https://github.com/openaphid">github repositories</a>.</p>
 ]]></content>
   </entry>
   

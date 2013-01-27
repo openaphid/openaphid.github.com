@@ -1,0 +1,430 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Part I: How to Choose a JavaScript Engine for iOS and Android Development - OpenAphid-Engine</title>
+  <meta name="author" content="Aphid Mobile">
+
+  
+  <meta name="description" content="DISCLAIMER: the post contains my personal opinions on the subject. I would appreciate it if you could correct my mistakes. Back to the time when I &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://openaphid.github.com/blog/2013/01/17/part-i-how-to-choose-a-javascript-engine-for-ios-and-android-apps">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="OpenAphid-Engine" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<!--link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css"-->
+
+<!--<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>-->
+
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-29340978-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+<h1><img src="/images/aphid-logo-new.png" width="64"><a href="/">OpenAphid-Engine</a></h1>
+  
+    <h2>JavaScript Powered Game Engine for Native iOS/Android Apps</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/api-doc/latest/index.html" target="_blank">API References</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Part I: How to Choose a JavaScript Engine for iOS and Android Development</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-17T15:30:00+08:00" pubdate data-updated="true">Jan 17<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><blockquote><p>DISCLAIMER: the post contains my personal opinions on the subject. I would appreciate it if you could correct my mistakes.</p></blockquote>
+
+<p>Back to the time when I started <a href="https://github.com/openaphid/runtime" title="OpenAphid-Engine">OpenAphid-Engine</a>, there were already several similar iOS/Android projects. These projects, either commercial or open source, expose their core features by JavaScript language. For instance, <a href="http://www.appcelerator.com/platform/titanium-sdk/" title="Titanium">Titanium</a> and <a href="http://phonegap.com/" title="PhoneGap">PhoneGap</a> allow developers to use JavaScript to build native iOS/Android apps; <a href="https://developer.mobage.com/" title="ngCore">ngCore</a> enables building cross platform games by pure JavaScript. JavaScript language has been chosen as a first-class citizen as it&#8217;s one of the most popular programming language. It eases the learning curve and easily attracts developers into a new product ecosystem.</p>
+
+<!-- more -->
+
+
+<h2>How to Support JavaScript on iOS/Android</h2>
+
+<p>There are two main approaches to support JavaScript in an iOS/Android app. One method is to leverage the system browser component, <a href="http://developer.apple.com/library/ios/#documentation/uikit/reference/UIWebView_Class/Reference/Reference.html" title="UIWebView">UIWebView</a> on iOS and <a href="http://developer.android.com/reference/android/webkit/WebView.html" title="WebView">WebView</a> on Android; the other way is to compile and integrate a full-featured JavaScript engine.</p>
+
+<p>Using the system component is easy to implement but it&#8217;s inflexible and inefficient. <a href="http://developer.android.com/reference/android/webkit/WebView.html" title="WebView">WebView</a> provides <a href="http://developer.android.com/reference/android/webkit/WebView.html#addJavascriptInterface%28java.lang.Object,%20java.lang.String%29">addJavascriptInterface</a> to inject Java classes into JavaScript context. But it only supports primitive data types which brings restrictions to API design; it&#8217;s also unstable and crashes on Android simulator 2.3 and some real devices according to <a href="http://code.google.com/p/android/issues/detail?id=12987">issue #12987</a>. Things are worse on iOS, <a href="http://developer.apple.com/library/ios/#documentation/uikit/reference/UIWebView_Class/Reference/Reference.html" title="UIWebView">UIWebView</a> doesn&#8217;t have public APIs to support direct interaction from JavaScript to Objective-C (You have to use private APIs to achieve the same functionality of <a href="http://developer.android.com/reference/android/webkit/WebView.html#addJavascriptInterface%28java.lang.Object,%20java.lang.String%29">addJavascriptInterface</a>).</p>
+
+<p><a href="http://phonegap.com/" title="PhoneGap">PhoneGap</a> is the most famous project that is built upon <a href="http://developer.apple.com/library/ios/#documentation/uikit/reference/UIWebView_Class/Reference/Reference.html" title="UIWebView">UIWebView</a> and <a href="http://developer.android.com/reference/android/webkit/WebView.html" title="WebView">WebView</a>. Developers are forced to use callbacks to retrieve return values from its JavaScript APIs, which is complex and inefficient especially for games.</p>
+
+<p>Some earlier versions of <a href="https://developer.mobage.com/" title="ngCore">ngCore</a> also relied on <a href="http://developer.apple.com/library/ios/#documentation/uikit/reference/UIWebView_Class/Reference/Reference.html" title="UIWebView">UIWebView</a> in order to support iOS. This mechanism has been replaced because of the awful performance.</p>
+
+<p>In order to get better performance, flexibility and compatibility, it becomes popular by embedding a full featured JavaScript engine in native apps.</p>
+
+<h2>Choices of JavaScript Engines</h2>
+
+<p>As far as I know, four JavaScript engines could be built and ran on iOS or Android: <a href="http://trac.webkit.org/wiki/JavaScriptCore" title="JavaScriptCore">JavaScriptCore</a>, <a href="https://developer.mozilla.org/en/docs/SpiderMonkey" title="SpiderMonkey">SpiderMonkey</a>, <a href="http://code.google.com/p/v8/" title="V8">V8</a> and <a href="https://developer.mozilla.org/en-US/docs/Rhino" title="Rhino">Rhino</a>. The table below lists their compatibilities on iOS and Android.</p>
+
+<table class="aphid-table">
+    <tr>
+        <th></th>
+        <th>iOS</th>
+        <th>Android</th>
+    </tr>
+    <tr>
+        <td class="aphid-table-main-col">JavaScriptCore</td> <td>Interpreter only</td> <td>Interpreter and JIT</td> 
+    </tr>
+    <tr>
+        <td class="aphid-table-main-col">SpiderMonkey</td> <td>Interpreter only</td> <td>Interpreter and JIT</td> 
+    </tr>
+    <tr>
+        <td class="aphid-table-main-col">V8</td> <td>JIT only for jailbroken devices</td> <td>JIT</td> 
+    </tr>
+    <tr>
+        <td class="aphid-table-main-col">Rhino</td> <td>Unsupported</td> <td>Interpreter</td> 
+    </tr>
+</table>
+
+
+<p>When I was searching for the right JavaScript engine for <a href="https://github.com/openaphid/runtime" title="OpenAphid-Engine">OpenAphid-Engine</a>, my evaluation focused on the following metrics:</p>
+
+<ul>
+<li><p>Compatibility. The engine should support both iOS and Android, and work on both simulators and devices, which requires it support both ARM and x86.</p></li>
+<li><p>Stability. It should stably work on both platforms and supported CPU architectures.</p></li>
+<li><p>Extensibility. Extending the engine to add native features should be easy. For example, <a href="https://github.com/openaphid/runtime" title="OpenAphid-Engine">OpenAphid-Engine</a> required a bridge layer to access OpenGL ES from JavaScript.</p></li>
+<li><p>Performance. It&#8217;s boiled down to two primary factors: fast JavaScript evaluation, and efficient binding mechanism with low overhead. <a href="https://github.com/openaphid/runtime" title="OpenAphid-Engine">OpenAphid-Engine</a> may trigger hundreds of OpenGL ES calls from JavaScript to render a single frame. The rendering would be slow if the overhead is much more significant than normal JavaScript routines.</p></li>
+<li><p>Small footprint. The memory footprint and binary size of the executable file should be small.</p></li>
+</ul>
+
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Rhino" title="Rhino">Rhino</a> and <a href="http://code.google.com/p/v8/" title="V8">V8</a> were out first since they don&#8217;t support iOS. I really wanted to build <a href="https://github.com/openaphid/runtime" title="OpenAphid-Engine">OpenAphid-Engine</a> with <a href="http://code.google.com/p/v8/" title="V8">V8</a>, which showed great performance and elegant code structure during my preliminary experiment on Android. But I got disappointed due to the fact that <a href="http://code.google.com/p/v8/" title="V8">V8</a> only employed a JIT mode while iOS doesn&#8217;t allow JIT unless on a jailbroken device. Please refer to <a href="http://code.google.com/p/v8/issues/detail?id=1312">issue #1312</a> if you need more technical details.</p>
+
+<p>I debated a lot between <a href="http://trac.webkit.org/wiki/JavaScriptCore" title="JavaScriptCore">JavaScriptCore</a> and <a href="https://developer.mozilla.org/en/docs/SpiderMonkey" title="SpiderMonkey">SpiderMonkey</a>. After successfully built them on iOS and Android, I applied benchmarks and experiments to find the better one.</p>
+
+<p><a href="https://developer.mozilla.org/en/docs/SpiderMonkey" title="SpiderMonkey">SpiderMonkey</a> is available under a more friendly license, but it lost in nearly all of my measurements compared to <a href="http://trac.webkit.org/wiki/JavaScriptCore" title="JavaScriptCore">JavaScriptCore</a>. It generated larger binary file size (about 1.3MB larger for ARMv7); JavaScript evaluation was slower and the performance overhead of bridging JavaScript and C++ was also more significant. One more reason that pushed me away was that my build of <a href="https://developer.mozilla.org/en/docs/SpiderMonkey" title="SpiderMonkey">SpiderMonkey</a> randomly crashed on iOS simulator.</p>
+
+<p>The performance of a JavaScript engine can be affected by many factors, like the version of build toolchains, the version of engines, and the OS types etc. The chart below lists the running times of several micro-benchmarks with different builds of engines on an <a href="http://en.wikipedia.org/wiki/IPod_Touch#Specifications">iPod Touch 4</a>. Please check out the <a href="https://docs.google.com/spreadsheet/ccc?key=0AmitMpjPL_UEdGVVdmlwWDBTa0lEbnlQWmw4dlNmTGc">Google Doc</a> if you&#8217;re interested at the precise running times.</p>
+
+<p><img src="/images/js-engine-benchmark-ipod-touch4.png" title="Benchmark Results of JavaScriptCore and SpiderMonkeys on iPod Touch 4" alt="benchmark" /></p>
+
+<blockquote><ul>
+<li><p><a href="http://trac.webkit.org/wiki/JavaScriptCore" title="JavaScriptCore">JavaScriptCore</a> is the clear winner by a large margin.</p></li>
+<li><p>I failed to find my build of <a href="https://developer.mozilla.org/en/docs/SpiderMonkey" title="SpiderMonkey">SpiderMonkey</a>, so I leveraged three other custom builds from <a href="http://cocos2d-iphone.googlecode.com/files/cocos2d-iphone-2.1-beta4.tar.gz">Cocos2d-iPhone-2.1-beta4</a>, <a href="http://cocos2d-x.googlecode.com/files/cocos2d-2.1beta3-x-2.1.0.zip">Cocos2d-x-2.1-beta3</a> and <a href="https://github.com/couchbaselabs/iMonkey">iMonkey</a>.</p></li>
+<li><p>All test apps were built with LLVM 4.1 in release mode; all engines ran in interpreter mode restricted by iOS.</p></li>
+<li><p>Explanations of some benchmarks:</p>
+
+<ul>
+<li><p><code>1m-js_loop</code> runs an empty loop for one million times.</p></li>
+<li><p><code>1m-native_function</code> invokes an injected native function for 1M times while the native function simply returns undefined.</p></li>
+<li><p><code>1m-js_function</code> is similar to the one above except the function is written in JavaScript.</p></li>
+<li><p><code>fib(30)</code> calculates Fibonacci(30) in a recursive manner.</p></li>
+<li><p><code>sudoku-5</code> solves five Sudoku problems with the algorithm from <a href="https://github.com/attractivechaos/plb/blob/master/sudoku/sudoku_v2.js">this project</a>.</p></li>
+</ul>
+</li>
+<li><p><code>1m-native_function</code> for <a href="http://trac.webkit.org/wiki/JavaScriptCore" title="JavaScriptCore">JavaScriptCore</a> was implemented by its portable <a href="http://trac.webkit.org/browser/trunk/Source/JavaScriptCore/API">C APIs</a>, which is not the most efficient way to inject native functions.</p></li>
+<li><p><a href="https://developer.mozilla.org/en/docs/SpiderMonkey" title="SpiderMonkey">SpiderMonkey</a> is fast on desktop with its advanced method tracing JIT. But it&#8217;s a whole different story on iOS devices.</p></li>
+<li><p>The build from <a href="https://github.com/couchbaselabs/iMonkey">iMonkey</a> was faster than other <a href="https://developer.mozilla.org/en/docs/SpiderMonkey" title="SpiderMonkey">SpiderMonkey</a> builds in most benchmarks.</p></li>
+<li><p>It&#8217;s definitely possible to get better performance from <a href="https://developer.mozilla.org/en/docs/SpiderMonkey" title="SpiderMonkey">SpiderMonkey</a> on iOS. <a href="https://developer.mobage.com/" title="ngCore">ngCore</a> 1.10 for iOS managed to embed a custom build, which outperformed other <a href="https://developer.mozilla.org/en/docs/SpiderMonkey" title="SpiderMonkey">SpiderMonkey</a> variants.</p></li>
+</ul>
+</blockquote>
+
+<h2>Adventure with JavaScriptCore</h2>
+
+<p>My study proceeded further after I settled down with <a href="http://trac.webkit.org/wiki/JavaScriptCore" title="JavaScriptCore">JavaScriptCore</a>:</p>
+
+<ol>
+<li><p>The running time of <code>1m-native_function</code> was over six times longer than <code>1m-js_function</code> and <code>1m-Math.abs(0)</code> on <a href="http://trac.webkit.org/wiki/JavaScriptCore" title="JavaScriptCore">JavaScriptCore</a>. I also observed the similar performance issue on accessing properties of injected native objects.</p></li>
+<li><p>The <a href="http://trac.webkit.org/browser/trunk/Source/JavaScriptCore/API">C APIs</a> had a clean design but was lack of flexible memory management APIs. It seems difficult to resolve issues caused by <a href="http://stackoverflow.com/questions/10092619/precise-explanation-of-javascript-dom-circular-reference-issue">circular references</a> without deeper cooperation with the internal garbage collector.</p></li>
+<li><p>There were many release versions of <a href="http://trac.webkit.org/wiki/JavaScriptCore" title="JavaScriptCore">JavaScriptCore</a> available. The best one should be fast and compact for <a href="https://github.com/openaphid/runtime" title="OpenAphid-Engine">OpenAphid-Engine</a>.</p></li>
+</ol>
+
+
+<p>I abandoned the original plan of using the <a href="http://trac.webkit.org/browser/trunk/Source/JavaScriptCore/API">C APIs</a> in order to solve problem 1 and 2. The version of JSC from iOS 4.3.3 was used, as it&#8217;s faster than the version from iOS 5 in interpreter mode with a smaller binary executable file.</p>
+
+<h2>Engines Used in Other Products</h2>
+
+<p>During the development of <a href="https://github.com/openaphid/runtime" title="OpenAphid-Engine">OpenAphid-Engine</a>, I always kept my eyes on other products. The table below summarizes the JavaScript engines they are using underneath.</p>
+
+<table class="aphid-table">
+    <tr>
+        <th></th>
+        <th>iOS</th>
+        <th>Android</th>
+    </tr>
+    <tr>
+        <td class="aphid-table-main-col">ngCore 1.6 and above</td> <td>UIWebView</td> <td>V8</td> 
+    </tr>
+    <tr>
+        <td class="aphid-table-main-col">ngCore 1.7 and later</td> <td>SpiderMonkey</td> <td>V8</td> 
+    </tr>
+    <tr>
+        <td class="aphid-table-main-col">Titanium</td> <td>JavaScriptCore</td> <td>V8 or Rhino</td> 
+    </tr>
+    <tr>
+        <td class="aphid-table-main-col">Cocos2D-x JavaScript</td> <td>SpiderMonkey</td> <td>SpiderMonkey</td> 
+    </tr>
+    <tr>
+        <td class="aphid-table-main-col">CocoonJS</td> <td>JavaScriptCore</td> <td>JavaScriptCore</td> 
+    </tr>
+    <tr>
+        <td class="aphid-table-main-col">Ejecta</td> <td>JavaScriptCore</td> <td>Unsupported</td> 
+    </tr>
+    <tr>
+        <td class="aphid-table-main-col">directCanvas</td> <td>JavaScriptCore</td> <td>No clue</td> 
+    </tr>
+</table>
+
+
+<h2>Next Story in Series</h2>
+
+<p>I will post my opinions on comparing <a href="https://developer.mobage.com/" title="ngCore">ngCore</a> to <a href="https://github.com/openaphid/runtime" title="OpenAphid-Engine">OpenAphid-Engine</a>. Stay tuned!</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Aphid Mobile</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-17T15:30:00+08:00" pubdate data-updated="true">Jan 17<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/openaphid-engine/'>OpenAphid-Engine</a>, <a class='category' href='/blog/categories/tutorial/'>Tutorial</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://openaphid.github.com/blog/2013/01/17/part-i-how-to-choose-a-javascript-engine-for-ios-and-android-apps/" data-via="openaphid" data-counturl="http://openaphid.github.com/blog/2013/01/17/part-i-how-to-choose-a-javascript-engine-for-ios-and-android-apps/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/01/14/openaphid-engine-v0-dot-2-1f-and-discontinuation-announcement/" title="Previous Post: OpenAphid-Engine v0.2.1f Release and Discontinuation Announcement">&laquo; OpenAphid-Engine v0.2.1f Release and Discontinuation Announcement</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/01/17/part-i-how-to-choose-a-javascript-engine-for-ios-and-android-apps/">Part I: How to Choose a JavaScript Engine for iOS and Android Development</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/01/14/openaphid-engine-v0-dot-2-1f-and-discontinuation-announcement/">OpenAphid-Engine v0.2.1f Release and Discontinuation Announcement</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/01/02/flipview-for-android-v0-dot-9-7-released/">FlipView for Android v0.9.7 Released</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/12/flipview-for-android-v0-dot-9-6-released/">FlipView for Android v0.9.6 Released</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/21/aphid-flipview-for-android-v0-dot-9-beta-released/">FlipView for Android v0.9 Beta Released</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Categories</h1>
+    <ul id="category-list"><li><a href='/blog/categories/flipview'>FlipView (4)</a></li><li><a href='/blog/categories/openaphid-engine'>OpenAphid-Engine (11)</a></li><li><a href='/blog/categories/release'>Release (7)</a></li><li><a href='/blog/categories/tutorial'>Tutorial (5)</a></li></ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/openaphid">@openaphid</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'openaphid',
+            count: 3,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("openaphid", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/openaphid" class="twitter-follow-button" data-show-count="false">Follow @openaphid</a>
+  
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+Copyright &copy; 2013 - Aphid Mobile - openaphid@gmail.com - 
+	<span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span> - 
+	<span class="credit">Artworks Designed by <a href="http://wannadobre.carbonmade.com/">Oana Dobre</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'openaphidblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://openaphid.github.com/blog/2013/01/17/part-i-how-to-choose-a-javascript-engine-for-ios-and-android-apps/';
+        var disqus_url = 'http://openaphid.github.com/blog/2013/01/17/part-i-how-to-choose-a-javascript-engine-for-ios-and-android-apps/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
