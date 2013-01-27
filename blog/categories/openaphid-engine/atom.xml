@@ -4,7 +4,7 @@
   <title><![CDATA[Category: OpenAphid-Engine | OpenAphid-Engine]]></title>
   <link href="http://openaphid.github.com/blog/categories/openaphid-engine/atom.xml" rel="self"/>
   <link href="http://openaphid.github.com/"/>
-  <updated>2013-01-27T23:31:20+08:00</updated>
+  <updated>2013-01-27T23:34:21+08:00</updated>
   <id>http://openaphid.github.com/</id>
   <author>
     <name><![CDATA[Aphid Mobile]]></name>
@@ -135,6 +135,9 @@
     </tr>
     <tr>
         <td class="aphid-table-main-col">Titanium</td> <td>JavaScriptCore</td> <td>V8 or Rhino</td> 
+    </tr>
+    <tr>
+        <td class="aphid-table-main-col">PhoneGap</td> <td>UIWebView</td> <td>WebView</td> 
     </tr>
     <tr>
         <td class="aphid-table-main-col">Cocos2D-x JavaScript</td> <td>SpiderMonkey</td> <td>SpiderMonkey</td> 
