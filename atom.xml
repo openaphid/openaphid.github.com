@@ -4,7 +4,7 @@
   <title><![CDATA[OpenAphid-Engine]]></title>
   <link href="http://openaphid.github.com/atom.xml" rel="self"/>
   <link href="http://openaphid.github.com/"/>
-  <updated>2013-01-27T23:34:21+08:00</updated>
+  <updated>2013-01-27T23:36:33+08:00</updated>
   <id>http://openaphid.github.com/</id>
   <author>
     <name><![CDATA[Aphid Mobile]]></name>
@@ -85,8 +85,8 @@
 
 <blockquote><ul>
 <li><p><a href="http://trac.webkit.org/wiki/JavaScriptCore" title="JavaScriptCore">JavaScriptCore</a> is the clear winner by a large margin.</p></li>
-<li><p>I failed to find my build of <a href="https://developer.mozilla.org/en/docs/SpiderMonkey" title="SpiderMonkey">SpiderMonkey</a>, so I leveraged three other custom builds from <a href="http://cocos2d-iphone.googlecode.com/files/cocos2d-iphone-2.1-beta4.tar.gz">Cocos2d-iPhone-2.1-beta4</a>, <a href="http://cocos2d-x.googlecode.com/files/cocos2d-2.1beta3-x-2.1.0.zip">Cocos2d-x-2.1-beta3</a> and <a href="https://github.com/couchbaselabs/iMonkey">iMonkey</a>.</p></li>
-<li><p>All test apps were built with LLVM 4.1 in release mode; all engines ran in interpreter mode restricted by iOS.</p></li>
+<li><p>I failed to find my build of <a href="https://developer.mozilla.org/en/docs/SpiderMonkey" title="SpiderMonkey">SpiderMonkey</a>, so I used three other custom builds from <a href="http://cocos2d-iphone.googlecode.com/files/cocos2d-iphone-2.1-beta4.tar.gz">Cocos2d-iPhone-2.1-beta4</a>, <a href="http://cocos2d-x.googlecode.com/files/cocos2d-2.1beta3-x-2.1.0.zip">Cocos2d-x-2.1-beta3</a> and <a href="https://github.com/couchbaselabs/iMonkey">iMonkey</a>.</p></li>
+<li><p>All test apps were built with LLVM 4.1 in release mode; all engines were running in interpreter mode restricted by iOS.</p></li>
 <li><p>Explanations of some benchmarks:</p>
 
 <ul>
