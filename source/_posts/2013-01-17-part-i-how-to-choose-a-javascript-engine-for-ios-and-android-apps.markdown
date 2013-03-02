@@ -102,7 +102,7 @@ My study proceeded further after I settled down with [JavaScriptCore][]:
 
 1. The running time of `1m-native_function` was over six times longer than `1m-js_function` and `1m-Math.abs(0)` on [JavaScriptCore][]. I also observed the similar performance issue on accessing properties of injected native objects.
 
-2. The [C APIs][6] had a clean design but was lack of flexible memory management APIs. It seems difficult to resolve issues caused by [circular references][9] without deeper cooperation with the internal garbage collector.
+2. The [C APIs][6] had a clean design but was lack of flexible memory management APIs. It seemed difficult to resolve issues caused by [circular references][9] without deeper cooperation with the internal garbage collector.
 
 3. There were many release versions of [JavaScriptCore][] available. The best one should be fast and compact for [OpenAphid-Engine][].
 
