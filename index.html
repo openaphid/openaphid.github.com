@@ -9,7 +9,7 @@
   <meta name="author" content="Aphid Mobile">
 
   
-  <meta name="description" content="DISCLAIMER: the post contains my personal opinions on the subject. I would appreciate it if you could correct my mistakes. Back to the time when I &hellip;">
+  <meta name="description" content="instancetype is a relative new keyword in Objective-C language. Besides its general usage scenarios, it can be leveraged for safe casting. The &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -52,7 +52,7 @@
   <header role="banner"><hgroup>
 <h1><img src="/images/aphid-logo-new.png" width="64"><a href="/">OpenAphid-Engine</a></h1>
   
-    <h2>JavaScript Powered Game Engine for Native iOS/Android Apps</h2>
+    <h2>JavaScript&OpenGL ES Powered 2D Game Engine for Native iOS/Android Apps</h2>
   
 </hgroup>
 
@@ -73,6 +73,98 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/03/31/safe-type-casting-in-objective-c-with-instancetype/">Safe Type Casting in Objective-C With &#8216;Instancetype&#8217;</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-31T23:11:00+08:00" pubdate data-updated="true">Mar 31<span>st</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><code>instancetype</code> is a relative new keyword in Objective-C language. Besides its general usage scenarios, it can  be leveraged for safe casting. The approach is simply a category to <code>NSObject</code>:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class='objective-c'><span class='line'><span class="k">@interface</span> <span class="nc">NSObject</span> <span class="nl">(OAUtils)</span>
+</span><span class='line'><span class="k">+</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">oa_cast:</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nv">any</span><span class="p">;</span>
+</span><span class='line'><span class="k">+</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">oa_cast:</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nv">any</span> <span class="nf">warnOnFailure:</span><span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span><span class="nv">warnOnFailure</span><span class="p">;</span>
+</span><span class='line'><span class="k">@end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">@implementation</span> <span class="nc">NSObject</span> <span class="nl">(OAUtils)</span>
+</span><span class='line'><span class="k">+</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">oa_cast:</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nv">any</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="k">return</span> <span class="p">[</span><span class="n">self</span> <span class="nl">oa_cast:</span><span class="n">any</span> <span class="nl">warnOnFailure:</span><span class="n">NO</span><span class="p">];</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">+</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">oa_cast:</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nv">any</span> <span class="nf">warnOnFailure:</span><span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span><span class="nv">warnOnFailure</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="n">any</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>        <span class="k">if</span> <span class="p">([</span><span class="n">any</span> <span class="nl">isKindOfClass:</span><span class="p">[</span><span class="n">self</span> <span class="n">class</span><span class="p">]])</span>
+</span><span class='line'>            <span class="k">return</span> <span class="n">any</span><span class="p">;</span>
+</span><span class='line'>        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">warnOnFailure</span><span class="p">)</span>
+</span><span class='line'>            <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;Can&#39;t cast %@ to type %@&quot;</span><span class="p">,</span> <span class="n">any</span><span class="p">,</span> <span class="n">NSStringFromClass</span><span class="p">([</span><span class="n">self</span> <span class="n">class</span><span class="p">]));</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">return</span> <span class="nb">nil</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/03/31/safe-type-casting-in-objective-c-with-instancetype/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -145,7 +237,7 @@
   </header>
 
 
-  <div class="entry-content"><p><a href="https://github.com/openaphid/runtime" title="OpenAphid-Engine">OpenAphid-Engine</a> was born as an exploration project at 2012 first half-year when I quit my day job. Its mission was to figure out the most efficient way to integrate a full JavaScript engine within native iOS/Android games.</p>
+  <div class="entry-content"><p><a href="https://github.com/openaphid/runtime" title="OpenAphid-Engine">OpenAphid-Engine</a> was born as an exploration project at the first half year of 2012 when I quit my day job. Its mission was to figure out the most efficient way to integrate a full JavaScript engine within native iOS/Android games.</p>
 
 </div>
   
@@ -477,51 +569,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/05/21/how-to-implement-flipboard-animation-on-android/">How to Implement Flipboard Animation on Android</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-05-21T22:14:00+08:00" pubdate data-updated="true">May 21<span>st</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><blockquote><p><strong> Updates at 2012-12-12: </strong> Please check out <a href="/blog/categories/flipview/">FlipView</a> for an improved solution.</p></blockquote>
-
-<p>The demo in this post was born when we&#8217;re working on the Android port of <a href="https://github.com/openaphid">OpenAphid-Engine</a>. One of our engineers is a huge fan of <a href="http://www.flipboard.com">Flipboard iOS</a>. He decided to implement its page flip animation on Android.</p>
-
-<p>If you don&#8217;t know about the effect, please install the APK file of our demo app to see how it looks:</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/05/21/how-to-implement-flipboard-animation-on-android/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -537,6 +584,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/03/31/safe-type-casting-in-objective-c-with-instancetype/">Safe Type Casting in Objective-C with &#8216;instancetype&#8217;</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/01/17/part-i-how-to-choose-a-javascript-engine-for-ios-and-android-apps/">Part I: How to Choose a JavaScript Engine for iOS and Android Development</a>
       </li>
     
@@ -550,10 +601,6 @@
     
       <li class="post">
         <a href="/blog/2012/12/12/flipview-for-android-v0-dot-9-6-released/">FlipView for Android v0.9.6 Released</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/09/21/aphid-flipview-for-android-v0-dot-9-beta-released/">FlipView for Android v0.9 Beta Released</a>
       </li>
     
   </ul>
@@ -616,7 +663,7 @@
     </div>
   </div>
   <footer role="contentinfo"><p>
-Copyright &copy; 2013 - Aphid Mobile - openaphid@gmail.com - 
+Copyright &copy; 2014 - Aphid Mobile - openaphid@gmail.com - 
 	<span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span> - 
 	<span class="credit">Artworks Designed by <a href="http://wannadobre.carbonmade.com/">Oana Dobre</a></span>
 </p>
