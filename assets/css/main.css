@@ -947,6 +947,10 @@ p img {
   display: block;
 }
 
+.fit-img {
+  width: auto;
+}
+
 .cover-img {
   width: 85%;
   margin: auto;
