@@ -13,7 +13,7 @@ Telegram-iOS builds most UIs upon AsyncDisplayKit. It’s folked as a [submodule
 
 AsyncDisplayKit is an asynchronous UI framework that was originally [born from Facebook](https://engineering.fb.com/ios/introducing-asyncdisplaykit-for-smooth-and-responsive-apps-on-ios/). It’s [adopted by Pinterest](https://medium.com/pinterest-engineering/introducing-texture-a-new-home-for-asyncdisplaykit-e7c003308f50) and was renamed to [Texture](https://texturegroup.org/) in 2017. Its core concept is using [`node`](https://texturegroup.org/docs/getting-started.html) as an abstraction of `UIView`, which is a bit similar to the ideas from React Virtual DOM. Nodes are thread-safe, which helps move expensive UI operations off the main thread, like image decoding, text sizing, etc. Nodes are also lightweight, which allows you to [NOT reuse cells](https://texturegroup.org/docs/faq.html#ascellnode-reusability) in tables and collections.
 
-![AsyncDisplayKit](/assets/tg-ios/part-5-asyncdisplaykit.png "Structure of the folked AsyncDisplayKit")
+![AsyncDisplayKit](/assets/tg-ios/part-5-asyncdisplaykit.png "Structure of the folked AsyncDisplayKit"){: .fit-img :}
 
 As illustrated in the diagram, Telegram-iOS keeps around 35% code that’s denoted in blue boxes and removes the others from the official version.
 
@@ -28,7 +28,7 @@ Basically speaking, Telegram-iOS keeps a minimal set of the core node system and
 
 # 2. Core Nodes
 
-![Core Nodes](/assets/tg-ios/part-5-codenodes.png "Core Node Classes")
+![Core Nodes](/assets/tg-ios/part-5-corenodes.png "Core Node Classes"){: .fit-img :}
 
 There are a few node classes as fundamental blocks to build the app’s user interface. Let’s check them out as listed in the diagram.
 
@@ -163,7 +163,7 @@ Telegram-iOS implements a rich set of components to support different media type
 
 # 3. Controllers
 
-![Controllers](/assets/tg-ios/part-5-controllers.png "Common Controllers")
+![Controllers](/assets/tg-ios/part-5-controllers.png "Common Controllers"){: .fit-img :}
 
 [`ViewController`](https://github.com/TelegramMessenger/Telegram-iOS/blob/release-6.1.2/submodules/Display/Source/ViewController.swift#L76) makes `UIViewController` work as a container of node hierarchies. Unlike the official node controller class [`ASViewController`](https://texturegroup.org/docs/containers-asviewcontroller.html), it doesn’t have features like [visibility depth](https://texturegroup.org/docs/asvisibility.html) and [intelligent preloading](https://texturegroup.org/docs/intelligent-preloading.html).
 
