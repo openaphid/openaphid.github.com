@@ -32,15 +32,23 @@ h1,h2,h3,h4,h5,h6 {
 }
 h1 {
   font-size: 2.25rem;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
 }
 h2 {
-  font-size: 1.875rem;
+  font-size: 1.5rem;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
 }
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 h4 {
-  font-size: 1.125rem;
+  font-size: 1rem;
 }
 a {
   color: {{ site.link-col | default: "#008AFF" }};
@@ -492,17 +500,17 @@ e
 .post-image {
   float: right;
   margin-left: 0.625rem;
-  height: 12rem;
+  /*height: 12rem;*/
   width: 12rem;
   margin-top: -2.1875rem;
-  filter: grayscale(90%);
+  /*filter: grayscale(90%);*/
 }
-.post-image:hover {
+/*.post-image:hover {
   filter: grayscale(0%);
-}
+}*/
 .post-image img {
-  border-radius: 6.25rem;
-  height: 12rem;
+  /*border-radius: 6.25rem;*/
+  /*height: 12rem;*/
   width: 12rem;
 }
 .post-preview .post-read-more {
@@ -820,6 +828,10 @@ table tr td :last-child {
 
 /* --- Code blocks --- */
 
+code {
+  background-color: rgba(242, 242, 242, 1);
+}
+
 pre {
   font-size: 1rem;
   line-height: 1.5;
@@ -878,6 +890,7 @@ pre {
   border: 1px solid #eee;
   border-left-width: 0.3125rem;
   border-radius: 0.3125rem 0.1875rem 0.1875rem 0.3125rem;
+  font-style: italic;
 }
 
 .box-note {
@@ -923,8 +936,13 @@ pre {
   margin: 1.25rem auto;
 }
 
+ol {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 p img {
-  width: 85%;
+  width: 100%;
   margin: auto;
   display: block;
 }
