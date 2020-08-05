@@ -172,13 +172,13 @@ timezone: "America/Vancouver"
 markdown: kramdown
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
-paginate: 6
+paginate: 4
 
 kramdown:
   input: GFM
   syntax_highlighter_opts:
     block:
-      line_numbers: true
+      line_numbers: false
 
 # Default YAML values (more information on Jekyll's site)
 defaults:
