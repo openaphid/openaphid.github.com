@@ -2,7 +2,7 @@
 layout: post
 title: "Source Code Walkthrough of Telegram-iOS Part 3: Other Foundations"
 subtitle: ""
-cover-img: "https://miro.medium.com/max/700/0*J0t9M0yYewxJV8Hs"
+cover-img: "/assets/tg-ios/part-3-cover.jpg"
 tags: [Telegram, iOS]
 comments: true
 ---

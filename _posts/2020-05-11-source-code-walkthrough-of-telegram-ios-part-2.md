@@ -2,7 +2,7 @@
 layout: post
 title: "Source Code Walkthrough of Telegram-iOS Part 2: SSignalKit"
 subtitle: ""
-cover-img: "https://miro.medium.com/max/700/0*H-zyp_Iow9jgKVvJ"
+cover-img: "/assets/tg-ios/part-2-cover.jpg"
 tags: [Telegram, iOS]
 comments: true
 ---

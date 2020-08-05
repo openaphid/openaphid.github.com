@@ -2,7 +2,7 @@
 layout: post
 title: "Source Code Walkthrough of Telegram-iOS Part 5: AsyncDisplayKit"
 subtitle: ""
-cover-img: "https://raw.githubusercontent.com/AsyncDisplayKit/Documentation/master/docs/static/images/logo.png"
+cover-img: "/assets/tg-ios/part-5-cover.png"
 tags: [Telegram, iOS]
 comments: true
 ---

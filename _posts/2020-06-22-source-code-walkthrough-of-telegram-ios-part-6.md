@@ -2,7 +2,7 @@
 layout: post
 title: "Source Code Walkthrough of Telegram-iOS Part 6: Bubbles"
 subtitle: ""
-cover-img: "https://miro.medium.com/max/700/0*Pz3gl7asjEDcgwYg"
+cover-img: "/assets/tg-ios/part-6-cover.jpg"
 tags: [Telegram, iOS]
 comments: true
 ---
