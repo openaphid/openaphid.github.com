@@ -916,6 +916,19 @@ pre {
   margin: 0.3125rem;
 }
 
+.google-docs {
+  width: 85%;
+  height: 400px;
+  display: block;
+  margin: 1.25rem auto;
+}
+
+p img {
+  width: 85%;
+  margin: auto;
+  display: block;
+}
+
 #full-tags-list {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
