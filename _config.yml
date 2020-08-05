@@ -1,31 +1,30 @@
 # --- Basic options --- #
 
 # Name of website
-title: My website
+title: Bo
 
 # Short description of your site
-description: A virtual proof that I'm awesome
+description: Bo's engineering notes
 
 # Your name to show in the footer
-author: Some Person
+author: Bo
 
 # --- List of links in the navigation bar --- #
 
 navbar-links:
   About Me: "aboutme"
-  Resources:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Learn markdown: "https://www.markdowntutorial.com/"
-  Author's home: "https://deanattali.com"
+  OpenAphid-Engine: "/api-doc/latest/index.html"
+  #Resources:
+  #  - OpenAphid-Engine: "/api-doc/latest/index.html"
 
 # --- Logo --- #
 
 # Image to show in the navigation bar - works best with a square image
 # Remove this parameter if you don't want an image in the navbar
-avatar: "/assets/img/avatar-icon.png"
+avatar: "/images/aphid-logo-new.png"
 
 # By default, the image is cut into a circle. You can disable this behaviour by setting 'round-avatar: false'
-round-avatar: true
+round-avatar: false
 
 # If you want to have an image logo in the top-left corner instead of the title text,
 # then specify the following parameter
@@ -38,10 +37,10 @@ round-avatar: true
 # Uncomment the links you want to show and add your information to each one.
 # If you don't want to show a link to an RSS feed, set rss to "false".
 social-network-links:
-  email: "someone@example.com"
-  facebook: deanattali
-  github: daattali
-  twitter: daattali
+  email: "openaphid@gmail.com"
+  #facebook: deanattali
+  github: openaphid
+  twitter: eniton
   rss: true
 #  reddit: yourname
 #  linkedin: daattali
@@ -66,13 +65,13 @@ social-network-links:
 # Select which social network share links to show in posts
 share-links-active:
   twitter: true
-  facebook: true
+  #facebook: true
   linkedin: true
-  vk: false
+  vk: true
 
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "MyWebsite.com"
+url-pretty: "openaphid.github.io"
 
 # Create a "tags" index page and make tags on each post clickable
 link-tags: true
@@ -84,8 +83,8 @@ excerpt_length: 50
 
 # Personalize the colors in your website. Colour values can be any valid CSS colour
 
-navbar-col: "#F5F5F5"
-navbar-text-col: "#404040"
+navbar-col: "#262c33" #"#F5F5F5"
+navbar-text-col: "#F2F2F2" #"#404040"
 navbar-border-col: "#EAEAEA"
 page-col: "#FFFFFF"
 link-col: "#008AFF"
@@ -97,8 +96,8 @@ footer-link-col: "#404040"
 # Alternatively, the navbar, footer, and page background can be set to use background images
 # instead of colour
 
-#navbar-img: "/assets/img/bgimage.png"
-#footer-img: "/assets/img/bgimage.png"
+# navbar-img: "/images/aphid-page-bg.png"
+footer-img: "/images/aphid-page-bg.png"
 #page-img: "/assets/img/bgimage.png"
 
 # --- Web Statistics Section --- #
@@ -107,7 +106,7 @@ footer-link-col: "#404040"
 #gtag: ""
 
 # Fill in your Google Analytics ID to track your website using GA
-#google_analytics: ""
+google_analytics: "UA-29340978-1"
 
 # Google Tag Manager ID
 #gtm: ""
@@ -123,7 +122,7 @@ footer-link-col: "#404040"
 # --- Comments --- #
 
 # To use Disqus comments, sign up to https://disqus.com and fill in your Disqus shortname (NOT the userid)
-#disqus: ""
+disqus: "openaphidblog"
 
 # To use Facebook Comments, create a Facebook app and fill in the Facebook App ID
 #fb_comment_id: ""
@@ -172,7 +171,7 @@ timezone: "America/Vancouver"
 markdown: kramdown
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
-paginate: 4
+paginate: 10
 
 kramdown:
   input: GFM
@@ -190,7 +189,7 @@ defaults:
       layout: "post"
       comments: true  # add comments to all blog posts
       social-share: true # add social media sharing buttons to all blog posts
-      readtime: false # add estimated reading time on all blog posts
+      readtime: true # add estimated reading time on all blog posts
   -
     scope:
       path: "" # all files
