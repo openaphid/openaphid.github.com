@@ -929,6 +929,12 @@ p img {
   display: block;
 }
 
+.cover-img {
+  width: 85%;
+  margin: auto;
+  display: block;
+}
+
 #full-tags-list {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }

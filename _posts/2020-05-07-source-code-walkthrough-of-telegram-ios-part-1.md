@@ -2,13 +2,10 @@
 layout: post
 title: "Source Code Walkthrough of Telegram-iOS: Part 1"
 subtitle: ""
+cover-img: "/assets/tg-ios/part-1-cover.png"
 tags: [Telegram, iOS]
 comments: true
 ---
-
-![Cover](/assets/tg-ios/part-1-cover.png)
-
-# Introduction
 
 Telegram is one of the most popular instant messengers in the market. As of April this year, its MAU has passed [400 million](https://telegram.org/blog/400-million). It’s a great achievement considering its service is not available in [some countries](https://en.wikipedia.org/wiki/Telegram_(software)#Censorship).
 

@@ -5,7 +5,7 @@
 {% if page.cover-img or page.title %}
 
 {% if page.cover-img %}
-  <div id="header-big-imgs" data-num-img={% if page.cover-img.first %}{{ page.cover-img.size }}{% else %}1{% endif %}
+  <!--div id="header-big-imgs" data-num-img={% if page.cover-img.first %}{{ page.cover-img.size }}{% else %}1{% endif %}
     {% for bigimg in page.cover-img %}
     {% assign imgnum = forloop.index %}
     {% for imginfo in bigimg %}
@@ -17,12 +17,12 @@
     {% endif %}
     {% endfor %}
     {% endfor %}
-  ></div>
+  ></div-->
 {% endif %}
 
-<header class="header-section {% if page.cover-img %}has-img{% endif %}">
+<header class="header-section">
 {% if page.cover-img %}
-<div class="big-img intro-header">
+<!--div class="big-img intro-header">
   <div class="container-fluid">
     <div class="row">
       <div class="col-xl-10 offset-xl-1 col-lg-10 offset-lg-1">
@@ -48,7 +48,7 @@
     </div>
   </div>
   <span class='img-desc'></span>
-</div>
+</div-->
 {% endif %}
 <div class="intro-header no-img">
   <div class="container-fluid">
@@ -72,6 +72,11 @@
           {% endif %}
       {% endif %}
         </div>
+        {% if page.cover-img %}
+        <div>
+          <img class="cover-img" src="{{ page.cover-img }}">
+        </div>
+        {% endif %}
       </div>
     </div>
   </div>
