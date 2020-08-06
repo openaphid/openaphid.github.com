@@ -11,9 +11,9 @@ html {
 }
 
 body {
-  font-family: 'Lora', 'Times New Roman', serif;
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
   font-size: 1.125rem;
-  color: #404040;
+  color: #414141;
   position: relative;
   background-color: {{ site.page-col | default: "#FFFFFF" }};
   {% if site.page-img %}
@@ -27,7 +27,7 @@ p {
 }
 h1,h2,h3,h4,h5,h6 {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.1;
 }
 h1 {
@@ -39,8 +39,8 @@ h1 {
 }
 h2 {
   font-size: 1.5rem;
-  margin-block-start: 0.83em;
-  margin-block-end: 0.83em;
+  /*margin-block-start: 0.83em;*/
+  /*margin-block-end: 0.83em;*/
   margin-inline-start: 0px;
   margin-inline-end: 0px;
 }
@@ -50,13 +50,31 @@ h3 {
 h4 {
   font-size: 1rem;
 }
+
+/*a links*/
 a {
-  color: {{ site.link-col | default: "#008AFF" }};
+  color: "#008AFF";
 }
 a:hover,
 a:focus {
+  color: "#0085A1";
+}
+
+.blog-post a {
+  color: {{ site.link-col | default: "#008AFF" }};
+  text-decoration: underline;
+}
+.blog-post a:visited,
+.blog-post a:hover,
+.blog-post a:focus {
   color: {{ site.hover-col | default: "#0085A1" }};
 }
+
+.blog-post a:visited>code {
+  color: {{ site.hover-col | default: "#0085A1" }};
+}
+
+
 blockquote {
   color: #808080;
   font-style: italic;
@@ -482,8 +500,8 @@ e
 }
 .post-preview .post-meta,
 .post-heading .post-meta {
-  color: #808080;
-  font-size: 1.125rem;
+  color: rgba(0, 0, 0, .54);
+  font-size: 1rem;
   font-style: italic;
   margin: 0 0 0.625rem;
 }
@@ -496,6 +514,7 @@ e
 }
 .post-entry {
   width: 100%;
+  color: rgba(0, 0, 0, .54);
 }
 .post-image {
   float: right;
@@ -513,13 +532,13 @@ e
   /*height: 12rem;*/
   width: 12rem;
 }
-.post-preview .post-read-more {
+/*.post-preview .post-read-more {
   font-weight: 800;
-}
+}*/
 
 @media (min-width: 768px) {
   .post-preview .post-title {
-    font-size: 2.25rem;
+    font-size: 2rem;
   }
 }
 
@@ -841,15 +860,16 @@ pre {
 .highlight pre {
   border: none;
   background: none;
-  margin: 0;
+  /*margin: 0;*/
+  font-size: 0.85rem;
 }
 .highlight > pre {
-  background-image: linear-gradient(
-    rgba(0,0,0,0.06), rgba(0,0,0,0.06) 1.5em, rgba(0,0,0,0.03) 1.5em, rgba(0,0,0,0.03) 3em);
-  background-size: auto 3em;
+  /*background-image: linear-gradient(
+    rgba(0,0,0,0.06), rgba(0,0,0,0.06) 1.5em, rgba(0,0,0,0.03) 1.5em, rgba(0,0,0,0.03) 3em);*/
+  /*background-size: auto 3em;*/
   background-position-y: 0.625rem;
   border: 1px solid rgba(0,0,0,0.1);
-  border-left: 0.4375rem solid #444;
+  /*border-left: 0.4375rem solid #444;*/
 }
 .highlight > pre:not([class~="highlight"]) { /* code block with line number */
   padding: 0;
@@ -863,7 +883,7 @@ pre {
 .highlight pre.lineno {
   color: rgba(0,0,0,0.3);
   border-radius: 0;
-  border-right: 2px solid #444;
+  border-right: 1px solid #ccc;
 }
 
 /* Make line numbers unselectable: excludes line numbers from copy-paste user ops */
@@ -888,7 +908,7 @@ pre {
   padding: 0.9375rem 0.9375rem 0.9375rem 0.625rem;
   margin: 1.25rem 1.25rem 1.25rem 0.3125rem;
   border: 1px solid #eee;
-  border-left-width: 0.3125rem;
+  border-left-width: 0.2rem;
   border-radius: 0.3125rem 0.1875rem 0.1875rem 0.3125rem;
   font-style: italic;
 }
@@ -945,6 +965,10 @@ p img {
   width: 100%;
   margin: auto;
   display: block;
+}
+
+pre code {
+  font-size: 85%;
 }
 
 .fit-img {

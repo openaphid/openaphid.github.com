@@ -87,11 +87,11 @@ navbar-col: "#262c33" #"#F5F5F5"
 navbar-text-col: "#F2F2F2" #"#404040"
 navbar-border-col: "#EAEAEA"
 page-col: "#FFFFFF"
-link-col: "#008AFF"
-hover-col: "#0085A1"
+link-col: "#008AFF" # "#414141"
+hover-col: "#414141" # "#008AFF"
 footer-col: "#F5F5F5"
 footer-text-col: "#777777"
-footer-link-col: "#404040"
+footer-link-col: "#414141"
 
 # Alternatively, the navbar, footer, and page background can be set to use background images
 # instead of colour
@@ -177,7 +177,7 @@ kramdown:
   input: GFM
   syntax_highlighter_opts:
     block:
-      line_numbers: false
+      line_numbers: true
 
 # Default YAML values (more information on Jekyll's site)
 defaults:
