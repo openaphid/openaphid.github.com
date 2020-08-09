@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  /*font-family: Georgia, Cambria, "Times New Roman", Times, serif;*/
   font-size: 1.125rem;
   color: #414141;
   position: relative;
@@ -26,14 +26,14 @@ p {
   margin: 1.875rem 0;
 }
 h1,h2,h3,h4,h5,h6 {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  /*font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;*/
   font-weight: 600;
   line-height: 1.1;
 }
 h1 {
   font-size: 2.25rem;
   margin-block-start: 0.83em;
-  margin-block-end: 0.83em;
+  margin-block-end: 0px; /*0.83em;*/
   margin-inline-start: 0px;
   margin-inline-end: 0px;
 }
@@ -154,7 +154,7 @@ img {
 .navbar-custom {
   background-color: {{ site.navbar-col | default: "#F5F5F5" }};
   border-bottom: 1px solid {{ site.navbar-border-col | default: "#EAEAEA" }};
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  /*font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;*/
   {% if site.navbar-img %}
     background-image: url({{ site.navbar-img | relative_url }});
     background-repeat: no-repeat;
@@ -506,7 +506,7 @@ e
   margin: 0 0 0.625rem;
 }
 .post-preview .post-entry {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  /*font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;*/
 }
 .post-entry-container {
   display: inline-block;
@@ -545,7 +545,7 @@ e
 /* --- Tags --- */
 
 .blog-tags {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  /*font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;*/
   color: #999;
   font-size: 0.9375rem;
   margin-bottom: 1.875rem;
@@ -647,7 +647,7 @@ e
   font-size: 1.6875rem;
   line-height: 1.1;
   display: block;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  /*font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;*/
   font-weight: 300;
   margin: 0.625rem 0 0;
 }
@@ -672,7 +672,7 @@ e
   padding: 0.3125rem 0.625rem;
   font-size: 0.6875rem;
   color: #EEE;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  /*font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;*/
   right: 0;
   bottom: 0;
   display: none;
@@ -787,7 +787,7 @@ e
 }
 
 .pagination .page-item .page-link {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  /*font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;*/
   text-transform: uppercase;
   font-size: 0.875rem;
   font-weight: 800;
@@ -859,15 +859,15 @@ pre {
 }
 .highlight pre {
   border: none;
-  background: none;
+  background: rgba(242, 242, 242, 1);
   /*margin: 0;*/
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }
 .highlight > pre {
   /*background-image: linear-gradient(
     rgba(0,0,0,0.06), rgba(0,0,0,0.06) 1.5em, rgba(0,0,0,0.03) 1.5em, rgba(0,0,0,0.03) 3em);*/
   /*background-size: auto 3em;*/
-  background-position-y: 0.625rem;
+  /*background-position-y: 0.625rem;*/
   border: 1px solid rgba(0,0,0,0.1);
   /*border-left: 0.4375rem solid #444;*/
 }
@@ -876,7 +876,7 @@ pre {
 }
 .highlight table, .highlight tr, .highlight td { /* to be removed after fixing table styles */
   border: none;
-  background: none;
+  /*background: none;*/
   padding: 0;
   margin: 0;
 }
