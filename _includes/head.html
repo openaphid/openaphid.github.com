@@ -12,7 +12,7 @@
   <meta name="description" content="{{ page.subtitle }}">
   {% endif %}
 
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title | default: 'Untitled' }} {{ site.title-separator | default: '-' }} {{ site.description }}" href="{{ '/feed.xml' | absolute_url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title | default: 'Untitled' }} {{ site.title-separator | default: '-' }} {{ site.description }}" href="{{ '/feed.xml' | relative_url }}">
 
   {% include gtag.html %}
   {% include gtm_head.html %}
@@ -73,11 +73,11 @@
   {% endif %}
 
   {% if page.id %}
-  <meta property="og:url" content="{{ page.url | absolute_url }}">
-  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <meta property="og:url" content="{{ page.url | relative_url }}">
+  <link rel="canonical" href="{{ page.url | relative_url }}">
   {% else %}
-  <meta property="og:url" content="{{ page.url | absolute_url | strip_index }}">
-  <link rel="canonical" href="{{ page.url | absolute_url | strip_index }}">
+  <meta property="og:url" content="{{ page.url | relative_url | strip_index }}">
+  <link rel="canonical" href="{{ page.url | relative_url | strip_index }}">
   {% endif %}
 
   {%- capture shareimg -%}
@@ -98,7 +98,7 @@
   {% assign shareimg=shareimg | strip %}
 
   {% if shareimg != "" %}
-  <meta property="og:image" content="{{ shareimg | absolute_url }}">
+  <meta property="og:image" content="{{ shareimg | relative_url }}">
   {% endif %}
 
 
@@ -128,7 +128,7 @@
   {% endif %}
 
   {% if shareimg != "" %}
-  <meta name="twitter:image" content="{{ shareimg | absolute_url }}">
+  <meta name="twitter:image" content="{{ shareimg | relative_url }}">
   {% endif %}
 
   {% if site.matomo %}
