@@ -122,7 +122,7 @@ google_analytics: "UA-29340978-1"
 # --- Comments --- #
 
 # To use Disqus comments, sign up to https://disqus.com and fill in your Disqus shortname (NOT the userid)
-disqus: "openaphidblog"
+# disqus: "openaphidblog"
 
 # To use Facebook Comments, create a Facebook app and fill in the Facebook App ID
 #fb_comment_id: ""
