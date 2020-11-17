@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Porting Dual-Pivot Sort and Timsort from Java to Go"
-date: 2020-11-10 00:23 -0800
+date: 2020-11-15 00:23 -0800
+cover-img: "/assets/etc/poker-sort.jpeg"
 tags: [Algorithm, Go]
 ---
 
