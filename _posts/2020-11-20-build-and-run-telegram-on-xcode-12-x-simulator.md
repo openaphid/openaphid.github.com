@@ -1,10 +1,12 @@
 ---
 layout: post
-title: Build and Run Telegram-iOS on Xcode 12.x Simulator
+title: Build and Run Telegram-iOS v7.2 in Xcode 12.x Simulator with Buck
 date: 2020-11-20 05:19 -0800
 tags: [Telegram, iOS]
 cover-img: "https://images.unsplash.com/photo-1587654780291-39c9404d746b"
 ---
+
+> Please refer to [Build and Run Telegram-iOS v7.3 in Simulator with Bazel](/2020-12-28-build-and-run-telegram-ios-v7-3-on-simulator-with-bazel/) if you use macOS Big Sur
 
 Telegram started the program of "[Reproducible Builds for iOS and Android](https://core.telegram.org/reproducible-builds)" to release its client source code in a more regular schedule. Although it's a great move, you may find it's still confusing how to build and run the iOS project with minimal effects. The [official guide](https://core.telegram.org/reproducible-builds#reproducible-builds-for-ios) is present to verify the build is reproducible, which requires an installation of macOS Catalina, Xcode 11.x, and other tools inside a Parallels virtual machine.
 
@@ -13,7 +15,7 @@ The guide has problems for developers who want to work with the code:
 - Running another clone of macOS and Xcode needs a powerful machine.
 - Xcode 11.x is outdated and the latest Xcode 12.x is [15 times faster](https://developer.apple.com/documentation/xcode-release-notes/xcode-12-release-notes) on code completion.
 - It runs an automation script file to generate an IPA file without showing how to open the project in Xcode IDE.
-- It doesn't cover how to build and run on Xcode simulator.
+- It doesn't cover how to build and run in Xcode simulator.
 
 This tutorial illustrates my way to fix the issues. It involves installing the necessary tools and modify parts of the project code to make it work. You can fast forward to the final section if you don't want to read the details.
 
@@ -52,7 +54,7 @@ cd telegram-ios
 
 ## #2 Set Up Environment Variables
 
-As Telegram-iOS enables developers to customize and build their own variants of clients, the build system takes a bunch of environment variables to feed the settings. We can reuse the settings from the reproducible builds guide as we only want to run it on simulator.
+As Telegram-iOS enables developers to customize and build their own variants of clients, the build system takes a bunch of environment variables to feed the settings. We can reuse the settings from the reproducible builds guide as we only want to run it in Simulator.
 
 ```bash
 export BUCK=buck
@@ -140,7 +142,7 @@ ld: symbol(s) not found for architecture x86_64
 
 The build settings of some third-party libraries don't have the `x86_64` target that is required by simulator unless you have an Apple M1 computer. We need to add it by ourselves.
 
-`mozjpeg` is one of them that needs a tweak. Inside [third-party/mozjpeg/BUCK](https://github.com/openaphid/Telegram-iOS/blob/main/third-party/mozjpeg/BUCK), it declares two targets of `arm64` and `armv7`. We can change `armv7` to `x86_64` as we don't need `armv7` on simulator and most devices.
+`mozjpeg` is one of them that needs a tweak. Inside [third-party/mozjpeg/BUCK](https://github.com/openaphid/Telegram-iOS/blob/main/third-party/mozjpeg/BUCK), it declares two targets of `arm64` and `armv7`. We can change `armv7` to `x86_64` as we don't need `armv7` in Simulator and on most devices.
 
 ```patch
 diff --git a/third-party/mozjpeg/BUCK b/third-party/mozjpeg/BUCK
@@ -234,9 +236,9 @@ make project
 
 It might take a while to finish as it needs to build libraries like openssl, ffmpeg, and webrtc-ios. Once it finishes, it opens Xcode IDE with the generated workspace file at `Telegram/Telegram_Buck.xcworkspace`.
 
-# Build and Run on Simulator
+# Build and Run in Simulator
 
-It's exciting to see Xcode is running, but there is one last change we need. Otherwise, the build process to run on simulator fails with many link stage errors:
+It's exciting to see Xcode is running, but there is one last change we need. Otherwise, the build process to run in Simulator fails with many link stage errors:
 
 ```console
 Undefined symbols for architecture x86_64:
@@ -248,7 +250,7 @@ Undefined symbols for architecture x86_64:
       Display.(PointerInteractionImpl in _B39DD7E7F85F24DF4F7212BCFE28692F).pointerInteraction(_: __C.UIPointerInteraction, styleFor: __C.UIPointerRegion) -> __C.UIPointerStyle? in PointerInteraction.o
 ```
 
-Symbols about pointer interactions can't be found by linker. I don't know the real reason behind it. It may be an issue of Xcode or buck may generate some incorrect project files. My fix is to comment out the code using pointer interactions inside [submodules/Display/Source/PointerInteraction.swift](https://github.com/openaphid/Telegram-iOS/blob/main/submodules/Display/Source/PointerInteraction.swift#L44) as I'm not going to test the feature on simulator.
+Symbols about pointer interactions can't be found by linker. I don't know the real reason behind it. It may be an issue of Xcode or buck may generate some incorrect project files. My fix is to comment out the code using pointer interactions inside [submodules/Display/Source/PointerInteraction.swift](https://github.com/openaphid/Telegram-iOS/blob/main/submodules/Display/Source/PointerInteraction.swift#L44) as I'm not going to test the feature in Simulator.
 
 ```diff
 diff --git a/submodules/Display/Source/PointerInteraction.swift b/submodules/Display/Source/PointerInteraction.swift
@@ -272,7 +274,7 @@ index 3a60a7e02..f8204f92b 100644
      }
 ```
 
-Now you should be able to build, run, and debug Telegram-iOS on simulator. 
+Now you should be able to build, run, and debug Telegram-iOS in Simulator. 
 
 # Fast Forward
 
@@ -288,6 +290,7 @@ brew install buck
 # Check out the code
 git clone --recursive https://github.com/TelegramMessenger/telegram-ios.git
 cd telegram-ios
+git checkout release-7.2
 
 # Download and apply enviroment variables
 wget https://raw.githubusercontent.com/openaphid/Telegram-iOS/main/hack_env.sh
