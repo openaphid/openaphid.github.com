@@ -6,8 +6,6 @@ tags: [Telegram, iOS]
 cover-img: "https://images.unsplash.com/photo-1587654780291-39c9404d746b"
 ---
 
-> Please refer to [Build and Run Telegram-iOS v7.3 in Simulator with Bazel](/2020-12-28-build-and-run-telegram-ios-v7-3-on-simulator-with-bazel/) if you use macOS Big Sur
-
 Telegram started the program of "[Reproducible Builds for iOS and Android](https://core.telegram.org/reproducible-builds)" to release its client source code in a more regular schedule. Although it's a great move, you may find it's still confusing how to build and run the iOS project with minimal effects. The [official guide](https://core.telegram.org/reproducible-builds#reproducible-builds-for-ios) is present to verify the build is reproducible, which requires an installation of macOS Catalina, Xcode 11.x, and other tools inside a Parallels virtual machine.
 
 The guide has problems for developers who want to work with the code:
@@ -18,6 +16,8 @@ The guide has problems for developers who want to work with the code:
 - It doesn't cover how to build and run in Xcode simulator.
 
 This tutorial illustrates my way to fix the issues. It involves installing the necessary tools and modify parts of the project code to make it work. You can fast forward to the final section if you don't want to read the details.
+
+> Please refer to [Build and Run Telegram-iOS v7.3 in Simulator with Bazel](/2020-12-28-build-and-run-telegram-ios-v7-3-on-simulator-with-bazel/) if you use macOS Big Sur
 
 # Install Buck
 
