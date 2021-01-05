@@ -16,10 +16,10 @@ Telegram-iOS project has been using Buck and Bazel in parallel as the build syst
 
 # Instructions
 
-My development machine runs macOS Big Sur v11.1 and Xcode 12.2 (12B45b). We can first use Homebrew to install Bazel and Yasm. Yasm is required to build some third-party dependencies.
+My development machine runs macOS Big Sur v11.1 and Xcode 12.2 (12B45b). We can first use Homebrew to install Bazel, Yasm and CMake. Yasm and CMake are required to build some third-party dependencies.
 
 ```bash
-brew install bazel yasm
+brew install bazel yasm cmake
 ```
 
 Here is the version information on my machine:
