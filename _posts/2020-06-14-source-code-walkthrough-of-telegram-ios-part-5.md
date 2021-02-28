@@ -303,4 +303,4 @@ open class ListView: ASDisplayNode, ... {
 
 # 5. Conclusion
 
-I’m impressed by Telegram’s approach to integrating AsyncDisplayKit. It rebuilds the whole family of UIKit components upon nodes for efficiency and full control. The chat message list feels fluid on old devices although the bubbles UI is complex to render. There are few codes to deal with the system upgrade debt, which always costs some “happy time” from most engineers after WWDC every year. Let’s see what might be broken after the first online WWDC in two weeks.
+I’m impressed by Telegram’s approach of integrating AsyncDisplayKit. It rebuilds the whole family of UIKit components upon nodes for efficiency and full control. The chat message list feels fluid on old devices although the bubbles UI is complex to render. There are few codes to deal with the system upgrade debt, which always costs some “happy time” from most engineers after WWDC every year. Let’s see what might be broken for other products after the first online WWDC in two weeks.
