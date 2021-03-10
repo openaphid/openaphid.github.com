@@ -3,7 +3,7 @@ layout: post
 title: "FlipView for Android v0.9.6 Released"
 date: 2012-12-12 15:59
 comments: true
-categories: [FlipView, Release]
+tags: [FlipView, Release]
 ---
 
 [FlipView](https://github.com/openaphid/android-flip) v0.9.6 is released with various bug fixes and enhancements.

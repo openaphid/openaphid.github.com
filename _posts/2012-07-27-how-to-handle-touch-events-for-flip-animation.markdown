@@ -3,7 +3,7 @@ layout: post
 title: "How to Handle Touch Events in Flip Animation"
 date: 2012-07-27 23:20
 comments: true
-categories: [FlipView]
+tags: [FlipView]
 ---
 
 > ** Updates at 2012-12-12: ** Please checkout [FlipView](/blog/categories/flipview/) for an improved solution.

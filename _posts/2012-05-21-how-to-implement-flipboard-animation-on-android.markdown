@@ -3,7 +3,7 @@ layout: post
 title: "How to Implement Flipboard Animation on Android"
 date: 2012-05-21 22:14
 comments: true
-categories: [FlipView]
+tags: [FlipView]
 ---
 
 > ** Updates at 2012-12-12: ** Please check out [FlipView](/blog/categories/flipview/) for an improved solution.

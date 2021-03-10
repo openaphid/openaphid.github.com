@@ -3,7 +3,7 @@ layout: post
 title: "Part I: How to Choose a JavaScript Engine for iOS and Android Development"
 date: 2013-01-17 15:30
 comments: true
-categories: [Tutorial, OpenAphid-Engine]
+tags: [Tutorial, OpenAphid-Engine]
 ---
 
 > DISCLAIMER: the post contains my personal opinions on the subject. I would appreciate it if you could correct my mistakes.

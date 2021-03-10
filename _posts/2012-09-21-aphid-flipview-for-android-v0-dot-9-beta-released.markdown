@@ -3,7 +3,7 @@ layout: post
 title: "FlipView for Android v0.9 Beta Released"
 date: 2012-09-21 15:11
 comments: true
-categories: [FlipView, Release]
+tags: [FlipView, Release]
 ---
 
 I'm happy to announce the first release of [FlipView](https://github.com/openaphid/android-flip), an Android UI component which help add flipping animation in your application. Please download and install the pre-built demo APK file to check out it in action:

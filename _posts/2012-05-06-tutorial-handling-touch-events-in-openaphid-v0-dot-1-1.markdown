@@ -3,7 +3,7 @@ layout: post
 title: "Tutorial: Handling Touch Events in OpenAphid-Engine v0.1.1"
 date: 2012-05-06 21:54
 comments: true
-categories: [OpenAphid-Engine, Tutorial]
+tags: [OpenAphid-Engine, Tutorial]
 ---
 
 We are glad to release OpenAphid-Engine v0.1.1, which adds multitouch support and fixes several issues about touch handling. The detailed change log is following:

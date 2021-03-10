@@ -3,7 +3,7 @@ layout: post
 title: "OpenAphid-Engine v0.2 is Available"
 date: 2012-05-15 22:28
 comments: true
-categories: [OpenAphid-Engine, Release]
+tags: [OpenAphid-Engine, Release]
 ---
 
 AphidMobile is pleased to announce the availability of OpenAphid-Engine v0.2.

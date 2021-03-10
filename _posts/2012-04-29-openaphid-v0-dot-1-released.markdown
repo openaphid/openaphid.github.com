@@ -3,7 +3,7 @@ layout: post
 title: "OpenAphid-Engine v0.1 Released"
 date: 2012-04-29 20:11
 comments: true
-categories: [OpenAphid-Engine, Release] 
+tags: [OpenAphid-Engine, Release] 
 ---
 
 We're excited to release OpenAphid-Engine v0.1, which is the first public version of the project.

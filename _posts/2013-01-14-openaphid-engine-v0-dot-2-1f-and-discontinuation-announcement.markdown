@@ -3,7 +3,7 @@ layout: post
 title: "OpenAphid-Engine v0.2.1f Release and Discontinuation Announcement"
 date: 2013-01-14 14:09
 comments: true
-categories: [OpenAphid-Engine, Release]
+tags: [OpenAphid-Engine, Release]
 ---
 [OpenAphid-Engine][] was born as an exploration project at the first half year of 2012 when I quit my day job. Its mission was to figure out the most efficient way to integrate a full JavaScript engine within native iOS/Android games. 
 

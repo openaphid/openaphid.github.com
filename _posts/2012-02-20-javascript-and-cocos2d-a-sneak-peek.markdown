@@ -3,7 +3,7 @@ layout: post
 title: "JavaScript and Cocos2D-iPhone: a sneak peek of OpenAphid-Engine"
 date: 2012-02-20 23:26
 comments: true
-categories: [OpenAphid-Engine]
+tags: [OpenAphid-Engine]
 ---
 ## What is OpenAphid-Engine?
 
