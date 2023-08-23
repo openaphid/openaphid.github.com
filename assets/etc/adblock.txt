@@ -1,0 +1,32 @@
+# block vivo tracking/ads domains
+DOMAIN-SUFFIX,adlog.vivo.com.cn
+DOMAIN-SUFFIX,adreq.vivo.com.cn
+DOMAIN-SUFFIX,adsdk.vivo.com.cn
+DOMAIN-SUFFIX,adsstatic.vivo.com.cn
+DOMAIN-SUFFIX,adxlog.vivo.com.cn
+DOMAIN-SUFFIX,stnetsdk.appstore.vivo.com.cn
+DOMAIN-SUFFIX,monitor-stsdk.vivo.com.cn
+DOMAIN-SUFFIX,onrt-stsdk.vivo.com.cn
+DOMAIN-SUFFIX,ort-stsdk.vivo.com.cn
+DOMAIN-SUFFIX,pnrt-stsdk.vivo.com.cn
+DOMAIN-SUFFIX,prt-stsdk.vivo.com.cn
+DOMAIN-SUFFIX,stnetsdk.vivo.com.cn
+DOMAIN-SUFFIX,stsdk.vivo.com.cn
+DOMAIN-SUFFIX,bronrt.stsdk.vivo.com.cn
+DOMAIN-SUFFIX,brort.stsdk.vivo.com.cn
+DOMAIN-SUFFIX,brpnrt.stsdk.vivo.com.cn
+DOMAIN-SUFFIX,brprt.stsdk.vivo.com.cn
+DOMAIN-SUFFIX,onrt.stsdk.vivo.com.cn
+DOMAIN-SUFFIX,ort.stsdk.vivo.com.cn
+DOMAIN-SUFFIX,pnrt.stsdk.vivo.com.cn
+DOMAIN-SUFFIX,prt.stsdk.vivo.com.cn
+DOMAIN-SUFFIX,vcardsdkservice.vivo.com.cn
+DOMAIN-SUFFIX,vcode-od.vivo.com.cn
+# more ads and annoying things
+DOMAIN-SUFFIX,monosnap.com
+DOMAIN-SUFFIX,pangolin-sdk-toutiao.com
+DOMAIN-KEYWORD,pangolin-sdk
+DOMAIN-SUFFIX,bytescm.com
+DOMAIN-SUFFIX,jiaoliuqu.com
+DOMAIN-SUFFIX,pglstatp-toutiao.com
+DOMAIN-SUFFIX,dspsdk.pinduoduo.com
